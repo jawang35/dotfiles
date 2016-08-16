@@ -8,6 +8,7 @@ docblockr@0.8.2
 file-icons@1.7.18
 filesize@0.4.2
 git-time-machine@1.5.3
+language-groovy@0.6.0
 language-haskell@1.9.4
 linter@1.11.16
 linter-eslint@7.2.4
