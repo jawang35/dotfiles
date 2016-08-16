@@ -148,6 +148,9 @@
 ".cpp.source":
   editor:
     tabLength: 4
+".groovy.source":
+  editor:
+    preferredLineLength: 100
 ".haskell.hint":
   editor:
     preferredLineLength: 100
