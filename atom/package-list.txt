@@ -10,6 +10,7 @@ filesize@0.4.2
 git-time-machine@1.5.3
 language-groovy@0.6.0
 language-haskell@1.9.4
+language-lua@0.9.11
 linter@1.11.16
 linter-eslint@7.2.4
 linter-flow@5.5.0

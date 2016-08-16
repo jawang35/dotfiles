@@ -187,6 +187,9 @@
 ".json.source":
   editor:
     tabLength: 4
+".lua.source":
+  editor:
+    preferredLineLength: 100
 ".makefile.source":
   editor:
     tabLength: 4
