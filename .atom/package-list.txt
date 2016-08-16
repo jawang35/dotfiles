@@ -22,7 +22,6 @@ platformio-ide-terminal@2.1.1
 react@0.16.0
 set-syntax@0.3.0
 split-diff@1.0.4
-sync-settings@0.7.2
 vim-mode-plus@0.51.0
 
 

@@ -118,11 +118,6 @@
     syncHorizontalScroll: true
   "status-bar":
     cursorPositionFormat: "%L: %C"
-  "sync-settings":
-    _analyticsUserId: "402286e8-cd62-4859-b950-a6077f9bb6b1"
-    _lastBackupHash: "f8406c9db85afce1b306a3227481e45a992455f1"
-    gistId: "d22f875c0f79dc0c3a0ed71d6aca7d7c"
-    personalAccessToken: "ff8d5e484db5455551bf61cca8f0e4ec6c614fa4"
   term3:
     autoRunCommand: "login -f `whoami`"
     cursorBlink: false
