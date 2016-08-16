@@ -1,0 +1,10 @@
+storage
+blob-store
+compile-cache
+packages
+recovery
+split-diff
+dev
+.apm
+.npm
+.node-gyp

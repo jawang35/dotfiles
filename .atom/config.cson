@@ -1,0 +1,198 @@
+"*":
+  "advanced-open-file":
+    createDirectories: true
+    fuzzyMatch: true
+    helmDirSwitch: true
+  "atom-beautify":
+    general:
+      _analyticsUserId: "4218a4fb-d994-4e13-8237-74e074cbc80a"
+  "atom-material-ui":
+    tabs:
+      compactTabs: true
+    treeView:
+      compactList: true
+    ui:
+      animations: false
+      panelContrast: true
+      panelShadows: true
+  "auto-detect-indentation":
+    indentationTypes: [
+      {
+        name: "2 Spaces"
+        softTabs: true
+        tabLength: 2
+      }
+      {
+        name: "4 Spaces"
+        softTabs: true
+        tabLength: 4
+      }
+    ]
+  "autocomplete-plus":
+    suppressActivationForEditorClasses: [
+      "vim-mode-plus.normal-mode"
+      "vim-mode-plus.visual-mode"
+      "vim-mode-plus.operator-pending-mode"
+      "vim-mode-plus.insert-mode.replace"
+    ]
+  core:
+    allowPendingPaneItems: false
+    closeEmptyWindows: false
+    disabledPackages: [
+      "autoflow"
+      "bookmarks"
+      "go-to-line"
+      "autosave"
+      "spell-check"
+      "symbols-view"
+      "welcome"
+      "styleguide"
+      "package-generator"
+      "metrics"
+      "link"
+      "dev-live-reload"
+      "background-tips"
+    ]
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "node_modules"
+    ]
+    packagesWithKeymapsDisabled: [
+      "bracket-matcher"
+      "linter"
+      "split-diff"
+      "git-diff"
+      "grammar-selector"
+      "advanced-open-file"
+      "atom-beautify"
+      "find-and-replace"
+      "fuzzy-finder"
+      "markdown-preview"
+      "notifications"
+      "open-on-github"
+      "tree-view"
+      "term3"
+    ]
+    themes: [
+      "atom-material-ui"
+      "atom-material-syntax"
+    ]
+  editor:
+    preferredLineLength: 100
+    scrollPastEnd: true
+    tabType: "soft"
+  "exception-reporting":
+    userId: "ecd7b451-e1f6-8d4f-901c-bae8e755d7f1"
+  filesize:
+    KibibyteRepresentation: false
+  linter:
+    lintOnFly: false
+    showErrorInline: false
+  minimap:
+    plugins:
+      cursorline: true
+      cursorlineDecorationsZIndex: 0
+      "git-diff": true
+      "git-diffDecorationsZIndex": 0
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+      "split-diff": true
+      "split-diffDecorationsZIndex": 0
+  "platformio-ide-terminal":
+    style:
+      animationSpeed: 0
+    toggles:
+      cursorBlink: false
+  react:
+    enabledForAllJavascriptFiles: true
+  "split-diff":
+    diffWords: true
+    ignoreWhitespace: true
+    leftEditorColor: "red"
+    rightEditorColor: "green"
+    syncHorizontalScroll: true
+  "status-bar":
+    cursorPositionFormat: "%L: %C"
+  "sync-settings":
+    _analyticsUserId: "402286e8-cd62-4859-b950-a6077f9bb6b1"
+    _lastBackupHash: "f8406c9db85afce1b306a3227481e45a992455f1"
+    gistId: "d22f875c0f79dc0c3a0ed71d6aca7d7c"
+    personalAccessToken: "ff8d5e484db5455551bf61cca8f0e4ec6c614fa4"
+  term3:
+    autoRunCommand: "login -f `whoami`"
+    cursorBlink: false
+  "terminal-plus":
+    style: {}
+  "vim-mode-plus":
+    charactersToAddSpaceOnSurround: [
+      "{"
+    ]
+    ignoreCaseForSearch: true
+    useSmartcaseForSearch: true
+  welcome:
+    showOnStartup: false
+".c.source":
+  editor:
+    tabLength: 4
+".c2hs.source":
+  editor:
+    preferredLineLength: 100
+    tabLength: 4
+".cabal.source":
+  editor:
+    preferredLineLength: 100
+    tabLength: 4
+".coffee.jsx.source":
+  editor:
+    preferredLineLength: 100
+".cpp.source":
+  editor:
+    tabLength: 4
+".haskell.hint":
+  editor:
+    preferredLineLength: 100
+    tabLength: 4
+".haskell.hint.message":
+  editor:
+    preferredLineLength: 100
+    tabLength: 4
+".haskell.hint.type":
+  editor:
+    preferredLineLength: 100
+    tabLength: 4
+".haskell.latex.tex.text":
+  editor:
+    preferredLineLength: 100
+    tabLength: 4
+".haskell.source":
+  editor:
+    preferredLineLength: 100
+    tabLength: 4
+".hsc2hs.source":
+  editor:
+    preferredLineLength: 100
+    tabLength: 4
+".js.jsx.source":
+  editor:
+    preferredLineLength: 100
+".js.regexp.replacement.source":
+  editor:
+    tabLength: 4
+".js.regexp.source":
+  editor:
+    tabLength: 4
+".json.source":
+  editor:
+    tabLength: 4
+".makefile.source":
+  editor:
+    tabLength: 4
+".text.todo":
+  editor:
+    preferredLineLength: 100
+    tabLength: 4
