@@ -36,7 +36,6 @@
       "vim-mode-plus.insert-mode.replace"
     ]
   core:
-    allowPendingPaneItems: false
     closeEmptyWindows: false
     disabledPackages: [
       "autoflow"
