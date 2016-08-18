@@ -4,6 +4,7 @@ compile-cache
 packages
 recovery
 split-diff
+git-time-machine
 dev
 .apm
 .npm
