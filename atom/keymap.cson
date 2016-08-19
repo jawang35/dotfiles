@@ -32,7 +32,7 @@
   'cmd-o': 'advanced-open-file:toggle'
   'alt-cmd-t': 'notifications:trigger-error' # what does this do?
 
-'atom-text-editor.vim-mode-plus.normal-mode:not(.terminal)':
+'atom-text-editor.vim-mode-plus.normal-mode':
   # auto detect indentation
   'space i': 'auto-detect-indentation:show-indentation-selector'
 
