@@ -2,7 +2,7 @@ hyper = { 'cmd', 'alt' }
 
 hs.window.animationDuration = 0
 
-hs.hotkey.bind(hyper, 'F', function ()
+hs.hotkey.bind(hyper, 'f', function ()
   local win = hs.window.focusedWindow()
   local frame = win:frame()
   local screen = win:screen()
@@ -15,7 +15,13 @@ hs.hotkey.bind(hyper, 'F', function ()
   win:setFrame(frame)
 end)
 
-hs.hotkey.bind(hyper, 'H', function ()
+hs.hotkey.bind(hyper, 'c', function ()
+  local win = hs.window.focusedWindow()
+
+  win:centerOnScreen()
+end)
+
+hs.hotkey.bind(hyper, 'h', function ()
   local win = hs.window.focusedWindow()
   local frame = win:frame()
   local screen = win:screen()
@@ -28,7 +34,7 @@ hs.hotkey.bind(hyper, 'H', function ()
   win:setFrame(frame)
 end)
 
-hs.hotkey.bind(hyper, 'J', function ()
+hs.hotkey.bind(hyper, 'j', function ()
   local win = hs.window.focusedWindow()
   local frame = win:frame()
   local screen = win:screen()
@@ -41,7 +47,7 @@ hs.hotkey.bind(hyper, 'J', function ()
   win:setFrame(frame)
 end)
 
-hs.hotkey.bind(hyper, 'K', function ()
+hs.hotkey.bind(hyper, 'k', function ()
   local win = hs.window.focusedWindow()
   local frame = win:frame()
   local screen = win:screen()
@@ -54,7 +60,7 @@ hs.hotkey.bind(hyper, 'K', function ()
   win:setFrame(frame)
 end)
 
-hs.hotkey.bind(hyper, 'L', function ()
+hs.hotkey.bind(hyper, 'l', function ()
   local win = hs.window.focusedWindow()
   local frame = win:frame()
   local screen = win:screen()
