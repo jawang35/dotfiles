@@ -1,3 +1,4 @@
 local hyper = { 'cmd', 'alt' }
+local hyperControl = { 'cmd', 'alt', 'ctrl' }
 
-require('windows')(hyper)
+require('windows')(hyper, hyperControl)

@@ -1,4 +1,4 @@
-local function windows(hyper)
+local function windows(hyper, hyperControl)
   hs.window.animationDuration = 0
 
   hs.hotkey.bind(hyper, 'f', function ()
@@ -70,6 +70,30 @@ local function windows(hyper)
     frame.w = max.w / 2
     frame.h = max.h
     win:setFrame(frame)
+  end)
+
+  hs.hotkey.bind(hyperControl, 'h', function ()
+    local win = hs.window.focusedWindow()
+
+    win:moveOneScreenWest(true, true)
+  end)
+
+  hs.hotkey.bind(hyperControl, 'j', function ()
+    local win = hs.window.focusedWindow()
+
+    win:moveOneScreenSouth(true, true)
+  end)
+
+  hs.hotkey.bind(hyperControl, 'k', function ()
+    local win = hs.window.focusedWindow()
+
+    win:moveOneScreenNorth(true, true)
+  end)
+
+  hs.hotkey.bind(hyperControl, 'l', function ()
+    local win = hs.window.focusedWindow()
+
+    win:moveOneScreenEast(true, true)
   end)
 end
 
