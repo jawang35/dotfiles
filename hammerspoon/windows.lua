@@ -1,88 +1,119 @@
-local function fullScreen()
-  local win = hs.window.focusedWindow()
-  local frame = win:frame()
-  local screen = win:screen()
-  local max = screen:frame()
+local function doIfActiveWindow(window, callback)
+  if window then
+    callback(window)
+  else
+    hs.alert.show('No active window')
+  end
+end
 
-  frame.x = max.x
-  frame.y = max.y
-  frame.w = max.w
-  frame.h = max.h
-  win:setFrame(frame)
+local function fullScreen()
+  local window = hs.window.focusedWindow()
+
+  doIfActiveWindow(window, function (window)
+    local frame = window:frame()
+    local screen = window:screen()
+    local max = screen:frame()
+
+    frame.x = max.x
+    frame.y = max.y
+    frame.w = max.w
+    frame.h = max.h
+    window:setFrame(frame)
+  end)
 end
 
 local function center()
-  local win = hs.window.focusedWindow()
+  local window = hs.window.focusedWindow()
 
-  win:centerOnScreen()
+  doIfActiveWindow(window, hs.window.centerOnScreen)
 end
 
 local function leftHalf()
-  local win = hs.window.focusedWindow()
-  local frame = win:frame()
-  local screen = win:screen()
-  local max = screen:frame()
+  local window = hs.window.focusedWindow()
 
-  frame.x = max.x
-  frame.w = max.w / 2
-  win:setFrame(frame)
+  doIfActiveWindow(window, function (window)
+    local frame = window:frame()
+    local screen = window:screen()
+    local max = screen:frame()
+
+    frame.x = max.x
+    frame.w = max.w / 2
+    window:setFrame(frame)
+  end)
 end
 
 local function bottomHalf()
-  local win = hs.window.focusedWindow()
-  local frame = win:frame()
-  local screen = win:screen()
-  local max = screen:frame()
+  local window = hs.window.focusedWindow()
 
-  frame.y = max.y + max.h / 2
-  frame.h = max.h / 2
-  win:setFrame(frame)
+  doIfActiveWindow(window, function (window)
+    local frame = window:frame()
+    local screen = window:screen()
+    local max = screen:frame()
+
+    frame.y = max.y + max.h / 2
+    frame.h = max.h / 2
+    window:setFrame(frame)
+  end)
 end
 
 local function topHalf()
-  local win = hs.window.focusedWindow()
-  local frame = win:frame()
-  local screen = win:screen()
-  local max = screen:frame()
+  local window = hs.window.focusedWindow()
 
-  frame.y = max.y
-  frame.h = max.h / 2
-  win:setFrame(frame)
+  doIfActiveWindow(window, function (window)
+    local frame = window:frame()
+    local screen = window:screen()
+    local max = screen:frame()
+
+    frame.y = max.y
+    frame.h = max.h / 2
+    window:setFrame(frame)
+  end)
 end
 
 local function rightHalf()
-  local win = hs.window.focusedWindow()
-  local frame = win:frame()
-  local screen = win:screen()
-  local max = screen:frame()
+  local window = hs.window.focusedWindow()
 
-  frame.x = max.x + max.w / 2
-  frame.w = max.w / 2
-  win:setFrame(frame)
+  doIfActiveWindow(window, function (window)
+    local frame = window:frame()
+    local screen = window:screen()
+    local max = screen:frame()
+
+    frame.x = max.x + max.w / 2
+    frame.w = max.w / 2
+    window:setFrame(frame)
+  end)
 end
 
 local function leftScreen()
-  local win = hs.window.focusedWindow()
+  local window = hs.window.focusedWindow()
 
-  win:moveOneScreenWest(true, true)
+  doIfActiveWindow(window, function (window)
+    window:moveOneScreenWest(true, true)
+  end)
 end
 
 local function lowerScreen()
-  local win = hs.window.focusedWindow()
+  local window = hs.window.focusedWindow()
 
-  win:moveOneScreenSouth(true, true)
+  doIfActiveWindow(window, function (window)
+    window:moveOneScreenSouth(true, true)
+  end)
 end
 
 local function upperScreen()
-  local win = hs.window.focusedWindow()
+  local window = hs.window.focusedWindow()
 
-  win:moveOneScreenNorth(true, true)
+  doIfActiveWindow(window, function (window)
+    window:moveOneScreenNorth(true, true)
+  end)
 end
 
 local function rightScreen()
-  local win = hs.window.focusedWindow()
+  local window = hs.window.focusedWindow()
 
-  win:moveOneScreenEast(true, true)
+  doIfActiveWindow(window, function (window)
+    window:moveOneScreenEast(true, true)
+  end)
 end
 
 local function windows(hyper, hyperControl)
