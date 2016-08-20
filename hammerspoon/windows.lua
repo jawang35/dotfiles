@@ -1,4 +1,6 @@
-local function doIfActiveWindow(window, callback)
+local function doForFocusedWindow(callback)
+  local window = hs.window.focusedWindow()
+
   if window then
     callback(window)
   else
@@ -7,9 +9,7 @@ local function doIfActiveWindow(window, callback)
 end
 
 local function fullScreen()
-  local window = hs.window.focusedWindow()
-
-  doIfActiveWindow(window, function (window)
+  doForFocusedWindow(function (window)
     local frame = window:frame()
     local screen = window:screen()
     local max = screen:frame()
@@ -23,15 +23,11 @@ local function fullScreen()
 end
 
 local function center()
-  local window = hs.window.focusedWindow()
-
-  doIfActiveWindow(window, hs.window.centerOnScreen)
+  doForFocusedWindow(hs.window.centerOnScreen)
 end
 
 local function leftHalf()
-  local window = hs.window.focusedWindow()
-
-  doIfActiveWindow(window, function (window)
+  doForFocusedWindow(function (window)
     local frame = window:frame()
     local screen = window:screen()
     local max = screen:frame()
@@ -43,9 +39,7 @@ local function leftHalf()
 end
 
 local function bottomHalf()
-  local window = hs.window.focusedWindow()
-
-  doIfActiveWindow(window, function (window)
+  doForFocusedWindow(function (window)
     local frame = window:frame()
     local screen = window:screen()
     local max = screen:frame()
@@ -57,9 +51,7 @@ local function bottomHalf()
 end
 
 local function topHalf()
-  local window = hs.window.focusedWindow()
-
-  doIfActiveWindow(window, function (window)
+  doForFocusedWindow(function (window)
     local frame = window:frame()
     local screen = window:screen()
     local max = screen:frame()
@@ -71,9 +63,7 @@ local function topHalf()
 end
 
 local function rightHalf()
-  local window = hs.window.focusedWindow()
-
-  doIfActiveWindow(window, function (window)
+  doForFocusedWindow(function (window)
     local frame = window:frame()
     local screen = window:screen()
     local max = screen:frame()
@@ -85,33 +75,25 @@ local function rightHalf()
 end
 
 local function leftScreen()
-  local window = hs.window.focusedWindow()
-
-  doIfActiveWindow(window, function (window)
+  doForFocusedWindow(function (window)
     window:moveOneScreenWest(true, true)
   end)
 end
 
 local function lowerScreen()
-  local window = hs.window.focusedWindow()
-
-  doIfActiveWindow(window, function (window)
+  doForFocusedWindow(function (window)
     window:moveOneScreenSouth(true, true)
   end)
 end
 
 local function upperScreen()
-  local window = hs.window.focusedWindow()
-
-  doIfActiveWindow(window, function (window)
+  doForFocusedWindow(function (window)
     window:moveOneScreenNorth(true, true)
   end)
 end
 
 local function rightScreen()
-  local window = hs.window.focusedWindow()
-
-  doIfActiveWindow(window, function (window)
+  doForFocusedWindow(function (window)
     window:moveOneScreenEast(true, true)
   end)
 end
