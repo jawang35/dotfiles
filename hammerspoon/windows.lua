@@ -24,9 +24,7 @@ local function leftHalf()
   local max = screen:frame()
 
   frame.x = max.x
-  frame.y = max.y
   frame.w = max.w / 2
-  frame.h = max.h
   win:setFrame(frame)
 end
 
@@ -36,9 +34,7 @@ local function bottomHalf()
   local screen = win:screen()
   local max = screen:frame()
 
-  frame.x = max.x
   frame.y = max.y + max.h / 2
-  frame.w = max.w
   frame.h = max.h / 2
   win:setFrame(frame)
 end
@@ -49,9 +45,7 @@ local function topHalf()
   local screen = win:screen()
   local max = screen:frame()
 
-  frame.x = max.x
   frame.y = max.y
-  frame.w = max.w
   frame.h = max.h / 2
   win:setFrame(frame)
 end
@@ -63,9 +57,7 @@ local function rightHalf()
   local max = screen:frame()
 
   frame.x = max.x + max.w / 2
-  frame.y = max.y
   frame.w = max.w / 2
-  frame.h = max.h
   win:setFrame(frame)
 end
 
@@ -98,7 +90,7 @@ local function windows(hyper, hyperControl)
 
   hs.hotkey.bind(hyper, 'f', fullScreen)
   hs.hotkey.bind(hyper, 'c', center)
-  
+
   hs.hotkey.bind(hyper, 'h', leftHalf)
   hs.hotkey.bind(hyper, 'j', bottomHalf)
   hs.hotkey.bind(hyper, 'k', topHalf)
