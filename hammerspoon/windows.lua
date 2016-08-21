@@ -1,4 +1,4 @@
-local function doForFocusedWindow(callback)
+local function onFocusedWindow(callback)
   local window = hs.window.focusedWindow()
 
   if window then
@@ -9,7 +9,7 @@ local function doForFocusedWindow(callback)
 end
 
 local function fullScreen()
-  doForFocusedWindow(function (window)
+  onFocusedWindow(function (window)
     local frame = window:frame()
     local screen = window:screen()
     local max = screen:frame()
@@ -23,11 +23,11 @@ local function fullScreen()
 end
 
 local function center()
-  doForFocusedWindow(hs.window.centerOnScreen)
+  onFocusedWindow(hs.window.centerOnScreen)
 end
 
 local function leftHalf()
-  doForFocusedWindow(function (window)
+  onFocusedWindow(function (window)
     local frame = window:frame()
     local screen = window:screen()
     local max = screen:frame()
@@ -39,7 +39,7 @@ local function leftHalf()
 end
 
 local function bottomHalf()
-  doForFocusedWindow(function (window)
+  onFocusedWindow(function (window)
     local frame = window:frame()
     local screen = window:screen()
     local max = screen:frame()
@@ -51,7 +51,7 @@ local function bottomHalf()
 end
 
 local function topHalf()
-  doForFocusedWindow(function (window)
+  onFocusedWindow(function (window)
     local frame = window:frame()
     local screen = window:screen()
     local max = screen:frame()
@@ -63,7 +63,7 @@ local function topHalf()
 end
 
 local function rightHalf()
-  doForFocusedWindow(function (window)
+  onFocusedWindow(function (window)
     local frame = window:frame()
     local screen = window:screen()
     local max = screen:frame()
@@ -75,25 +75,25 @@ local function rightHalf()
 end
 
 local function leftScreen()
-  doForFocusedWindow(function (window)
+  onFocusedWindow(function (window)
     window:moveOneScreenWest(true, true)
   end)
 end
 
 local function lowerScreen()
-  doForFocusedWindow(function (window)
+  onFocusedWindow(function (window)
     window:moveOneScreenSouth(true, true)
   end)
 end
 
 local function upperScreen()
-  doForFocusedWindow(function (window)
+  onFocusedWindow(function (window)
     window:moveOneScreenNorth(true, true)
   end)
 end
 
 local function rightScreen()
-  doForFocusedWindow(function (window)
+  onFocusedWindow(function (window)
     window:moveOneScreenEast(true, true)
   end)
 end
