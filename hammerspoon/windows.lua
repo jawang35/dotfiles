@@ -98,7 +98,7 @@ local function rightScreen()
   end)
 end
 
-local function windows(hyper, hyperControl)
+local function windows(hyper, hyperShift)
   hs.window.animationDuration = 0
 
   hs.hotkey.bind(hyper, 'f', fullScreen)
@@ -109,10 +109,10 @@ local function windows(hyper, hyperControl)
   hs.hotkey.bind(hyper, 'k', topHalf)
   hs.hotkey.bind(hyper, 'l', rightHalf)
 
-  hs.hotkey.bind(hyperControl, 'h', leftScreen)
-  hs.hotkey.bind(hyperControl, 'j', lowerScreen)
-  hs.hotkey.bind(hyperControl, 'k', upperScreen)
-  hs.hotkey.bind(hyperControl, 'l', rightScreen)
+  hs.hotkey.bind(hyperShift, 'h', leftScreen)
+  hs.hotkey.bind(hyperShift, 'j', lowerScreen)
+  hs.hotkey.bind(hyperShift, 'k', upperScreen)
+  hs.hotkey.bind(hyperShift, 'l', rightScreen)
 end
 
 return windows
