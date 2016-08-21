@@ -1,10 +1,7 @@
-local function reloadConfig(files)
-  for _,file in pairs(files) do
-    if file:sub(-4) == ".lua" then
-      hs.reload()
-    end
-  end
+local function reloadConfig(hyper)
+  hs.hotkey.bind(hyper, 'r', hs.reload)
 end
 
-hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
-hs.alert.show("Hammerspoon config loaded")
+hs.alert.show('Hammerspoon config loaded')
+
+return reloadConfig
