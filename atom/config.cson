@@ -108,6 +108,7 @@
   "platformio-ide-terminal":
     style:
       animationSpeed: 0
+      theme: "pro"
     toggles:
       cursorBlink: false
   react:
