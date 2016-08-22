@@ -1,7 +1,6 @@
 local function reloadConfig(hyper)
   hs.hotkey.bind(hyper, 'r', hs.reload)
+  hs.alert.show('Hammerspoon config loaded')
 end
-
-hs.alert.show('Hammerspoon config loaded')
 
 return reloadConfig
