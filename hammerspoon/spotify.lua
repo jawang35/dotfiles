@@ -14,6 +14,10 @@ local function open()
   end
 end
 
+local function info()
+  spotifyNotification('Currently Playing', getCurrentSong())
+end
+
 local function previous()
   hs.spotify.previous()
   spotifyNotification('⏮ Previous', getCurrentSong())
@@ -57,6 +61,7 @@ local function spotify(hyper)
   spotifyModal:bind(hyper, 'h', function () execute(previous) end)
   spotifyModal:bind(hyper, 'j', function () execute(pause) end)
   spotifyModal:bind(hyper, 'k', function () execute(play) end)
+  spotifyModal:bind(hyper, 'i', function () execute(info) end)
 end
 
 return spotify
