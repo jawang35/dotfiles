@@ -52,6 +52,7 @@
       "link"
       "dev-live-reload"
       "background-tips"
+      "exception-reporting"
     ]
     ignoredNames: [
       ".git"
