@@ -32,6 +32,10 @@
   'cmd-o': 'advanced-open-file:toggle'
   'alt-cmd-t': 'notifications:trigger-error' # what does this do?
 
+# escape exits autocomplete and insert mode
+'atom-text-editor.autocomplete-active':
+  'escape': 'vim-mode-plus:activate-normal-mode'
+
 'atom-text-editor.vim-mode-plus.normal-mode':
   # auto detect indentation
   'space i': 'auto-detect-indentation:show-indentation-selector'

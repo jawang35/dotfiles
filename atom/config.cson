@@ -133,7 +133,9 @@
       "{"
     ]
     ignoreCaseForSearch: true
+    ignoreCaseForSearchCurrentWord: true
     useSmartcaseForSearch: true
+    useSmartcaseForSearchCurrentWord: true
   welcome:
     showOnStartup: false
 ".c.source":
