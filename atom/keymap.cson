@@ -107,15 +107,15 @@
   'alt-l': 'core-move-right'
 
   # pane management
-  'ctrl-/ ctrl-x': 'pane:close'
-  'ctrl-/ j':      'pane:split-down-and-copy-active-item'
-  'ctrl-/ h':      'pane:split-left-and-copy-active-item'
-  'ctrl-/ l':      'pane:split-right-and-copy-active-item'
-  'ctrl-/ k':      'pane:split-up-and-copy-active-item'
-  'ctrl-/ ctrl-j': 'window:focus-pane-below'
-  'ctrl-/ ctrl-h': 'window:focus-pane-on-left'
-  'ctrl-/ ctrl-l': 'window:focus-pane-on-right'
-  'ctrl-/ ctrl-k': 'window:focus-pane-above'
+  'ctrl-p ctrl-x': 'pane:close'
+  'ctrl-p j':      'pane:split-down-and-copy-active-item'
+  'ctrl-p h':      'pane:split-left-and-copy-active-item'
+  'ctrl-p l':      'pane:split-right-and-copy-active-item'
+  'ctrl-p k':      'pane:split-up-and-copy-active-item'
+  'ctrl-p ctrl-j': 'window:focus-pane-below'
+  'ctrl-p ctrl-h': 'window:focus-pane-on-left'
+  'ctrl-p ctrl-l': 'window:focus-pane-on-right'
+  'ctrl-p ctrl-k': 'window:focus-pane-above'
 
 
 # advanced open file
