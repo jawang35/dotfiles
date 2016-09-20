@@ -86,6 +86,7 @@
   editor:
     preferredLineLength: 100
     scrollPastEnd: true
+    showIndentGuide: true
     tabType: "soft"
   "exception-reporting":
     userId: "ecd7b451-e1f6-8d4f-901c-bae8e755d7f1"
