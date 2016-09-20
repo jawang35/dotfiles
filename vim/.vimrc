@@ -8,6 +8,10 @@ set backspace=indent,eol,start
 " Switch syntax highlighting on
 syntax enable
 
+" Material theme
+set background=dark
+colorscheme material-theme
+
 " Enable file type detection and do language-dependent indenting.
 filetype plugin indent on
 
