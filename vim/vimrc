@@ -12,6 +12,7 @@ syntax enable
 execute pathogen#infect()
 
 " Material theme
+set t_Co=256
 set background=dark
 colorscheme material-theme
 
@@ -29,3 +30,4 @@ set history=100
 
 " Airline
 set laststatus=2
+let g:airline_theme='luna'
