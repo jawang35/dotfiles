@@ -11,10 +11,9 @@ syntax enable
 " Pathogen
 execute pathogen#infect()
 
-" Material theme
-set t_Co=256
+" Solarized Colors
 set background=dark
-colorscheme material-theme
+colorscheme solarized
 
 " Enable file type detection and do language-dependent indenting.
 filetype plugin indent on

@@ -4,9 +4,6 @@
 [submodule "vim/bundle/vim-airline-themes"]
 	path = vim/bundle/vim-airline-themes
 	url = git@github.com:vim-airline/vim-airline-themes.git
-[submodule "vim/bundle/vim-material-theme"]
-	path = vim/bundle/vim-material-theme
-	url = git@github.com:jdkanani/vim-material-theme.git
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
 	url = git@github.com:tpope/vim-surround.git
@@ -25,3 +22,9 @@
 [submodule "vim/bundle/vim-node"]
 	path = vim/bundle/vim-node
 	url = git@github.com:moll/vim-node.git
+[submodule "vim/bundle/vim-colors-solarized"]
+	path = vim/bundle/vim-colors-solarized
+	url = git@github.com:altercation/vim-colors-solarized.git
+[submodule "vim/bundle/vim-material-theme"]
+	path = vim/bundle/vim-material-theme
+	url = git@github.com:jdkanani/vim-material-theme.git
