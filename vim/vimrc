@@ -29,7 +29,7 @@ set hidden
 set history=100
 
 " Spaces instead of tabs
-:set expandtab
+set expandtab
 
 " Airline
 set laststatus=2
