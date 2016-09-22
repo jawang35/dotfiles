@@ -34,6 +34,7 @@ set history=100
 " Airline
 set laststatus=2
 let g:airline_theme="luna"
+let g:airline#extensions#tabline#enabled = 1
 
 " Leader
 let mapleader="\<Space>"
