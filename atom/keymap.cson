@@ -66,6 +66,17 @@
   'ctrl-w f': 'open-this:split-down'
   'ctrl-w F': 'open-this:split-right'
 
+  # pane management
+  'space shift-x': 'pane:close'
+  'space shift-j': 'pane:split-down-and-copy-active-item'
+  'space shift-h': 'pane:split-left-and-copy-active-item'
+  'space shift-l': 'pane:split-right-and-copy-active-item'
+  'space shift-k': 'pane:split-up-and-copy-active-item'
+  'space j':       'window:focus-pane-below'
+  'space h':       'window:focus-pane-on-left'
+  'space l':       'window:focus-pane-on-right'
+  'space k':       'window:focus-pane-above'
+
   # surround: ys
   'y s':   'vim-mode-plus:surround'
   'y s w': 'vim-mode-plus:surround-word'
@@ -105,18 +116,6 @@
   'alt-k': 'core:move-up'
   'alt-h': 'core-move-left'
   'alt-l': 'core-move-right'
-
-  # pane management
-  'ctrl-p ctrl-x': 'pane:close'
-  'ctrl-p j':      'pane:split-down-and-copy-active-item'
-  'ctrl-p h':      'pane:split-left-and-copy-active-item'
-  'ctrl-p l':      'pane:split-right-and-copy-active-item'
-  'ctrl-p k':      'pane:split-up-and-copy-active-item'
-  'ctrl-p ctrl-j': 'window:focus-pane-below'
-  'ctrl-p ctrl-h': 'window:focus-pane-on-left'
-  'ctrl-p ctrl-l': 'window:focus-pane-on-right'
-  'ctrl-p ctrl-k': 'window:focus-pane-above'
-
 
 # advanced open file
 '.advanced-open-file atom-text-editor':
