@@ -5,7 +5,7 @@ Configurations and package management for [https://atom.io](Atom).
 ## Usage
 
 ```
-ln -s /path/to/dotfiles/atom ~/.atom
+$ ln -s /path/to/dotfiles/atom ~/.atom
 ```
 
 ### Packages

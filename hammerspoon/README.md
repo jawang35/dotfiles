@@ -5,7 +5,7 @@ Lua scripts for [Hammerspoon](http://www.hammerspoon.org/) configuration. `init.
 ## Usage
 
 ```
-ln -s /path/to/dotfiles/hammerspoon ~/.hammerspoon
+$ ln -s /path/to/dotfiles/hammerspoon ~/.hammerspoon
 ```
 
 ## Hyper Key

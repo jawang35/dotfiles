@@ -5,5 +5,5 @@
 ## Usage
 
 ```
-ln -s /path/to/dotfiles/tmux/.tmux.conf ~/.tmux.conf
+$ ln -s /path/to/dotfiles/tmux/.tmux.conf ~/.tmux.conf
 ```

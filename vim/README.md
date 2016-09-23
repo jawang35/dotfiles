@@ -5,7 +5,7 @@ Configurations and packages for [Vim](http://www.vim.org/).
 ## Usage
 
 ```
-ln -s /path/to/dotfiles/vim ~/.vim
+$ ln -s /path/to/dotfiles/vim ~/.vim
 ```
 
 ## Packages
@@ -15,7 +15,7 @@ Packages are managed using [pathogen](https://github.com/tpope/vim-pathogen). Ea
 ### Update Packages
 
 ```
-git submodule update --init --recursive
+$ git submodule update --init --recursive
 ```
 
 ### Airline/Powerline Fonts
