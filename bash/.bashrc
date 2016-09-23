@@ -7,8 +7,8 @@ alias gc='git commit'
 alias gco='git checkout'
 alias gcob='git checkout -b'
 alias gd='git diff'
-alias gph='git push'
-alias gpl='git pull'
+alias gpu='git push'
+alias gpd='git pull'
 alias gs='git status'
 
 # tmux aliases
