@@ -1,6 +1,6 @@
 # Hammerspoon
 
-Lua scripts for Hammerspoon configuration. `init.lua` is the entrypoint that loads all the other modules.
+Lua scripts for [Hammerspoon](http://www.hammerspoon.org/) configuration. `init.lua` is the entrypoint that loads all the other modules.
 
 ## Usage
 

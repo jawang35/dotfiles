@@ -1,6 +1,6 @@
 # tmux
 
-tmux configuration.
+[tmux](https://tmux.github.io/) configuration.
 
 ## Usage
 

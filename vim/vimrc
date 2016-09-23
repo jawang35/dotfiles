@@ -8,6 +8,10 @@ set backspace=indent,eol,start
 " Switch syntax highlighting on
 syntax enable
 
+" Smart case searching
+set ignorecase
+set smartcase
+
 " Pathogen
 execute pathogen#infect()
 
