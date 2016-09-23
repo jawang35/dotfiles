@@ -16,7 +16,7 @@ alias t='tmux'
 alias ts='tmux new -s'
 alias ta='tmux attach -t'
 alias tl='tmux ls'
-alias tk='tmux kill -t'
+alias tk='tmux kill-session -t'
 
 # Vim aliases
 alias v='vim'
