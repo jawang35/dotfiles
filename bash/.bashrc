@@ -1,4 +1,8 @@
-alias ls='ls -ahlFG'
+alias cp='cp -iv'
+alias ls='ls -AFG'
+alias ll='ls -AhlFG'
+alias mkdir='mkdir -pv'
+alias mv='mv -iv'
 
 # Git aliases
 alias ga='git add'
