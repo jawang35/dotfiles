@@ -1,8 +1,12 @@
+# Preferred implementations
 alias cp='cp -iv'
 alias ls='ls -AFG'
 alias ll='ls -AhlFG'
 alias mkdir='mkdir -pv'
 alias mv='mv -iv'
+
+# ls after cd
+function cd { builtin cd "$@" && ls; }
 
 # Git aliases
 alias g='git'
