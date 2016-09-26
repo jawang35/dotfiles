@@ -1,3 +1,7 @@
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-export EDITOR=/usr/bin/vim
+if [ -f /usr/local/bin/nvim ]; then
+        export EDITOR=/usr/local/bin/nvim
+else
+        export EDITOR=/usr/bin/vim
+fi
