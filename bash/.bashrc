@@ -4,6 +4,7 @@ alias ls='ls -AFG'
 alias ll='ls -AhlFG'
 alias mkdir='mkdir -pv'
 alias mv='mv -iv'
+alias rm='rm -v'
 
 # ls after cd
 function cd { builtin cd "$@" && ls; }
