@@ -4,8 +4,16 @@ Configurations and packages for [Vim](http://www.vim.org/).
 
 ## Usage
 
+### Vim
+
 ```
 $ ln -s /path/to/dotfiles/vim ~/.vim
+```
+
+### Neovim
+
+```
+$ ln -s /path/to/dotfiles/vim ~/.config/nvim
 ```
 
 ## Packages
