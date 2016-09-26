@@ -2,8 +2,29 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" Make backspace behave in a sane manner.
+" Neovim defaults for Vim
+set autoindent
+set autoread
 set backspace=indent,eol,start
+set complete-=i
+set display=lastline
+set encoding=utf-8
+set formatoptions=tcqj
+set history=10000
+set hlsearch
+set incsearch
+set langnoremap
+set laststatus=2
+set listchars=tab:>\ ,trail:-,nbsp:+
+set mouse=a
+set nrformats=hex
+set sessionoptions-=options
+set smarttab
+set tabpagemax=50
+set tags=./tags;,tags
+set ttyfast
+set viminfo+=!
+set wildmenu
 
 " Switch syntax highlighting on
 syntax enable
@@ -30,14 +51,9 @@ set number
 " Allow hidden buffers, don't limit to 1 file per window/split
 set hidden
 
-" Save last 100 commands
-set history=100
-
 " Spaces instead of tabs
 set expandtab
 
-" Airline
-set laststatus=2
 let g:airline_theme="luna"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
