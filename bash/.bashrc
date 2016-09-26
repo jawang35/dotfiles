@@ -30,4 +30,8 @@ alias tl='tmux ls'
 alias tk='tmux kill-session -t'
 
 # Vim aliases
+if [ -f /usr/local/bin/nvim ]; then
+        alias vim='nvim'
+fi
+
 alias v='vim'
