@@ -1,4 +1,5 @@
 # Preferred implementations
+alias cd.='cd ${HOME}/.dotfiles'
 alias cp='cp -iv'
 alias ls='ls -AFG'
 alias ll='ls -AhlFG'
