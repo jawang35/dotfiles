@@ -37,10 +37,17 @@ set smartcase
 execute pathogen#infect()
 
 " Solarized Colors
+" set t_Co=256
+" let g:solarized_termcolors=256
+" set background=dark
+" colorscheme solarized
+
+" Molokai Colors
 set t_Co=256
-let g:solarized_termcolors=256
 set background=dark
-colorscheme solarized
+let g:molokai_original=1
+let g:rehash256=1
+colorscheme molokai
 
 " Enable file type detection and do language-dependent indenting.
 filetype plugin indent on
@@ -54,6 +61,7 @@ set hidden
 " Spaces instead of tabs
 set expandtab
 
+" Airline
 let g:airline_theme="luna"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1

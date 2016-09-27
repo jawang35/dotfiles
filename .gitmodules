@@ -22,9 +22,6 @@
 [submodule "vim/bundle/vim-node"]
 	path = vim/bundle/vim-node
 	url = git@github.com:moll/vim-node.git
-[submodule "vim/bundle/vim-colors-solarized"]
-	path = vim/bundle/vim-colors-solarized
-	url = git@github.com:altercation/vim-colors-solarized.git
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = git@github.com:scrooloose/nerdtree.git
@@ -34,3 +31,6 @@
 [submodule "vim/fonts"]
 	path = vim/fonts
 	url = git@github.com:powerline/fonts.git
+[submodule "vim/bundle/molokai"]
+	path = vim/bundle/molokai
+	url = git@github.com:tomasr/molokai.git
