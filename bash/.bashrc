@@ -8,11 +8,12 @@ alias mv='mv -iv'
 alias rm='rm -v'
 
 # ls after cd
-function cd { builtin cd "$@" && ls; }
+function cd { builtin cd "$@" && ls && echo "Working Directory: $(pwd)"; }
 
 # Git aliases
 alias g='git'
 alias ga='git add'
+alias ga.='git add .'
 alias gb='git branch'
 alias gc='git commit'
 alias gco='git checkout'
