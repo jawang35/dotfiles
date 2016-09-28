@@ -7,7 +7,7 @@ alias mkdir='mkdir -pv'
 alias mv='mv -iv'
 alias rm='rm -v'
 
-# ls after cd
+# ls and pwd after cd
 function cd { builtin cd "$@" && ls && echo "Working Directory: $(pwd)"; }
 
 # Git aliases
@@ -31,7 +31,7 @@ alias ta='tmux attach -t'
 alias tl='tmux ls'
 alias tk='tmux kill-session -t'
 
-# Vim aliases
+# Neovim/Vim aliases
 if [ -f /usr/local/bin/nvim ]; then
         alias vim='nvim'
 fi
