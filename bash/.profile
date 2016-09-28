@@ -1,7 +1,8 @@
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-if [ -f ${HOME}/.git-completion.bash ]; then
-        source ${HOME}/.git-completion.bash
+# https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
+if [ -f ${HOME}/git-completion.bash ]; then
+        source ${HOME}/git-completion.bash
 
         # Git completion for aliases
         __git_complete g __git_main
