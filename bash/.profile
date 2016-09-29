@@ -14,6 +14,8 @@ if [ -f ${HOME}/git-completion.bash ]; then
         __git_complete gf _git_fetch
         __git_complete gpu _git_push
         __git_complete gpd _git_pull
+        __git_complete gr _git_rebase
+        __git_complete grc _git_rebase
 fi
 
 # Set EDITOR variable to nvim/vim

@@ -6,6 +6,7 @@ alias ll='ls -AhlFG'
 alias mkdir='mkdir -pv'
 alias mv='mv -iv'
 alias rm='rm -v'
+alias rmrf='rm -rf'
 
 # ls and pwd after cd
 function cd { builtin cd "$@" && ls && echo "Working Directory: $(pwd)"; }
@@ -22,6 +23,8 @@ alias gd='git diff'
 alias gf='git fetch'
 alias gpu='git push'
 alias gpd='git pull'
+alias gr='git rebase -i'
+alias grc='git rebase --continue'
 alias gs='git status'
 
 # tmux aliases
