@@ -22,7 +22,6 @@ packages: [
   "open-this"
   "package-sync"
   "pigments"
-  "platformio-ide-terminal"
   "react"
   "set-syntax"
   "split-diff"
