@@ -23,8 +23,8 @@ local function applications(hyper)
   applicationModal:bind(hyper, 'o', function () launch('Microsoft Outlook') end)
   applicationModal:bind(hyper, 'p', function () launch('1Password 6') end)
   applicationModal:bind(hyper, 's', function () launch('Slack') end)
-  hs.hotkey.bind(hyper, '1', function () launch('Terminal') end)
-  hs.hotkey.bind(hyper, '2', function () launch('Atom') end)
+  hs.hotkey.bind(hyper, '`', function () launch('Terminal') end)
+  hs.hotkey.bind(hyper, '1', function () launch('Atom') end)
   applicationModal:bind('', 'escape', function () applicationModal:exit() end)
 end
 
