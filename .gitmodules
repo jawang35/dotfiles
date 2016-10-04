@@ -1,42 +1,42 @@
 [submodule "vim/bundle/vim-airline"]
 	path = vim/bundle/vim-airline
-	url = git@github.com:vim-airline/vim-airline.git
+	url = https://github.com:vim-airline/vim-airline.git
 [submodule "vim/bundle/vim-airline-themes"]
 	path = vim/bundle/vim-airline-themes
-	url = git@github.com:vim-airline/vim-airline-themes.git
+	url = https://github.com:vim-airline/vim-airline-themes.git
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
-	url = git@github.com:tpope/vim-surround.git
+	url = https://github.com:tpope/vim-surround.git
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
-	url = git@github.com:scrooloose/syntastic.git
+	url = https://github.com:scrooloose/syntastic.git
 [submodule "vim/bundle/ctrlp.vim"]
 	path = vim/bundle/ctrlp.vim
-	url = git@github.com:ctrlpvim/ctrlp.vim.git
+	url = https://github.com:ctrlpvim/ctrlp.vim.git
 [submodule "vim/bundle/vim-repeat"]
 	path = vim/bundle/vim-repeat
-	url = git@github.com:tpope/vim-repeat.git
+	url = https://github.com:tpope/vim-repeat.git
 [submodule "vim/bundle/vim-javascript"]
 	path = vim/bundle/vim-javascript
-	url = git@github.com:pangloss/vim-javascript.git
+	url = https://github.com:pangloss/vim-javascript.git
 [submodule "vim/bundle/vim-node"]
 	path = vim/bundle/vim-node
-	url = git@github.com:moll/vim-node.git
+	url = https://github.com:moll/vim-node.git
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
-	url = git@github.com:scrooloose/nerdtree.git
+	url = https://github.com:scrooloose/nerdtree.git
 [submodule "vim/bundle/vim-fugitive"]
 	path = vim/bundle/vim-fugitive
-	url = git@github.com:tpope/vim-fugitive.git
+	url = https://github.com:tpope/vim-fugitive.git
 [submodule "vim/fonts"]
 	path = vim/fonts
-	url = git@github.com:powerline/fonts.git
+	url = https://github.com:powerline/fonts.git
 [submodule "vim/bundle/molokai"]
 	path = vim/bundle/molokai
-	url = git@github.com:tomasr/molokai.git
+	url = https://github.com:tomasr/molokai.git
 [submodule "vim/bundle/vim-coffee-script"]
 	path = vim/bundle/vim-coffee-script
-	url = git@github.com:kchmck/vim-coffee-script.git
+	url = https://github.com:kchmck/vim-coffee-script.git
 [submodule "vim/bundle/delimitMate"]
 	path = vim/bundle/delimitMate
-	url = git@github.com:Raimondi/delimitMate.git
+	url = https://github.com:Raimondi/delimitMate.git
