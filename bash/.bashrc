@@ -12,7 +12,7 @@ alias rm='rm -v'
 alias rmrf='rm -rf'
 
 # ls and pwd after cd
-function cd { builtin cd "$@" && ls && echo "Working Directory: $(pwd)"; }
+function cd { builtin cd "$@" && ls && echo -e "\nWorking Directory: $(pwd)"; }
 
 # Git aliases
 alias g='git'
