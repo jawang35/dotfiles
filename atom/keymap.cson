@@ -32,6 +32,9 @@
   'cmd-o': 'advanced-open-file:toggle'
   'alt-cmd-t': 'notifications:trigger-error' # what does this do?
 
+'atom-text-editor':
+  'ctrl-k': 'unset!'
+
 # escape exits autocomplete and insert mode
 'atom-text-editor.autocomplete-active':
   'escape': 'vim-mode-plus:activate-normal-mode'
@@ -112,10 +115,10 @@
 
 'body':
   # add hjkl navigation to body
-  'alt-j': 'core:move-down'
-  'alt-k': 'core:move-up'
-  'alt-h': 'core-move-left'
-  'alt-l': 'core-move-right'
+  'ctrl-j': 'core:move-down'
+  'ctrl-k': 'core:move-up'
+  'ctrl-h': 'core-move-left'
+  'ctrl-l': 'core-move-right'
 
 # advanced open file
 '.advanced-open-file atom-text-editor':
