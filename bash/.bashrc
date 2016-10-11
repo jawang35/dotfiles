@@ -3,6 +3,7 @@ alias reload='source ${HOME}/.bash_profile && echo "Loaded ${HOME}/.bash_profile
 
 # Preferred implementations
 alias cd.='cd ${HOME}/.dotfiles'
+alias cd..='cd ..'
 alias cp='cp -iv'
 alias ls='ls -AFG'
 alias ll='ls -AhlFG'
