@@ -79,6 +79,11 @@ nnoremap <leader>h <C-W><C-H>
 cabbrev split vsplit
 cabbrev hsplit split
 
+" Buffer management
+nnoremap <leader>[ :bp<CR>
+nnoremap <leader>] :bn<CR>
+nnoremap <leader>x :bd<CR>
+
 " Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
