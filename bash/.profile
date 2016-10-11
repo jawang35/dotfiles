@@ -27,3 +27,5 @@ elif [ -f /usr/local/bin/vim ]; then
 else
         export EDITOR=/usr/bin/vim
 fi
+
+export GREP_OPTIONS="--color"
