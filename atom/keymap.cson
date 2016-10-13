@@ -123,8 +123,8 @@
 # advanced open file
 '.advanced-open-file atom-text-editor':
   'tab': 'advanced-open-file:autocomplete'
-  'alt-k': 'advanced-open-file:move-cursor-up'
-  'alt-j': 'advanced-open-file:move-cursor-down'
+  'ctrl-j': 'advanced-open-file:move-cursor-down'
+  'ctrl-k': 'advanced-open-file:move-cursor-up'
   'up': 'advanced-open-file:move-cursor-up'
   'down': 'advanced-open-file:move-cursor-down'
   'cmd-z': 'advanced-open-file:undo'
