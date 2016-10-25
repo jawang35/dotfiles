@@ -40,14 +40,15 @@ end
 
 local function spotify(hyper)
   local spotifyModal = hs.hotkey.modal.new(hyper, 's')
-  local menubar = hs.menubar.new()
+  local menubar
 
   function spotifyModal:entered()
+    menubar = hs.menubar.new()
     menubar:setTitle('Spotify Mode')
   end
 
   function spotifyModal:exited()
-    menubar:setTitle(nil)
+    menubar:delete()
   end
 
   local function execute(callback)

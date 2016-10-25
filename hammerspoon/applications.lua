@@ -1,13 +1,14 @@
 local function applications(hyper)
   local applicationModal = hs.hotkey.modal.new(hyper, 'a')
-  local menubar = hs.menubar.new()
+  local menubar
 
   function applicationModal:entered()
+    menubar = hs.menubar.new()
     menubar:setTitle('Application Mode')
   end
 
   function applicationModal:exited()
-    menubar:setTitle(nil)
+    menubar:delete()
   end
 
   local function launch(application)
