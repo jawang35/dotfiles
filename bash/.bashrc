@@ -45,3 +45,4 @@ if [ -f /usr/local/bin/nvim ]; then
 fi
 
 alias v='vim'
+alias a='atom'
