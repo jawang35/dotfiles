@@ -1,4 +1,4 @@
-source .shell_prompt.sh
+if [ -f ${HOME}/.shell_prompt.sh ]; then source ${HOME}/.shell_prompt.sh; fi
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
