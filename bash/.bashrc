@@ -46,3 +46,4 @@ fi
 
 alias v='vim'
 alias a='atom'
+alias a.='atom .'
