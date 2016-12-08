@@ -43,3 +43,6 @@
 [submodule "vim/bundle/nerdcommenter"]
 	path = vim/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "vim/bundle/promptline.vim"]
+	path = vim/bundle/promptline.vim
+	url = https://github.com/edkolev/promptline.vim.git

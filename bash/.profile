@@ -1,3 +1,5 @@
+source .shell_prompt.sh
+
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
