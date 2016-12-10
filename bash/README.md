@@ -6,8 +6,8 @@ Configurations for Bash shell defaults.
 
 ```sh
 # ~/.bash_profile
-source /path/to/dotfiles/bash/.profile
 source $HOME/.profile
-source /path/to/dotfiles/bash/.bashrc
+source /path/to/dotfiles/bash/.profile
 source $HOME/.bashrc
+source /path/to/dotfiles/bash/.bashrc
 ```

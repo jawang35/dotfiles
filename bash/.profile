@@ -29,3 +29,5 @@ else
 fi
 
 export GREP_OPTIONS="--color"
+
+if ! [ -z ${GOPATH+x} ]; then export PATH=$PATH:$GOPATH/bin; fi
