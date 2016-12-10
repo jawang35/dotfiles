@@ -1,7 +1,5 @@
 if [ -f ${HOME}/.shell_prompt.sh ]; then source ${HOME}/.shell_prompt.sh; fi
 
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
 # https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
 if [ -f ${HOME}/git-completion.bash ]; then
         source ${HOME}/git-completion.bash
