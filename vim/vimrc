@@ -29,6 +29,9 @@ set wildmenu
 " Switch syntax highlighting on
 syntax enable
 
+" Disable search highlighting
+set nohlsearch
+
 " Smart case searching
 set ignorecase
 set smartcase
