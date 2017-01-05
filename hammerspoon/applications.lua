@@ -27,6 +27,9 @@ local function applications(hyper)
   hs.hotkey.bind(hyper, '1', function () launch('Atom') end)
   hs.hotkey.bind(hyper, '2', function () launch('Google Chrome') end)
   applicationModal:bind('', 'escape', function () applicationModal:exit() end)
+
+  applicationModal:enter()
+  applicationModal:exit()
 end
 
 return applications
