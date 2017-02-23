@@ -95,6 +95,8 @@
   linter:
     lintOnFly: false
     showErrorInline: false
+  "markdown-preview":
+    useGitHubStyle: true
   minimap:
     plugins:
       cursorline: true

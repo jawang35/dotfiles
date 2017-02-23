@@ -12,6 +12,7 @@ packages: [
   "language-groovy"
   "language-haskell"
   "language-lua"
+  "language-robot-framework"
   "linter"
   "linter-eslint"
   "linter-flow"
