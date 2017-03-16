@@ -93,8 +93,13 @@
   filesize:
     KibibyteRepresentation: false
   linter:
+    lintOnChange: false
     lintOnFly: false
     showErrorInline: false
+  "linter-ui-default":
+    showPanel: true
+    showTooltip: false
+    statusBarPosition: "Right"
   "markdown-preview":
     useGitHubStyle: true
   minimap:
