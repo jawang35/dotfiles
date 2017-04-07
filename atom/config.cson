@@ -94,8 +94,6 @@
     KibibyteRepresentation: false
   linter:
     lintOnChange: false
-    lintOnFly: false
-    showErrorInline: false
   "linter-ui-default":
     showPanel: true
     showTooltip: false
