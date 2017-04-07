@@ -121,6 +121,8 @@
       cursorBlink: false
   react:
     enabledForAllJavascriptFiles: true
+  "relative-numbers":
+    softWrapsCount: false
   "split-diff":
     diffWords: true
     ignoreWhitespace: true

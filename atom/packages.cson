@@ -27,6 +27,7 @@ packages: [
   "package-sync"
   "pigments"
   "react"
+  "relative-numbers"
   "set-syntax"
   "split-diff"
   "vim-mode-plus"
