@@ -142,6 +142,7 @@
     ]
     ignoreCaseForSearch: true
     ignoreCaseForSearchCurrentWord: true
+    useClipboardAsDefaultRegister: false
     useSmartcaseForSearch: true
     useSmartcaseForSearchCurrentWord: true
   welcome:
