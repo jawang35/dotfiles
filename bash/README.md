@@ -14,14 +14,12 @@ source /path/to/dotfiles/bash/.bashrc
 
 ## Promptline
 
-With vim-airline installed, run the following in Vim.
+With vim-airline installed, run the following.
 
 ```sh
+# Vim ex
 :PromptlineSnapshot ~/.shell_prompt.sh airline
-```
 
-Promptline should run in the shell upon login. Run the following to start Promptline in the current session.
-
-```sh
-source ~/.shell_prompt.sh
+# Bash
+$ source ~/.shell_prompt.sh
 ```
