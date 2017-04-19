@@ -137,9 +137,7 @@
   "terminal-plus":
     style: {}
   "vim-mode-plus":
-    charactersToAddSpaceOnSurround: [
-      "{"
-    ]
+    highlightSearch: false
     ignoreCaseForSearch: true
     ignoreCaseForSearchCurrentWord: true
     useClipboardAsDefaultRegister: false
