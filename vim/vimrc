@@ -39,7 +39,7 @@ set smartcase
 " Pathogen
 execute pathogen#infect()
 
-colorscheme brogrammer
+colorscheme minimalist
 
 " Solarized Colors
 " set t_Co=256

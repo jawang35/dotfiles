@@ -49,6 +49,6 @@
 [submodule "vim/bundle/vim-sleuth"]
 	path = vim/bundle/vim-sleuth
 	url = https://github.com/tpope/vim-sleuth.git
-[submodule "vim/bundle/vim-colorschemes"]
-	path = vim/bundle/vim-colorschemes
-	url = https://github.com/flazz/vim-colorschemes.git
+[submodule "vim/bundle/awesome-vim-colorschemes"]
+	path = vim/bundle/awesome-vim-colorschemes
+	url = https://github.com/rafi/awesome-vim-colorschemes.git
