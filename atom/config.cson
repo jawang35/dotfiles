@@ -92,6 +92,8 @@
     userId: "ecd7b451-e1f6-8d4f-901c-bae8e755d7f1"
   filesize:
     KibibyteRepresentation: false
+  "language-elm":
+    autocompleteEnabled: false
   linter:
     lintOnChange: false
   "linter-ui-default":
