@@ -31,9 +31,6 @@
 [submodule "vim/fonts"]
 	path = vim/fonts
 	url = https://github.com/powerline/fonts.git
-[submodule "vim/bundle/molokai"]
-	path = vim/bundle/molokai
-	url = https://github.com/tomasr/molokai.git
 [submodule "vim/bundle/vim-coffee-script"]
 	path = vim/bundle/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
@@ -52,3 +49,6 @@
 [submodule "vim/bundle/vim-sleuth"]
 	path = vim/bundle/vim-sleuth
 	url = https://github.com/tpope/vim-sleuth.git
+[submodule "vim/bundle/vim-colorschemes"]
+	path = vim/bundle/vim-colorschemes
+	url = https://github.com/flazz/vim-colorschemes.git
