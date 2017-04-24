@@ -58,6 +58,7 @@ colorscheme minimalist
 filetype plugin indent on
 
 " Show relative line numbers
+set number
 set relativenumber
 
 " Allow hidden buffers, don't limit to 1 file per window/split
