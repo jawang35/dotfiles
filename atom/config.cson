@@ -103,6 +103,7 @@
   "markdown-preview":
     useGitHubStyle: true
   minimap:
+    disablePythonDocLinks: true
     plugins:
       cursorline: true
       cursorlineDecorationsZIndex: 0
