@@ -2,8 +2,8 @@
 
 Jason's dotfiles.
 
-- [Atom](/atom/README.md)
-- [Bash](/bash/README.md)
-- [Hammerspoon](/hammerspoon/README.md)
-- [tmux](/tmux/README.md)
-- [Vim](/vim/README.md)
+- [Atom](/atom/#atom)
+- [Bash](/bash/#bash)
+- [Hammerspoon](/hammerspoon/#hammerspoon)
+- [tmux](/tmux/#tmux)
+- [Vim](/vim/#vim)
