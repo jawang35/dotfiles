@@ -29,6 +29,11 @@
         softTabs: true
         tabLength: 4
       }
+      {
+        name: "4 Space Tab"
+        softTabs: false
+        tabLength: 4
+      }
     ]
   "autocomplete-plus":
     suppressActivationForEditorClasses: [
@@ -166,6 +171,12 @@
   editor:
     preferredLineLength: 100
 ".cpp.source":
+  editor:
+    tabLength: 4
+".go.source":
+  editor:
+    tabLength: 4
+".gotemplate.source":
   editor:
     tabLength: 4
 ".groovy.source":
