@@ -12,6 +12,10 @@ source $HOME/.bashrc
 source /path/to/dotfiles/bash/.bashrc
 ```
 
+```sh
+source /path/to/dotfiles/bash/.inputrc
+```
+
 ## Promptline
 
 With vim-airline installed, run the following.
