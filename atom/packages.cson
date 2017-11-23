@@ -10,6 +10,7 @@ packages: [
   "filesize"
   "git-time-machine"
   "intentions"
+  "language-elixir"
   "language-elm"
   "language-groovy"
   "language-haskell"
