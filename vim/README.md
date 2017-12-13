@@ -6,13 +6,13 @@ Configurations and packages for [Vim](http://www.vim.org/).
 
 ### Vim
 
-```
+```sh
 $ ln -s /path/to/dotfiles/vim ~/.vim
 ```
 
 ### Neovim
 
-```
+```sh
 $ ln -s /path/to/dotfiles/vim ~/.config/nvim
 ```
 
@@ -22,7 +22,7 @@ Packages are managed using [pathogen](https://github.com/tpope/vim-pathogen). Ea
 
 ### Update Packages
 
-```
+```sh
 $ git submodule update --init --recursive
 ```
 

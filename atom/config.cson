@@ -151,7 +151,6 @@
     highlightSearch: false
     ignoreCaseForSearch: true
     ignoreCaseForSearchCurrentWord: true
-    notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
     useClipboardAsDefaultRegister: false
     useSmartcaseForSearch: true
     useSmartcaseForSearchCurrentWord: true
