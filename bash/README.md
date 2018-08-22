@@ -13,7 +13,8 @@ source /path/to/dotfiles/bash/.bashrc
 ```
 
 ```sh
-source /path/to/dotfiles/bash/.inputrc
+# Bash
+$ ln -s /path/to/dotfiles/bash/.inputrc $HOME/.inputrc
 ```
 
 ## Promptline
