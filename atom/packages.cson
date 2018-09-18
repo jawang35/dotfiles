@@ -15,7 +15,6 @@ packages: [
   "language-groovy"
   "language-haskell"
   "language-lua"
-  "language-robot-framework"
   "language-terraform"
   "linter"
   "linter-eslint"

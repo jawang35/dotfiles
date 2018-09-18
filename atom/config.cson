@@ -105,7 +105,7 @@
   linter:
     lintOnChange: false
   "linter-ui-default":
-    showPanel: true
+    panelHeight: 81
     showTooltip: false
     statusBarPosition: "Right"
   "markdown-preview":
