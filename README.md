@@ -8,3 +8,9 @@ Jason's dotfiles.
 - [Karabiner-Elements](/karabiner/#karabiner-elements)
 - [tmux](/tmux/#tmux)
 - [Vim](/vim/#vim)
+
+## Quick Start
+
+```sh
+$ ./setup.sh
+```
