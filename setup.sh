@@ -2,14 +2,17 @@
 
 DIR=$(pwd)
 
-echo "source ${DIR}/bash/.profile\nsource ${DIR}/bash/.bashrc" >> ~/.bash_profile
+echo "source ${DIR}/bash/.profile" >> ${HOME}/.bash_profile
+echo "source ${DIR}/bash/.bashrc" >> ${HOME}/.bash_profile
 
+# Symlink dot files
 ln -s ${DIR}/atom ${HOME}/.atom
 ln -s ${DIR}/bash/.inputrc ${HOME}/.inputrc
 ln -s ${DIR}/hammerspoon ${HOME}/.hammerspoon
-ln -s ${DIR}/karabiner ${HOME}/.config/karabiner
+mkdir -p ${HOME}/.config && ln -s ${DIR}/karabiner ${HOME}/.config/karabiner
 ln -s ${DIR}/tmux/.tmux.conf ${HOME}/.tmux.conf
 
+# Vim
 if command -v nvim >/dev/null 2>&1;
 then
     ln -s ${DIR}/vim ${HOME}/.config/nvim
