@@ -4,14 +4,20 @@ DIR=$(pwd)
 
 setup_symlink () {
     if [ -f $2 ]; then
-	echo "${2} already exists!"
+    	echo "${2} already exists!"
     else
-	ln -s $1 $2
+    	ln -s $1 $2
     fi
 }
 
-echo "source ${DIR}/bash/.profile" >> ${HOME}/.bash_profile
-echo "source ${DIR}/bash/.bashrc" >> ${HOME}/.bash_profile
+append_bash_profile () {
+    if [[ $(cat ${HOME}/.bash_profile) != *$1* ]]; then
+        echo $1 >> ${HOME}/.bash_profile
+    fi
+}
+
+append_bash_profile "source ${DIR}/bash/.profile"
+append_bash_profile "source ${DIR}/bash/.bashrc"
 
 # Symlink dot files
 setup_symlink ${DIR}/atom ${HOME}/.atom

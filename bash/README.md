@@ -13,7 +13,6 @@ source /path/to/dotfiles/bash/.bashrc
 ```
 
 ```sh
-# Bash
 $ ln -s /path/to/dotfiles/bash/.inputrc ${HOME}/.inputrc
 ```
 
@@ -22,9 +21,6 @@ $ ln -s /path/to/dotfiles/bash/.inputrc ${HOME}/.inputrc
 With vim-airline installed, run the following.
 
 ```sh
-# Vim ex
-:PromptlineSnapshot ${HOME}/.shell_prompt.sh airline
-
-# Bash
+$ vim "+PromptlineSnapshot ${HOME}/.shell_prompt.sh airline" +qall
 $ source ${HOME}/.shell_prompt.sh
 ```
