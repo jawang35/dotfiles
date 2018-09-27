@@ -1,230 +1,307 @@
-"*":
-  "advanced-open-file":
-    createDirectories: true
-    fuzzyMatch: true
-    helmDirSwitch: true
-  "atom-beautify":
-    general:
-      _analyticsUserId: "4218a4fb-d994-4e13-8237-74e074cbc80a"
-  "atom-material-ui":
-    tabs:
-      compactTabs: true
-    treeView:
-      compactList: true
-    ui:
-      animations: false
-      panelContrast: true
-      panelShadows: true
-  "atom-package-deps":
-    ignored: []
-  "auto-detect-indentation":
-    indentationTypes: [
-      {
-        name: "2 Spaces"
-        softTabs: true
-        tabLength: 2
+{
+  "*": {
+    "advanced-open-file": {
+      "createDirectories": true,
+      "fuzzyMatch": true,
+      "helmDirSwitch": true
+    },
+    "atom-beautify": {
+      "general": {
+        "_analyticsUserId": "4218a4fb-d994-4e13-8237-74e074cbc80a"
       }
-      {
-        name: "4 Spaces"
-        softTabs: true
-        tabLength: 4
+    },
+    "atom-material-ui": {
+      "tabs": {
+        "compactTabs": true
+      },
+      "treeView": {
+        "compactList": true
+      },
+      "ui": {
+        "animations": false,
+        "panelContrast": true,
+        "panelShadows": true
       }
-      {
-        name: "4 Space Tab"
-        softTabs: false
-        tabLength: 4
+    },
+    "atom-package-deps": {
+      "ignored": []
+    },
+    "auto-detect-indentation": {
+      "indentationTypes": [
+        {
+          "name": "2 Spaces",
+          "softTabs": true,
+          "tabLength": 2
+        },
+        {
+          "name": "4 Spaces",
+          "softTabs": true,
+          "tabLength": 4
+        },
+        {
+          "name": "4 Space Tab",
+          "softTabs": false,
+          "tabLength": 4
+        }
+      ]
+    },
+    "autocomplete-plus": {
+      "suppressActivationForEditorClasses": [
+        "vim-mode-plus.normal-mode",
+        "vim-mode-plus.visual-mode",
+        "vim-mode-plus.operator-pending-mode",
+        "vim-mode-plus.insert-mode.replace"
+      ]
+    },
+    "core": {
+      "audioBeep": false,
+      "closeEmptyWindows": false,
+      "disabledPackages": [
+        "autoflow",
+        "bookmarks",
+        "go-to-line",
+        "autosave",
+        "spell-check",
+        "symbols-view",
+        "welcome",
+        "styleguide",
+        "package-generator",
+        "metrics",
+        "link",
+        "dev-live-reload",
+        "background-tips",
+        "exception-reporting",
+        "github"
+      ],
+      "ignoredNames": [
+        ".git",
+        ".hg",
+        ".svn",
+        ".DS_Store",
+        "._*",
+        "Thumbs.db",
+        "node_modules"
+      ],
+      "packagesWithKeymapsDisabled": [
+        "bracket-matcher",
+        "linter",
+        "split-diff",
+        "git-diff",
+        "grammar-selector",
+        "advanced-open-file",
+        "atom-beautify",
+        "find-and-replace",
+        "fuzzy-finder",
+        "markdown-preview",
+        "notifications",
+        "open-on-github",
+        "tree-view",
+        "term3"
+      ],
+      "themes": [
+        "atom-material-ui",
+        "atom-material-syntax"
+      ]
+    },
+    "editor": {
+      "preferredLineLength": 100,
+      "scrollPastEnd": true,
+      "showIndentGuide": true,
+      "tabType": "soft"
+    },
+    "exception-reporting": {
+      "userId": "ecd7b451-e1f6-8d4f-901c-bae8e755d7f1"
+    },
+    "filesize": {
+      "KibibyteRepresentation": false
+    },
+    "language-elm": {
+      "autocompleteEnabled": false
+    },
+    "linter": {
+      "lintOnChange": false
+    },
+    "linter-ui-default": {
+      "panelHeight": 81,
+      "showTooltip": false,
+      "statusBarPosition": "Right"
+    },
+    "markdown-preview": {
+      "useGitHubStyle": true
+    },
+    "minimap": {
+      "disablePythonDocLinks": true,
+      "plugins": {
+        "cursorline": true,
+        "cursorlineDecorationsZIndex": 0,
+        "git-diff": true,
+        "git-diffDecorationsZIndex": 0,
+        "highlight-selected": true,
+        "highlight-selectedDecorationsZIndex": 0,
+        "split-diff": true,
+        "split-diffDecorationsZIndex": 0
       }
-    ]
-  "autocomplete-plus":
-    suppressActivationForEditorClasses: [
-      "vim-mode-plus.normal-mode"
-      "vim-mode-plus.visual-mode"
-      "vim-mode-plus.operator-pending-mode"
-      "vim-mode-plus.insert-mode.replace"
-    ]
-  core:
-    audioBeep: false
-    closeEmptyWindows: false
-    disabledPackages: [
-      "autoflow"
-      "bookmarks"
-      "go-to-line"
-      "autosave"
-      "spell-check"
-      "symbols-view"
-      "welcome"
-      "styleguide"
-      "package-generator"
-      "metrics"
-      "link"
-      "dev-live-reload"
-      "background-tips"
-      "exception-reporting"
-      "github"
-    ]
-    ignoredNames: [
-      ".git"
-      ".hg"
-      ".svn"
-      ".DS_Store"
-      "._*"
-      "Thumbs.db"
-      "node_modules"
-    ]
-    packagesWithKeymapsDisabled: [
-      "bracket-matcher"
-      "linter"
-      "split-diff"
-      "git-diff"
-      "grammar-selector"
-      "advanced-open-file"
-      "atom-beautify"
-      "find-and-replace"
-      "fuzzy-finder"
-      "markdown-preview"
-      "notifications"
-      "open-on-github"
-      "tree-view"
-      "term3"
-    ]
-    themes: [
-      "atom-material-ui"
-      "atom-material-syntax"
-    ]
-  editor:
-    preferredLineLength: 100
-    scrollPastEnd: true
-    showIndentGuide: true
-    tabType: "soft"
-  "exception-reporting":
-    userId: "ecd7b451-e1f6-8d4f-901c-bae8e755d7f1"
-  filesize:
-    KibibyteRepresentation: false
-  "language-elm":
-    autocompleteEnabled: false
-  linter:
-    lintOnChange: false
-  "linter-ui-default":
-    panelHeight: 81
-    showTooltip: false
-    statusBarPosition: "Right"
-  "markdown-preview":
-    useGitHubStyle: true
-  minimap:
-    disablePythonDocLinks: true
-    plugins:
-      cursorline: true
-      cursorlineDecorationsZIndex: 0
-      "git-diff": true
-      "git-diffDecorationsZIndex": 0
-      "highlight-selected": true
-      "highlight-selectedDecorationsZIndex": 0
-      "split-diff": true
-      "split-diffDecorationsZIndex": 0
-  "package-sync":
-    createOnChange: true
-    forceOverwrite: true
-  "platformio-ide-terminal":
-    style:
-      animationSpeed: 0
-      theme: "pro"
-    toggles:
-      cursorBlink: false
-  react:
-    enabledForAllJavascriptFiles: true
-  "relative-numbers":
-    softWrapsCount: false
-  "split-diff":
-    diffWords: true
-    ignoreWhitespace: true
-    leftEditorColor: "red"
-    rightEditorColor: "green"
-    syncHorizontalScroll: true
-  "status-bar":
-    cursorPositionFormat: "%L: %C"
-  term3:
-    autoRunCommand: "login -f `whoami`"
-    cursorBlink: false
-  "terminal-plus":
-    style: {}
-  "vim-mode-plus":
-    highlightSearch: false
-    ignoreCaseForSearch: true
-    ignoreCaseForSearchCurrentWord: true
-    useClipboardAsDefaultRegister: false
-    useSmartcaseForSearch: true
-    useSmartcaseForSearchCurrentWord: true
-  welcome:
-    showOnStartup: false
-".c.source":
-  editor:
-    tabLength: 4
-".c2hs.source":
-  editor:
-    preferredLineLength: 100
-    tabLength: 4
-".cabal.source":
-  editor:
-    preferredLineLength: 100
-    tabLength: 4
-".coffee.jsx.source":
-  editor:
-    preferredLineLength: 100
-".cpp.source":
-  editor:
-    tabLength: 4
-".go.source":
-  editor:
-    tabLength: 4
-".gotemplate.source":
-  editor:
-    tabLength: 4
-".groovy.source":
-  editor:
-    preferredLineLength: 100
-".haskell.hint":
-  editor:
-    preferredLineLength: 100
-    tabLength: 4
-".haskell.hint.message":
-  editor:
-    preferredLineLength: 100
-    tabLength: 4
-".haskell.hint.type":
-  editor:
-    preferredLineLength: 100
-    tabLength: 4
-".haskell.latex.tex.text":
-  editor:
-    preferredLineLength: 100
-    tabLength: 4
-".haskell.source":
-  editor:
-    preferredLineLength: 100
-    tabLength: 4
-".hsc2hs.source":
-  editor:
-    preferredLineLength: 100
-    tabLength: 4
-".js.jsx.source":
-  editor:
-    preferredLineLength: 100
-".js.regexp.replacement.source":
-  editor:
-    tabLength: 4
-".js.regexp.source":
-  editor:
-    tabLength: 4
-".json.source":
-  editor:
-    tabLength: 4
-".lua.source":
-  editor:
-    preferredLineLength: 100
-".makefile.source":
-  editor:
-    tabLength: 4
-".text.todo":
-  editor:
-    preferredLineLength: 100
-    tabLength: 4
+    },
+    "package-sync": {
+      "createOnChange": true,
+      "forceOverwrite": true
+    },
+    "platformio-ide-terminal": {
+      "style": {
+        "animationSpeed": 0,
+        "theme": "pro"
+      },
+      "toggles": {
+        "cursorBlink": false
+      }
+    },
+    "react": {
+      "enabledForAllJavascriptFiles": true
+    },
+    "relative-numbers": {
+      "softWrapsCount": false
+    },
+    "split-diff": {
+      "diffWords": true,
+      "ignoreWhitespace": true,
+      "leftEditorColor": "red",
+      "rightEditorColor": "green",
+      "syncHorizontalScroll": true
+    },
+    "status-bar": {
+      "cursorPositionFormat": "%L: %C"
+    },
+    "term3": {
+      "autoRunCommand": "login -f `whoami`",
+      "cursorBlink": false
+    },
+    "terminal-plus": {
+      "style": {}
+    },
+    "vim-mode-plus": {
+      "highlightSearch": false,
+      "ignoreCaseForSearch": true,
+      "ignoreCaseForSearchCurrentWord": true,
+      "useClipboardAsDefaultRegister": false,
+      "useSmartcaseForSearch": true,
+      "useSmartcaseForSearchCurrentWord": true
+    },
+    "welcome": {
+      "showOnStartup": false
+    }
+  },
+  ".c.source": {
+    "editor": {
+      "tabLength": 4
+    }
+  },
+  ".c2hs.source": {
+    "editor": {
+      "preferredLineLength": 100,
+      "tabLength": 4
+    }
+  },
+  ".cabal.source": {
+    "editor": {
+      "preferredLineLength": 100,
+      "tabLength": 4
+    }
+  },
+  ".coffee.jsx.source": {
+    "editor": {
+      "preferredLineLength": 100
+    }
+  },
+  ".cpp.source": {
+    "editor": {
+      "tabLength": 4
+    }
+  },
+  ".go.source": {
+    "editor": {
+      "tabLength": 4
+    }
+  },
+  ".gotemplate.source": {
+    "editor": {
+      "tabLength": 4
+    }
+  },
+  ".groovy.source": {
+    "editor": {
+      "preferredLineLength": 100
+    }
+  },
+  ".haskell.hint": {
+    "editor": {
+      "preferredLineLength": 100,
+      "tabLength": 4
+    }
+  },
+  ".haskell.hint.message": {
+    "editor": {
+      "preferredLineLength": 100,
+      "tabLength": 4
+    }
+  },
+  ".haskell.hint.type": {
+    "editor": {
+      "preferredLineLength": 100,
+      "tabLength": 4
+    }
+  },
+  ".haskell.latex.tex.text": {
+    "editor": {
+      "preferredLineLength": 100,
+      "tabLength": 4
+    }
+  },
+  ".haskell.source": {
+    "editor": {
+      "preferredLineLength": 100,
+      "tabLength": 4
+    }
+  },
+  ".hsc2hs.source": {
+    "editor": {
+      "preferredLineLength": 100,
+      "tabLength": 4
+    }
+  },
+  ".js.jsx.source": {
+    "editor": {
+      "preferredLineLength": 100
+    }
+  },
+  ".js.regexp.replacement.source": {
+    "editor": {
+      "tabLength": 4
+    }
+  },
+  ".js.regexp.source": {
+    "editor": {
+      "tabLength": 4
+    }
+  },
+  ".json.source": {
+    "editor": {
+      "tabLength": 4
+    }
+  },
+  ".lua.source": {
+    "editor": {
+      "preferredLineLength": 100
+    }
+  },
+  ".makefile.source": {
+    "editor": {
+      "tabLength": 4
+    }
+  },
+  ".text.todo": {
+    "editor": {
+      "preferredLineLength": 100,
+      "tabLength": 4
+    }
+  }
+}
