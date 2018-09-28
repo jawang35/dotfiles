@@ -35,5 +35,4 @@ fi
 
 git submodule update --init --recursive
 vim "+PromptlineSnapshot ${HOME}/.shell_prompt.sh airline" +qall
-source ${HOME}/.shell_prompt.sh
 source ${DIR}/vim/fonts/install.sh
