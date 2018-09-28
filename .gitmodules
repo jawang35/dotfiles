@@ -46,9 +46,6 @@
 [submodule "vim/bundle/awesome-vim-colorschemes"]
 	path = vim/bundle/awesome-vim-colorschemes
 	url = https://github.com/rafi/awesome-vim-colorschemes.git
-[submodule "vim/bundle/vim-elixir"]
-	path = vim/bundle/vim-elixir
-	url = https://github.com/elixir-lang/vim-elixir.git
 [submodule "vim/bundle/vim-commentary"]
 	path = vim/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
