@@ -109,4 +109,7 @@ let g:ctrlp_working_path_mode = "ra"
 let g:ctrlp_user_command = [".git", "cd %s && git ls-files -co --exclude-standard"]
 
 " NERDTree
-map <leader>\ :NERDTreeToggle<CR>
+nnoremap <leader>\ :NERDTreeToggle<CR>
+
+" Commentary
+map g/ gc
