@@ -1,6 +1,10 @@
 // Place your key bindings in this file to overwrite the defaults
 [
     {
+        "key": "cmd+]",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    {
         "key": "cmd+\\",
         "command": "workbench.action.toggleSidebarVisibility"
     },
