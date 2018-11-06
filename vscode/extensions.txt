@@ -1,0 +1,5 @@
+christian-kohler.path-intellisense
+ms-vscode.Go
+PKief.material-icon-theme
+vscodevim.vim
+zhuangtongfa.Material-theme

@@ -1,0 +1,116 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "editor.acceptSuggestionOnEnter": "smart",
+    "editor.cursorBlinking": "solid",
+    "editor.dragAndDrop": false,
+    "editor.emptySelectionClipboard": false,
+    "editor.fontSize": 14,
+    "editor.formatOnSave": true,
+    "editor.lineNumbers": "relative",
+    "editor.minimap.renderCharacters": false,
+    "editor.minimap.showSlider": "always",
+    "editor.wordWrap": "on",
+    "editor.wrappingIndent": "none",
+    "explorer.openEditors.visible": 0,
+    "files.enableTrash": false,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "material-icon-theme.activeIconPack": "none",
+    "search.location": "panel",
+    "search.quickOpen.includeHistory": false,
+    "search.smartCase": true,
+    "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
+    "terminal.integrated.fontSize": 14,
+    "vim.leader": "space",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "h"
+            ],
+            "commands": [
+                "workbench.action.navigateLeft"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "j"
+            ],
+            "commands": [
+                "workbench.action.navigateDown"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "k"
+            ],
+            "commands": [
+                "workbench.action.navigateUp"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "l"
+            ],
+            "commands": [
+                "workbench.action.navigateRight"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "H"
+            ],
+            "commands": [
+                "workbench.action.splitEditorLeft"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "J"
+            ],
+            "commands": [
+                "workbench.action.splitEditorDown"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "K"
+            ],
+            "commands": [
+                "workbench.action.splitEditorUp"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "L"
+            ],
+            "commands": [
+                "workbench.action.splitEditorRight"
+            ]
+        }
+    ],
+    "window.zoomLevel": 0,
+    "window.restoreWindows": "all",
+    "workbench.activityBar.visible": false,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f"
+    },
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.enableExperiments": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.list.openMode": "doubleClick",
+    "workbench.settings.openDefaultSettings": false,
+    "workbench.sideBar.location": "left",
+    "workbench.statusBar.feedback.visible": false
+}
