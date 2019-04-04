@@ -11,7 +11,7 @@ alias mkdir='mkdir -pv'
 alias mv='mv -iv'
 alias rm='rm -v'
 alias rmrf='rm -rf'
-alias ssh-nocheck='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
+alias sshnc='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
 
 # ls and pwd after cd
 function cd { builtin cd "$@" && ls && echo -e "\nWorking Directory: $(pwd)"; }
