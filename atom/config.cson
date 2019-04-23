@@ -17,6 +17,7 @@
       panelShadows: true
   "atom-package-deps":
     ignored: []
+  "atom-typescript": {}
   "auto-detect-indentation":
     indentationTypes: [
       {
@@ -100,12 +101,28 @@
     userId: "ecd7b451-e1f6-8d4f-901c-bae8e755d7f1"
   filesize:
     KibibyteRepresentation: false
+  "go-plus":
+    disabledBundledPackages: [
+      "atom-ide-ui"
+    ]
+    skipCodeFormatCheck: true
   "language-elm":
     autocompleteEnabled: false
   linter:
     lintOnChange: false
+  "linter-eslint":
+    scopes: [
+      "source.js"
+      "source.jsx"
+      "source.js.jsx"
+      "source.flow"
+      "source.babel"
+      "source.js-semantic"
+      "source.ts"
+      "source.tsx"
+    ]
   "linter-ui-default":
-    panelHeight: 81
+    showPanel: true
     showTooltip: false
     statusBarPosition: "Right"
   "markdown-preview":
