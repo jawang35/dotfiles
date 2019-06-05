@@ -1,0 +1,7 @@
+\set QUIET 1
+\timing
+\x auto
+\set COMP_KEYWORD_CASE upper
+\set ON_ERROR_ROLLBACK interactive
+\pset null '(null)'
+\unset QUIET
