@@ -4,6 +4,7 @@ set nocompatible
 
 " Neovim defaults for Vim
 set autoindent
+set autochdir
 set autoread
 set backspace=indent,eol,start
 set complete-=i
@@ -21,7 +22,6 @@ set listchars=tab:>\ ,trail:-,nbsp:+
 set mouse=a
 set nrformats=hex
 set sessionoptions-=options
-set smarttab
 set tabpagemax=50
 set tags=./tags;,tags
 set ttyfast
