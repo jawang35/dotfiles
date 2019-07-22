@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Reload .bash_profile
 alias reload='source ${HOME}/.bash_profile && echo "Loaded ${HOME}/.bash_profile"'
 
