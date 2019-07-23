@@ -7,6 +7,9 @@
 [submodule "vim/bundle/delimitMate"]
 	path = vim/bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
+[submodule "vim/bundle/deoplete.nvim"]
+	path = vim/bundle/deoplete.nvim
+	url = https://github.com/Shougo/deoplete.nvim.git
 [submodule "vim/bundle/editorconfig-vim"]
 	path = vim/bundle/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
@@ -52,9 +55,6 @@
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
-[submodule "vim/bundle/VimCompletesMe"]
-	path = vim/bundle/VimCompletesMe
-	url = https://github.com/ajh17/VimCompletesMe.git
 [submodule "vim/fonts"]
 	path = vim/fonts
 	url = https://github.com/powerline/fonts.git
