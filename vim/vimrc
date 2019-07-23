@@ -27,9 +27,6 @@ set ttyfast
 set viminfo+=!
 set wildmenu
 
-" True colors
-set termguicolors
-
 " Automatically set directory to current buffer's
 set autochdir
 
