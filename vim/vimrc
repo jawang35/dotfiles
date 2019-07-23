@@ -27,6 +27,9 @@ set ttyfast
 set viminfo+=!
 set wildmenu
 
+" Do not flash command on bottom line
+set noshowcmd
+
 " Automatically set directory to current buffer's
 set autochdir
 
@@ -44,19 +47,6 @@ set smartcase
 execute pathogen#infect()
 
 colorscheme minimalist
-
-" Solarized Colors
-" set t_Co=256
-" let g:solarized_termcolors=256
-" set background=dark
-" colorscheme solarized
-
-" Molokai Colors
-" set t_Co=256
-" set background=dark
-" let g:molokai_original=1
-" let g:rehash256=1
-" colorscheme molokai
 
 " Enable file type detection and do language-dependent indenting.
 filetype plugin indent on
