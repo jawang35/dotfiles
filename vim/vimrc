@@ -4,7 +4,6 @@ set nocompatible
 
 " Neovim defaults for Vim
 set autoindent
-set autochdir
 set autoread
 set backspace=indent,eol,start
 set complete-=i
@@ -27,6 +26,12 @@ set tags=./tags;,tags
 set ttyfast
 set viminfo+=!
 set wildmenu
+
+" True colors
+set termguicolors
+
+" Automatically set directory to current buffer's
+set autochdir
 
 " Switch syntax highlighting on
 syntax enable
