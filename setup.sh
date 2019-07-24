@@ -21,7 +21,9 @@ append_bash_profile "source ${DIR}/bash/.bashrc"
 
 # Symlink dot files
 setup_symlink "${DIR}/atom" "${HOME}/.atom"
-setup_symlink "${DIR}/bash/.inputrc" "${HOME}/.inputrc"
+setup_symlink "${DIR}/.editorconfig" "${HOME}/.editorconfig"
+setup_symlink "${DIR}/.inputrc" "${HOME}/.inputrc"
+setup_symlink "${DIR}/.psqlrc" "${HOME}/.psqlrc"
 setup_symlink "${DIR}/hammerspoon" "${HOME}/.hammerspoon"
 mkdir -p "${HOME}/.config" && setup_symlink "${DIR}/karabiner" "${HOME}/.config/karabiner"
 setup_symlink "${DIR}/tmux/.tmux.conf" "${HOME}/.tmux.conf"

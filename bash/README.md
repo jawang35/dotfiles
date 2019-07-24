@@ -12,11 +12,6 @@ source ${HOME}/.bashrc
 source /path/to/dotfiles/bash/.bashrc
 ```
 
-```sh
-$ ln -s /path/to/dotfiles/bash/.inputrc ${HOME}/.inputrc
-$ ln -s /path/to/dotfiles/bash/.psqlrc ${HOME}/.psqlrc
-```
-
 ## Promptline
 
 With vim-airline installed, run the following.
