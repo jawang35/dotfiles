@@ -116,3 +116,7 @@ let g:deoplete#enable_at_startup = 1
 " Tab through pop-up menus
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+
+" Default Python paths to ensure pynvim exists when changing environments
+let g:python_host_prog  = '/usr/local/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
