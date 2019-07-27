@@ -25,7 +25,10 @@ set tabpagemax=50
 set tags=./tags;,tags
 set ttyfast
 set viminfo+=!
+
+" Mimic bash behavior for command autocompletion
 set wildmenu
+set wildmode=list:longest
 
 " Do not flash command on bottom line
 set noshowcmd
