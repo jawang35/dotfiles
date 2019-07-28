@@ -19,9 +19,6 @@
 [submodule "vim/bundle/promptline.vim"]
 	path = vim/bundles/all/promptline.vim
 	url = https://github.com/edkolev/promptline.vim.git
-[submodule "vim/bundle/syntastic"]
-	path = vim/bundles/all/syntastic
-	url = https://github.com/scrooloose/syntastic.git
 [submodule "vim/bundle/tmuxline.vim"]
 	path = vim/bundles/all/tmuxline.vim
 	url = https://github.com/edkolev/tmuxline.vim
@@ -55,3 +52,6 @@
 [submodule "vim/fonts"]
 	path = vim/fonts
 	url = https://github.com/powerline/fonts.git
+[submodule "vim/bundles/all/ale"]
+	path = vim/bundles/all/ale
+	url = https://github.com/w0rp/ale.git
