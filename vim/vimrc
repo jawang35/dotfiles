@@ -47,7 +47,7 @@ set ignorecase
 set smartcase
 
 " Pathogen
-execute pathogen#infect()
+execute pathogen#infect('bundles/all/{}')
 
 colorscheme minimalist
 
