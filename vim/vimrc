@@ -48,6 +48,9 @@ set smartcase
 
 " Pathogen
 execute pathogen#infect('bundles/all/{}')
+if v:progname == 'nvim' || (v:progname == 'vim' && v:version >= 800)
+    execute pathogen#infect('bundles/nvim/{}')
+endif
 
 colorscheme minimalist
 

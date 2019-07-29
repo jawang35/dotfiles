@@ -8,7 +8,7 @@
 	path = vim/bundles/all/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
 [submodule "vim/bundle/deoplete.nvim"]
-	path = vim/bundles/all/deoplete.nvim
+	path = vim/bundles/nvim/deoplete.nvim
 	url = https://github.com/Shougo/deoplete.nvim.git
 [submodule "vim/bundle/editorconfig-vim"]
 	path = vim/bundles/all/editorconfig-vim
