@@ -48,7 +48,7 @@ set smartcase
 
 " Pathogen
 execute pathogen#infect('bundles/all/{}')
-if v:progname == 'nvim' || (v:progname == 'vim' && v:version >= 800)
+if v:progname == 'nvim'
     execute pathogen#infect('bundles/nvim/{}')
 endif
 
