@@ -47,10 +47,13 @@ set ignorecase
 set smartcase
 
 " Pathogen
-execute pathogen#infect('bundles/all/{}')
-if v:progname == 'nvim' || (v:progname == 'vim' && v:version >= 800)
-    execute pathogen#infect('bundles/nvim/{}')
-endif
+function PathogenInfect(filetype)
+    execute pathogen#infect('bundles/vim/' . a:filetype . '/{}')
+    if v:progname == 'nvim' || (v:progname == 'vim' && v:version >= 800)
+        execute pathogen#infect('bundles/nvim/' . a:filetype . '/{}')
+    endif
+endfunction
+execute PathogenInfect('all')
 
 colorscheme minimalist
 
