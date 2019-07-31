@@ -143,6 +143,7 @@ endfunction
 
 " Promptline bash status bar
 " Uncomment and run :PromptlineSnapshot! ../bash/shell_prompt.sh
+" execute pathogen#infect('bundles/utils/promptline.vim')
 " let g:promptline_theme = 'lightline'
 " let g:promptline_preset = {
 " 	\ 'a'   : [ promptline#slices#user() ],
@@ -154,5 +155,6 @@ endfunction
 
 " tmuxline
 " Uncomment and run :Tmuxline
+" execute pathogen#infect('bundles/utils/tmuxline.vim')
 " let g:tmuxline_theme = 'lightline'
 " let g:tmuxline_powerline_separators = 0

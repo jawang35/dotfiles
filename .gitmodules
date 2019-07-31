@@ -29,10 +29,10 @@
 	path = vim/bundles/vim/all/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
 [submodule "promptline.vim"]
-	path = vim/bundles/vim/all/promptline.vim
+	path = vim/bundles/utils/promptline.vim
 	url = https://github.com/edkolev/promptline.vim.git
 [submodule "tmuxline.vim"]
-	path = vim/bundles/vim/all/tmuxline.vim
+	path = vim/bundles/utils/tmuxline.vim
 	url = https://github.com/edkolev/tmuxline.vim
 [submodule "typescript-vim"]
 	path = vim/bundles/vim/all/typescript-vim
