@@ -18,6 +18,7 @@ append_bash_profile () {
 
 append_bash_profile "source ${DIR}/bash/.profile"
 append_bash_profile "source ${DIR}/bash/.bashrc"
+append_bash_profile "source ${DIR}/bash/shell_prompt.sh"
 
 # Symlink dot files
 setup_symlink "${DIR}/atom" "${HOME}/.atom"
@@ -36,5 +37,4 @@ else
 fi
 
 git submodule update --init --recursive
-vim "+PromptlineSnapshot ${HOME}/.shell_prompt.sh airline" +qall
 source "${DIR}/vim/fonts/install.sh"

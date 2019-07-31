@@ -74,7 +74,7 @@ set shiftwidth=4
 set expandtab
 
 " Airline
-let g:airline_theme="papercolor"
+let g:airline_theme='papercolor'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
@@ -96,10 +96,10 @@ nnoremap <leader>[ :bp<CR>
 nnoremap <leader>] :bn<CR>
 
 " CtrlP
-let g:ctrlp_map = "<leader>p"
-let g:ctrlp_cmd = "CtrlP"
-let g:ctrlp_working_path_mode = "ra"
-let g:ctrlp_user_command = [".git", "cd %s && git ls-files -co --exclude-standard"]
+let g:ctrlp_map = '<leader>p'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ca'
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " NERDTree
 nnoremap <leader>\ :NERDTreeToggle<CR>
@@ -125,3 +125,13 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 " ALE lint on open/save only
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
+
+" Promptline bash status bar
+" Uncomment and run PromptlineSnapshot shell_prompt.sh
+" let g:promptline_theme = 'airline'
+" let g:promptline_preset = {
+" 	\'a'   : [ promptline#slices#conda_env(), promptline#slices#python_virtualenv() ],
+" 	\'b'   : [ '\w' ],
+" 	\'c'   : [ promptline#slices#vcs_branch() ],
+" 	\'warn': [ promptline#slices#last_exit_code() ]}
+" let g:promptline_powerline_symbols = 0
