@@ -22,9 +22,6 @@
 [submodule "editorconfig-vim"]
 	path = vim/bundles/vim/all/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
-[submodule "fonts"]
-	path = vim/fonts
-	url = https://github.com/powerline/fonts.git
 [submodule "lightline.vim"]
 	path = vim/bundles/vim/all/lightline.vim
 	url = https://github.com/itchyny/lightline.vim.git
