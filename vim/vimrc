@@ -30,8 +30,9 @@ set viminfo+=!
 set wildmenu
 set wildmode=list:longest
 
-" Do not flash command on bottom line
+" Hide command and mode on command line
 set noshowcmd
+set noshowmode
 
 " Automatically set directory to current buffer's
 set autochdir
@@ -106,8 +107,12 @@ nnoremap <leader>\ :NERDTreeToggle<CR>
 " Commentary
 map g/ gc
 
-" Use deoplete.
+" Use deoplete for autocompletion
 let g:deoplete#enable_at_startup = 1
+
+" Use echodoc to move autocompletion preview window to command line
+set completeopt-=preview
+let g:echodoc_enable_at_startup = 1
 
 " Tab through pop-up menus
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"

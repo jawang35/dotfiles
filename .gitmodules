@@ -58,3 +58,6 @@
 [submodule "vim/bundles/nvim/python/deoplete-jedi"]
 	path = vim/bundles/nvim/python/deoplete-jedi
 	url = https://github.com/deoplete-plugins/deoplete-jedi.git
+[submodule "vim/bundles/nvim/all/echodoc.vim"]
+	path = vim/bundles/nvim/all/echodoc.vim
+	url = https://github.com/Shougo/echodoc.vim.git
