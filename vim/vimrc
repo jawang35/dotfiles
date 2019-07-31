@@ -146,7 +146,7 @@ endfunction
 " let g:promptline_theme = 'lightline'
 " let g:promptline_preset = {
 " 	\ 'a'   : [ promptline#slices#user() ],
-" 	\ 'b'   : [ '\w' ],
+" 	\ 'b'   : [ promptline#slices#cwd({ 'dir_limit': 2 }) ],
 " 	\ 'c'   : [ promptline#slices#vcs_branch() ],
 " 	\ 'warn': [ promptline#slices#last_exit_code() ],
 " 	\ }
