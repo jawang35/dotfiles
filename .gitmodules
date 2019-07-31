@@ -1,63 +1,63 @@
-[submodule "vim/bundle/awesome-vim-colorschemes"]
-	path = vim/bundles/vim/all/awesome-vim-colorschemes
-	url = https://github.com/rafi/awesome-vim-colorschemes.git
-[submodule "vim/bundle/ctrlp.vim"]
-	path = vim/bundles/vim/all/ctrlp.vim
-	url = https://github.com/ctrlpvim/ctrlp.vim.git
-[submodule "vim/bundle/delimitMate"]
-	path = vim/bundles/vim/all/delimitMate
-	url = https://github.com/Raimondi/delimitMate.git
-[submodule "vim/bundle/deoplete.nvim"]
-	path = vim/bundles/nvim/all/deoplete.nvim
-	url = https://github.com/Shougo/deoplete.nvim.git
-[submodule "vim/bundle/editorconfig-vim"]
-	path = vim/bundles/vim/all/editorconfig-vim
-	url = https://github.com/editorconfig/editorconfig-vim.git
-[submodule "vim/bundle/nerdtree"]
-	path = vim/bundles/vim/all/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
-[submodule "vim/bundle/promptline.vim"]
-	path = vim/bundles/vim/all/promptline.vim
-	url = https://github.com/edkolev/promptline.vim.git
-[submodule "vim/bundle/tmuxline.vim"]
-	path = vim/bundles/vim/all/tmuxline.vim
-	url = https://github.com/edkolev/tmuxline.vim
-[submodule "vim/bundle/typescript-vim"]
-	path = vim/bundles/vim/all/typescript-vim
-	url = https://github.com/leafgarland/typescript-vim.git
-[submodule "vim/bundle/vim-airline"]
-	path = vim/bundles/vim/all/vim-airline
-	url = https://github.com/vim-airline/vim-airline.git
-[submodule "vim/bundle/vim-airline-themes"]
-	path = vim/bundles/vim/all/vim-airline-themes
-	url = https://github.com/vim-airline/vim-airline-themes.git
-[submodule "vim/bundle/vim-commentary"]
-	path = vim/bundles/vim/all/vim-commentary
-	url = https://github.com/tpope/vim-commentary.git
-[submodule "vim/bundle/vim-fugitive"]
-	path = vim/bundles/vim/all/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
-[submodule "vim/bundle/vim-javascript"]
-	path = vim/bundles/vim/all/vim-javascript
-	url = https://github.com/pangloss/vim-javascript.git
-[submodule "vim/bundle/vim-repeat"]
-	path = vim/bundles/vim/all/vim-repeat
-	url = https://github.com/tpope/vim-repeat.git
-[submodule "vim/bundle/vim-sleuth"]
-	path = vim/bundles/vim/all/vim-sleuth
-	url = https://github.com/tpope/vim-sleuth.git
-[submodule "vim/bundle/vim-surround"]
-	path = vim/bundles/vim/all/vim-surround
-	url = https://github.com/tpope/vim-surround.git
-[submodule "vim/fonts"]
-	path = vim/fonts
-	url = https://github.com/powerline/fonts.git
-[submodule "vim/bundles/all/ale"]
+[submodule "ale"]
 	path = vim/bundles/nvim/all/ale
 	url = https://github.com/w0rp/ale.git
-[submodule "vim/bundles/nvim/python/deoplete-jedi"]
+[submodule "awesome-vim-colorschemes"]
+	path = vim/bundles/vim/all/awesome-vim-colorschemes
+	url = https://github.com/rafi/awesome-vim-colorschemes.git
+[submodule "ctrlp.vim"]
+	path = vim/bundles/vim/all/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "delimitMate"]
+	path = vim/bundles/vim/all/delimitMate
+	url = https://github.com/Raimondi/delimitMate.git
+[submodule "deoplete.nvim"]
+	path = vim/bundles/nvim/all/deoplete.nvim
+	url = https://github.com/Shougo/deoplete.nvim.git
+[submodule "deoplete-jedi"]
 	path = vim/bundles/nvim/python/deoplete-jedi
 	url = https://github.com/deoplete-plugins/deoplete-jedi.git
-[submodule "vim/bundles/nvim/all/echodoc.vim"]
+[submodule "echodoc.vim"]
 	path = vim/bundles/nvim/all/echodoc.vim
 	url = https://github.com/Shougo/echodoc.vim.git
+[submodule "editorconfig-vim"]
+	path = vim/bundles/vim/all/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule "fonts"]
+	path = vim/fonts
+	url = https://github.com/powerline/fonts.git
+[submodule "lightline.vim"]
+	path = vim/bundles/vim/all/lightline.vim
+	url = https://github.com/itchyny/lightline.vim.git
+[submodule "nerdtree"]
+	path = vim/bundles/vim/all/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "promptline.vim"]
+	path = vim/bundles/vim/all/promptline.vim
+	url = https://github.com/edkolev/promptline.vim.git
+[submodule "tmuxline.vim"]
+	path = vim/bundles/vim/all/tmuxline.vim
+	url = https://github.com/edkolev/tmuxline.vim
+[submodule "typescript-vim"]
+	path = vim/bundles/vim/all/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
+[submodule "vim-bufferline"]
+	path = vim/bundles/vim/all/vim-bufferline
+	url = https://github.com/bling/vim-bufferline.git
+[submodule "vim-commentary"]
+	path = vim/bundles/vim/all/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule "vim-fugitive"]
+	path = vim/bundles/vim/all/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "vim-javascript"]
+	path = vim/bundles/vim/all/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
+[submodule "vim-repeat"]
+	path = vim/bundles/vim/all/vim-repeat
+	url = https://github.com/tpope/vim-repeat.git
+[submodule "vim-sleuth"]
+	path = vim/bundles/vim/all/vim-sleuth
+	url = https://github.com/tpope/vim-sleuth.git
+[submodule "vim-surround"]
+	path = vim/bundles/vim/all/vim-surround
+	url = https://github.com/tpope/vim-surround.git

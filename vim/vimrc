@@ -73,11 +73,6 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-" Airline
-let g:airline_theme='papercolor'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-
 " Leader
 let mapleader="\<Space>"
 
@@ -126,12 +121,38 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
 
+" Lightline
+set showtabline=2
+let g:bufferline_echo = 0
+let g:lightline = {
+    \ 'colorscheme': 'PaperColor_light',
+    \ 'tabline': {
+    \   'left': [ [ 'bufferline' ] ],
+    \ },
+    \ 'component_expand': {
+    \   'bufferline': 'LightlineBufferline',
+    \ },
+    \ 'component_type': {
+    \   'bufferline': 'tabsel',
+    \ },
+    \ }
+function! LightlineBufferline()
+    call bufferline#refresh_status()
+    return [ g:bufferline_status_info.before, g:bufferline_status_info.current, g:bufferline_status_info.after ]
+endfunction
+
 " Promptline bash status bar
-" Uncomment and run PromptlineSnapshot shell_prompt.sh
+" Uncomment and run :PromptlineSnapshot shell_prompt.sh
 " let g:promptline_theme = 'airline'
 " let g:promptline_preset = {
-" 	\'a'   : [ promptline#slices#conda_env(), promptline#slices#python_virtualenv() ],
-" 	\'b'   : [ '\w' ],
-" 	\'c'   : [ promptline#slices#vcs_branch() ],
-" 	\'warn': [ promptline#slices#last_exit_code() ]}
+" 	\ 'a'   : [ promptline#slices#conda_env(), promptline#slices#python_virtualenv() ],
+" 	\ 'b'   : [ '\w' ],
+" 	\ 'c'   : [ promptline#slices#vcs_branch() ],
+" 	\ 'warn': [ promptline#slices#last_exit_code() ],
+" 	\ }
 " let g:promptline_powerline_symbols = 0
+
+" tmuxline
+" Uncomment and run :Tmuxline
+" let g:tmuxline_theme = 'lightline'
+" let g:tmuxline_powerline_separators = 0
