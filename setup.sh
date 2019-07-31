@@ -24,9 +24,9 @@ setup_symlink "${DIR}/atom" "${HOME}/.atom"
 setup_symlink "${DIR}/.editorconfig" "${HOME}/.editorconfig"
 setup_symlink "${DIR}/.inputrc" "${HOME}/.inputrc"
 setup_symlink "${DIR}/.psqlrc" "${HOME}/.psqlrc"
+setup_symlink "${DIR}/.tmux.conf" "${HOME}/.tmux.conf"
 setup_symlink "${DIR}/hammerspoon" "${HOME}/.hammerspoon"
 mkdir -p "${HOME}/.config" && setup_symlink "${DIR}/karabiner" "${HOME}/.config/karabiner"
-setup_symlink "${DIR}/tmux/.tmux.conf" "${HOME}/.tmux.conf"
 
 # Vim
 if command -v nvim >/dev/null 2>&1; then
