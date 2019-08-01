@@ -146,7 +146,7 @@ function! LightlineBufferline()
 endfunction
 
 " Promptline bash status bar
-" Uncomment and run :PromptlineSnapshot! ../bash/shell_prompt.sh
+" Uncomment and run :PromptlineSnapshot! ../bash/.shell_prompt.sh
 " execute pathogen#infect('bundles/utils/promptline.vim')
 " let g:promptline_theme = 'lightline'
 " let g:promptline_preset = {

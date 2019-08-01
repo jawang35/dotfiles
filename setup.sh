@@ -18,7 +18,7 @@ append_bash_profile () {
 
 append_bash_profile "source ${DIR}/bash/.profile"
 append_bash_profile "source ${DIR}/bash/.bashrc"
-append_bash_profile "source ${DIR}/bash/shell_prompt.sh"
+append_bash_profile "source ${DIR}/bash/.shell_prompt.sh"
 
 # Symlink dot files
 setup_symlink "${DIR}/atom" "${HOME}/.atom"
