@@ -47,17 +47,6 @@ set nohlsearch
 set ignorecase
 set smartcase
 
-" Pathogen
-function PathogenInfect(filetype)
-    execute pathogen#infect('bundles/vim/' . a:filetype . '/{}')
-    if v:progname == 'nvim' || (v:progname == 'vim' && v:version >= 800)
-        execute pathogen#infect('bundles/nvim/' . a:filetype . '/{}')
-    endif
-endfunction
-execute PathogenInfect('all')
-
-colorscheme minimalist
-
 " Enable file type detection and do language-dependent indenting.
 filetype plugin indent on
 
@@ -89,6 +78,21 @@ cabbrev hsplit split
 " Buffer management
 nnoremap <leader>[ :bp<CR>
 nnoremap <leader>] :bn<CR>
+
+";; for easy escape insert mode
+inoremap ;; <Esc>
+vnoremap ;; <Esc>
+
+" Pathogen
+function PathogenInfect(filetype)
+    execute pathogen#infect('bundles/vim/' . a:filetype . '/{}')
+    if v:progname == 'nvim' || (v:progname == 'vim' && v:version >= 800)
+        execute pathogen#infect('bundles/nvim/' . a:filetype . '/{}')
+    endif
+endfunction
+execute PathogenInfect('all')
+
+colorscheme minimalist
 
 " CtrlP
 let g:ctrlp_map = '<leader>p'
