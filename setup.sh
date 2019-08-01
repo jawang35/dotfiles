@@ -37,4 +37,3 @@ else
 fi
 
 git submodule update --init --recursive
-source "${DIR}/vim/fonts/install.sh"
