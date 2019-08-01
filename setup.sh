@@ -18,13 +18,13 @@ append_bash_profile () {
 
 append_bash_profile "source ${DIR}/bash/.profile"
 append_bash_profile "source ${DIR}/bash/.bashrc"
-append_bash_profile "source ${DIR}/bash/.shell_prompt.sh"
 
 # Symlink dot files
 setup_symlink "${DIR}/atom" "${HOME}/.atom"
 setup_symlink "${DIR}/.editorconfig" "${HOME}/.editorconfig"
 setup_symlink "${DIR}/.inputrc" "${HOME}/.inputrc"
 setup_symlink "${DIR}/.psqlrc" "${HOME}/.psqlrc"
+setup_symlink "${DIR}/.shell_prompt.sh" "${HOME}/.shell_prompt.sh"
 setup_symlink "${DIR}/.tmux.conf" "${HOME}/.tmux.conf"
 setup_symlink "${DIR}/hammerspoon" "${HOME}/.hammerspoon"
 mkdir -p "${HOME}/.config" && setup_symlink "${DIR}/karabiner" "${HOME}/.config/karabiner"
