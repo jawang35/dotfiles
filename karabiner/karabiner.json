@@ -16,9 +16,32 @@
                 },
                 "rules": [
                     {
+                        "description": "Change simultaneous j-k to escape.",
                         "manipulators": [
                             {
-                                "description": "Change caps_lock to command+control+option. Escape if no other key used.",
+                                "from": {
+                                    "simultaneous": [
+                                        {
+                                            "key_code": "j"
+                                        },
+                                        {
+                                            "key_code": "k"
+                                        }
+                                    ]
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "escape"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Change caps_lock to command+control+option.",
+                        "manipulators": [
+                            {
                                 "from": {
                                     "key_code": "caps_lock",
                                     "modifiers": {
@@ -34,11 +57,6 @@
                                             "left_control",
                                             "left_option"
                                         ]
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "escape"
                                     }
                                 ],
                                 "type": "basic"
