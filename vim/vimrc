@@ -107,6 +107,7 @@ nnoremap <leader>\ :NERDTreeToggle<CR>
 map g/ gc
 
 " Use deoplete for autocompletion
+set omnifunc=syntaxcomplete#Complete
 let g:deoplete#enable_at_startup = 1
 
 " Use echodoc to move autocompletion preview window to command line

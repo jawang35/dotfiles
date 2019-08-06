@@ -46,6 +46,9 @@
 [submodule "vim-fugitive"]
 	path = vim/bundles/vim/all/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule "vim-go"]
+	path = vim/bundles/vim/all/vim-go
+	url = https://github.com/fatih/vim-go.git
 [submodule "vim-javascript"]
 	path = vim/bundles/vim/all/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
