@@ -77,10 +77,6 @@ nnoremap <leader>h <C-W><C-H>
 nnoremap <leader>[ :bp<CR>
 nnoremap <leader>] :bn<CR>
 
-";; for easy escape insert mode
-inoremap ;; <Esc>
-vnoremap ;; <Esc>
-
 " Pathogen
 function PathogenInfect(filetype)
     execute pathogen#infect('bundles/vim/' . a:filetype . '/{}')
