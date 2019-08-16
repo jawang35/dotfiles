@@ -61,3 +61,6 @@
 [submodule "vim-surround"]
 	path = vim/bundles/vim/all/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule "vim-terraform"]
+	path = vim/bundles/vim/all/vim-terraform
+	url = https://github.com/hashivim/vim-terraform.git
