@@ -1,6 +1,7 @@
 set editing-mode vi
+set show-all-if-ambiguous on
+set completion-ignore-case on
 
 set keymap vi-command
 
 set keymap vi-insert
-";;": "\e"
