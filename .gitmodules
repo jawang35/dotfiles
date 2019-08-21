@@ -43,6 +43,9 @@
 [submodule "vim-commentary"]
 	path = vim/bundles/vim/all/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
+[submodule "vim-easydir"]
+	path = vim/bundles/vim/all/vim-easydir
+	url = https://github.com/duggiefresh/vim-easydir.git
 [submodule "vim-fugitive"]
 	path = vim/bundles/vim/all/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
