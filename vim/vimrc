@@ -128,6 +128,9 @@ let g:lightline = {
     \ 'tabline': {
     \   'left': [ [ 'bufferline' ] ],
     \ },
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'absolutepath', 'modified' ] ],
+    \ },
     \ 'component_expand': {
     \   'bufferline': 'LightlineBufferline',
     \ },
