@@ -129,7 +129,7 @@ let g:lightline = {
     \   'left': [ [ 'bufferline' ] ],
     \ },
     \ 'active': {
-    \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'absolutepath', 'modified' ] ],
+    \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filepath', 'modified' ] ],
     \ },
     \ 'component_expand': {
     \   'bufferline': 'LightlineBufferline',
@@ -137,10 +137,33 @@ let g:lightline = {
     \ 'component_type': {
     \   'bufferline': 'tabsel',
     \ },
+    \ 'component_function': {
+    \   'filepath': 'LightlineFilepath'
     \ }
+    \ }
+
 function! LightlineBufferline()
     call bufferline#refresh_status()
     return [ g:bufferline_status_info.before, g:bufferline_status_info.current, g:bufferline_status_info.after ]
+endfunction
+
+function! LightlineFilepath()
+    if winwidth(0) < 120
+        return expand('%')
+    endif
+
+    let home = fnamemodify('~', ':p:h')
+    let abspath = substitute(expand('%:p'), home, '~', '')
+    if abspath ==# ''
+        return '[No Name]'
+    endif
+
+    let filepath = split(abspath, '/')
+    if len(filepath) > 3
+        return '⋯ /' . join(filepath[-3:], '/')
+    endif
+
+    return join(filepath, '/')
 endfunction
 
 " Promptline bash status bar
