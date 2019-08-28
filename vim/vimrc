@@ -62,6 +62,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" Snap shift width
+set shiftround
+
 " Leader
 let mapleader="\<Space>"
 
