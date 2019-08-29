@@ -1,9 +1,40 @@
 #!/usr/bin/env bash
+.
+..
+.DS_Store
+.bash_profile
+.bashrc
+.editorconfig
+.git
+.gitignore
+.gitmodules
+.inputrc
+.profile
+.psqlrc
+.shell_prompt.sh
+.tmux.conf
+LICENSE
+README.md
+atom
+bootstrap.sh
+hammerspoon
+karabiner
+vim
 
 set -xe
 
 sync () {
-    mkdir -p "${2}" && rsync -avh -f '- /*/*/'  "${1}" "${2}"
+    mkdir -p "${2}"
+    rsync -avh \
+        --no-perms \
+        -f '- /*/*/' \
+        --exclude .git/ \
+        --exclude .gitignore \
+        --exclude .gitmodules \
+        --exclude LICENSE \
+        --exclude README.md \
+        --exclude bootstrap.sh \
+        "${1}" "${2}"
 }
 
 git submodule update --init --recursive
