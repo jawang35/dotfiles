@@ -1,29 +1,29 @@
 #!/usr/bin/env bash
 
-set -xe
+set -e
 
 sync () {
-    mkdir -p "${2}"
+    git submodule update --init --recursive
     rsync -avh \
         --no-perms \
-        -f '- /*/*/' \
+        --exclude .DS_Store \
         --exclude .git/ \
         --exclude .gitignore \
         --exclude .gitmodules \
         --exclude LICENSE \
         --exclude README.md \
         --exclude bootstrap.sh \
-        "${1}" "${2}"
+        . ~
 }
 
-git submodule update --init --recursive
+if [ "${1}" == "--force" ] || [ "${1}" == "-f" ]; then
+	sync
+else
+	read -r -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1
+	echo ""
+	if [[ "${REPLY}" =~ ^[Yy]$ ]]; then
+		sync
+	fi
+fi
 
-rsync -avh \
-    --no-perms \
-    --exclude .git/ \
-    --exclude .gitignore \
-    --exclude .gitmodules \
-    --exclude LICENSE \
-    --exclude README.md \
-    --exclude bootstrap.sh \
-    . ~
+unset sync
