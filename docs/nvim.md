@@ -1,6 +1,6 @@
 # Neovim/Vim
 
-Configurations and packages for [Vim](http://www.vim.org/).
+Configurations and packages for [Neovim](https://neovim.io)/[Vim](https://www.vim.org).
 
 ## Packages
 
