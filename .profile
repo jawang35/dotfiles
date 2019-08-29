@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 
-if [ -f "${HOME}/.shell_prompt.sh" ]; then source "${HOME}/.shell_prompt.sh"; fi
-
 # https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
-if [ -f "${HOME}/git-completion.bash" ]; then
-    source "${HOME}/git-completion.bash"
+if [ -f "git-completion.bash" ]; then
+    source git-completion.bash
 
     # Git completion for aliases
     __git_complete g __git_main
