@@ -2,12 +2,6 @@
 
 Lua scripts for [Hammerspoon](http://www.hammerspoon.org/) configuration. `init.lua` is the entrypoint that loads all the other modules.
 
-## Usage
-
-```
-$ ln -s /path/to/dotfiles/hammerspoon ${HOME}/.hammerspoon
-```
-
 ## Hyper Key
 
 `HYPER` key is bound to `CTRL+OPTION+CMD`. Optionally, disable `CAPSLOCK` and map it to `CTRL+OPTION+CMD` to create a pseudo `HYPER` key.

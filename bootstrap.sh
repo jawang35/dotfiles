@@ -10,9 +10,10 @@ sync () {
         --exclude .git/ \
         --exclude .gitignore \
         --exclude .gitmodules \
+        --exclude bootstrap.sh \
+        --exclude docs \
         --exclude LICENSE \
         --exclude README.md \
-        --exclude bootstrap.sh \
         . ~
 }
 
