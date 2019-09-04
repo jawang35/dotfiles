@@ -133,6 +133,7 @@ let g:lightline = {
     \ 'colorscheme': 'PaperColor_light',
     \ 'tabline': {
     \   'left': [ [ 'bufferline' ] ],
+    \   'right': [ [] ]
     \ },
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filepath', 'modified' ] ],
