@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Manage dotfiles repository
+alias df='git --git-dir=${HOME}/.dotfiles.git --work-tree=${HOME}'
+
 # Reload .bash_profile
 alias reload='source ~/.bash_profile && echo "Loaded ~/.bash_profile"'
 

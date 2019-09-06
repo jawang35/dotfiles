@@ -5,6 +5,7 @@ if [ -f ~/git-completion.bash ]; then
     source ~/git-completion.bash
 
     # Git completion for aliases
+    __git_complete df __git_main
     __git_complete g __git_main
     __git_complete ga _git_add
     __git_complete gb _git_branch
