@@ -6,6 +6,7 @@ sync () {
     git submodule update --init --recursive
     rsync -avh \
         --no-perms \
+        --exclude .dependabot \
         --exclude .DS_Store \
         --exclude .git/ \
         --exclude .gitignore \
