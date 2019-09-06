@@ -46,9 +46,6 @@
 [submodule "vim-easydir"]
 	path = .config/nvim/bundles/vim/all/vim-easydir
 	url = https://github.com/duggiefresh/vim-easydir.git
-[submodule "vim-fugitive"]
-	path = .config/nvim/bundles/vim/all/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
 [submodule "vim-go"]
 	path = .config/nvim/bundles/vim/all/vim-go
 	url = https://github.com/fatih/vim-go.git
