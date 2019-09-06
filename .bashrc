@@ -7,7 +7,6 @@ alias df='git --git-dir=${HOME}/.dotfiles.git --work-tree=${HOME}'
 alias reload='source ~/.bash_profile && echo "Loaded ~/.bash_profile"'
 
 # Preferred implementations
-alias cd.='cd ~/.dotfiles'
 alias cd..='cd ..'
 alias cp='cp -iv'
 alias ls='ls -AF'
