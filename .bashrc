@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Manage dotfiles repository
-alias df='git --git-dir=${HOME}/.dotfiles.git --work-tree=${HOME}'
+alias config='git --git-dir=${HOME}/.dotfiles.git --work-tree=${HOME}'
 
 # Reload .bash_profile
 alias reload='source ~/.bash_profile && echo "Loaded ~/.bash_profile"'
@@ -33,7 +33,7 @@ alias gcob='git checkout -b'
 alias gcom='git checkout master'
 alias gd='git diff'
 alias gd.='git diff .'
-alias gf='git fetch'
+alias gf='git fetch --prune'
 alias gl='git --no-pager log --oneline'
 alias gm='git merge'
 alias gpu='git push'
