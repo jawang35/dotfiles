@@ -83,7 +83,7 @@ nnoremap <leader>] :bn<CR>
 " Pathogen
 function PathogenInfect(filetype)
     execute pathogen#infect('bundles/vim/' . a:filetype . '/{}')
-    if v:progname == 'nvim' || (v:progname == 'vim' && v:version >= 800)
+    if v:progname == 'nvim'
         execute pathogen#infect('bundles/nvim/' . a:filetype . '/{}')
     endif
 endfunction
