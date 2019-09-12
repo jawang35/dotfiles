@@ -127,6 +127,9 @@ let g:ale_lint_on_insert_leave = 0
 " Golang
 let g:go_version_warning = 0
 
+" Terraform
+let g:terraform_fmt_on_save = 1
+
 " Lightline
 set showtabline=2
 let g:bufferline_echo = 0
