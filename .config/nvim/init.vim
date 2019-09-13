@@ -128,6 +128,10 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
 
+" ALE bindings
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
 " Golang
 let g:go_version_warning = 0
 
