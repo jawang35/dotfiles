@@ -62,13 +62,10 @@ set expandtab
 " Snap shift width
 set shiftround
 
-" Use ripgrep and fd for faster searching
+" Use ripgrep for faster searching
 if executable('rg')
     set grepprg=rg\ --vimgrep\ --smart-case
-endif
-
-if executable('fd')
-    let g:ctrlp_user_command = 'fd -c never "" "%s"'
+    let g:ctrlp_user_command = 'rg %s --files --hidden --vimgrep --glob ""'
     let g:ctrlp_use_caching = 0
 endif
 
