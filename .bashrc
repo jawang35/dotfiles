@@ -56,5 +56,4 @@ then
 fi
 
 alias v='vim'
-alias a='atom'
-alias a.='atom .'
+alias rg='rg --smart-case'
