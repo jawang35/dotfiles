@@ -34,9 +34,6 @@ set wildmode=list:longest
 set noshowcmd
 set noshowmode
 
-" Automatically set directory to current buffer's
-set autochdir
-
 " Switch syntax highlighting on
 syntax enable
 
@@ -64,6 +61,16 @@ set expandtab
 
 " Snap shift width
 set shiftround
+
+" Use ripgrep and fd for faster searching
+if executable('rg')
+    set grepprg=rg\ --vimgrep\ --smart-case
+endif
+
+if executable('fd')
+    let g:ctrlp_user_command = 'fd -c never "" "%s"'
+    let g:ctrlp_use_caching = 0
+endif
 
 " Leader
 let mapleader="\<Space>"
