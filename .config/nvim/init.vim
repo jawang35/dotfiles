@@ -106,7 +106,7 @@ let g:ctrlp_root_markers = ['environment.yml', 'Gopkg.toml', 'Makefile', 'packag
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " NERDTree
-nnoremap <leader>\ :NERDTreeToggle<CR>
+nnoremap <leader>\ :Explore<CR>
 
 " Commentary
 map g/ gc
