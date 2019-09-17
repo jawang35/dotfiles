@@ -87,6 +87,9 @@ nnoremap <leader>o <C-W><C-O>
 nnoremap <leader>[ :bp<CR>
 nnoremap <leader>] :bn<CR>
 
+" netrw defaults
+let g:netrw_banner = 0
+
 " Pathogen
 function PathogenInfect(filetype)
     execute pathogen#infect('bundles/vim/' . a:filetype . '/{}')
@@ -104,9 +107,6 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_root_markers = ['environment.yml', 'Gopkg.toml', 'Makefile', 'package.json', 'requirements.txt']
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-
-" NERDTree
-nnoremap <leader>\ :Explore<CR>
 
 " Commentary
 map g/ gc
