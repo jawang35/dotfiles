@@ -87,8 +87,9 @@ nnoremap <leader>o <C-W><C-O>
 nnoremap <leader>[ :bp<CR>
 nnoremap <leader>] :bn<CR>
 
-" netrw defaults
-let g:netrw_banner = 0
+" NERDTree
+nnoremap <leader>\ :NERDTreeToggle<CR>
+nnoremap <leader>\| :NERDTreeFind<CR>
 
 " Pathogen
 function PathogenInfect(filetype)
