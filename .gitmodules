@@ -52,6 +52,9 @@
 [submodule "vim-javascript"]
 	path = .config/nvim/bundles/vim/all/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
+[submodule "vim-python-pep8-indent"]
+	path = .config/nvim/bundles/vim/python/vim-python-pep8-indent
+	url = https://github.com/Vimjas/vim-python-pep8-indent.git
 [submodule "vim-repeat"]
 	path = .config/nvim/bundles/vim/all/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
