@@ -2,6 +2,9 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" Consider
+" set modelines=0
+
 " Neovim defaults for Vim
 set autoindent
 set autoread
@@ -25,6 +28,9 @@ set tabpagemax=50
 set tags=./tags;,tags
 set ttyfast
 set viminfo+=!
+
+" Undo history
+set undofile
 
 " Mimic bash behavior for command autocompletion
 set wildmenu
@@ -86,6 +92,9 @@ nnoremap <leader>o <C-W><C-O>
 " Buffer management
 nnoremap <leader>[ :bp<CR>
 nnoremap <leader>] :bn<CR>
+
+nnoremap / /\v
+vnoremap / /\v
 
 " NERDTree
 nnoremap <leader>\ :NERDTreeToggle<CR>
