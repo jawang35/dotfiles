@@ -40,9 +40,6 @@ set wildmode=list:longest
 set noshowcmd
 set noshowmode
 
-" Switch syntax highlighting on
-syntax enable
-
 " Disable search highlighting
 set nohlsearch
 
@@ -109,6 +106,9 @@ function PathogenInfect(filetype)
 endfunction
 execute PathogenInfect('all')
 
+" Minimalist color scheme
+set t_Co=256
+syntax on
 colorscheme minimalist
 
 " CtrlP
