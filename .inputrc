@@ -1,5 +1,4 @@
 set colored-stats on
-set completion-ignore-case on
 set editing-mode vi
 set mark-symlinked-directories on
 set show-all-if-ambiguous on
