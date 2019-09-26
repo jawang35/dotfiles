@@ -92,6 +92,8 @@ nnoremap <leader>] :bn<CR>
 
 nnoremap / /\v
 vnoremap / /\v
+nnoremap ? ?\v
+vnoremap ? ?\v
 
 " NERDTree
 nnoremap <leader>\ :NERDTreeToggle<CR>
