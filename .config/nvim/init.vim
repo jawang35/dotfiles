@@ -142,6 +142,7 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 " ALE lint on open/save only
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
+let g:ale_fix_on_save = 1
 
 " ALE bindings
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
