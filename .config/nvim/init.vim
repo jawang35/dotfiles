@@ -14,7 +14,6 @@ set display=lastline
 set encoding=utf-8
 set formatoptions=tcqj
 set history=10000
-set hlsearch
 set incsearch
 if exists('+langnoremap')
     set langnoremap
