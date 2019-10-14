@@ -35,6 +35,11 @@ set nomodeline
 " Undo history
 set undofile
 
+" Centralized swap, backup, undo files
+set backupdir=~/.local/share/vim/backup//
+set directory=~/.local/share/vim/swap//
+set undodir=~/.local/share/vim/undo//
+
 " Bash style autocompletion
 set wildmode=list:longest
 
