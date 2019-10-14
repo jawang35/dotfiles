@@ -2,9 +2,6 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" Consider
-" set modelines=0
-
 " Neovim defaults for Vim
 set autoindent
 set autoread
@@ -31,6 +28,9 @@ set ttyfast
 set viminfo+=!
 set wildmenu
 " End Neovim defaults
+
+" Disable modeline to prevent unpredictable behavior
+set nomodeline
 
 " Undo history
 set undofile
