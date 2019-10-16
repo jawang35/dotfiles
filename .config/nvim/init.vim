@@ -50,6 +50,9 @@ set noshowmode
 " Disable search highlighting
 set nohlsearch
 
+" Highlight current line
+set cursorline
+
 " Smart case searching
 set ignorecase
 set smartcase
