@@ -1,12 +1,12 @@
 [submodule "ale"]
 	path = .config/nvim/bundles/nvim/all/ale
 	url = https://github.com/w0rp/ale.git
-[submodule "auto-pairs"]
-	path = .config/nvim/bundles/vim/all/auto-pairs
-	url = https://github.com/jiangmiao/auto-pairs.git
 [submodule "ctrlp.vim"]
 	path = .config/nvim/bundles/vim/all/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "delimitMate"]
+	path = .config/nvim/bundles/vim/all/delimitMate
+	url = https://github.com/Raimondi/delimitMate.git
 [submodule "deoplete.nvim"]
 	path = .config/nvim/bundles/nvim/all/deoplete.nvim
 	url = https://github.com/Shougo/deoplete.nvim.git
