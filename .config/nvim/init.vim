@@ -81,6 +81,9 @@ set shiftround
 set splitbelow
 set splitright
 
+" Create intermediate directories that don't already exist
+au BufWritePre,FileWritePre * silent! call mkdir(expand('<afile>:p:h'), 'p')
+
 " Leader
 let mapleader="\<Space>"
 
@@ -203,10 +206,6 @@ endfunction
 set t_Co=256
 syntax on
 colorscheme minimalist
-
-" NERDTree
-nnoremap <leader>\ :NERDTreeToggle<CR>
-nnoremap <leader>\| :NERDTreeFind<CR>
 
 " Terraform
 let g:terraform_fmt_on_save = 1

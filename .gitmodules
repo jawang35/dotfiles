@@ -25,9 +25,6 @@
 [submodule "minimalist"]
 	path = .config/nvim/bundles/vim/all/minimalist
 	url = https://github.com/dikiaap/minimalist.git
-[submodule "nerdtree"]
-	path = .config/nvim/bundles/vim/all/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
 [submodule "promptline.vim"]
 	path = .config/nvim/bundles/utils/promptline.vim
 	url = https://github.com/edkolev/promptline.vim.git
@@ -43,6 +40,9 @@
 [submodule "vim-commentary"]
 	path = .config/nvim/bundles/vim/all/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
+[submodule "vim-dirvish"]
+	path = .config/nvim/bundles/vim/all/vim-dirvish
+	url = https://github.com/justinmk/vim-dirvish.git
 [submodule "vim-go"]
 	path = .config/nvim/bundles/vim/all/vim-go
 	url = https://github.com/fatih/vim-go.git
