@@ -82,6 +82,7 @@ set splitbelow
 set splitright
 
 " Create intermediate directories that don't already exist
+" https://github.com/justinmk/vim-dirvish/issues/38
 au BufWritePre,FileWritePre * silent! call mkdir(expand('<afile>:p:h'), 'p')
 
 " Leader
