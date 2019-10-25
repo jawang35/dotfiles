@@ -43,6 +43,9 @@
 [submodule "vim-dirvish"]
 	path = .config/nvim/bundles/vim/all/vim-dirvish
 	url = https://github.com/justinmk/vim-dirvish.git
+[submodule "vim-eunuch"]
+	path = .config/nvim/bundles/vim/all/vim-eunuch
+	url = https://github.com/tpope/vim-eunuch.git
 [submodule "vim-go"]
 	path = .config/nvim/bundles/vim/all/vim-go
 	url = https://github.com/fatih/vim-go.git
