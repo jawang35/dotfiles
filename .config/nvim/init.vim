@@ -208,6 +208,9 @@ set t_Co=256
 syntax on
 colorscheme minimalist
 
+" Mundo
+nnoremap <leader>u :MundoToggle<CR>
+
 " Terraform
 let g:terraform_fmt_on_save = 1
 
