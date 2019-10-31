@@ -1,5 +1,6 @@
 tap 'homebrew/cask'
 
+brew 'bash-completion'
 brew 'direnv'
 brew 'fd'
 brew 'git'
