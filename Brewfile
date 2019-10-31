@@ -14,6 +14,7 @@ cask 'docker'
 cask 'google-chrome'
 cask 'hammerspoon'
 cask 'karabiner-elements'
+cask 'slack'
 
 if (File.file?('Brewfile.local'))
   instance_eval(File.read('Brewfile.local'))
