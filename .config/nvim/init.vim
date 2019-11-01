@@ -110,7 +110,7 @@ if executable('rg')
     " Use ripgrep for faster grepping
     set grepprg=rg\ --vimgrep\ --smart-case
 else
-    set grepprg=grep\ -nr\ $*\ .\ /dev/null
+    set grepprg=grep\ -nr\ $*\ /dev/null
 endif
 
 " Default Python paths to ensure pynvim exists when changing environments
