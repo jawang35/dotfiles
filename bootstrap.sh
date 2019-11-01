@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-set -xe
+set -e
 
 source ${HOME}/.bash_profile
-config submodule update --init --recursive
+git --git-dir=${HOME}/.dotfiles.git --work-tree=${HOME} submodule update --init --recursive
 if command -v brew >/dev/null 2>&1; then
     brew bundle
 fi
