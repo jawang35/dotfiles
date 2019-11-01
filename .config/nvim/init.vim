@@ -105,11 +105,12 @@ vnoremap / /\v
 nnoremap ? ?\v
 vnoremap ? ?\v
 
-" Use ripgrep for faster searching
+" Better grepping
 if executable('rg')
+    " Use ripgrep for faster grepping
     set grepprg=rg\ --vimgrep\ --smart-case
-    let g:ctrlp_user_command = 'rg %s --files --hidden --vimgrep --glob ""'
-    let g:ctrlp_use_caching = 0
+else
+    set grepprg=grep\ -nr\ $*\ .\ /dev/null
 endif
 
 " Default Python paths to ensure pynvim exists when changing environments
@@ -141,7 +142,13 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_root_markers = ['environment.yml', 'Gopkg.toml', 'Makefile', 'package.json', 'requirements.txt']
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+if executable('rg')
+    " Use ripgrep for faster searching
+    let g:ctrlp_user_command = 'rg %s --files --hidden --vimgrep --glob ""'
+    let g:ctrlp_use_caching = 0
+else
+    let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+endif
 
 " deoplete.nvim
 set omnifunc=syntaxcomplete#Complete
