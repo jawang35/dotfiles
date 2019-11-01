@@ -50,8 +50,7 @@ alias tl='tmux ls'
 alias tk='tmux kill-session -t'
 
 # Neovim/Vim aliases
-if command -v nvim >/dev/null 2>&1;
-then
+if command -v nvim >/dev/null 2>&1; then
     alias vim='nvim'
 fi
 
