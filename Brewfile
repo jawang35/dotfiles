@@ -1,4 +1,5 @@
 tap 'homebrew/cask'
+tap 'homebrew/cask-fonts'
 
 brew 'bash-completion'
 brew 'direnv'
@@ -12,6 +13,7 @@ brew 'tmux'
 brew 'tree'
 
 cask 'docker'
+cask 'font-source-code-pro'
 cask 'google-chrome'
 cask 'hammerspoon'
 cask 'karabiner-elements'
