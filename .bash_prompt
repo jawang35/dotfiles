@@ -3,94 +3,94 @@
 # Bash prompt based on the PaperColor theme.
 
 function __bash_prompt_cwd {
-  local dir_limit="2"
-  local truncation="⋯ "
-  local first_char
-  local part_count=0
-  local formatted_cwd=""
-  local dir_sep="/"
-  local tilde="~"
+    local dir_limit="2"
+    local truncation="⋯ "
+    local first_char
+    local part_count=0
+    local formatted_cwd=""
+    local dir_sep="/"
+    local tilde="~"
 
-  local cwd="${PWD/#$HOME/$tilde}"
+    local cwd="${PWD/#$HOME/$tilde}"
 
-  # Get first char of the path, i.e. tilde or slash
-  first_char=${cwd::1}
+    # Get first char of the path, i.e. tilde or slash
+    first_char=${cwd::1}
 
-  # Remove leading tilde
-  cwd="${cwd#\~}"
+    # Remove leading tilde
+    cwd="${cwd#\~}"
 
-  while [[ "$cwd" == */* && "$cwd" != "/" ]]; do
-    # Pop off last part of cwd
-    local part="${cwd##*/}"
-    cwd="${cwd%/*}"
+    while [[ "$cwd" == */* && "$cwd" != "/" ]]; do
+        # Pop off last part of cwd
+        local part="${cwd##*/}"
+        cwd="${cwd%/*}"
 
-    formatted_cwd="$dir_sep$part$formatted_cwd"
-    part_count=$((part_count+1))
+        formatted_cwd="$dir_sep$part$formatted_cwd"
+        part_count=$((part_count+1))
 
-    [[ $part_count -eq $dir_limit ]] && first_char="$truncation" && break
-  done
+        [[ $part_count -eq $dir_limit ]] && first_char="$truncation" && break
+    done
 
-  printf "%s" "$first_char$formatted_cwd"
+    printf "%s" "$first_char$formatted_cwd"
 }
 
 function __bash_prompt_git_branch {
-  local branch
-  local branch_symbol=""
+    local branch
+    local branch_symbol=""
 
-  if hash git 2>/dev/null; then
-    if branch=$( { git symbolic-ref --quiet HEAD || git rev-parse --short HEAD; } 2>/dev/null ); then
-      branch=${branch##*/}
-      printf "%s" "${branch_symbol} ${branch:-unknown}"
-      return
+    if command -v git > /dev/null 2>&1; then
+        if branch=$( { git symbolic-ref --quiet HEAD || git rev-parse --short HEAD; } 2>/dev/null ); then
+            branch=${branch##*/}
+            printf "%s" "${branch_symbol} ${branch:-unknown}"
+            return
+        fi
     fi
-  fi
-  return 1
+    return 1
 }
 
 function __bash_prompt_last_exit_code {
-  [[ $last_exit_code -gt 0 ]] || return 1;
+    [[ $last_exit_code -gt 0 ]] || return 1;
 
-  printf "%s" "$last_exit_code"
+    printf "%s" "$last_exit_code"
 }
 
 function __bash_prompt_section {
-  # Apply colors $2 to text $1 and wrap with spaces, only if $1 is not empty
+    # Apply colors $2 to text $1 and wrap with spaces, only if $1 is not empty
 
-  [[ -n "$1" ]] || return 1
-  printf "%s" "${2} ${1} "
+    [[ -n "$1" ]] || return 1
+    printf "%s" "${2} ${1} "
 }
 
 function __bash_prompt_ps1 {
-  local last_exit_code="${PROMPTLINE_LAST_EXIT_CODE:-$?}"
+    local last_exit_code="${PROMPTLINE_LAST_EXIT_CODE:-$?}"
 
-  local reset="\[\e[49m\]\[\e[0m\]"
+    local reset="\[\e[49m\]\[\e[0m\]"
 
-  # Empty line
-  printf "\n"
+    # Empty line
+    printf "\n"
 
-  # Section "user"
-  __bash_prompt_section "$(printf "%s" \\u)" "\[\e[38;5;238m\]\[\e[48;5;231m\]"
+    # Section "user"
+    __bash_prompt_section "$(printf "%s" \\u)" "\[\e[38;5;238m\]\[\e[48;5;231m\]"
 
-  # Section "cwd"
-  __bash_prompt_section "$(__bash_prompt_cwd)" "\[\e[38;5;255m\]\[\e[48;5;67m\]"
+    # Section "cwd"
+    __bash_prompt_section "$(__bash_prompt_cwd)" "\[\e[38;5;255m\]\[\e[48;5;67m\]"
 
-  # Section "git"
-  __bash_prompt_section "$(__bash_prompt_git_branch)" "\[\e[38;5;255m\]\[\e[48;5;24m\]"
+    # Section "git"
+    __bash_prompt_section "$(__bash_prompt_git_branch)" "\[\e[38;5;255m\]\[\e[48;5;24m\]"
 
-  # Section "warn"
-  __bash_prompt_section "$(__bash_prompt_last_exit_code)" "\[\e[38;5;231m\]\[\e[48;5;64m\]"
+    # Section "warn"
+    __bash_prompt_section "$(__bash_prompt_last_exit_code)" "\[\e[38;5;231m\]\[\e[48;5;64m\]"
 
-  # New line
-  printf "%s\n" "$reset"
+    # New line
+    printf "%s\n" "$reset"
 
-  # Prompt
-  printf "\[\e[38;5;67m\]$%s " "$reset"
+    # Prompt
+    printf "\[\e[38;5;67m\]$%s " "$reset"
 }
 
 function __bash_prompt {
-  PS1="$(__bash_prompt_ps1)"
+    PS1="$(__bash_prompt_ps1)"
 }
 
 if [[ ! "$PROMPT_COMMAND" == *__bash_prompt* ]]; then
-  PROMPT_COMMAND='__bash_prompt;'$'\n'"$PROMPT_COMMAND"
+    PROMPT_COMMAND='__bash_prompt;'$'\n'"$PROMPT_COMMAND"
 fi
