@@ -185,7 +185,7 @@ let g:lightline = {
     \   'filepath': 'LightlineFilepath'
     \ }
     \ }
-
+" Buffers in tabsline
 function! LightlineBufferline()
     call bufferline#refresh_status()
     return [ g:bufferline_status_info.before, g:bufferline_status_info.current, g:bufferline_status_info.after ]
