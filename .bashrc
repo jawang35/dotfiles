@@ -17,8 +17,8 @@ alias rm='rm -v'
 alias rmrf='rm -rf'
 alias sshnc='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
 
-# ls and pwd after cd
-function cd { builtin cd "$@" && ls && echo -e "\nWorking Directory: $(pwd)"; }
+# ls after cd
+function cd { builtin cd "$@" && ls; }
 
 # Git aliases
 alias g='git'
