@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Bash prompt based on the PaperColor theme.
+
 function __bash_prompt_cwd {
   local dir_limit="2"
   local truncation="⋯ "
