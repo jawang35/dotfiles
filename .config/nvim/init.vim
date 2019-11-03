@@ -113,8 +113,7 @@ else
     set grepprg=grep\ -nr\ $*\ /dev/null
 endif
 
-" Default Python paths to ensure pynvim exists when changing environments
-let g:python_host_prog  = '/usr/local/bin/python'
+" Default Python path to ensure pynvim exists when changing environments
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 " Pathogen
@@ -216,6 +215,7 @@ syntax on
 colorscheme minimalist
 
 " Mundo
+let g:mundo_prefer_python3 = 1
 nnoremap <leader>u :MundoToggle<CR>
 
 " Terraform
