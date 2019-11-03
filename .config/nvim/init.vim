@@ -113,7 +113,10 @@ else
     set grepprg=grep\ -nr\ $*\ /dev/null
 endif
 
-" Default Python path to ensure pynvim exists when changing environments
+" Disable Python 2
+let g:loaded_python_provider = 0
+
+" Default Python 3 path to ensure pynvim exists when changing environments
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 " Pathogen
