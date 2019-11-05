@@ -1,6 +1,9 @@
 [submodule "ale"]
 	path = .config/nvim/bundles/nvim/all/ale
 	url = https://github.com/w0rp/ale.git
+[submodule "awesome-vim-colorschemes"]
+	path = .config/nvim/bundles/vim/all/awesome-vim-colorschemes
+	url = https://github.com/rafi/awesome-vim-colorschemes.git
 [submodule "ctrlp.vim"]
 	path = .config/nvim/bundles/vim/all/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
@@ -22,9 +25,6 @@
 [submodule "lightline.vim"]
 	path = .config/nvim/bundles/vim/all/lightline.vim
 	url = https://github.com/itchyny/lightline.vim.git
-[submodule "minimalist"]
-	path = .config/nvim/bundles/vim/all/minimalist
-	url = https://github.com/dikiaap/minimalist.git
 [submodule "promptline.vim"]
 	path = .config/nvim/bundles/utils/promptline.vim
 	url = https://github.com/edkolev/promptline.vim.git
