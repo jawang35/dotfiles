@@ -3,6 +3,7 @@ tap 'homebrew/cask-fonts'
 
 brew 'bash-completion'
 brew 'direnv'
+brew 'docker-compose'
 brew 'fd'
 brew 'git'
 brew 'htop'
