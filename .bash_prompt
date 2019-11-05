@@ -69,7 +69,7 @@ function __bash_prompt_ps1 {
     printf "\n"
 
     # Section "user"
-    __bash_prompt_section "$(printf "%s" \\u)" "\[\e[38;5;236m\]\[\e[48;5;114m\]"
+    __bash_prompt_section "$(printf "%s" \\u)" "\[\e[38;5;236m\]\[\e[48;5;73m\]"
 
     # Section "cwd"
     __bash_prompt_section "$(__bash_prompt_cwd)" "\[\e[38;5;255m\]\[\e[48;5;243m\]"
@@ -84,7 +84,7 @@ function __bash_prompt_ps1 {
     printf "%s\n" "$reset"
 
     # Prompt
-    printf "\[\e[38;5;114m\]$%s " "$reset"
+    printf "\[\e[38;5;73m\]$%s " "$reset"
 }
 
 function __bash_prompt {
