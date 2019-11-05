@@ -213,7 +213,6 @@ function! LightlineFilepath()
 endfunction
 
 " Colors
-execute pathogen#infect('bundles/onehalf/{}')
 set t_Co=256
 syntax on " Syntax highlighting
 colorscheme onehalfdark
