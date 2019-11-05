@@ -212,10 +212,10 @@ function! LightlineFilepath()
     return join(filepath, '/')
 endfunction
 
-" Minimalist color scheme
-set t_Co=256
-syntax on
-colorscheme minimalist
+" Colors
+set termguicolors " 24-bit colors
+syntax on " Syntax highlighting
+colorscheme one
 
 " Mundo
 let g:mundo_prefer_python3 = 1
