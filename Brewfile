@@ -17,7 +17,6 @@ cask 'docker'
 cask 'font-source-code-pro'
 cask 'google-chrome'
 cask 'hammerspoon'
-cask 'iterm2'
 cask 'karabiner-elements'
 cask 'slack'
 

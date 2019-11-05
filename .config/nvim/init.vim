@@ -169,7 +169,7 @@ let g:go_version_warning = 0
 set showtabline=2
 let g:bufferline_echo = 0
 let g:lightline = {
-    \ 'colorscheme': 'PaperColor_light',
+    \ 'colorscheme': 'onehalfdark',
     \ 'tabline': {
     \   'left': [ [ 'bufferline' ] ],
     \   'right': [ [] ]
@@ -213,9 +213,10 @@ function! LightlineFilepath()
 endfunction
 
 " Colors
-set termguicolors " 24-bit colors
+execute pathogen#infect('bundles/onehalf/{}')
+set t_Co=256
 syntax on " Syntax highlighting
-colorscheme one
+colorscheme onehalfdark
 
 " Mundo
 let g:mundo_prefer_python3 = 1
@@ -225,8 +226,8 @@ nnoremap <leader>u :MundoToggle<CR>
 let g:terraform_fmt_on_save = 1
 
 " Promptline bash status bar
-" Uncomment and run :PromptlineSnapshot! ../bash/.shell_prompt.sh
-" execute pathogen#infect('bundles/utils/promptline.vim')
+" Uncomment and run :PromptlineSnapshot ~/.bash_prompt.temp
+" execute pathogen#infect('bundles/utils/{}')
 " let g:promptline_theme = 'lightline'
 " let g:promptline_preset = {
 " 	\ 'a'   : [ promptline#slices#user() ],
@@ -238,6 +239,7 @@ let g:terraform_fmt_on_save = 1
 
 " tmuxline
 " Uncomment and run :Tmuxline
-" execute pathogen#infect('bundles/utils/tmuxline.vim')
+" TmuxlineSnapshot ~/.tmux.conf
+" execute pathogen#infect('bundles/utils/{}')
 " let g:tmuxline_theme = 'lightline'
 " let g:tmuxline_powerline_separators = 0
