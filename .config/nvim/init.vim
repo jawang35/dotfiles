@@ -139,6 +139,15 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 set t_Co=256
 syntax on
 colorscheme minimalist
+highlight Normal ctermfg=188 ctermbg=236 guifg=#dcdfe4 guibg=#282c34
+highlight LineNr ctermfg=247 ctermbg=236 guifg=#919baa guibg=#282c34
+highlight Comment ctermfg=241 guifg=#5c6370
+highlight CursorLineNr ctermfg=188 ctermbg=236 guifg=#dcdfe4 guibg=#282c34
+highlight CursorColumn ctermbg=237 guibg=#313640
+highlight CursorLine ctermbg=237 guibg=#313640
+highlight PmenuSbar ctermbg=239 guibg=#313640
+highlight Visual ctermbg=239 guibg=#313640
+highlight VisualNOS ctermbg=239 guibg=#313640
 
 " commentary.vim
 map g/ gc
