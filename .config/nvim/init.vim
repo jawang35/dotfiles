@@ -138,11 +138,7 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 " Colors
 set t_Co=256
 syntax on
-colorscheme onehalfdark
-highlight SpellBad ctermfg=188 ctermbg=168 cterm=NONE guifg=#dcdfe4 guibg=#e06c75 gui=NONE
-highlight SpellCap ctermfg=236 ctermbg=75 cterm=NONE guifg=#282c34 guibg=#61afef gui=NONE
-highlight Error ctermfg=188 ctermbg=168 cterm=NONE guifg=#dcdfe4 guibg=#e06c75 gui=NONE
-highlight Todo ctermfg=236 ctermbg=75 cterm=NONE guifg=#282c34 guibg=#61afef gui=NONE
+colorscheme minimalist
 
 " commentary.vim
 map g/ gc
