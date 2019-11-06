@@ -6,7 +6,7 @@ if [ -f /usr/local/etc/bash_completion ]; then
 
     # Git completion for aliases
     if command -v __git_complete > /dev/null 2>&1; then
-        __git_complete df __git_main
+        __git_complete config __git_main
         __git_complete g __git_main
         __git_complete ga _git_add
         __git_complete gb _git_branch
