@@ -78,7 +78,7 @@ function __bash_prompt_ps1 {
     __bash_prompt_section "$(__bash_prompt_git_branch)" "\[\e[38;5;255m\]\[\e[48;5;238m\]"
 
     # Section "warn"
-    __bash_prompt_section "$(__bash_prompt_last_exit_code)" "\[\e[38;5;236m\]\[\e[48;5;168m\]"
+    __bash_prompt_section "$(__bash_prompt_last_exit_code)" "\[\e[38;5;236m\]\[\e[48;5;180m\]"
 
     # New line
     printf "%s\n" "$reset"
