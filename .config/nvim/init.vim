@@ -96,8 +96,8 @@ nnoremap <leader>h <C-W><C-H>
 nnoremap <leader>o <C-W><C-O>
 
 " Buffer management
-nnoremap <leader>[ :bp<CR>
-nnoremap <leader>] :bn<CR>
+nnoremap <silent><leader>[ :bp<CR>
+nnoremap <silent><leader>] :bn<CR>
 
 " Search behaves like grep
 nnoremap / /\v
@@ -233,7 +233,7 @@ endfunction
 
 " Mundo
 let g:mundo_prefer_python3 = 1
-nnoremap <leader>u :MundoToggle<CR>
+nnoremap <silent><leader>u :MundoToggle<CR>
 
 " Terraform
 let g:terraform_fmt_on_save = 1
