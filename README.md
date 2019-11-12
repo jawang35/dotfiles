@@ -9,12 +9,12 @@ Jason's dotfiles.
 - [Git](https://git-scm.com/)
 - [Homebrew](https://brew.sh/)
 
-[bootstrap.sh](bootstrap.sh) script
-1. Clones the repository as a Git bare repository into ~/.dotfiles.
-2. Checks out configuration files into the `$HOME` directory.
-3. Installs submodule dependencies.
-4. Installs [Homebrew](#homebrew) packages and applications.
-5. Loads [.bash_profile](.bash_profile).
+[bootstrap.sh](bootstrap.sh) script will:
+1. Clone the repository as a Git bare repository into ~/.dotfiles.
+2. Check out configuration files into the `$HOME` directory.
+3. Install submodule dependencies.
+4. Install [Homebrew](#homebrew) packages and applications.
+5. Load [.bash_profile](.bash_profile).
 
 ```sh
 curl -s https://raw.githubusercontent.com/jawang35/.dotfiles/master/bootstrap.sh | bash
