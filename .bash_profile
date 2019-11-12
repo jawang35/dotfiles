@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
-source ~/.profile
-source ~/.bashrc
-source ~/.bash_prompt
+# shellcheck source=.profile
+source "${HOME}/.profile"
+# shellcheck source=.bashrc
+source "${HOME}/.bashrc"
+# shellcheck source=.bash_prompt
+source "${HOME}/.bash_prompt"
 
-if [ -f ~/.bash_profile.local ]; then source ~/.bash_profile.local; fi
+if [ -f "${HOME}/.bash_profile.local" ]; then source "${HOME}/.bash_profile.local"; fi

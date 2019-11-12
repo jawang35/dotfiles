@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-# https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
 if [ -f /usr/local/etc/bash_completion ]; then
     source /usr/local/etc/bash_completion
 
