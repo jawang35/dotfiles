@@ -9,7 +9,12 @@ Jason's dotfiles.
 - [Git](https://git-scm.com/)
 - [Homebrew](https://brew.sh/)
 
-Setup using a Git bare repository (inspired by https://www.atlassian.com/git/tutorials/dotfiles).
+[bootstrap.sh](bootstrap.sh) script
+1. Clones the repository as a Git bare repository into ~/.dotfiles.
+2. Checks out configuration files into the `$HOME` directory.
+3. Installs submodule dependencies.
+4. Installs [Homebrew](#homebrew) packages and applications.
+5. Loads [.bash_profile](.bash_profile).
 
 ```sh
 curl -s https://raw.githubusercontent.com/jawang35/.dotfiles/master/bootstrap.sh | bash
@@ -17,7 +22,7 @@ curl -s https://raw.githubusercontent.com/jawang35/.dotfiles/master/bootstrap.sh
 
 ## Configuration Management
 
-`config` is an alias for `git --git-dir=${HOME}/.dotfiles.git --work-tree=${HOME}` and is used to manage the Git bare repository.
+Configuration files are managed using a Git bare repository (inspired by https://www.atlassian.com/git/tutorials/dotfiles). `config` is an alias for `git --git-dir=${HOME}/.dotfiles.git --work-tree=${HOME}` and is used to manage the repository.
 
 To update to latest:
 
@@ -34,7 +39,7 @@ $ config submodule update --init --recursive
 
 ## Homebrew
 
-Applications and packages are managed with the [Brewfile](Brewfile). `Brewfile.local` is optionally loaded to manage local dependencies.
+Packages and applications are managed with the [Brewfile](Brewfile) using [Homebrew](https://brew.sh/). `Brewfile.local` is optionally loaded to manage local dependencies.
 
 To install missing dependencies:
 
