@@ -58,7 +58,7 @@ Opening [OneHalfDark.terminal](https://github.com/sonph/onehalf/blob/master/term
 
 Lua scripts for [Hammerspoon](http://www.hammerspoon.org/) configuration. `init.lua` is the entrypoint that loads all the other modules.
 
-## Hyper Key
+### Hyper Key
 
 `HYPER` key is bound to `CTRL+OPTION+CMD`. This is bound to `CAPSLOCK` using [Karabiner-Elements](.config/karabiner/karabiner.json).
 
