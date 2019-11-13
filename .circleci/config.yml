@@ -8,7 +8,7 @@ jobs:
         name: Install Dependencies
         command: |
           apt update
-          apt install -y git
+          apt install -y curl git
           sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
     - run:
         name: Run bootstrap.sh
