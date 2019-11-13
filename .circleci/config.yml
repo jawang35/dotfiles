@@ -5,6 +5,11 @@ jobs:
     - image: debian:10
     steps:
     - run:
+        name: Install Dependencies
+        command: |
+          apt update
+          apt install -y curl
+    - run:
         name: Run bootstrap.sh
         command: curl -s https://raw.githubusercontent.com/jawang35/.dotfiles/master/bootstrap.sh | bash
 workflows:
