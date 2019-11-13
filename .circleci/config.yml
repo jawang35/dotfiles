@@ -5,12 +5,6 @@ jobs:
     - image: debian:10
     steps:
     - run:
-        name: Install Dependencies
-        command: |
-          apt update
-          apt install -y curl git sudo
-          sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
-    - run:
         name: Run bootstrap.sh
         command: curl -s https://raw.githubusercontent.com/jawang35/.dotfiles/master/bootstrap.sh | bash
 workflows:
