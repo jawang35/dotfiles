@@ -9,7 +9,9 @@ jobs:
         command: rm ~/.bashrc ~/.profile
     - run:
         name: Run bootstrap.sh
-        command: curl -s https://raw.githubusercontent.com/jawang35/.dotfiles/master/bootstrap.sh | bash
+        command: |
+            cd ~
+            curl -s https://raw.githubusercontent.com/jawang35/.dotfiles/master/bootstrap.sh | bash
 workflows:
   version: 2
   workflow:
