@@ -11,7 +11,7 @@ jobs:
           apt install -y curl git
     - run:
         name: Remove Existing Configurations
-        command: rm .bashrc .profile
+        command: rm ~/.bashrc ~/.profile
     - run:
         name: Run bootstrap.sh
         command: curl -s https://raw.githubusercontent.com/jawang35/.dotfiles/master/bootstrap.sh | bash
