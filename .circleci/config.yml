@@ -8,7 +8,7 @@ jobs:
         name: Install Dependencies
         command: |
           apt update
-          apt install -y curl
+          apt install -y curl git
     - run:
         name: Run bootstrap.sh
         command: curl -s https://raw.githubusercontent.com/jawang35/.dotfiles/master/bootstrap.sh | bash
