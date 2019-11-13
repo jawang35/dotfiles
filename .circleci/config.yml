@@ -7,6 +7,7 @@ jobs:
     - run:
         name: Install Dependencies
         command: |
+          apt update
           apt install -y git
           sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
     - run:
