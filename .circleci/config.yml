@@ -2,13 +2,8 @@ version: 2
 jobs:
   bootstrap:
     docker:
-    - image: debian:10
+    - image: linuxbrew/debian
     steps:
-    - run:
-        name: Install Dependencies
-        command: |
-          apt update
-          apt install -y curl git
     - run:
         name: Remove Existing Configurations
         command: rm ~/.bashrc ~/.profile
