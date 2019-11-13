@@ -1,0 +1,20 @@
+version: 2
+jobs:
+  bootstrap:
+    docker:
+    - image: debian:10
+    steps:
+    - run:
+        name: Install Dependencies
+        command: |
+          sudo apt update
+          sudo apt install git
+          sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+    - run:
+        name: Run bootstrap.sh
+        command: curl -s https://raw.githubusercontent.com/jawang35/.dotfiles/master/bootstrap.sh | bash
+workflows:
+  version: 2
+  workflow:
+    jobs:
+    - bootstrap
