@@ -2,8 +2,6 @@
 
 [![CircleCI](https://circleci.com/gh/jawang35/.dotfiles.svg?style=svg)](https://circleci.com/gh/jawang35/.dotfiles)
 
-Jason's dotfiles.
-
 ## Installation
 
 ### Requires
