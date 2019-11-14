@@ -55,6 +55,9 @@
 [submodule "vim-javascript"]
 	path = .config/nvim/bundles/vim/all/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
+[submodule "vim-jsx-pretty"]
+	path = .config/nvim/bundles/vim/all/vim-jsx-pretty
+	url = https://github.com/MaxMEllon/vim-jsx-pretty.git
 [submodule "vim-mundo"]
 	path = .config/nvim/bundles/nvim/all/vim-mundo
 	url = https://github.com/simnalamburt/vim-mundo.git
