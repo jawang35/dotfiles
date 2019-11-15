@@ -1,13 +1,17 @@
-# dotfiles
+# Jason's dotfiles
 
 [![CircleCI](https://circleci.com/gh/jawang35/.dotfiles.svg?style=svg)](https://circleci.com/gh/jawang35/.dotfiles)
+
+## Purpose
+
+This is my collection of configurations. As with any open source software I don't recommend blindly running anything that has not been properly understood and/or vetted. These settings should be considered unstable and constantly changing. Rather than installing as is, I recommend forking and modifying it for your own use or using as a resource for your own configurations.
 
 ## Installation
 
 ### Requires
 
 - [Git](https://git-scm.com/)
-- [Homebrew](https://brew.sh/)
+- [Homebrew](https://brew.sh/) - optional
 
 ```sh
 curl -s https://raw.githubusercontent.com/jawang35/.dotfiles/master/bootstrap.sh | bash
@@ -107,3 +111,8 @@ The following keys act on the active window:
 | `HYPER+SHIFT+J` | Lower Screen |
 | `HYPER+SHIFT+K` | Upper Screen |
 | `HYPER+SHIFT+L` | Right Screen |
+
+## License
+
+Copyright (c) 2018 Jason Wang
+Licensed under the [MIT License](LICENSE).
