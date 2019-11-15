@@ -59,7 +59,9 @@ $ brew bundle cleanup # --force to remove
 
 ## Vim/Neovim
 
-Configurations are optimized for [Neovim](https://neovim.io/), but should be compatible with [Vim](https://www.vim.org/) without any fuss. This is done by symlinking `.vim` to `.config/nvim` and `.vim/vimrc` to `.config/nvim/init.vim`. Packages are managed using submodules and installed with [Pathogen](https://github.com/tpope/vim-pathogen). If using [Vim](https://www.vim.org/), [Neovim](https://neovim.io/) specific bundles will not be loaded.
+Configurations are optimized for [Neovim](https://neovim.io/), but should be compatible with [Vim](https://www.vim.org/) without any fuss. This is done by symlinking `.vim` to `.config/nvim` and `.vim/vimrc` to `.config/nvim/init.vim`.
+
+Packages are managed using submodules and installed with [Pathogen](https://github.com/tpope/vim-pathogen). If using [Vim](https://www.vim.org/), [Neovim](https://neovim.io/) specific bundles will not be loaded.
 
 ## Colors
 
