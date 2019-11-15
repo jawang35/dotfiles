@@ -120,5 +120,5 @@ The following keys act on the active window:
 
 ## License
 
-Copyright (c) 2018 Jason Wang
+Copyright (c) 2016 Jason Wang
 Licensed under the [MIT License](LICENSE).
