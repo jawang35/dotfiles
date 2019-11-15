@@ -35,7 +35,7 @@ $ config pull
 $ config checkout
 ```
 
-To update submodule-managed configuration dependencies, including [Vim](https://www.vim.org/)/[Neovim](https://neovim.io/) packages installed with [pathogen](https://github.com/tpope/vim-pathogen):
+To update submodule-managed configuration dependencies:
 
 ```sh
 $ config submodule update --init --recursive
@@ -57,9 +57,13 @@ To list orphaned dependencies:
 $ brew bundle cleanup # --force to remove
 ```
 
+## Vim/Neovim
+
+Configurations are optimized for [Neovim](https://neovim.io/), but should be compatible with [Vim](https://www.vim.org/) without any fuss. This is done by symlinking `.vim` to `.config/nvim` and `.vim/vimrc` to `.config/nvim/init.vim`. Packages are managed using submodules and installed with [Pathogen](https://github.com/tpope/vim-pathogen). If using [Vim](https://www.vim.org/), [Neovim](https://neovim.io/) specific bundles will not be loaded.
+
 ## Colors
 
-[onehalf](https://github.com/sonph/onehalf) colors are used for Terminal.app and [Vim](https://www.vim.org/)/[Neovim](https://neovim.io/). [Bash prompt](.bash_prompt) and [tmux prompt](.tmux.conf) have also been configured to use a similar color scheme. This is a 256 color scheme and does not require 24-bit or TrueColor terminal applications.
+[onehalf](https://github.com/sonph/onehalf) colors are used for Terminal.app and [Vim/Neovim](#vim-neovim). [Bash prompt](.bash_prompt) and [tmux prompt](.tmux.conf) have also been configured to use a similar color scheme. This is a 256 color scheme and does not require 24-bit or TrueColor terminal applications.
 
 Opening [OneHalfDark.terminal](https://github.com/sonph/onehalf/blob/master/terminal/OneHalfDark.terminal) loads the `OneHalfDark` profile in Terminal.app. To use this color scheme set this as your default profile. I also recommend using [Source Code Pro](http://adobe-fonts.github.io/source-code-pro/) 14pt font, which should have been installed with [Homebrew](#homebrew).
 
