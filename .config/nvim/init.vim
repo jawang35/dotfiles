@@ -245,8 +245,7 @@ let g:terraform_fmt_on_save = 1
 " let g:promptline_powerline_symbols = 0
 
 " tmuxline
-" Uncomment and run :Tmuxline
-" TmuxlineSnapshot ~/.tmux.conf
+" Uncomment and run :Tmuxline and then :TmuxlineSnapshot ~/.tmux.conf
 " execute pathogen#infect('bundles/utils/{}')
 " let g:tmuxline_theme = 'lightline'
 " let g:tmuxline_powerline_separators = 0
