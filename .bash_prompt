@@ -2,6 +2,10 @@
 
 # Bash prompt based on the PaperColor theme.
 
+function __bash_prompt_user_host {
+    printf "%s@%s" \\u \\h
+}
+
 function __bash_prompt_cwd {
     local dir_limit="2"
     local truncation="⋯ "
@@ -69,7 +73,7 @@ function __bash_prompt_ps1 {
     printf "\n"
 
     # Section "user"
-    __bash_prompt_section "$(printf "%s" \\u)" "\[\e[38;5;236m\]\[\e[48;5;75m\]"
+    __bash_prompt_section "$(__bash_prompt_user_host)" "\[\e[38;5;236m\]\[\e[48;5;75m\]"
 
     # Section "cwd"
     __bash_prompt_section "$(__bash_prompt_cwd)" "\[\e[38;5;255m\]\[\e[48;5;243m\]"
