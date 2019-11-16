@@ -139,19 +139,14 @@ nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " Colors
-set termguicolors
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 set t_Co=256
 syntax on
-colorscheme minimalist
-highlight Normal ctermfg=188 ctermbg=236 guifg=#dcdfe4 guibg=#282c34
-highlight LineNr ctermfg=247 ctermbg=236 guifg=#919baa guibg=#282c34
-highlight Comment ctermfg=241 guifg=#5c6370
-highlight CursorLineNr ctermfg=188 ctermbg=236 guifg=#dcdfe4 guibg=#282c34
-highlight CursorColumn ctermbg=237 guibg=#313640
-highlight CursorLine ctermbg=237 guibg=#313640
-highlight PmenuSbar ctermbg=239 guibg=#313640
-highlight Visual ctermbg=239 guibg=#313640
-highlight VisualNOS ctermbg=239 guibg=#313640
+colorscheme onehalfdark
 
 " commentary.vim
 map g/ gc

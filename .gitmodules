@@ -22,9 +22,6 @@
 [submodule "lightline.vim"]
 	path = .config/nvim/bundles/vim/all/lightline.vim
 	url = https://github.com/itchyny/lightline.vim.git
-[submodule "minimalist"]
-	path = .config/nvim/bundles/vim/all/minimalist
-	url = https://github.com/dikiaap/minimalist.git
 [submodule "onehalf"]
 	path = onehalf
 	url = https://github.com/sonph/onehalf.git
