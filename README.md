@@ -61,11 +61,11 @@ Configurations are optimized for [Neovim](https://neovim.io/), but should be com
 
 Packages are managed using submodules and installed with [Pathogen](https://github.com/tpope/vim-pathogen). If using [Vim](https://www.vim.org/), [Neovim](https://neovim.io/) specific bundles will not be loaded.
 
-## Colors
+## Colors and Fonts
 
-[onehalf](https://github.com/sonph/onehalf) colors are used for Terminal.app and [Vim/Neovim](#vimneovim). [Bash prompt](.bash_prompt) and [tmux prompt](.tmux.conf) have also been configured to use a similar color scheme. This is a 256 color scheme and does not require 24-bit or TrueColor terminal applications.
+[onehalf](https://github.com/sonph/onehalf) colors are used for Alacritty and [Vim/Neovim](#vimneovim). [Bash prompt](.bash_prompt) and [tmux prompt](.tmux.conf) have also been configured to use a similar color scheme.
 
-Opening [OneHalfDark.terminal](https://github.com/sonph/onehalf/blob/master/terminal/OneHalfDark.terminal) loads the `OneHalfDark` profile in Terminal.app. To use this color scheme set this as your default profile. I also recommend using [Source Code Pro](http://adobe-fonts.github.io/source-code-pro/) 14pt font, which should have been installed with [Homebrew](#homebrew).
+Alacritty is configured to use [Source Code Pro](http://adobe-fonts.github.io/source-code-pro/) 14pt font, which should have been installed with [Homebrew](#homebrew).
 
 ## Hammerspoon
 
@@ -81,7 +81,7 @@ The following application shortcuts are used:
 
 | Key          | Application   |
 |:------------:| ------------- |
-| ``HYPER+` `` | Terminal      |
+| ``HYPER+` `` | Alacritty      |
 | `HYPER+1`    | Google Chrome |
 
 #### Application Mode

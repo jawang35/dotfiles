@@ -16,6 +16,7 @@ brew 'ripgrep'
 brew 'tmux'
 brew 'tree'
 
+cask 'alacritty'
 cask 'docker'
 cask 'font-source-code-pro'
 cask 'google-chrome'
