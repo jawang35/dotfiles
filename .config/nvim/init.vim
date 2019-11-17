@@ -181,6 +181,8 @@ let g:go_version_warning = 0
 " Lightline
 set showtabline=2
 let g:bufferline_echo = 0
+let g:bufferline_active_buffer_left = ' '
+let g:bufferline_active_buffer_right = ' '
 let g:lightline = {
     \ 'colorscheme': 'onehalfdark',
     \ 'tabline': {
@@ -219,7 +221,7 @@ function! LightlineFilepath()
 
     let filepath = split(abspath, '/')
     if len(filepath) > 3
-        return '⋯ /' . join(filepath[-3:], '/')
+        return '⋯/' . join(filepath[-3:], '/')
     endif
 
     return join(filepath, '/')
