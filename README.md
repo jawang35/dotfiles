@@ -61,12 +61,6 @@ Configurations are optimized for [Neovim](https://neovim.io/), but should be com
 
 Packages are managed using submodules and installed with [Pathogen](https://github.com/tpope/vim-pathogen). If using [Vim](https://www.vim.org/), [Neovim](https://neovim.io/) specific bundles will not be loaded.
 
-## Colors and Fonts
-
-[onehalf](https://github.com/sonph/onehalf) colors are used for [Alacritty](https://github.com/jwilm/alacritty) and [Vim/Neovim](#vimneovim). [Bash prompt](.bash_prompt) and [tmux prompt](.tmux.conf) have also been configured to use a similar color scheme.
-
-[Alacritty](https://github.com/jwilm/alacritty) is configured to use [Source Code Pro](http://adobe-fonts.github.io/source-code-pro/) 14pt font, which should have been installed with [Homebrew](#homebrew).
-
 ## Hammerspoon
 
 Lua scripts for [Hammerspoon](http://www.hammerspoon.org/) configuration. `init.lua` is the entrypoint that loads all the other modules.
