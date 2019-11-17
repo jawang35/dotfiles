@@ -63,9 +63,9 @@ Packages are managed using submodules and installed with [Pathogen](https://gith
 
 ## Colors and Fonts
 
-[onehalf](https://github.com/sonph/onehalf) colors are used for Alacritty and [Vim/Neovim](#vimneovim). [Bash prompt](.bash_prompt) and [tmux prompt](.tmux.conf) have also been configured to use a similar color scheme.
+[onehalf](https://github.com/sonph/onehalf) colors are used for [Alacritty](https://github.com/jwilm/alacritty) and [Vim/Neovim](#vimneovim). [Bash prompt](.bash_prompt) and [tmux prompt](.tmux.conf) have also been configured to use a similar color scheme.
 
-Alacritty is configured to use [Source Code Pro](http://adobe-fonts.github.io/source-code-pro/) 14pt font, which should have been installed with [Homebrew](#homebrew).
+[Alacritty](https://github.com/jwilm/alacritty) is configured to use [Source Code Pro](http://adobe-fonts.github.io/source-code-pro/) 14pt font, which should have been installed with [Homebrew](#homebrew).
 
 ## Hammerspoon
 
