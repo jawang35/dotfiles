@@ -73,22 +73,22 @@ function __bash_prompt_ps1 {
     printf "\n"
 
     # Section "user"
-    __bash_prompt_section "$(__bash_prompt_user_host)" "\[\e[38;5;236m\]\[\e[48;5;75m\]"
+    __bash_prompt_section "$(__bash_prompt_user_host)" "\[\033[38;2;40;44;52m\]\[\033[48;2;86;182;194m\]"
 
     # Section "cwd"
-    __bash_prompt_section "$(__bash_prompt_cwd)" "\[\e[38;5;255m\]\[\e[48;5;243m\]"
+    __bash_prompt_section "$(__bash_prompt_cwd)" "\[\033[38;2;220;223;228m\]\[\033[48;2;93;103;122m\]"
 
-    # Section "git"
-    __bash_prompt_section "$(__bash_prompt_git_branch)" "\[\e[38;5;255m\]\[\e[48;5;238m\]"
+    # # Section "git"
+    __bash_prompt_section "$(__bash_prompt_git_branch)" "\[\033[38;2;40;44;52m\]\[\033[48;2;220;223;228m\]"
 
-    # Section "warn"
-    __bash_prompt_section "$(__bash_prompt_last_exit_code)" "\[\e[38;5;236m\]\[\e[48;5;180m\]"
+    # # Section "warn"
+    __bash_prompt_section "$(__bash_prompt_last_exit_code)" "\[\033[38;2;40;44;52m\]\[\033[48;2;229;192;123m\]"
 
     # New line
     printf "%s\n" "$reset"
 
     # Prompt
-    printf "\[\e[38;5;75m\]$%s " "$reset"
+    printf "\[\033[38;2;86;182;194m\]$%s " "$reset"
 }
 
 function __bash_prompt {
