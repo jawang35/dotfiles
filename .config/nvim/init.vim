@@ -139,7 +139,7 @@ nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " Colors
-if exists('+termguicolors')
+if exists('+termguicolors') && ($COLORTERM == 'truecolor' || $COLORTERM == '24bit')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
