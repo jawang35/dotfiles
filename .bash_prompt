@@ -65,33 +65,46 @@ function __bash_prompt_section {
 }
 
 function __bash_prompt_ps1 {
-    local last_exit_code="${PROMPTLINE_LAST_EXIT_CODE:-$?}"
-
-    local reset="\[\e[49m\]\[\e[0m\]"
-
     # Empty line
     printf "\n"
 
-    # Section "user"
-    __bash_prompt_section "$(__bash_prompt_user_host)" "\[\033[38;2;40;44;52m\]\[\033[48;2;86;182;194m\]"
+    # Section "user_host"
+    __bash_prompt_section "$(__bash_prompt_user_host)" "$user_host_color"
 
     # Section "cwd"
-    __bash_prompt_section "$(__bash_prompt_cwd)" "\[\033[38;2;220;223;228m\]\[\033[48;2;93;103;122m\]"
+    __bash_prompt_section "$(__bash_prompt_cwd)" "$cwd_color"
 
     # # Section "git"
-    __bash_prompt_section "$(__bash_prompt_git_branch)" "\[\033[38;2;40;44;52m\]\[\033[48;2;220;223;228m\]"
+    __bash_prompt_section "$(__bash_prompt_git_branch)" "$git_color"
 
     # # Section "warn"
-    __bash_prompt_section "$(__bash_prompt_last_exit_code)" "\[\033[38;2;40;44;52m\]\[\033[48;2;229;192;123m\]"
+    __bash_prompt_section "$(__bash_prompt_last_exit_code)" "$warn_color"
 
     # New line
     printf "%s\n" "$reset"
 
     # Prompt
-    printf "\[\033[38;2;86;182;194m\]$%s " "$reset"
+    printf "%s$%s " "$prompt_color" "$reset"
 }
 
 function __bash_prompt {
+    last_exit_code="${PROMPTLINE_LAST_EXIT_CODE:-$?}"
+    reset="\[\e[49m\]\[\e[0m\]"
+
+    if [ "$COLORTERM" = truecolor ] || [ "$COLORTERM" = 24bit ]; then
+        user_host_color="\[\033[38;2;40;44;52m\]\[\033[48;2;86;182;194m\]"
+        cwd_color="\[\033[38;2;220;223;228m\]\[\033[48;2;93;103;122m\]"
+        git_color="\[\033[38;2;40;44;52m\]\[\033[48;2;220;223;228m\]"
+        warn_color="\[\033[38;2;40;44;52m\]\[\033[48;2;229;192;123m\]"
+        prompt_color="\[\033[38;2;86;182;194m\]"
+    else
+        user_host_color="\[\e[38;5;236m\]\[\e[48;5;75m\]"
+        cwd_color="\[\e[38;5;255m\]\[\e[48;5;243m\]"
+        git_color="\[\e[38;5;255m\]\[\e[48;5;238m\]"
+        warn_color="\[\e[38;5;236m\]\[\e[48;5;180m\]"
+        prompt_color="\[\e[38;5;75m\]"
+    fi
+
     PS1="$(__bash_prompt_ps1)"
 }
 
