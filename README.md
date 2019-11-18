@@ -75,7 +75,7 @@ The following application shortcuts are used:
 
 | Key          | Application   |
 |:------------:| ------------- |
-| ``HYPER+` `` | Alacritty      |
+| ``HYPER+` `` | Kitty         |
 | `HYPER+1`    | Google Chrome |
 
 #### Application Mode
