@@ -4,6 +4,9 @@
 
 This is my collection of configurations. As with any open source software I don't recommend blindly running anything that has not been properly understood and/or vetted. These settings should be considered unstable and constantly changing. Rather than installing as is, I recommend forking and modifying it for your own use or using as a resource for your own configurations.
 
+![Kitty (24-bit colors)](.local/themes/kitty-24-bit.png "Kitty (24-bit colors)")
+![Terminal.app (256 colors)](.local/themes/terminal-8-bit.png "Terminal.app (256 colors)")
+
 ## Installation
 
 ### Requires
