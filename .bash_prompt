@@ -100,7 +100,7 @@ function __bash_prompt {
     else
         user_host_color="\[\e[38;5;236m\]\[\e[48;5;73m\]"
         cwd_color="\[\e[38;5;255m\]\[\e[48;5;243m\]"
-        git_color="\[\e[38;5;255m\]\[\e[48;5;238m\]"
+        git_color="\[\e[38;5;238m\]\[\e[48;5;255m\]"
         warn_color="\[\e[38;5;236m\]\[\e[48;5;180m\]"
         prompt_color="\[\e[38;5;73m\]"
     fi
