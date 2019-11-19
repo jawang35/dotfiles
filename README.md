@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/jawang35/.dotfiles.svg?style=svg)](https://circleci.com/gh/jawang35/.dotfiles)
 
-![Kitty (24-bit colors)](themes/kitty-24-bit.png "Kitty (24-bit colors)")
+[![Kitty (24-bit colors)](themes/kitty-24-bit.png "Kitty (24-bit colors)")](https://media.githubusercontent.com/media/jawang35/.dotfiles/master/themes/kitty-24-bit.png)
 
 This is my collection of configurations. As with any open source software never blindly running anything that has not been properly understood and/or vetted. These settings should be considered unstable as I'm constantly tinkering with them. Rather than installing, I recommend forking and modifying it for your own use or using as a resource for your own configurations.
 
