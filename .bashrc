@@ -1,58 +1,30 @@
 #!/usr/bin/env bash
 
-# Manage dotfiles repository
-alias config='git --git-dir=${HOME}/.dotfiles.git --work-tree=${HOME}'
+if [ -f /usr/local/etc/bash_completion ]; then
+    source /usr/local/etc/bash_completion
 
-# Reload .bash_profile
-alias reload='source ~/.bash_profile && echo "Loaded ~/.bash_profile"'
-
-# Preferred implementations
-alias cd..='cd ..'
-alias cp='cp -iv'
-alias ls='ls -AF'
-alias ll='ls -AhlF'
-alias mkdir='mkdir -pv'
-alias mv='mv -iv'
-alias rm='rm -v'
-alias rmrf='rm -rf'
-alias sshnc='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
-
-# ls after cd
-function cd { builtin cd "$@" && ls; }
-
-# Git aliases
-alias g='git'
-alias ga='git add'
-alias ga.='git add .'
-alias gb='git branch'
-alias gc='git commit'
-alias gca='git commit --amend'
-alias gco='git checkout'
-alias gco.='git checkout .'
-alias gcob='git checkout -b'
-alias gcom='git checkout master'
-alias gd='git diff'
-alias gd.='git diff .'
-alias gf='git fetch --prune'
-alias gl='git --no-pager log --oneline'
-alias gm='git merge'
-alias gpu='git push'
-alias gpuf='git push --force'
-alias gpd='git pull --rebase'
-alias gr='git rebase -i'
-alias gs='git status'
-
-# tmux aliases
-alias t='tmux'
-alias ts='tmux new -s'
-alias ta='tmux attach -t'
-alias tl='tmux ls'
-alias tk='tmux kill-session -t'
-
-# Neovim/Vim aliases
-if command -v nvim >/dev/null 2>&1; then
-    alias vim='nvim'
+    # Git completion for aliases
+    if command -v __git_complete > /dev/null 2>&1; then
+        __git_complete config __git_main
+        __git_complete g __git_main
+        __git_complete ga _git_add
+        __git_complete gb _git_branch
+        __git_complete gco _git_checkout
+        __git_complete gcob _git_checkout
+        __git_complete gd _git_diff
+        __git_complete gf _git_fetch
+        __git_complete gl _git_log
+        __git_complete gm _git_merge
+        __git_complete gpu _git_push
+        __git_complete gpuf _git_push
+        __git_complete gpd _git_pull
+        __git_complete gr _git_rebase
+        __git_complete gs _git_status
+    fi
 fi
 
-alias v='vim'
-alias rg='rg --smart-case'
+eval "$(direnv hook bash)"
+
+for file in ${HOME}/.{bash_prompt,aliases,exports,functions,bash_profile.local}; do
+    if [ -f "${file}" ]; then source "${file}"; fi
+done

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# ls after cd
+function cd { builtin cd "$@" && ls; }
