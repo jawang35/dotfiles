@@ -14,6 +14,7 @@ brew 'neofetch'
 brew 'neovim'
 brew 'python'
 brew 'ripgrep'
+brew 'tealdeer'
 brew 'tmux'
 brew 'tree'
 
