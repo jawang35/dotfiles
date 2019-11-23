@@ -23,12 +23,16 @@ if [ -f /usr/local/etc/bash_completion ]; then
     fi
 fi
 
-eval "$(direnv hook bash)"
+if command -v direnv > /dev/null 2>&1; then
+    eval "$(direnv hook bash)"
+fi
 
 for file in ${HOME}/.{bash_prompt,aliases,exports,functions,bash_profile.local}; do
-    if [ -f "${file}" ]; then source "${file}"; fi
+    if [ -f "${file}" ]; then
+        source "${file}"
+    fi
 done
 
-if [ -z "${TMUX}" ] && command -v neofetch >/dev/null 2>&1; then
+if [ -z "${TMUX}" ] && command -v neofetch > /dev/null 2>&1; then
     neofetch
 fi
