@@ -210,7 +210,7 @@ endfunction
 " Truncate filepath on narrow panes
 function! LightlineFilepath()
     if winwidth(0) < 120
-        return expand('%')
+        return expand('%:t')
     endif
 
     let home = fnamemodify('~', ':p:h')
@@ -220,6 +220,7 @@ function! LightlineFilepath()
     endif
 
     let filepath = split(abspath, '/')
+
     if len(filepath) > 3
         return '⋯/' . join(filepath[-3:], '/')
     endif
