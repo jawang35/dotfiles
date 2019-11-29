@@ -13,11 +13,15 @@ brew 'jq'
 brew 'neofetch'
 brew 'neovim'
 brew 'python'
-brew 'reattach-to-user-namespace'
 brew 'ripgrep'
 brew 'tealdeer'
 brew 'tmux'
 brew 'tree'
+
+# Mac OS only
+if RUBY_PLATFORM.include? 'darwin'
+    brew 'reattach-to-user-namespace'
+end
 
 cask 'docker'
 cask 'font-source-code-pro'
@@ -28,6 +32,6 @@ cask 'kitty'
 cask 'scroll-reverser'
 cask 'slack'
 
-if (File.file?('Brewfile.local'))
+if File.file?('Brewfile.local')
   instance_eval(File.read('Brewfile.local'))
 end
