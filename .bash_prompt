@@ -92,17 +92,17 @@ function __bash_prompt {
     reset="\[\e[49m\]\[\e[0m\]"
 
     if [ "$COLORTERM" = truecolor ] || [ "$COLORTERM" = 24bit ]; then
-        user_host_color="\[\033[38;2;40;44;52m\]\[\033[48;2;86;182;194m\]"
+        user_host_color="\[\033[38;2;40;44;52m\]\[\033[48;2;97;175;239m\]"
         cwd_color="\[\033[38;2;220;223;228m\]\[\033[48;2;93;103;122m\]"
-        git_color="\[\033[38;2;40;44;52m\]\[\033[48;2;220;223;228m\]"
+        git_color="\[\033[38;2;97;175;239m\]\[\033[48;2;49;54;64m\]"
         warn_color="\[\033[38;2;40;44;52m\]\[\033[48;2;229;192;123m\]"
-        prompt_color="\[\033[38;2;86;182;194m\]"
+        prompt_color="\[\033[38;2;97;175;239m\]"
     else
-        user_host_color="\[\e[38;5;236m\]\[\e[48;5;73m\]"
+        user_host_color="\[\e[38;5;236m\]\[\e[48;5;75m\]"
         cwd_color="\[\e[38;5;255m\]\[\e[48;5;243m\]"
-        git_color="\[\e[38;5;238m\]\[\e[48;5;255m\]"
+        git_color="\[\e[38;5;75m\]\[\e[48;5;238m\]"
         warn_color="\[\e[38;5;236m\]\[\e[48;5;180m\]"
-        prompt_color="\[\e[38;5;73m\]"
+        prompt_color="\[\e[38;5;75m\]"
     fi
 
     PS1="$(__bash_prompt_ps1)"
