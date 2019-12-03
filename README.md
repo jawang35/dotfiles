@@ -1,6 +1,6 @@
 # Jason's dotfiles
 
-[![CircleCI](https://circleci.com/gh/jawang35/.dotfiles.svg?style=svg)](https://circleci.com/gh/jawang35/.dotfiles)
+![](https://github.com/jawang35/.dotfiles/workflows/Test/badge.svg)
 
 [![Kitty (24-bit colors)](themes/kitty-24-bit.png "Kitty (24-bit colors)")](https://raw.githubusercontent.com/jawang35/.dotfiles/master/themes/kitty-24-bit.png)
 
