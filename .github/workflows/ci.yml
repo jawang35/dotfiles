@@ -12,5 +12,4 @@ jobs:
       - name: Clean Workspace
         run: rm ~/.bash_profile ~/.bashrc
       - name: Run Bootstrap Script
-        working-directory: ~
         run: ./bootstrap.sh
