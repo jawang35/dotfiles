@@ -1,6 +1,6 @@
 # Jason's dotfiles
 
-![](https://github.com/jawang35/.dotfiles/workflows/Test/badge.svg)
+![](https://github.com/jawang35/.dotfiles/workflows/CI/badge.svg)
 
 [![Kitty (24-bit colors)](themes/kitty-24-bit.png "Kitty (24-bit colors)")](https://raw.githubusercontent.com/jawang35/.dotfiles/master/themes/kitty-24-bit.png)
 
