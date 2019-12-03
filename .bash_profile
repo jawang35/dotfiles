@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ -f "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]; then
+if command -v brew >/dev/null 2>&1 && [ -f "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]; then
     source "$(brew --prefix)/etc/profile.d/bash_completion.sh"
 fi
 
