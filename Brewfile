@@ -2,7 +2,7 @@ tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
 
 brew 'bash'
-brew 'bash-completion'
+brew 'bash-completion@2'
 brew 'direnv'
 brew 'docker-compose'
 brew 'fd'
