@@ -12,6 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Clean Workspace
-        run: rm ~/.bash_profile ~/.bashrc
+        run: rm -f ~/.bash_profile ~/.bashrc
       - name: Run Bootstrap Script
         run: ./bootstrap.sh
