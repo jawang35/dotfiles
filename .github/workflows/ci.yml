@@ -8,8 +8,9 @@ jobs:
     name: CI
     runs-on: macos-latest
     steps:
+      - uses: actions/checkout@v1
       - name: Clean Workspace
         run: rm ~/.bash_profile ~/.bashrc
       - name: Run Bootstrap Script
         working-directory: ~
-        run: curl -s https://raw.githubusercontent.com/jawang35/.dotfiles/master/bootstrap.sh | bash
+        run: ./bootstrap.sh
