@@ -9,6 +9,8 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Clean Workspace
+        working-directory: ~
         run: rm .bash_profile .bashrc
       - name: Run Bootstrap Script
+        working-directory: ~
         run: curl -s https://raw.githubusercontent.com/jawang35/.dotfiles/master/bootstrap.sh | bash
