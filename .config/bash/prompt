@@ -41,10 +41,14 @@ function __bash_prompt_git_branch {
     local branch
     local branch_symbol=""
 
-    if command -v git > /dev/null 2>&1; then
-        if branch=$( { git symbolic-ref --quiet HEAD || git rev-parse --short HEAD; } 2>/dev/null ); then
-            branch=${branch##*/}
-            printf "%s" "${branch_symbol} ${branch:-unknown}"
+    if command -v __git_ps1 > /dev/null 2>&1; then
+        branch=$(
+            GIT_PS1_SHOWDIRTYSTATE=1 \
+            __git_ps1 | sed -e 's/^[[:space:]](*//' -e 's/)*$//'
+        )
+
+        if [ -n "${branch}" ]; then
+            printf "%s" "${branch_symbol} ${branch}"
             return
         fi
     fi
