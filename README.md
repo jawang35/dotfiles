@@ -28,10 +28,10 @@ curl -s https://raw.githubusercontent.com/jawang35/.dotfiles/master/bootstrap.sh
 
 ## Local Configurations
 
-Secrets and local configurations are loaded from `.local`
+To keep the `$HOME` directory clean, configs are moved into [.config](.config) as much as I can. Secrets and local configurations are loaded from [.local](.local).
 
-- Files in `.local/bash` are sourced from `.bash_profile`.
-- `Brewfile` evaluates `.local/Brewfile`.
+- Files in [.local/bash](.local/bash) are sourced from [.bash_profile](.bash_profile).
+- [.config/Brewfile](.config/Brewfile) evaluates `.local/Brewfile`.
 
 ## Configuration Management
 
@@ -52,7 +52,7 @@ $ config submodule update --init --recursive
 
 ## Homebrew
 
-Packages and applications are managed with the [Brewfile](.config/Brewfile) using [Homebrew](https://brew.sh/).
+Packages and applications are managed with [.config/Brewfile](.config/Brewfile) using [Homebrew](https://brew.sh/).
 
 To install missing dependencies:
 
@@ -68,13 +68,13 @@ $ brew bundle cleanup # --force to remove
 
 ## Vim/Neovim
 
-Configurations are optimized for [Neovim](https://neovim.io/), but should be compatible with [Vim](https://www.vim.org/) without any fuss. This is done by symlinking `.vim` to `.config/nvim` and `.vim/vimrc` to `.config/nvim/init.vim`.
+Configurations are optimized for [Neovim](https://neovim.io/), but should be compatible with [Vim](https://www.vim.org/) without any fuss. This is done by symlinking [.vim](.vim) to [.config/nvim](.config/nvim) and [.config/nvim/vimrc](.config/nvim/vimrc) to [.config/nvim/init.vim](.config/nvim/init.vim).
 
 Packages are managed using submodules and installed with [Pathogen](https://github.com/tpope/vim-pathogen). If using [Vim](https://www.vim.org/), [Neovim](https://neovim.io/) specific bundles will not be loaded.
 
 ## Hammerspoon
 
-Lua scripts for [Hammerspoon](http://www.hammerspoon.org/) configuration. `init.lua` is the entrypoint that loads all the other modules.
+Lua scripts for [Hammerspoon](http://www.hammerspoon.org/) configuration. [.hammerspoon/init.lua](.hammerspoon/init.lua) is the entrypoint that loads all the other modules.
 
 ### Hyper Key
 
