@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
 function __bash_profile {
-    local BREW_PREFIX
-    BREW_PREFIX="$(brew --prefix)"
+    if command -v brew >/dev/null 2>&1; then
+        local BREW_PREFIX
+        BREW_PREFIX="$(brew --prefix)"
 
-    if command -v brew >/dev/null 2>&1 && [ -f "${BREW_PREFIX}/etc/profile.d/bash_completion.sh" ]; then
-        export BASH_COMPLETION_COMPAT_DIR="${BREW_PREFIX}/etc/bash_completion.d"
-        source "${BREW_PREFIX}/etc/profile.d/bash_completion.sh"
+        if [ -f "${BREW_PREFIX}/etc/profile.d/bash_completion.sh" ]; then
+            export BASH_COMPLETION_COMPAT_DIR="${BREW_PREFIX}/etc/bash_completion.d"
+            source "${BREW_PREFIX}/etc/profile.d/bash_completion.sh"
+        fi
     fi
 
     # Git completion for aliases
