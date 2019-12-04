@@ -6,7 +6,7 @@
 
 This is my collection of configurations. As with any open source software never blindly running anything that has not been properly understood and/or vetted. These settings should be considered unstable as I'm constantly tinkering with them. Rather than installing, I recommend forking and modifying it for your own use or using as a resource for your own configurations.
 
-[![Kitty (24-bit colors)](themes/kitty-24-bit.png "Kitty (24-bit colors)")](https://raw.githubusercontent.com/jawang35/.dotfiles/master/themes/kitty-24-bit.png)
+[![Kitty (24-bit colors)](.themes/kitty-24-bit.png "Kitty (24-bit colors)")](https://raw.githubusercontent.com/jawang35/.dotfiles/master/.themes/kitty-24-bit.png)
 
 ## Installation
 
@@ -25,6 +25,13 @@ curl -s https://raw.githubusercontent.com/jawang35/.dotfiles/master/bootstrap.sh
 3. Install submodule dependencies.
 4. Install [Homebrew](#homebrew) packages and applications.
 5. Load [.bash_profile](.bash_profile).
+
+## Local Configurations
+
+Secrets and local configurations are loaded from `.local`
+
+- Files in `.local/bash` are sourced from `.bash_profile`.
+- `Brewfile` evaluates `.local/Brewfile`.
 
 ## Configuration Management
 
