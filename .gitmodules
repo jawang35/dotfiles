@@ -23,7 +23,7 @@
 	path = .config/nvim/bundles/vim/all/lightline.vim
 	url = https://github.com/itchyny/lightline.vim.git
 [submodule "onehalf"]
-	path = themes/onehalf
+	path = .themes/onehalf
 	url = https://github.com/jawang35/onehalf.git
 [submodule "promptline.vim"]
 	path = .config/nvim/bundles/utils/promptline.vim

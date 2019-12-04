@@ -45,7 +45,7 @@ $ config submodule update --init --recursive
 
 ## Homebrew
 
-Packages and applications are managed with the [Brewfile](Brewfile) using [Homebrew](https://brew.sh/). `Brewfile.local` is optionally loaded to manage local dependencies.
+Packages and applications are managed with the [Brewfile](.config/Brewfile) using [Homebrew](https://brew.sh/). `Brewfile.local` is optionally loaded to manage local dependencies.
 
 To install missing dependencies:
 

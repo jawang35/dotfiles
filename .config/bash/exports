@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+export INPUTRC="${HOME}/.config/inputrc"
+export HOMEBREW_BUNDLE_FILE="${HOME}/.config/Brewfile"
+
 # Set EDITOR variable to nvim/vim
 if [ -f /usr/local/bin/nvim ]; then
     export EDITOR=/usr/local/bin/nvim

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Bash prompt based on the PaperColor theme.
+# Bash prompt based on the onehalfdark theme.
 
 function __bash_prompt_user_host {
     printf "%s@%s" \\u \\h

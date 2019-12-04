@@ -32,7 +32,7 @@ cask 'kitty'
 cask 'scroll-reverser'
 cask 'slack'
 
-BREWFILE_LOCAL = File.join(ENV['HOME'], 'Brewfile.local')
+BREWFILE_LOCAL = File.join(ENV['HOME'], '.local', 'Brewfile')
 if File.file?(BREWFILE_LOCAL)
   instance_eval(File.read(BREWFILE_LOCAL))
 end
