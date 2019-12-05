@@ -1,7 +1,7 @@
 [include]
 	path = ~/.local/gitconfig
 [push]
-	default = simple
+	default = current
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
