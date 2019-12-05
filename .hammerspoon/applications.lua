@@ -19,13 +19,14 @@ local function applications(hyper)
     end
   end
 
+  hs.hotkey.bind(hyper, '`', function () launch('Kitty') end)
+  hs.hotkey.bind(hyper, '1', function () launch('Google Chrome') end)
+
+  applicationModal:bind('', 'escape', function () applicationModal:exit() end)
   applicationModal:bind(hyper, 'm', function () launch('Messages') end)
   applicationModal:bind(hyper, 'o', function () launch('Microsoft Outlook') end)
   applicationModal:bind(hyper, 'p', function () launch('1Password 7') end)
   applicationModal:bind(hyper, 's', function () launch('Slack') end)
-  hs.hotkey.bind(hyper, '`', function () launch('Kitty') end)
-  hs.hotkey.bind(hyper, '1', function () launch('Google Chrome') end)
-  applicationModal:bind('', 'escape', function () applicationModal:exit() end)
 
   applicationModal:enter()
   applicationModal:exit()

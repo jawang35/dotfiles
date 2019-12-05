@@ -101,18 +101,30 @@ end
 local function windows(hyper, hyperShift)
   hs.window.animationDuration = 0
 
+  local windowModal = hs.hotkey.modal.new(hyper, 'w')
+
+  function windowModal:entered()
+    menubar = hs.menubar.new()
+    menubar:setTitle('Window Mode')
+  end
+
+  function windowModal:exited()
+    menubar:delete()
+  end
+
   hs.hotkey.bind(hyper, 'f', fullScreen)
   hs.hotkey.bind(hyper, 'c', center)
 
-  hs.hotkey.bind(hyper, 'h', leftHalf)
-  hs.hotkey.bind(hyper, 'j', bottomHalf)
-  hs.hotkey.bind(hyper, 'k', topHalf)
-  hs.hotkey.bind(hyper, 'l', rightHalf)
+  windowModal:bind(hyper, 'h', leftHalf)
+  windowModal:bind(hyper, 'j', bottomHalf)
+  windowModal:bind(hyper, 'k', topHalf)
+  windowModal:bind(hyper, 'l', rightHalf)
 
-  hs.hotkey.bind(hyperShift, 'h', leftScreen)
-  hs.hotkey.bind(hyperShift, 'j', lowerScreen)
-  hs.hotkey.bind(hyperShift, 'k', upperScreen)
-  hs.hotkey.bind(hyperShift, 'l', rightScreen)
+  windowModal:bind('', 'escape', function () windowModal:exit() end)
+  windowModal:bind(hyperShift, 'h', leftScreen)
+  windowModal:bind(hyperShift, 'j', lowerScreen)
+  windowModal:bind(hyperShift, 'k', upperScreen)
+  windowModal:bind(hyperShift, 'l', rightScreen)
 end
 
 return windows
