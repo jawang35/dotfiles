@@ -3,7 +3,12 @@
 # Bash prompt based on the onehalfdark theme.
 
 function __bash_prompt_user_host {
-    printf "%s@%s" \\u \\h
+    printf "%s" \\u
+
+    # Print host if via SSH
+    if [ -n "${SSH_CONNECTION-}${SSH_CLIENT-}${SSH_TTY-}" ]; then
+        printf "@%s" \\h
+    fi
 }
 
 function __bash_prompt_cwd {
