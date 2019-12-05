@@ -78,7 +78,8 @@ Lua scripts for [Hammerspoon](http://www.hammerspoon.org/) configuration. [.hamm
 
 ### Hyper Key
 
-`HYPER` key is bound to `CTRL+OPTION+CMD`. This is bound to `CAPSLOCK` using [Karabiner-Elements](.config/karabiner/karabiner.json).
+`HYPER` key is bound to `CTRL+OPTION+CMD`. This is bound to `CAPSLOCK` using [Karabiner-Elements](.config/karabiner/karabiner.json). `HYPER+R` reloads the Hammerspoon config.
+
 
 ### Applications
 
@@ -91,7 +92,7 @@ The following application shortcuts are used:
 
 #### Application Mode
 
-`HYPER+A` opens the application modal. `ESCAPE` closes the application modal. With the application modal open, the following keys launch or switch to the corresponding applications and close the application modal:
+`HYPER+A` opens the application mode. `ESCAPE` closes the mode. With the mode open, the following keys launch or switch to the corresponding and close the mode:
 
 | Key       | Application       |
 |:---------:| ----------------- |
@@ -100,18 +101,21 @@ The following application shortcuts are used:
 | `HYPER+P` | 1Password         |
 | `HYPER+S` | Slack             |
 
-### Reload Config
-
-`HYPER+R` reloads the Hammerspoon config.
-
 ### Windows
 
-The following keys act on the active window:
+The following window shortcuts are used:
+
+| Key       | Action      |
+|:---------:| ----------- |
+| `HYPER+F` | Full Screen |
+| `HYPER+C` | Center      |
+
+#### Windows Mode
+
+`HYPER+W` opens the window mode. `ESCAPE` closes the mode. With the mode open, the following keys act on the active window:
 
 | Key             | Action       |
 |:---------------:| ------------ |
-| `HYPER+F`       | Full Screen  |
-| `HYPER+C`       | Center       |
 | `HYPER+H`       | Left Half    |
 | `HYPER+J`       | Bottom Half  |
 | `HYPER+K`       | Top Half     |
