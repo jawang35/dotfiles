@@ -39,16 +39,17 @@ function __bash_prompt_cwd {
 
 function __bash_prompt_git_branch {
     local branch
-    local branch_symbol=""
 
     if command -v __git_ps1 > /dev/null 2>&1; then
         branch=$(
             GIT_PS1_SHOWDIRTYSTATE=1 \
-            __git_ps1 | sed -e 's/^[[:space:]](*//' -e 's/)*$//'
+            GIT_PS1_SHOWUNTRACKEDFILES=1 \
+            GIT_PS1_STATESEPARATOR=':' \
+            __git_ps1 ' %s'
         )
 
         if [ -n "${branch}" ]; then
-            printf "%s" "${branch_symbol} ${branch}"
+            printf "%s" "${branch}"
             return
         fi
     fi
@@ -78,10 +79,10 @@ function __bash_prompt_ps1 {
     # Section "cwd"
     __bash_prompt_section "$(__bash_prompt_cwd)" "$cwd_color"
 
-    # # Section "git"
+    # Section "git"
     __bash_prompt_section "$(__bash_prompt_git_branch)" "$git_color"
 
-    # # Section "warn"
+    # Section "warn"
     __bash_prompt_section "$(__bash_prompt_last_exit_code)" "$warn_color"
 
     # New line
