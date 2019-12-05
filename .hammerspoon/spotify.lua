@@ -28,14 +28,15 @@ local function next()
   spotifyNotification('⏭ Next', getCurrentSong())
 end
 
-local function play()
-  hs.spotify.play()
-  spotifyNotification('▶️ Play', getCurrentSong())
-end
-
-local function pause()
-  hs.spotify.pause()
-  spotifyNotification('⏸ Pause', getCurrentSong())
+local function pause_play()
+  local playbackState = hs.spotify.getPlaybackState()
+  if playbackState == hs.spotify.state_playing then
+    hs.spotify.pause()
+    spotifyNotification('⏸ Pause', getCurrentSong())
+  else
+    hs.spotify.play()
+    spotifyNotification('▶️ Play', getCurrentSong())
+  end
 end
 
 local function spotify(hyper)
@@ -58,10 +59,9 @@ local function spotify(hyper)
 
   spotifyModal:bind('', 'escape', function () spotifyModal:exit() end)
   spotifyModal:bind(hyper, 's', function () execute(open) end)
-  spotifyModal:bind(hyper, 'l', function () execute(next) end)
-  spotifyModal:bind(hyper, 'h', function () execute(previous) end)
-  spotifyModal:bind(hyper, 'j', function () execute(pause) end)
-  spotifyModal:bind(hyper, 'k', function () execute(play) end)
+  spotifyModal:bind(hyper, ']', function () execute(next) end)
+  spotifyModal:bind(hyper, '[', function () execute(previous) end)
+  spotifyModal:bind(hyper, 'p', function () execute(pause_play) end)
   spotifyModal:bind(hyper, 'i', function () execute(info) end)
 end
 
