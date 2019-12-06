@@ -187,21 +187,20 @@ let g:lightline = {
     \ 'colorscheme': 'onehalfdark',
     \ 'tabline': {
     \   'left': [ [ 'bufferline' ] ],
-    \   'right': [ [] ]
-    \ },
+    \   'right': [ [] ] },
     \ 'active': {
-    \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filepath', 'modified' ] ],
-    \ },
-    \ 'component_expand': {
-    \   'bufferline': 'LightlineBufferline',
-    \ },
-    \ 'component_type': {
-    \   'bufferline': 'tabsel',
-    \ },
-    \ 'component_function': {
-    \   'filepath': 'LightlineFilepath'
-    \ }
-    \ }
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'readonly', 'filepath', 'modified' ] ],
+    \   'right': [ [ 'lineinfo' ],
+    \              [ 'percent' ],
+    \              [ 'fileformat', 'fileencoding', 'filetype' ] ] },
+    \ 'inactive': {
+    \   'left': [ [ 'filename' ] ],
+    \   'right': [ [ 'lineinfo' ],
+    \              [ 'percent' ] ] },
+    \ 'component_expand': { 'bufferline': 'LightlineBufferline' },
+    \ 'component_type': { 'bufferline': 'tabsel' },
+    \ 'component_function': { 'filepath': 'LightlineFilepath' } }
 " Buffers in tabsline
 function! LightlineBufferline()
     call bufferline#refresh_status()
