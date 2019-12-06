@@ -78,7 +78,7 @@ Lua scripts for [Hammerspoon](http://www.hammerspoon.org/) configuration. [.hamm
 
 ### Hyper Key
 
-`HYPER` key is bound to `CTRL+OPTION+CMD`. This is bound to `CAPSLOCK` using [Karabiner-Elements](.config/karabiner/karabiner.json). `HYPER+R` reloads the Hammerspoon config. `HYPER` transforms `HJKL` to Vim-like arrow keys.
+`HYPER` key is bound to `CTRL+OPTION+CMD`. This is bound to `CAPSLOCK` using [Karabiner-Elements](.config/karabiner/karabiner.json). `HYPER+R` reloads the Hammerspoon config.
 
 
 ### Applications
@@ -105,17 +105,10 @@ The following application shortcuts are used:
 
 The following window shortcuts are used:
 
-| Key       | Action      |
-|:---------:| ----------- |
-| `HYPER+F` | Full Screen |
-| `HYPER+C` | Center      |
-
-#### Windows Mode
-
-`HYPER+W` opens the window mode. `ESCAPE` closes the mode. With the mode open, the following keys act on the active window:
-
 | Key             | Action       |
 |:---------------:| ------------ |
+| `HYPER+F`       | Full Screen  |
+| `HYPER+C`       | Center       |
 | `HYPER+H`       | Left Half    |
 | `HYPER+J`       | Bottom Half  |
 | `HYPER+K`       | Top Half     |
