@@ -6,7 +6,7 @@
 	required = true
 	smudge = git-lfs smudge -- %f
 [include]
-	path = ~/.local/gitconfig
+	path = ~/.local/git/config
 [merge]
 	ff = only
 [push]
