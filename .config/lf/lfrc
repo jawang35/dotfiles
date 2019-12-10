@@ -1,7 +1,11 @@
 # interpreter for shell commands (needs to be POSIX compatible)
 set shell sh
 
+set color256
 set icons
+set hidden
+set incsearch
+set previewer ~/.config/lf/pv.sh
 
 # set '-eu' options for shell commands
 # These options are used to have safer shell commands. Option '-e' is used to
