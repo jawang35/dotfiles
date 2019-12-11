@@ -7,8 +7,6 @@
 
 This is my collection of configurations. As with any open source software never blindly running anything that has not been properly understood and/or vetted. These settings should be considered unstable as I'm constantly tinkering with them. Rather than installing, I recommend forking and modifying it for your own use or using as a resource for your own configurations.
 
-[![Kitty (24-bit colors)](.themes/kitty-24-bit.png "Kitty (24-bit colors)")](https://raw.githubusercontent.com/jawang35/.dotfiles/master/.themes/kitty-24-bit.png)
-
 ## Installation
 
 ### Requires
@@ -37,7 +35,7 @@ To update to latest:
 config pull && config checkout && config submodule update --init --recursive
 ```
 
-- [Bash](https://www.gnu.org/software/bash/) - Default shell. All files found in [.config/bash](.config/bash) are loaded in both login and non-login shells. Local configs added to [.local/bash](.local/bash) will also be loaded.
+- [Bash](https://www.gnu.org/software/bash/) - Default shell. All files found in [.config/bash](.config/bash) are loaded in both login and non-login shells. Local configs added to [.local/bash](.local/bash) will also be loaded. [.config/inputrc](.config/inputrc) improves [Bash](https://www.gnu.org/software/bash/) completion behavior and sets [vi editing mode](https://sanctum.geek.nz/arabesque/vi-mode-in-bash/).
 - [Git](https://git-scm.com/) - Version control. Configurations defined in [.config/git](.config/git). Dependencies managed as [submodules](.gitmodules).
 - [Hammerspoon](https://www.hammerspoon.org/) - Key bindings for managing Mac OS applications/windows. See [Hammerspoon](#hammerspoon).
 - [Homebrew](https://brew.sh/) - Mac OS package manager. [bundler](https://github.com/Homebrew/homebrew-bundle) manages packages [.config/Brewfile](.config/Brewfile). Local package dependencies managed by `.local/Brewfile` if it exists.
@@ -45,9 +43,14 @@ config pull && config checkout && config submodule update --init --recursive
 - [kitty](https://sw.kovidgoyal.net/kitty/) - Full-featured GPU-optimized terminal emulator with a readable [configuration file](.config/kitty).
 - [lf](https://github.com/gokcehan/lf) - Terminal based file manager. Configurations in [.config/lf](.config/lf).
 - [psql](https://www.postgresql.org/docs/current/app-psql.html) - Postgres CLI tool. Configurations at [.psqlrc](.psqlrc).
-- [Readline](https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File.html) - [.config/inputrc](.config/inputrc) improves [Bash](https://www.gnu.org/software/bash/) completion behavior and sets [vi editing mode](https://sanctum.geek.nz/arabesque/vi-mode-in-bash/).
 - [tmux](https://github.com/tmux/tmux) - Manages multiple terminal sessions, windows, and panes. Configured in [.tmux.conf](.tmux.conf).
 - [Vim](https://www.vim.org/)/[Neovim](https://neovim.io/) - Configurations setup primarily for [Neovim](https://neovim.io/) at [.config/nvim](.config/nvim). [pathogen.vim](https://github.com/tpope/vim-pathogen) for managing plugins as [submodules](.gitmodule). [.editorconfig](.editorconfig) is used to configure coding styles. Compatibility with [Vim](https://www.vim.org/) is preserved by symlinking [.vim](.vim) and [.config/nvim/vimrc](.config/nvim/vimrc). [Neovim specific plugins](.config/nvim/bundles/nvim) are ignored by vanilla [Vim](https://www.vim.org/).
+
+## Theme
+
+I use the [onehalfdark](https://github.com/sonph/onehalf) theme. My [Bash prompt](.config/bash/prompt) and [tmux status bar](https://github.com/jawang35/.dotfiles/blob/master/.config/tmux/onehalfdark.tmux) have been inspired by the same theme. Everything should look good in both [24-bit](https://raw.githubusercontent.com/jawang35/.dotfiles/master/.themes/kitty-24-bit.png) and [256-color](https://raw.githubusercontent.com/jawang35/.dotfiles/master/.themes/terminal-8-bit.png) terminal emulators.
+
+[![Kitty (24-bit colors)](.themes/kitty-24-bit.png "Kitty (24-bit colors)")](https://raw.githubusercontent.com/jawang35/.dotfiles/master/.themes/kitty-24-bit.png)
 
 ## Hammerspoon
 
