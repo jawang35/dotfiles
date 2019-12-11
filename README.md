@@ -27,51 +27,27 @@ curl -s https://raw.githubusercontent.com/jawang35/.dotfiles/master/bootstrap.sh
 4. Install [Homebrew](#homebrew) packages and applications.
 5. Load [.bash_profile](.bash_profile).
 
-## Local Configurations
-
-To keep the `$HOME` directory clean, configs are moved into [.config](.config) as much as I can. Secrets and local configurations are loaded from [.local](.local).
-
-- Files in [.local/bash](.local/bash) are sourced from [.bash_profile](.bash_profile).
-- [.config/Brewfile](.config/Brewfile) evaluates `.local/Brewfile`.
-
-## Configuration Management
+## Configurations
 
 Configuration files are managed using a Git bare repository (inspired by https://www.atlassian.com/git/tutorials/dotfiles). `config` is an alias for `git --git-dir=${HOME}/.dotfiles.git --work-tree=${HOME}` and is used to manage the repository.
 
 To update to latest:
 
 ```sh
-$ config pull
-$ config checkout
+config pull && config checkout && config submodule update --init --recursive
 ```
 
-To update submodule-managed configuration dependencies:
-
-```sh
-$ config submodule update --init --recursive
-```
-
-## Homebrew
-
-Packages and applications are managed with [.config/Brewfile](.config/Brewfile) using [Homebrew](https://brew.sh/).
-
-To install missing dependencies:
-
-```sh
-$ brew bundle
-```
-
-To list orphaned dependencies:
-
-```sh
-$ brew bundle cleanup # --force to remove
-```
-
-## Vim/Neovim
-
-Configurations are optimized for [Neovim](https://neovim.io/), but should be compatible with [Vim](https://www.vim.org/) without any fuss. This is done by symlinking [.vim](.vim) to [.config/nvim](.config/nvim) and [.config/nvim/vimrc](.config/nvim/vimrc) to [.config/nvim/init.vim](.config/nvim/init.vim).
-
-Packages are managed using submodules and installed with [Pathogen](https://github.com/tpope/vim-pathogen). If using [Vim](https://www.vim.org/), [Neovim](https://neovim.io/) specific bundles will not be loaded.
+- [Bash](https://www.gnu.org/software/bash/) - Default shell. All files found in [.config/bash](.config/bash) are loaded in both login and non-login shells. Local configs added to [.local/bash](.local/bash) will also be loaded.
+- [Git](https://git-scm.com/) - Version control. Configurations defined in [.config/git](.config/git). Dependencies managed as [submodules](.gitmodules).
+- [Hammerspoon](https://www.hammerspoon.org/) - Key bindings for managing Mac OS applications/windows. See [Hammerspoon](#hammerspoon).
+- [Homebrew](https://brew.sh/) - Mac OS package manager. [bundler](https://github.com/Homebrew/homebrew-bundle) manages packages [.config/Brewfile](.config/Brewfile). Local package dependencies managed by `.local/Brewfile` if it exists.
+- [Karabiner-Elements](https://pqrs.org/osx/karabiner/) - Custom key mappings. Configurations defined in [.config/karabiner](.config/karabiner). Simultaneous `j-k` mapped to `escape`. `capslock` mapped to `cmd+alt+ctrl` to create a ["hyper" key](https://brettterpstra.com/2017/06/15/a-hyper-key-with-karabiner-elements-full-instructions/) for [Hammerspoon](#hammerspoon).
+- [kitty](https://sw.kovidgoyal.net/kitty/) - Full-featured GPU-optimized terminal emulator with a readable [configuration file](.config/kitty).
+- [lf](https://github.com/gokcehan/lf) - Terminal based file manager. Configurations in [.config/lf](.config/lf).
+- [psql](https://www.postgresql.org/docs/current/app-psql.html) - Postgres CLI tool. Configurations at [.psqlrc](.psqlrc).
+- [Readline](https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File.html) - [.config/inputrc](.config/inputrc) improves [Bash](https://www.gnu.org/software/bash/) completion behavior and sets [vi editing mode](https://sanctum.geek.nz/arabesque/vi-mode-in-bash/).
+- [tmux](https://github.com/tmux/tmux) - Manages multiple terminal sessions, windows, and panes. Configured in [.tmux.conf](.tmux.conf).
+- [Vim](https://www.vim.org/)/[Neovim](https://neovim.io/) - Configurations setup primarily for [Neovim](https://neovim.io/) at [.config/nvim](.config/nvim). [pathogen.vim](https://github.com/tpope/vim-pathogen) for managing plugins as [submodules](.gitmodule). [.editorconfig](.editorconfig) is used to configure coding styles. Compatibility with [Vim](https://www.vim.org/) is preserved by symlinking [.vim](.vim) and [.config/nvim/vimrc](.config/nvim/vimrc). [Neovim specific plugins](.config/nvim/bundles/nvim) are ignored by vanilla [Vim](https://www.vim.org/).
 
 ## Hammerspoon
 
@@ -79,8 +55,7 @@ Lua scripts for [Hammerspoon](http://www.hammerspoon.org/) configuration. [.hamm
 
 ### Hyper Key
 
-`HYPER` key is bound to `CTRL+OPTION+CMD`. This is bound to `CAPSLOCK` using [Karabiner-Elements](.config/karabiner/karabiner.json). `HYPER+R` reloads the Hammerspoon config.
-
+`hyper` key is bound to `ctrl+option+cmd`. This is bound to `capslock` using [Karabiner-Elements](.config/karabiner/karabiner.json). `hyper+r` reloads the Hammerspoon config.
 
 ### Applications
 
@@ -88,19 +63,19 @@ The following application shortcuts are used:
 
 | Key          | Application   |
 |:------------:| ------------- |
-| ``HYPER+` `` | Kitty         |
-| `HYPER+1`    | Google Chrome |
+| ``hyper+` `` | Kitty         |
+| `hyper+1`    | Google Chrome |
 
 #### Application Mode
 
-`HYPER+A` opens the application mode. `ESCAPE` closes the mode. With the mode open, the following keys launch or switch to the corresponding and close the mode:
+`hyper+a` opens the application mode. `escape` closes the mode. With the mode open, the following keys launch or switch to the corresponding and close the mode:
 
 | Key       | Application       |
 |:---------:| ----------------- |
-| `HYPER+M` | Messages          |
-| `HYPER+O` | Microsoft Outlook |
-| `HYPER+P` | 1Password         |
-| `HYPER+S` | Slack             |
+| `hyper+m` | Messages          |
+| `hyper+o` | Microsoft Outlook |
+| `hyper+p` | 1Password         |
+| `hyper+s` | Slack             |
 
 ### Windows
 
@@ -108,16 +83,16 @@ The following window shortcuts are used:
 
 | Key             | Action       |
 |:---------------:| ------------ |
-| `HYPER+F`       | Full Screen  |
-| `HYPER+C`       | Center       |
-| `HYPER+H`       | Left Half    |
-| `HYPER+J`       | Bottom Half  |
-| `HYPER+K`       | Top Half     |
-| `HYPER+L`       | Right Half   |
-| `HYPER+SHIFT+H` | Left Screen  |
-| `HYPER+SHIFT+J` | Lower Screen |
-| `HYPER+SHIFT+K` | Upper Screen |
-| `HYPER+SHIFT+L` | Right Screen |
+| `hyper+f`       | Full Screen  |
+| `hyper+c`       | Center       |
+| `hyper+h`       | Left Half    |
+| `hyper+j`       | Bottom Half  |
+| `hyper+k`       | Top Half     |
+| `hyper+l`       | Right Half   |
+| `hyper+shift+h` | Left Screen  |
+| `hyper+shift+j` | Lower Screen |
+| `hyper+shift+k` | Upper Screen |
+| `hyper+shift+l` | Right Screen |
 
 ## License
 
