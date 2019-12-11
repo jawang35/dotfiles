@@ -48,7 +48,9 @@ config pull && config checkout && config submodule update --init --recursive
 
 ## Theme
 
-I use the [@sonph](https://github.com/sonph)'s [onehalfdark](https://github.com/sonph/onehalf) theme. My [Bash prompt](.config/bash/prompt) and [tmux status bar](https://github.com/jawang35/.dotfiles/blob/master/.config/tmux/onehalfdark.tmux) have been inspired by the same theme. Everything should look good in both [24-bit](https://raw.githubusercontent.com/jawang35/.dotfiles/master/.themes/kitty-24-bit.png) and [256-color](https://raw.githubusercontent.com/jawang35/.dotfiles/master/.themes/terminal-8-bit.png) terminal emulators.
+I use the [@sonph](https://github.com/sonph)'s [onehalfdark](https://github.com/sonph/onehalf) theme with [Source Code Pro Nerd Font Mono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/SourceCodePro). My [Bash prompt](.config/bash/prompt) and [tmux status bar](https://github.com/jawang35/.dotfiles/blob/master/.config/tmux/onehalfdark.tmux) have been inspired by the same theme. [24-bit](https://raw.githubusercontent.com/jawang35/.dotfiles/master/.themes/kitty-24-bit.png) and [256-color](https://raw.githubusercontent.com/jawang35/.dotfiles/master/.themes/terminal-8-bit.png) terminal emulators are supported.
+
+
 
 [![Kitty (24-bit colors)](.themes/kitty-24-bit.png "Kitty (24-bit colors)")](https://raw.githubusercontent.com/jawang35/.dotfiles/master/.themes/kitty-24-bit.png)
 
