@@ -14,6 +14,8 @@ This is my collection of [dotfiles](https://dotfiles.github.io/). As with any op
 - [Git](https://git-scm.com/)
 - [Homebrew](https://brew.sh/) - optional
 
+### Bootstrap
+
 ```sh
 $ curl -s https://raw.githubusercontent.com/jawang35/.dotfiles/master/bootstrap.sh | bash
 ```
