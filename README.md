@@ -5,7 +5,7 @@
 [![GitHub Actions](https://github.com/jawang35/.dotfiles/workflows/CI/badge.svg)](https://github.com/jawang35/.dotfiles/actions?query=workflow%3ACI)
 [![Dependabot](https://api.dependabot.com/badges/status?host=github&repo=jawang35/.dotfiles)](https://app.dependabot.com/)
 
-This is my collection of configurations. As with any open source software never blindly running anything that has not been properly understood and/or vetted. These settings should be considered unstable as I'm constantly tinkering with them. Rather than installing, I recommend forking and modifying it for your own use or using as a resource for your own configurations.
+This is my collection of [dotfiles](https://dotfiles.github.io/). As with any open source software never blindly running anything that has not been properly understood and/or vetted. These settings should be considered unstable as I'm constantly tinkering with them. Rather than installing, I recommend forking and modifying it for your own use or using as a resource for your own configurations.
 
 ## Installation
 
@@ -15,7 +15,7 @@ This is my collection of configurations. As with any open source software never 
 - [Homebrew](https://brew.sh/) - optional
 
 ```sh
-curl -s https://raw.githubusercontent.com/jawang35/.dotfiles/master/bootstrap.sh | bash
+$ curl -s https://raw.githubusercontent.com/jawang35/.dotfiles/master/bootstrap.sh | bash
 ```
 
 [bootstrap.sh](bootstrap.sh) script will:
@@ -32,7 +32,7 @@ Configuration files are managed using a Git bare repository (inspired by https:/
 To update to latest:
 
 ```sh
-config pull && config checkout && config submodule update --init --recursive
+$ config pull && config checkout && config submodule update --init --recursive
 ```
 
 - [Bash](https://www.gnu.org/software/bash/) - Default shell. All files found in [.config/bash](.config/bash) are loaded in both login and non-login shells. Local configs added to [.local/bash](.local/bash) will also be loaded. [.config/inputrc](.config/inputrc) improves [Bash](https://www.gnu.org/software/bash/) completion behavior and sets [vi editing mode](https://sanctum.geek.nz/arabesque/vi-mode-in-bash/).
