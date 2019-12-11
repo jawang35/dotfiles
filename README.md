@@ -60,9 +60,7 @@ I use the [@sonph](https://github.com/sonph)'s [onehalfdark](https://github.com/
 
 Lua scripts for [Hammerspoon](http://www.hammerspoon.org/) configuration. [.hammerspoon/init.lua](.hammerspoon/init.lua) is the entrypoint that loads all the other modules.
 
-### Hyper Key
-
-`hyper` key is defined as `ctrl+option+cmd`. This is bound to `capslock` using [Karabiner-Elements](.config/karabiner/karabiner.json). `hyper+r` reloads the Hammerspoon config.
+`hyper` key is defined as `ctrl+option+cmd` and is bound to `capslock` using [Karabiner-Elements](.config/karabiner/karabiner.json). `hyper+r` reloads the Hammerspoon config.
 
 ### Applications
 
