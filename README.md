@@ -62,7 +62,7 @@ Lua scripts for [Hammerspoon](http://www.hammerspoon.org/) configuration. [.hamm
 
 ### Hyper Key
 
-`hyper` key is bound to `ctrl+option+cmd`. This is bound to `capslock` using [Karabiner-Elements](.config/karabiner/karabiner.json). `hyper+r` reloads the Hammerspoon config.
+`hyper` key is defined as `ctrl+option+cmd`. This is bound to `capslock` using [Karabiner-Elements](.config/karabiner/karabiner.json). `hyper+r` reloads the Hammerspoon config.
 
 ### Applications
 
