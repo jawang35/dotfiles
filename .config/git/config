@@ -9,8 +9,6 @@
 	path = ~/.local/git/config
 [merge]
 	ff = only
-[push]
-	default = current
 [pull]
 	rebase = true
 [status]
