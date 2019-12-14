@@ -145,10 +145,10 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_command",
+                                        "key_code": "right_command",
                                         "modifiers": [
-                                            "left_control",
-                                            "left_option"
+                                            "right_control",
+                                            "right_option"
                                         ]
                                     }
                                 ],
