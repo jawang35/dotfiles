@@ -89,11 +89,11 @@ au BufWritePre,FileWritePre * silent! call mkdir(expand('<afile>:p:h'), 'p')
 let mapleader="\<Space>"
 
 " Pane management
-nnoremap <leader>j <C-W><C-J>
-nnoremap <leader>k <C-W><C-K>
-nnoremap <leader>l <C-W><C-L>
-nnoremap <leader>h <C-W><C-H>
-nnoremap <leader>o <C-W><C-O>
+nnoremap <leader>j <C-w><C-j>
+nnoremap <leader>k <C-w><C-k>
+nnoremap <leader>l <C-w><C-l>
+nnoremap <leader>h <C-w><C-h>
+nnoremap <leader>o <C-w><C-o>
 
 " Buffer management
 nnoremap <silent><leader>[ :bp<CR>
@@ -135,8 +135,8 @@ let g:ale_fix_on_save = 1
 let g:ale_fixers = {
     \ '*': ['remove_trailing_lines', 'trim_whitespace'],
     \ }
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
+nmap <silent> <C-p> <Plug>(ale_previous_wrap)
+nmap <silent> <C-n> <Plug>(ale_next_wrap)
 
 " Colors
 if exists('+termguicolors') && ($COLORTERM == 'truecolor' || $COLORTERM == '24bit')
