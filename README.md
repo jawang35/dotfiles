@@ -39,14 +39,14 @@ $ config pull && config checkout && config submodule update --init --recursive
 
 - [Bash](https://www.gnu.org/software/bash/) - Default shell. All files found in [.config/bash](.config/bash) are loaded in both login and non-login shells. Local configs added to [.local/bash](.local/bash) will also be loaded. [.config/inputrc](.config/inputrc) improves [Bash](https://www.gnu.org/software/bash/) completion behavior and sets [vi editing mode](https://sanctum.geek.nz/arabesque/vi-mode-in-bash/).
 - [Git](https://git-scm.com/) - Version control. Configurations defined in [.config/git](.config/git). Dependencies managed as [submodules](.gitmodules).
-- [Hammerspoon](https://www.hammerspoon.org/) - Key bindings for managing Mac OS applications/windows. See [Hammerspoon](#hammerspoon).
-- [Homebrew](https://brew.sh/) - Mac OS package manager. [bundler](https://github.com/Homebrew/homebrew-bundle) manages packages [.config/Brewfile](.config/Brewfile). Local package dependencies managed by `.local/Brewfile` if it exists.
-- [Karabiner-Elements](https://pqrs.org/osx/karabiner/) - Custom key mappings. Configurations defined in [.config/karabiner](.config/karabiner). Simultaneous `j-k` mapped to `escape`. `capslock` mapped to `cmd+alt+ctrl` to create a ["hyper" key](https://brettterpstra.com/2017/06/15/a-hyper-key-with-karabiner-elements-full-instructions/) for [Hammerspoon](#hammerspoon).
+- [Hammerspoon](https://www.hammerspoon.org/) - Key bindings for managing macOS applications/windows. See [Hammerspoon](#hammerspoon).
+- [Homebrew](https://brew.sh/) - macOS package manager. [bundler](https://github.com/Homebrew/homebrew-bundle) manages packages [.config/Brewfile](.config/Brewfile). Local package dependencies managed by `.local/Brewfile` if it exists.
+- [Karabiner-Elements](https://pqrs.org/osx/karabiner/) - Custom key mappings for macOS. Configurations defined in [.config/karabiner](.config/karabiner).
 - [kitty](https://sw.kovidgoyal.net/kitty/) - Full-featured GPU-optimized terminal emulator with a readable [configuration file](.config/kitty).
 - [lf](https://github.com/gokcehan/lf) - Terminal based file manager. Configurations in [.config/lf](.config/lf).
 - [psql](https://www.postgresql.org/docs/current/app-psql.html) - Postgres CLI tool. Configurations at [.psqlrc](.psqlrc).
 - [tmux](https://github.com/tmux/tmux) - Manages multiple terminal sessions, windows, and panes. Configured in [.tmux.conf](.tmux.conf).
-- [Vim](https://www.vim.org/)/[Neovim](https://neovim.io/) - Configurations setup primarily for [Neovim](https://neovim.io/) at [.config/nvim](.config/nvim). [pathogen.vim](https://github.com/tpope/vim-pathogen) for managing plugins as [submodules](.gitmodule). [.editorconfig](.editorconfig) is used to configure coding styles. Compatibility with [Vim](https://www.vim.org/) is preserved by symlinking [.vim](.vim) and [.config/nvim/vimrc](.config/nvim/vimrc). [Neovim specific plugins](.config/nvim/bundles/nvim) are ignored by vanilla [Vim](https://www.vim.org/).
+- [Vim](https://www.vim.org/)/[Neovim](https://neovim.io/) - Configurations setup primarily for [Neovim](https://neovim.io/) at [.config/nvim](.config/nvim). Compatibility with [Vim](https://www.vim.org/) is preserved by symlinking [.vim](.vim) and [.config/nvim/vimrc](.config/nvim/vimrc), and by ignoring [Neovim specific plugins](.config/nvim/bundles/nvim).
 
 ## Theme
 
