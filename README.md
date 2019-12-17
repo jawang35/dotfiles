@@ -1,9 +1,9 @@
-<a href="https://github.com/jawang35/.dotfiles" title="Jason's dotfiles">
+<a href="https://github.com/jawang35/dotfiles" title="Jason's dotfiles">
     <img src="https://raw.githubusercontent.com/jglovier/dotfiles-logo/master/dotfiles-logo.svg?sanitize=true" alt="Jason's dotfiles" width="400">
 </a>
 
-[![GitHub Actions](https://github.com/jawang35/.dotfiles/workflows/CI/badge.svg)](https://github.com/jawang35/.dotfiles/actions?query=workflow%3ACI)
-[![Dependabot](https://api.dependabot.com/badges/status?host=github&repo=jawang35/.dotfiles)](https://app.dependabot.com/)
+[![GitHub Actions](https://github.com/jawang35/dotfiles/workflows/CI/badge.svg)](https://github.com/jawang35/dotfiles/actions?query=workflow%3ACI)
+[![Dependabot](https://api.dependabot.com/badges/status?host=github&repo=jawang35/dotfiles)](https://app.dependabot.com/)
 
 This is my collection of [dotfiles](https://dotfiles.github.io/). As with any open source software never blindly running anything that has not been properly understood and/or vetted. These settings should be considered unstable as I'm constantly tinkering with them. Rather than installing, I recommend forking and modifying it for your own use or using as a resource for your own configurations.
 
@@ -17,7 +17,7 @@ This is my collection of [dotfiles](https://dotfiles.github.io/). As with any op
 ### Bootstrap
 
 ```sh
-$ curl -s https://raw.githubusercontent.com/jawang35/.dotfiles/master/bootstrap.sh | bash
+$ curl -s https://raw.githubusercontent.com/jawang35/dotfiles/master/bootstrap.sh | bash
 ```
 
 [bootstrap.sh](bootstrap.sh) script will:
@@ -50,11 +50,11 @@ $ config pull && config checkout && config submodule update --init --recursive
 
 ## Theme
 
-I use the [@sonph](https://github.com/sonph)'s [onehalfdark](https://github.com/sonph/onehalf) theme with [Source Code Pro Nerd Font Mono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/SourceCodePro). My [Bash prompt](.config/bash/prompt) and [tmux status bar](https://github.com/jawang35/.dotfiles/blob/master/.config/tmux/onehalfdark.tmux) have been inspired by the same theme. [24-bit](https://raw.githubusercontent.com/jawang35/.dotfiles/master/.themes/kitty-24-bit.png) and [256-color](https://raw.githubusercontent.com/jawang35/.dotfiles/master/.themes/terminal-8-bit.png) terminal emulators are supported.
+I use the [@sonph](https://github.com/sonph)'s [onehalfdark](https://github.com/sonph/onehalf) theme with [Source Code Pro Nerd Font Mono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/SourceCodePro). My [Bash prompt](.config/bash/prompt) and [tmux status bar](.config/tmux/onehalfdark.tmux) have been inspired by the same theme. [24-bit](https://raw.githubusercontent.com/jawang35/dotfiles/master/.themes/kitty-24-bit.png) and [256-color](https://raw.githubusercontent.com/jawang35/dotfiles/master/.themes/terminal-8-bit.png) terminal emulators are supported.
 
 
 
-[![Kitty (24-bit colors)](.themes/kitty-24-bit.png "Kitty (24-bit colors)")](https://raw.githubusercontent.com/jawang35/.dotfiles/master/.themes/kitty-24-bit.png)
+[![Kitty (24-bit colors)](.themes/kitty-24-bit.png "Kitty (24-bit colors)")](https://raw.githubusercontent.com/jawang35/dotfiles/master/.themes/kitty-24-bit.png)
 
 ## Hammerspoon
 

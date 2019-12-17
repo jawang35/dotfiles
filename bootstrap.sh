@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-git clone --bare https://github.com/jawang35/.dotfiles.git "${HOME}/.dotfiles.git"
+git clone --bare https://github.com/jawang35/dotfiles.git "${HOME}/.dotfiles.git"
 git --git-dir="${HOME}/.dotfiles.git" --work-tree="${HOME}" checkout
 git --git-dir="${HOME}/.dotfiles.git" --work-tree="${HOME}" submodule update --init --recursive
 
