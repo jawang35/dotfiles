@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
 function __bash_exports {
-    export INPUTRC="${HOME}/.config/inputrc"
+    export CONDARC="${HOME}/.config/conda/condarc"
     export HOMEBREW_BUNDLE_FILE="${HOME}/.config/Brewfile"
+    export INPUTRC="${HOME}/.config/inputrc"
 
     # Set EDITOR variable to nvim/vim
     if [ -f /usr/local/bin/nvim ]; then
