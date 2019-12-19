@@ -9,6 +9,7 @@ brew 'docker-compose'
 brew 'fd'
 brew 'git'
 brew 'git-lfs'
+brew 'go'
 brew 'haskell-stack'
 brew 'highlight'
 brew 'htop'
@@ -44,6 +45,7 @@ cask 'miniconda'
 cask 'ngrok'
 cask 'scroll-reverser'
 cask 'slack'
+cask 'viscosity'
 
 BREWFILE_LOCAL = File.join(ENV['HOME'], '.local', 'Brewfile')
 if File.file?(BREWFILE_LOCAL)
