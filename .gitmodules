@@ -40,12 +40,18 @@
 [submodule "vim-commentary"]
 	path = .config/nvim/bundles/vim/all/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
+[submodule "vim-devicons"]
+	path = .config/nvim/bundles/vim/all/vim-devicons
+	url = https://github.com/ryanoasis/vim-devicons.git
 [submodule "vim-dirvish"]
 	path = .config/nvim/bundles/vim/all/vim-dirvish
 	url = https://github.com/justinmk/vim-dirvish.git
 [submodule "vim-eunuch"]
 	path = .config/nvim/bundles/vim/all/vim-eunuch
 	url = https://github.com/tpope/vim-eunuch.git
+[submodule "vim-gitbranch"]
+	path = .config/nvim/bundles/vim/all/vim-gitbranch
+	url = https://github.com/itchyny/vim-gitbranch.git
 [submodule "vim-go"]
 	path = .config/nvim/bundles/vim/all/vim-go
 	url = https://github.com/fatih/vim-go.git

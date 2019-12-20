@@ -175,6 +175,9 @@ let g:echodoc_enable_at_startup = 1
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
+" devicons
+let g:webdevicons_enable_ctrlp = 1
+
 " Golang
 let g:go_version_warning = 0
 
@@ -193,21 +196,27 @@ let g:lightline = {
     \             [ 'readonly', 'filepath', 'modified' ] ],
     \   'right': [ [ 'lineinfo' ],
     \              [ 'percent' ],
-    \              [ 'fileformat', 'fileencoding', 'filetype' ] ] },
+    \              [ 'gitbranch', 'fileformat', 'filetype' ] ] },
     \ 'inactive': {
     \   'left': [ [ 'filename' ] ],
     \   'right': [ [ 'lineinfo' ],
     \              [ 'percent' ] ] },
     \ 'component_expand': { 'bufferline': 'LightlineBufferline' },
     \ 'component_type': { 'bufferline': 'tabsel' },
-    \ 'component_function': { 'filepath': 'LightlineFilepath' } }
-" Buffers in tabsline
+    \ 'component_function': { 'fileformat': 'LightlineFileFormat',
+    \                         'filepath': 'LightlineFilePath',
+    \                         'filetype': 'LightlineFileType',
+    \                         'gitbranch': 'LightlineGitBranch'} }
 function! LightlineBufferline()
+    " Buffers in tabsline
     call bufferline#refresh_status()
     return [ g:bufferline_status_info.before, g:bufferline_status_info.current, g:bufferline_status_info.after ]
 endfunction
-" Truncate filepath on narrow panes
-function! LightlineFilepath()
+function! LightlineFileFormat()
+    return &fileformat . ' ' . WebDevIconsGetFileFormatSymbol() . ' '
+endfunction
+function! LightlineFilePath()
+    " Truncate filepath on narrow panes
     if winwidth(0) < 120
         return expand('%:t')
     endif
@@ -226,6 +235,17 @@ function! LightlineFilepath()
 
     return join(filepath, '/')
 endfunction
+function! LightlineFileType()
+    return strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() . ' ' : 'no ft'
+endfunction
+function! LightlineGitBranch()
+    if winwidth(0) < 120
+        return ''
+    endif
+    let branchname = gitbranch#name()
+    return strlen(branchname) ? ' ' . branchname : ''
+endfunction
+
 
 " Mundo
 let g:mundo_prefer_python3 = 1

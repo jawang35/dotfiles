@@ -54,7 +54,7 @@ function __bash_prompt_git_branch {
         )
 
         if [ -n "${branch}" ]; then
-            printf "%s" "${branch}"
+            printf "%s" "${branch}"
             return
         fi
     fi
