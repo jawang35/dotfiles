@@ -9,7 +9,7 @@ if command -v brew >/dev/null 2>&1; then
     brew update && brew bundle --file="${HOME}/.config/Brewfile"
 fi
 
-vim -c 'PlugInstall' -c 'PlugUpdate' -c 'PlugClean' -c 'qa!'
+vim -E +PlugInstall +PlugUpdate +PlugClean +qall
 
 # shellcheck source=.bash_profile
 source "${HOME}/.bash_profile"
