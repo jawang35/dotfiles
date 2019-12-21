@@ -1,12 +1,20 @@
 #!/usr/bin/env bash
 
 function __bash_functions {
-    function brew-update {
+    function config-update-all {
+        config pull && config-update-submodule && config-update-brew && config-update-vim-plug
+    }
+
+    function config-update-brew {
         brew update && brew bundle && brew upgrade && brew bundle cleanup --force
     }
 
-    function submodule-update {
+    function config-update-submodule {
         config submodule update --init --recursive
+    }
+
+    function config-update-vim-plug {
+        vim -c 'PlugInstall' -c 'PlugUpdate' -c 'PlugClean' -c 'qa!'
     }
 
     # ls after cd
