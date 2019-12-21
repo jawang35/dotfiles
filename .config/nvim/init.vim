@@ -206,14 +206,16 @@ let g:lightline = {
     \ 'component_function': { 'fileformat': 'LightlineFileFormat',
     \                         'filepath': 'LightlineFilePath',
     \                         'filetype': 'LightlineFileType',
-    \                         'gitbranch': 'LightlineGitBranch'} }
+    \                         'gitbranch': 'LightlineGitBranch'},
+    \ 'separator': { 'left': '', 'right': '' },
+    \ 'subseparator': { 'left': '', 'right': '' } }
 function! LightlineBufferline()
     " Buffers in tabsline
     call bufferline#refresh_status()
     return [ g:bufferline_status_info.before, g:bufferline_status_info.current, g:bufferline_status_info.after ]
 endfunction
 function! LightlineFileFormat()
-    return &fileformat . ' ' . WebDevIconsGetFileFormatSymbol() . ' '
+    return WebDevIconsGetFileFormatSymbol() . ' ' . &fileformat
 endfunction
 function! LightlineFilePath()
     " Truncate filepath on narrow panes
@@ -236,7 +238,7 @@ function! LightlineFilePath()
     return join(filepath, '/')
 endfunction
 function! LightlineFileType()
-    return strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() . ' ' : 'no ft'
+    return strlen(&filetype) ? WebDevIconsGetFileTypeSymbol() . ' ' . &filetype : 'no ft'
 endfunction
 function! LightlineGitBranch()
     if winwidth(0) < 120
