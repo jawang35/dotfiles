@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# tmux status bar based on the onehalfdark theme.
+
 if [ "$COLORTERM" = truecolor ] || [ "$COLORTERM" = 24bit ]; then
     TMUX_COLOR_WHITE='#dcdfe4'
     TMUX_COLOR_BLACK='#282c34'
