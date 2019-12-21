@@ -119,14 +119,37 @@ let g:loaded_python_provider = 0
 " Default Python 3 path to ensure pynvim exists when changing environments
 let g:python3_host_prog = '/usr/local/bin/python3'
 
-" Pathogen
-function PathogenInfect(filetype)
-    execute pathogen#infect('bundles/vim/' . a:filetype . '/{}')
-    if v:progname == 'nvim'
-        execute pathogen#infect('bundles/nvim/' . a:filetype . '/{}')
-    endif
-endfunction
-execute PathogenInfect('all')
+call plug#begin('~/.local/share/vim/plugged')
+Plug '~/.modules/onehalf/vim'
+
+Plug 'bling/vim-bufferline'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'fatih/vim-go'
+Plug 'hashivim/vim-terraform'
+Plug 'itchyny/lightline.vim'
+Plug 'itchyny/vim-gitbranch'
+Plug 'justinmk/vim-dirvish'
+Plug 'leafgarland/typescript-vim'
+Plug 'MaxMEllon/vim-jsx-pretty', { 'for': ['javascript', 'typescript'] }
+Plug 'pangloss/vim-javascript'
+Plug 'Raimondi/delimitMate'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-surround'
+Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
+
+if v:progname == 'nvim'
+    Plug 'deoplete-plugins/deoplete-jedi', { 'for': 'python' }
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'Shougo/echodoc'
+    Plug 'simnalamburt/vim-mundo', { 'on': 'MundoToggle' }
+    Plug 'w0rp/ale'
+endif
+call plug#end()
 
 " ALE (Asynchronous Lint Engine)
 let g:ale_lint_on_text_changed = 'never'
@@ -255,21 +278,3 @@ nnoremap <silent><leader>u :MundoToggle<CR>
 
 " Terraform
 let g:terraform_fmt_on_save = 1
-
-" Promptline bash status bar
-" Uncomment and run :PromptlineSnapshot ~/.bash_prompt.temp
-" execute pathogen#infect('bundles/utils/{}')
-" let g:promptline_theme = 'lightline'
-" let g:promptline_preset = {
-" 	\ 'a'   : [ promptline#slices#user() ],
-" 	\ 'b'   : [ promptline#slices#cwd({ 'dir_limit': 2 }) ],
-" 	\ 'c'   : [ promptline#slices#vcs_branch() ],
-" 	\ 'warn': [ promptline#slices#last_exit_code() ],
-" 	\ }
-" let g:promptline_powerline_symbols = 0
-
-" tmuxline
-" Uncomment and run :Tmuxline and then :TmuxlineSnapshot ~/.tmux.conf
-" execute pathogen#infect('bundles/utils/{}')
-" let g:tmuxline_theme = 'lightline'
-" let g:tmuxline_powerline_separators = 0
