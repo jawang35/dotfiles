@@ -120,7 +120,7 @@ let g:loaded_python_provider = 0
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 " Plugins {{{
-call plug#begin('~/.local/share/vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 Plug '~/.modules/onehalf/vim'
 
 Plug 'bling/vim-bufferline'
