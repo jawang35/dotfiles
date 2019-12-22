@@ -2,7 +2,7 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" Neovim defaults for Vim
+" Neovim defaults for Vim {{{
 set autoindent
 set autoread
 set backspace=indent,eol,start
@@ -27,7 +27,7 @@ set tags=./tags;,tags
 set ttyfast
 set viminfo+=!
 set wildmenu
-" End Neovim defaults
+" }}}
 
 " Disable modeline to prevent unpredictable behavior
 set nomodeline
@@ -119,6 +119,7 @@ let g:loaded_python_provider = 0
 " Default Python 3 path to ensure pynvim exists when changing environments
 let g:python3_host_prog = '/usr/local/bin/python3'
 
+" Plugins {{{
 call plug#begin('~/.local/share/vim/plugged')
 Plug '~/.modules/onehalf/vim'
 
@@ -150,8 +151,9 @@ if v:progname == 'nvim'
     Plug 'w0rp/ale'
 endif
 call plug#end()
+" }}}
 
-" ALE (Asynchronous Lint Engine)
+" ALE - linting and formatting {{{
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
 let g:ale_fix_on_save = 1
@@ -160,26 +162,30 @@ let g:ale_fixers = {
     \ }
 nmap <silent> <C-p> <Plug>(ale_previous_wrap)
 nmap <silent> <C-n> <Plug>(ale_next_wrap)
+" }}}
 
-" Colors
+" Colors {{{
 if exists('+termguicolors') && ($COLORTERM == 'truecolor' || $COLORTERM == '24bit')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
+
 set t_Co=256
 syntax on
 colorscheme onehalfdark
+" }}}
 
 " commentary.vim
 map g/ gc
 
-" CtrlP
+" CtrlP - fuzzy finding {{{
 let g:ctrlp_map = '<leader>p'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_root_markers = ['environment.yml', 'Gopkg.toml', 'Makefile', 'package.json', 'requirements.txt']
+
 if executable('rg')
     " Use ripgrep for faster searching
     let g:ctrlp_user_command = 'rg %s --files --hidden --vimgrep --glob ""'
@@ -187,16 +193,20 @@ if executable('rg')
 else
     let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 endif
+" }}}
 
-" deoplete.nvim
+" deoplete {{{
 set omnifunc=syntaxcomplete#Complete
 let g:deoplete#enable_at_startup = 1
+
 " Use echodoc to move autocompletion preview window to command line
 set completeopt-=preview
 let g:echodoc_enable_at_startup = 1
+
 " Tab through pop-up menus
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+" }}}
 
 " devicons
 let g:webdevicons_enable_ctrlp = 1
@@ -204,11 +214,55 @@ let g:webdevicons_enable_ctrlp = 1
 " Golang
 let g:go_version_warning = 0
 
-" Lightline
+" Lightline - status bar and buffers {{{
 set showtabline=2
 let g:bufferline_echo = 0
 let g:bufferline_active_buffer_left = ' '
 let g:bufferline_active_buffer_right = ' '
+
+" Buffers in tabsline
+function! LightlineBufferline()
+    call bufferline#refresh_status()
+    return [ g:bufferline_status_info.before, g:bufferline_status_info.current, g:bufferline_status_info.after ]
+endfunction
+
+function! LightlineFileFormat()
+    return WebDevIconsGetFileFormatSymbol() . ' ' . &fileformat
+endfunction
+
+" Truncate filepath on narrow panes
+function! LightlineFilePath()
+    if winwidth(0) < 120
+        return expand('%:t')
+    endif
+
+    let home = fnamemodify('~', ':p:h')
+    let abspath = substitute(expand('%:p'), home, '~', '')
+    if abspath ==# ''
+        return '[No Name]'
+    endif
+
+    let filepath = split(abspath, '/')
+
+    if len(filepath) > 3
+        return '⋯/' . join(filepath[-3:], '/')
+    endif
+
+    return join(filepath, '/')
+endfunction
+
+function! LightlineFileType()
+    return strlen(&filetype) ? WebDevIconsGetFileTypeSymbol() . ' ' . &filetype : 'no ft'
+endfunction
+
+function! LightlineGitBranch()
+    if winwidth(0) < 120
+        return ''
+    endif
+    let branchname = gitbranch#name()
+    return strlen(branchname) ? ' ' . branchname : ''
+endfunction
+
 let g:lightline = {
     \ 'colorscheme': 'onehalfdark',
     \ 'tabline': {
@@ -232,49 +286,12 @@ let g:lightline = {
     \                         'gitbranch': 'LightlineGitBranch'},
     \ 'separator': { 'left': '', 'right': '' },
     \ 'subseparator': { 'left': '', 'right': '' } }
-function! LightlineBufferline()
-    " Buffers in tabsline
-    call bufferline#refresh_status()
-    return [ g:bufferline_status_info.before, g:bufferline_status_info.current, g:bufferline_status_info.after ]
-endfunction
-function! LightlineFileFormat()
-    return WebDevIconsGetFileFormatSymbol() . ' ' . &fileformat
-endfunction
-function! LightlineFilePath()
-    " Truncate filepath on narrow panes
-    if winwidth(0) < 120
-        return expand('%:t')
-    endif
+" }}}
 
-    let home = fnamemodify('~', ':p:h')
-    let abspath = substitute(expand('%:p'), home, '~', '')
-    if abspath ==# ''
-        return '[No Name]'
-    endif
-
-    let filepath = split(abspath, '/')
-
-    if len(filepath) > 3
-        return '⋯/' . join(filepath[-3:], '/')
-    endif
-
-    return join(filepath, '/')
-endfunction
-function! LightlineFileType()
-    return strlen(&filetype) ? WebDevIconsGetFileTypeSymbol() . ' ' . &filetype : 'no ft'
-endfunction
-function! LightlineGitBranch()
-    if winwidth(0) < 120
-        return ''
-    endif
-    let branchname = gitbranch#name()
-    return strlen(branchname) ? ' ' . branchname : ''
-endfunction
-
-
-" Mundo
+" Mundo - undo tree interface {{{
 let g:mundo_prefer_python3 = 1
 nnoremap <silent><leader>u :MundoToggle<CR>
+" }}}
 
 " Terraform
 let g:terraform_fmt_on_save = 1
