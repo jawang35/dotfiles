@@ -270,6 +270,27 @@ function! LightlineGitBranch()
     return strlen(branchname) ? ' ' . branchname : ''
 endfunction
 
+function! LightlineRightInfo()
+    let gitbranch = LightlineGitBranch()
+    let fileformat = LightlineFileFormat()
+    let filetype = LightlineFileType()
+    let parts = []
+
+    if strlen(gitbranch)
+        let parts = parts + [gitbranch]
+    endif
+
+    if strlen(fileformat)
+        let parts = parts + [fileformat]
+    endif
+
+    if strlen(filetype)
+        let parts = parts + [filetype]
+    endif
+
+    return join(parts, ' ')
+endfunction
+
 let g:lightline = {
     \ 'colorscheme': 'onehalfdark',
     \ 'tabline': {
@@ -280,15 +301,13 @@ let g:lightline = {
     \             [ 'readonly', 'filepath', 'modified' ] ],
     \   'right': [ [ 'lineinfo' ],
     \              [ 'percent' ],
-    \              [ 'gitbranch', 'fileformat', 'filetype' ] ] },
+    \              [ 'rightinfo' ] ] },
     \ 'inactive': {
     \   'left': [ [ 'filename' ] ],
     \   'right': [ [ 'lineinfo' ],
     \              [ 'percent' ] ] },
     \ 'component_expand': { 'bufferline': 'LightlineBufferline' },
     \ 'component_type': { 'bufferline': 'tabsel' },
-    \ 'component_function': { 'fileformat': 'LightlineFileFormat',
-    \                         'filepath': 'LightlineFilePath',
-    \                         'filetype': 'LightlineFileType',
-    \                         'gitbranch': 'LightlineGitBranch'} }
+    \ 'component_function': { 'filepath': 'LightlineFilePath',
+    \                         'rightinfo': 'LightlineRightInfo' } }
 " }}}
