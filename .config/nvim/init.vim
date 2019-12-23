@@ -1,8 +1,5 @@
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
-
 " Neovim defaults for Vim {{{
+set nocompatible
 set autoindent
 set autoread
 set backspace=indent,eol,start
@@ -29,33 +26,17 @@ set viminfo+=!
 set wildmenu
 " }}}
 
+" Miscellaneous defaults {{{
+set foldmethod=marker
+
 " Disable modeline to prevent unpredictable behavior
 set nomodeline
-
-" Undo history
-set undofile
-
-" Centralized swap, backup, undo files
-set backupdir=~/.local/share/vim/backup//
-set directory=~/.local/share/vim/swap//
-set undodir=~/.local/share/vim/undo//
 
 " Bash style autocompletion
 set wildmode=list:longest
 
-" Hide command and mode on command line
-set noshowcmd
-set noshowmode
-
-" Disable search highlighting
-set nohlsearch
-
 " Highlight current line
 set cursorline
-
-" Smart case searching
-set ignorecase
-set smartcase
 
 " Enable file type detection and do language-dependent indenting.
 filetype plugin indent on
@@ -63,9 +44,6 @@ filetype plugin indent on
 " Show relative line numbers
 set number
 set relativenumber
-
-" Allow hidden buffers, don't limit to 1 file per window/split
-set hidden
 
 " 4 space tabs
 set tabstop=4
@@ -77,49 +55,17 @@ set expandtab
 " Indentations snap to multiple of shift width
 set shiftround
 
-" Natural splitting
-set splitbelow
-set splitright
-
-" Create intermediate directories that don't already exist
-" https://github.com/justinmk/vim-dirvish/issues/38
-au BufWritePre,FileWritePre * silent! call mkdir(expand('<afile>:p:h'), 'p')
-
 " Leader
 let mapleader="\<Space>"
+" }}}
 
-" Pane management
-nnoremap <leader>j <C-w><C-j>
-nnoremap <leader>k <C-w><C-k>
-nnoremap <leader>l <C-w><C-l>
-nnoremap <leader>h <C-w><C-h>
-nnoremap <leader>o <C-w><C-o>
-
-" Buffer management
-nnoremap <silent><leader>[ :bp<CR>
-nnoremap <silent><leader>] :bn<CR>
-
-" Search behaves like grep
-nnoremap / /\v
-vnoremap / /\v
-nnoremap ? ?\v
-vnoremap ? ?\v
-
-" Better grepping
-if executable('rg')
-    " Use ripgrep for faster grepping
-    set grepprg=rg\ --vimgrep\ --smart-case
-else
-    set grepprg=grep\ -nr\ $*\ /dev/null
-endif
-
+" Plugins {{{
 " Disable Python 2
 let g:loaded_python_provider = 0
 
 " Default Python 3 path to ensure pynvim exists when changing environments
 let g:python3_host_prog = '/usr/local/bin/python3'
 
-" Plugins {{{
 call plug#begin('~/.config/nvim/plugged')
 Plug '~/.modules/onehalf/vim'
 
@@ -153,7 +99,65 @@ endif
 call plug#end()
 " }}}
 
-" ALE - linting and formatting {{{
+" Undo (Mundo), swap, backup {{{
+" Undo history
+set undofile
+
+" Centralized swap, backup, undo files
+set backupdir=~/.local/share/vim/backup//
+set directory=~/.local/share/vim/swap//
+set undodir=~/.local/share/vim/undo//
+
+let g:mundo_prefer_python3 = 1
+nnoremap <silent><leader>u :MundoToggle<CR>
+" }}}
+
+" Pane/buffer management {{{
+" Allow hidden buffers, don't limit to 1 file per window/split
+set hidden
+
+" Natural splitting
+set splitbelow
+set splitright
+
+nnoremap <leader>j <C-w><C-j>
+nnoremap <leader>k <C-w><C-k>
+nnoremap <leader>l <C-w><C-l>
+nnoremap <leader>h <C-w><C-h>
+nnoremap <leader>o <C-w><C-o>
+
+nnoremap <silent><leader>[ :bp<CR>
+nnoremap <silent><leader>] :bn<CR>
+
+" Create intermediate directories that don't already exist
+" https://github.com/justinmk/vim-dirvish/issues/38
+au BufWritePre,FileWritePre * silent! call mkdir(expand('<afile>:p:h'), 'p')
+" }}}
+
+" Searching {{{
+" Disable search highlighting
+set nohlsearch
+
+" Smart case searching
+set ignorecase
+set smartcase
+
+" Search behaves like grep
+nnoremap / /\v
+vnoremap / /\v
+nnoremap ? ?\v
+vnoremap ? ?\v
+
+" Better grepping
+if executable('rg')
+    " Use ripgrep for faster grepping
+    set grepprg=rg\ --vimgrep\ --smart-case
+else
+    set grepprg=grep\ -nr\ $*\ /dev/null
+endif
+" }}}
+
+" Linting and formatting (ALE) {{{
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
 let g:ale_fix_on_save = 1
@@ -164,7 +168,7 @@ nmap <silent> <C-p> <Plug>(ale_previous_wrap)
 nmap <silent> <C-n> <Plug>(ale_next_wrap)
 " }}}
 
-" Colors {{{
+" Colors (onehalf-dark) {{{
 if exists('+termguicolors') && ($COLORTERM == 'truecolor' || $COLORTERM == '24bit')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -176,15 +180,17 @@ syntax on
 colorscheme onehalfdark
 " }}}
 
-" commentary.vim
+" Commenting (commentary) {{{
 map g/ gc
+" }}}
 
-" CtrlP - fuzzy finding {{{
+" Fuzzy file finding (CtrlP) {{{
 let g:ctrlp_map = '<leader>p'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_root_markers = ['environment.yml', 'Gopkg.toml', 'Makefile', 'package.json', 'requirements.txt']
+let g:webdevicons_enable_ctrlp = 1
 
 if executable('rg')
     " Use ripgrep for faster searching
@@ -195,7 +201,7 @@ else
 endif
 " }}}
 
-" deoplete {{{
+" Autocompletion (deoplete/echodoc) {{{
 set omnifunc=syntaxcomplete#Complete
 let g:deoplete#enable_at_startup = 1
 
@@ -208,13 +214,11 @@ inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 " }}}
 
-" devicons
-let g:webdevicons_enable_ctrlp = 1
+" Status bar and buffers (lightline/bufferline) {{{
+" Hide command and mode on command line
+set noshowcmd
+set noshowmode
 
-" Golang
-let g:go_version_warning = 0
-
-" Lightline - status bar and buffers {{{
 set showtabline=2
 let g:bufferline_echo = 0
 let g:bufferline_active_buffer_left = ' '
@@ -287,11 +291,3 @@ let g:lightline = {
     \ 'separator': { 'left': '', 'right': '' },
     \ 'subseparator': { 'left': '', 'right': '' } }
 " }}}
-
-" Mundo - undo tree interface {{{
-let g:mundo_prefer_python3 = 1
-nnoremap <silent><leader>u :MundoToggle<CR>
-" }}}
-
-" Terraform
-let g:terraform_fmt_on_save = 1
