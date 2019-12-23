@@ -55,6 +55,9 @@ set expandtab
 " Indentations snap to multiple of shift width
 set shiftround
 
+" Disable vim-go version warning
+let g:go_version_warning = 0
+
 " Leader
 let mapleader="\<Space>"
 " }}}
