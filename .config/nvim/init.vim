@@ -290,7 +290,5 @@ let g:lightline = {
     \ 'component_function': { 'fileformat': 'LightlineFileFormat',
     \                         'filepath': 'LightlineFilePath',
     \                         'filetype': 'LightlineFileType',
-    \                         'gitbranch': 'LightlineGitBranch'},
-    \ 'separator': { 'left': '', 'right': '' },
-    \ 'subseparator': { 'left': '', 'right': '' } }
+    \                         'gitbranch': 'LightlineGitBranch'} }
 " }}}
