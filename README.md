@@ -25,6 +25,7 @@ $ curl -s https://raw.githubusercontent.com/jawang35/dotfiles/master/bootstrap.s
 2. Check out configuration files into the `$HOME` directory.
 3. Install submodule dependencies.
 4. Install [Homebrew](#homebrew) packages and applications.
+5. Install Vim/Neovim plugins with [vim-plug](https://github.com/junegunn/vim-plug).
 5. Load [.bash_profile](.bash_profile).
 
 ## Configurations
