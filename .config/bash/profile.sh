@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function __bash_profile {
-    if command -v brew >/dev/null 2>&1; then
+    if command -v brew > /dev/null 2>&1; then
         local BREW_PREFIX
         BREW_PREFIX="$(brew --prefix)"
 
