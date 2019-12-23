@@ -14,7 +14,7 @@ function __bash_functions {
     }
 
     function config-update-vim-plug {
-        vim -E +PlugInstall! +PlugClean! +qa!
+        vim -E +PlugInstall +PlugClean! +UpdateRemotePlugins +qa!
     }
 
     # ls after cd
