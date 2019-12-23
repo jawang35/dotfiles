@@ -1,4 +1,4 @@
-[submodule "onehalf"]
+[submodule ".modules/onehalf"]
 	path = .modules/onehalf
 	url = https://github.com/jawang35/onehalf.git
 [submodule ".modules/vim-plug"]
