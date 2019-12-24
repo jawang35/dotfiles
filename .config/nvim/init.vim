@@ -131,10 +131,6 @@ nnoremap <leader>o <C-w><C-o>
 
 nnoremap <silent><leader>[ :bp<CR>
 nnoremap <silent><leader>] :bn<CR>
-
-" Create intermediate directories that don't already exist
-" https://github.com/justinmk/vim-dirvish/issues/38
-au BufWritePre,FileWritePre * silent! call mkdir(expand('<afile>:p:h'), 'p')
 " }}}
 
 " Searching {{{
@@ -185,6 +181,15 @@ colorscheme onehalfdark
 
 " Commenting (commentary) {{{
 map g/ gc
+" }}}
+
+" File management (dirvish) {{{
+let g:dirvish_mode = ':sort ,^.*[\/],'
+call dirvish#add_icon_fn({p -> WebDevIconsGetFileTypeSymbol(p, p[-1:] == '/')})
+
+" Create intermediate directories that don't already exist
+" https://github.com/justinmk/vim-dirvish/issues/38
+au BufWritePre,FileWritePre * silent! call mkdir(expand('<afile>:p:h'), 'p')
 " }}}
 
 " Fuzzy file finding (CtrlP) {{{

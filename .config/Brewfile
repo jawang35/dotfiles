@@ -1,5 +1,6 @@
 tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
+tap 'homebrew/services'
 
 brew 'awscli'
 brew 'bash'
