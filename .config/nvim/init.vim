@@ -259,7 +259,7 @@ function! LightlineFilePath()
 endfunction
 
 function! LightlineFileType()
-    return strlen(&filetype) ? WebDevIconsGetFileTypeSymbol() . ' ' . &filetype : 'no ft'
+    return WebDevIconsGetFileTypeSymbol() . ' ' . (strlen(&filetype) ?  &filetype : 'text')
 endfunction
 
 function! LightlineGitBranch()
