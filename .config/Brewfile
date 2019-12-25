@@ -30,6 +30,7 @@ brew 'tealdeer'
 brew 'tfenv'
 brew 'tmux'
 brew 'tree'
+brew 'wifi-password'
 
 # Mac OS only
 if RUBY_PLATFORM.include? 'darwin'
