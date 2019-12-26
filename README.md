@@ -34,7 +34,7 @@ Configuration files are managed using a Git bare repository (inspired by https:/
 To update to latest:
 
 ```sh
-$ config pull && config checkout && config submodule update --init --recursive
+$ config-update-all
 ```
 
 - [Bash](https://www.gnu.org/software/bash/) - Default shell. All files found in [.config/bash](.config/bash) are loaded in both login and non-login shells. Local configs added to [.local/bash](.local/bash) will also be loaded. [.config/inputrc](.config/inputrc) improves [Bash](https://www.gnu.org/software/bash/) completion behavior and sets [vi editing mode](https://sanctum.geek.nz/arabesque/vi-mode-in-bash/).
