@@ -26,9 +26,10 @@ function __bash_exports {
 
     # fzf
     export FZF_DEFAULT_COMMAND='fd --exclude .git --hidden --type f'
-    export FZF_DEFAULT_OPTS='--height 40% --reverse'
+    export FZF_DEFAULT_OPTS='--height 40%'
     export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
     export FZF_CTRL_T_OPTS="${FZF_DEFAULT_OPTS} --preview='bat {} | head -500'"
+    export FZF_CTRL_R_OPTS="${FZF_DEFAULT_OPTS} --reverse"
 }
 
 __bash_exports
