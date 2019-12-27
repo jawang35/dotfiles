@@ -5,10 +5,18 @@ function __bash_profile {
         local BREW_PREFIX
         BREW_PREFIX="$(brew --prefix)"
 
+        # bash-completion
         if [ -f "${BREW_PREFIX}/etc/profile.d/bash_completion.sh" ]; then
             export BASH_COMPLETION_COMPAT_DIR="${BREW_PREFIX}/etc/bash_completion.d"
             source "${BREW_PREFIX}/etc/profile.d/bash_completion.sh"
         fi
+
+        # fzf
+        if [[ ! "$PATH" == "*${BREW_PREFIX}/opt/fzf/bin*" ]]; then
+            export PATH="${PATH:+${PATH}:}${BREW_PREFIX}/opt/fzf/bin"
+        fi
+        [[ $- == *i* ]] && source "${BREW_PREFIX}/opt/fzf/shell/completion.bash" 2> /dev/null
+        source "${BREW_PREFIX}/opt/fzf/shell/key-bindings.bash"
     fi
 
     # Git completion for aliases
