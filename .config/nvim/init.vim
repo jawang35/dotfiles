@@ -198,10 +198,16 @@ au BufWritePre,FileWritePre * silent! call mkdir(expand('<afile>:p:h'), 'p')
 
 " Fuzzy finding (fzf) {{{
 let g:fzf_command_prefix = 'Fzf'
+nnoremap <silent><leader>b :FzfBuffers<CR>
 nnoremap <silent><leader>t :FzfFiles<CR>
 nnoremap <silent><leader>f :FzfRg<CR>
 
-" Fix preview with ripgreg
+" Previews
+command! -bang -nargs=? -complete=dir FzfFiles call fzf#vim#files(
+    \ <q-args>,
+    \ fzf#vim#with_preview(),
+    \ <bang>0)
+
 command! -bang -nargs=* FzfRg call fzf#vim#grep(
     \ 'rg --column --no-heading --line-number --color=always --smart-case '.shellescape(<q-args>),
     \ 1,
