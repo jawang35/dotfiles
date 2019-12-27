@@ -1,22 +1,20 @@
 #!/usr/bin/env bash
 
 function __bash_profile {
-    if command -v brew > /dev/null 2>&1; then
-        local BREW_PREFIX
-        BREW_PREFIX="$(brew --prefix)"
+    # bash-completion
+    if [ -f '/usr/local/etc/profile.d/bash_completion.sh' ]; then
+        export BASH_COMPLETION_COMPAT_DIR='/usr/local/etc/bash_completion.d'
+        source '/usr/local/etc/profile.d/bash_completion.sh'
+    fi
 
-        # bash-completion
-        if [ -f "${BREW_PREFIX}/etc/profile.d/bash_completion.sh" ]; then
-            export BASH_COMPLETION_COMPAT_DIR="${BREW_PREFIX}/etc/bash_completion.d"
-            source "${BREW_PREFIX}/etc/profile.d/bash_completion.sh"
+    # fzf
+    if [ -d '/usr/local/opt/fzf' ]; then
+        if [[ ! "$PATH" == "*/usr/local/opt/fzf/bin*" ]]; then
+            export PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
         fi
-
-        # fzf
-        if [[ ! "$PATH" == "*${BREW_PREFIX}/opt/fzf/bin*" ]]; then
-            export PATH="${PATH:+${PATH}:}${BREW_PREFIX}/opt/fzf/bin"
-        fi
-        [[ $- == *i* ]] && source "${BREW_PREFIX}/opt/fzf/shell/completion.bash" 2> /dev/null
-        source "${BREW_PREFIX}/opt/fzf/shell/key-bindings.bash"
+        [[ $- == *i* ]] && source '/usr/local/opt/fzf/shell/completion.bash' 2> /dev/null
+        source '/usr/local/opt/fzf/shell/key-bindings.bash'
+        complete -F _fzf_path_completion -o default -o bashdefault v
     fi
 
     # Git completion for aliases
