@@ -73,7 +73,6 @@ call plug#begin('~/.config/nvim/plugged')
 Plug '~/.modules/onehalf/vim'
 
 Plug 'bling/vim-bufferline'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go'
 Plug 'hashivim/vim-terraform'
@@ -98,6 +97,11 @@ if v:progname == 'nvim'
     Plug 'Shougo/echodoc'
     Plug 'simnalamburt/vim-mundo', { 'on': 'MundoToggle' }
     Plug 'w0rp/ale'
+endif
+
+if isdirectory('/usr/local/opt/fzf')
+    Plug '/usr/local/opt/fzf'
+    Plug 'junegunn/fzf.vim'
 endif
 call plug#end()
 " }}}
@@ -192,21 +196,22 @@ call dirvish#add_icon_fn({p -> WebDevIconsGetFileTypeSymbol(p, p[-1:] == '/')})
 au BufWritePre,FileWritePre * silent! call mkdir(expand('<afile>:p:h'), 'p')
 " }}}
 
-" Fuzzy file finding (CtrlP) {{{
-let g:ctrlp_map = '<leader>p'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_switch_buffer = 0
-let g:ctrlp_root_markers = ['environment.yml', 'Gopkg.toml', 'Makefile', 'package.json', 'requirements.txt']
-let g:webdevicons_enable_ctrlp = 1
+" Fuzzy finding (fzf) {{{
+let g:fzf_command_prefix = 'Fzf'
+nnoremap <silent><leader>t :FzfFiles<CR>
+nnoremap <silent><leader>f :FzfRg<CR>
 
-if executable('rg')
-    " Use ripgrep for faster searching
-    let g:ctrlp_user_command = 'rg %s --files --hidden --vimgrep --glob ""'
-    let g:ctrlp_use_caching = 0
-else
-    let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-endif
+" Fix preview with ripgreg
+command! -bang -nargs=* FzfRg call fzf#vim#grep(
+    \ 'rg --column --no-heading --line-number --color=always --smart-case '.shellescape(<q-args>),
+    \ 1,
+    \ fzf#vim#with_preview(),
+    \ <bang>0)
+
+" Hide status line
+autocmd! FileType fzf
+autocmd  FileType fzf set laststatus=0 noshowmode noruler
+  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 " }}}
 
 " Autocompletion (deoplete/echodoc) {{{

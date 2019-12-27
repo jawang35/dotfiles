@@ -5,6 +5,7 @@ function __bash_exports {
     export CONDARC="${HOME}/.config/conda/condarc"
     export HOMEBREW_BUNDLE_FILE="${HOME}/.config/Brewfile"
     export INPUTRC="${HOME}/.config/inputrc"
+    export RIPGREP_CONFIG_PATH="${HOME}/.config/ripgrep/config"
 
     # Set EDITOR variable to Neovim/Vim
     if [ -f /usr/local/bin/nvim ]; then
@@ -25,7 +26,7 @@ function __bash_exports {
 
     # fzf
     export FZF_DEFAULT_COMMAND='fd --exclude .git --hidden --type f'
-    export FZF_DEFAULT_OPTS="--border --height 40% --preview='bat {} | head -500' --reverse"
+    export FZF_DEFAULT_OPTS="--height 40% --preview='bat {} | head -500' --reverse"
     export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
 }
 

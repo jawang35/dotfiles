@@ -53,7 +53,6 @@ function __bash_aliases {
     fi
 
     alias v='vim'
-    alias rg='rg --smart-case'
 }
 
 __bash_aliases
