@@ -13,5 +13,8 @@ jobs:
       - uses: actions/checkout@v1
       - name: Clean Workspace
         run: rm -f ~/.bash_profile ~/.bashrc ~/.gitconfig
+      - name: Clean Homebrew Packages
+        run: brew bundle cleanup --force
+        if: matrix.os == 'macos-latest'
       - name: Run Bootstrap Script
         run: ./bootstrap.sh
