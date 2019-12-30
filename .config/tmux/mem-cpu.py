@@ -27,8 +27,12 @@ def main():
     else:
         cpu_color = colors[2]
 
-    print(f'#[fg={mem_color}]M:{mem:3.0f}%#[default] '
-          f'#[fg={cpu_color}]C:{cpu:3.0f}%#[default]')
+    bars = os.popen(f'spark 0 100 {mem} {cpu}').readlines()[0]
+    mem_bar = bars[2]
+    cpu_bar = bars[3]
+
+    print(f'#[fg={mem_color}]M:{mem_bar}{mem:3.0f}%#[default] '
+          f'#[fg={cpu_color}]C:{cpu_bar}{cpu:3.0f}%#[default]')
 
 
 if __name__ == '__main__':
