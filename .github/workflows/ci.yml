@@ -14,7 +14,7 @@ jobs:
       - name: Clean Workspace
         run: rm -f ~/.bash_profile ~/.bashrc ~/.gitconfig
       - name: Clean Homebrew Packages
-        run: brew bundle cleanup --force
+        run: brew bundle --file="${HOME}/.config/Brewfile" cleanup --force
         if: matrix.os == 'macos-latest'
       - name: Run Bootstrap Script
         run: ./bootstrap.sh
