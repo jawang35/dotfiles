@@ -30,6 +30,7 @@ brew 'shellcheck'
 brew 'tealdeer'
 brew 'tfenv'
 brew 'tmux'
+brew 'tmux-mem-cpu-load'
 brew 'tree'
 brew 'wifi-password'
 

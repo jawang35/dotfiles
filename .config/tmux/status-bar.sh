@@ -19,6 +19,7 @@ fi
 tmux set -g status-justify 'left'
 tmux set -g status 'on'
 tmux set -g status-left-style 'none'
+tmux set -g status-interval '1'
 tmux set -g message-command-style "fg=$TMUX_COLOR_WHITE"
 tmux set -g message-command-style "bg=$TMUX_COLOR_LIGHT_GRAY"
 tmux set -g status-right-style 'none'
@@ -32,6 +33,6 @@ tmux setw -g window-status-activity-style "none"
 tmux setw -g window-status-separator ''
 tmux setw -g window-status-style "none,fg=$TMUX_COLOR_WHITE,bg=$TMUX_COLOR_DARK_GRAY"
 tmux set -g status-left "#[fg=$TMUX_COLOR_BLACK,bg=$TMUX_COLOR_PURPLE] #S "
-tmux set -g status-right "#[fg=$TMUX_COLOR_PURPLE,bg=$TMUX_COLOR_DARK_GRAY]  %Y-%m-%d  %H:%M #[fg=$TMUX_COLOR_BLACK,bg=$TMUX_COLOR_PURPLE] #h "
+tmux set -g status-right "#[fg=$TMUX_COLOR_PURPLE,bg=$TMUX_COLOR_DARK_GRAY]#(tmux-mem-cpu-load -i1 -g0 -m2 -t0 | awk '{print \"M:\"\$1, \"C:\"\$2}')#[default] #[fg=$TMUX_COLOR_BLACK,bg=$TMUX_COLOR_PURPLE] #h "
 tmux setw -g window-status-format "#[fg=$TMUX_COLOR_LIGHT_GRAY,bg=$TMUX_COLOR_DARK_GRAY] #I:#W "
 tmux setw -g window-status-current-format "#[fg=$TMUX_COLOR_WHITE,bg=$TMUX_COLOR_LIGHT_GRAY] #I:#W "
