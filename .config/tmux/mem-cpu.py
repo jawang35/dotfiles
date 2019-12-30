@@ -27,8 +27,8 @@ def main():
     else:
         cpu_color = colors[2]
 
-    print(f'#[fg={mem_color}]M:{mem:.1f}%#[default] '
-          f'#[fg={cpu_color}]C:{cpu:.1f}%#[default]')
+    print(f'#[fg={mem_color}]M:{mem:3.0f}%#[default] '
+          f'#[fg={cpu_color}]C:{cpu:3.0f}%#[default]')
 
 
 if __name__ == '__main__':
