@@ -14,7 +14,24 @@ function __bash_profile {
         fi
         [[ $- == *i* ]] && source '/usr/local/opt/fzf/shell/completion.bash' 2> /dev/null
         source '/usr/local/opt/fzf/shell/key-bindings.bash'
-        complete -F _fzf_path_completion -o default -o bashdefault v
+
+        _fzf_setup_completion path v
+
+        export FZF_DEFAULT_COMMAND='fd --exclude .git --hidden --type f'
+        export FZF_DEFAULT_OPTS='--height 40%'
+        export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
+        export FZF_CTRL_T_OPTS="${FZF_DEFAULT_OPTS} --preview='bat {} | head -500'"
+        export FZF_CTRL_R_OPTS="${FZF_DEFAULT_OPTS} --reverse"
+
+        # Use fd to generate the list for path completion
+        _fzf_compgen_path() {
+            fd --exclude .git --hidden --follow . "${1}"
+        }
+
+        # Use fd to generate the list for directory completion
+        _fzf_compgen_dir() {
+            fd --exclude .git --hidden --follow --type d . "${1}"
+        }
     fi
 
     # Git completion for aliases
