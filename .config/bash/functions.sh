@@ -2,7 +2,7 @@
 
 function __bash_functions {
     function config-update-all {
-        config pull && config-update-submodule && config-update-brew && config-update-vim-plug
+        config pull && config-update-submodule && config-update-brew && config-update-vim-plug && config-reload
     }
 
     function config-update-brew {
@@ -15,6 +15,10 @@ function __bash_functions {
 
     function config-update-vim-plug {
         vim -E +PlugInstall +PlugClean! +UpdateRemotePlugins +qa!
+    }
+
+    function config-reload {
+        source "${HOME}/.bash_profile"
     }
 
     # ls after cd

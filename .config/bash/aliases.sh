@@ -4,9 +4,6 @@ function __bash_aliases {
     # Manage dotfiles repository
     alias config='git --git-dir=${HOME}/.dotfiles.git --work-tree=${HOME}'
 
-    # Reload .bash_profile
-    alias reload='source ~/.bash_profile && echo "Loaded ~/.bash_profile"'
-
     # Preferred implementations
     alias cd..='cd ..'
     alias cp='cp -iv'
