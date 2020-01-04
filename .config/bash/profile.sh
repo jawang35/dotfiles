@@ -12,10 +12,12 @@ function __bash_profile {
         if [[ ! "$PATH" == "*/usr/local/opt/fzf/bin*" ]]; then
             export PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
         fi
-        [[ $- == *i* ]] && source '/usr/local/opt/fzf/shell/completion.bash' 2> /dev/null
-        source '/usr/local/opt/fzf/shell/key-bindings.bash'
 
-        _fzf_setup_completion path v
+        if [[ $- == *i* ]]; then
+            source '/usr/local/opt/fzf/shell/completion.bash'
+            source '/usr/local/opt/fzf/shell/key-bindings.bash'
+            _fzf_setup_completion path v
+        fi
 
         export FZF_DEFAULT_COMMAND='fd --exclude .git --hidden --type f'
         export FZF_DEFAULT_OPTS='--height 40%'
