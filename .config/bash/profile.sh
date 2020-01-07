@@ -47,7 +47,7 @@ __bash_profile() {
         if [[ $- == *i* ]]; then
             _fzf_git_branch_completion() {
                 _fzf_complete "${FZF_DEFAULT_OPTS} ${FZF_COMPLETION_OPTS}" "$@" < <(
-                    git --no-pager branch | sed -e 's/\*//g' -e 's/ //g'
+                    git --no-pager branch --all | sed -e 's|remotes/[^/]*/||' -e 's/\*//g' -e 's/ //g'
                 )
             }
 
