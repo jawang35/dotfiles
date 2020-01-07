@@ -240,13 +240,17 @@ set noshowmode
 
 set showtabline=2
 let g:bufferline_echo = 0
-let g:bufferline_active_buffer_left = ' '
-let g:bufferline_active_buffer_right = ' '
+let g:bufferline_active_buffer_left = ''
+let g:bufferline_active_buffer_right = ''
+let g:bufferline_modified = ''
 
 " Buffers in tabsline
 function! LightlineBufferline()
     call bufferline#refresh_status()
-    return [ g:bufferline_status_info.before, g:bufferline_status_info.current, g:bufferline_status_info.after ]
+    let before = join(split(g:bufferline_status_info.before), '  ')
+    let current = substitute(g:bufferline_status_info.current, ' ', '', '')
+    let after = join(split(g:bufferline_status_info.after), '  ')
+    return [ before, current, after ]
 endfunction
 
 function! LightlineFileFormat()
@@ -306,10 +310,10 @@ let g:lightline = {
     \ 'colorscheme': 'onehalfdark',
     \ 'tabline': {
     \   'left': [ [ 'bufferline' ] ],
-    \   'right': [ [] ] },
+    \   'right': [ [ 'readonly', 'modified' ] ] },
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'readonly', 'filepath', 'modified' ],
+    \             [ 'filepath' ],
     \             [ 'gitbranch' ] ],
     \   'right': [ [ 'lineinfo' ],
     \              [ 'percent' ],
