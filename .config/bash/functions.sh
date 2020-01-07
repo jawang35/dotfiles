@@ -1,28 +1,28 @@
 #!/usr/bin/env bash
 
-function __bash_functions {
-    function config-update-all {
+__bash_functions() {
+    config-update-all() {
         config pull && config-update-submodule && config-update-brew && config-update-vim-plug && config-reload
     }
 
-    function config-update-brew {
+    config-update-brew() {
         brew update && brew bundle && brew upgrade && brew bundle cleanup --force
     }
 
-    function config-update-submodule {
+    config-update-submodule() {
         config submodule update --init --recursive
     }
 
-    function config-update-vim-plug {
+    config-update-vim-plug() {
         vim -E +PlugInstall +PlugClean! +UpdateRemotePlugins +qa!
     }
 
-    function config-reload {
+    config-reload() {
         source "${HOME}/.bash_profile"
     }
 
     # ls after cd
-    function cd {
+    cd() {
         builtin cd "$@" && ls
     }
 }

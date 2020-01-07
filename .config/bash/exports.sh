@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-function __bash_exports {
+__bash_exports() {
     # Config file paths
     export CONDARC="${HOME}/.config/conda/condarc"
     export HOMEBREW_BUNDLE_FILE="${HOME}/.config/Brewfile"

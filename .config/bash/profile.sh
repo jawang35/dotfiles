@@ -1,39 +1,10 @@
 #!/usr/bin/env bash
 
-function __bash_profile {
+__bash_profile() {
     # bash-completion
     if [ -f '/usr/local/etc/profile.d/bash_completion.sh' ]; then
         export BASH_COMPLETION_COMPAT_DIR='/usr/local/etc/bash_completion.d'
         source '/usr/local/etc/profile.d/bash_completion.sh'
-    fi
-
-    # fzf
-    if [ -d '/usr/local/opt/fzf' ]; then
-        if [[ ! "$PATH" == "*/usr/local/opt/fzf/bin*" ]]; then
-            export PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
-        fi
-
-        if [[ $- == *i* ]]; then
-            source '/usr/local/opt/fzf/shell/completion.bash'
-            source '/usr/local/opt/fzf/shell/key-bindings.bash'
-            _fzf_setup_completion path v
-        fi
-
-        export FZF_DEFAULT_COMMAND='fd --exclude .git --hidden --type f'
-        export FZF_DEFAULT_OPTS='--height 40%'
-        export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
-        export FZF_CTRL_T_OPTS="--preview='bat {} | head -500'"
-        export FZF_CTRL_R_OPTS="--reverse"
-
-        # Use fd to generate the list for path completion
-        _fzf_compgen_path() {
-            fd --exclude .git --hidden --follow . "${1}"
-        }
-
-        # Use fd to generate the list for directory completion
-        _fzf_compgen_dir() {
-            fd --exclude .git --hidden --follow --type d . "${1}"
-        }
     fi
 
     # Git completion for aliases
@@ -55,8 +26,47 @@ function __bash_profile {
         __git_complete gs _git_status
     fi
 
+    # direnv
     if command -v direnv > /dev/null 2>&1; then
         eval "$(direnv hook bash)"
+    fi
+
+    # fzf
+    if [ -d '/usr/local/opt/fzf' ]; then
+        if [[ ! "$PATH" == "*/usr/local/opt/fzf/bin*" ]]; then
+            export PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
+        fi
+
+        export FZF_DEFAULT_COMMAND='fd --exclude .git --hidden --type f'
+        export FZF_DEFAULT_OPTS='--height 40%'
+        export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
+        export FZF_CTRL_T_OPTS="--preview='bat {} | head -500'"
+        export FZF_CTRL_R_OPTS="--reverse"
+
+        # Setup completions and keybindings for interactive shell
+        if [[ $- == *i* ]]; then
+            _fzf_git_branch_completion() {
+                _fzf_complete "${FZF_DEFAULT_OPTS} ${FZF_COMPLETION_OPTS}" "$@" < <(
+                    git --no-pager branch | sed -e 's/\*//g' -e 's/ //g'
+                )
+            }
+
+            # Use fd to generate the list for path completion
+            _fzf_compgen_path() {
+                fd --exclude .git --hidden --follow . "${1}"
+            }
+
+            # Use fd to generate the list for directory completion
+            _fzf_compgen_dir() {
+                fd --exclude .git --hidden --follow --type d . "${1}"
+            }
+
+            source '/usr/local/opt/fzf/shell/completion.bash'
+            source '/usr/local/opt/fzf/shell/key-bindings.bash'
+
+            _fzf_setup_completion path v
+            _fzf_setup_completion git_branch gco
+        fi
     fi
 }
 

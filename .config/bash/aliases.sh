@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-function __bash_aliases {
+__bash_aliases() {
     # Manage dotfiles repository
     alias config='git --git-dir=${HOME}/.dotfiles.git --work-tree=${HOME}'
 

@@ -2,7 +2,7 @@
 
 # Bash prompt based on the onehalfdark theme.
 
-function __bash_prompt_user_host {
+__bash_prompt_user_host() {
     printf "%s" \\u
 
     # Print host if via SSH
@@ -11,7 +11,7 @@ function __bash_prompt_user_host {
     fi
 }
 
-function __bash_prompt_cwd {
+__bash_prompt_cwd() {
     local dir_limit="2"
     local truncation="⋯"
     local first_char
@@ -42,7 +42,7 @@ function __bash_prompt_cwd {
     printf "%s" "$first_char$formatted_cwd"
 }
 
-function __bash_prompt_git_branch {
+__bash_prompt_git_branch() {
     local branch
 
     if command -v __git_ps1 > /dev/null 2>&1; then
@@ -61,20 +61,20 @@ function __bash_prompt_git_branch {
     return 1
 }
 
-function __bash_prompt_last_exit_code {
+__bash_prompt_last_exit_code() {
     [[ $last_exit_code -gt 0 ]] || return 1;
 
     printf "%s" "$last_exit_code"
 }
 
-function __bash_prompt_section {
+__bash_prompt_section() {
     # Apply colors $2 to text $1 and wrap with spaces, only if $1 is not empty
 
     [[ -n "$1" ]] || return 1
     printf "%s" "${2} ${1} "
 }
 
-function __bash_prompt_ps1 {
+__bash_prompt_ps1() {
     # Empty line
     printf "\n"
 
@@ -97,7 +97,7 @@ function __bash_prompt_ps1 {
     printf "%s❯%s " "$prompt_color" "$reset"
 }
 
-function __bash_prompt {
+__bash_prompt() {
     last_exit_code="${PROMPTLINE_LAST_EXIT_CODE:-$?}"
     reset="\[\e[49m\]\[\e[0m\]"
 
