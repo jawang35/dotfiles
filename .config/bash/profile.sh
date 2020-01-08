@@ -46,7 +46,7 @@ __bash_profile() {
         # Setup completions and keybindings for interactive shell
         if [[ $- == *i* ]]; then
             _fzf_git_branch_completion() {
-                _fzf_complete "${FZF_DEFAULT_OPTS} ${FZF_COMPLETION_OPTS}" "$@" < <(
+                _fzf_complete "" "$@" < <(
                     git --no-pager branch --all \
                         | grep -v HEAD \
                         | sed -e 's|remotes/[^/]*/||' -e 's/\*//g' -e 's/ //g' \
