@@ -41,6 +41,7 @@ if RUBY_PLATFORM.include? 'darwin'
 end
 
 cask 'docker'
+cask 'dozer'
 cask 'font-sourcecodepro-nerd-font-mono'
 cask 'google-chrome'
 cask 'hammerspoon'
