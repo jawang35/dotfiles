@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
 __bash_profile() {
-    shopt -s autocd
-    shopt -s direxpand
+    if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
+        shopt -s autocd direxpand
+    fi
 
     # bash-completion
     if [ -f '/usr/local/etc/profile.d/bash_completion.sh' ]; then
