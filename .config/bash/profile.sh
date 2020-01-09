@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
 __bash_profile() {
+    shopt -s autocd
+    shopt -s direxpand
+
     # bash-completion
     if [ -f '/usr/local/etc/profile.d/bash_completion.sh' ]; then
         export BASH_COMPLETION_COMPAT_DIR='/usr/local/etc/bash_completion.d'
