@@ -42,7 +42,7 @@ __bash_profile() {
         fi
 
         export FZF_DEFAULT_COMMAND='fd --exclude .git --hidden --type f'
-        export FZF_DEFAULT_OPTS='--height 40%'
+        export FZF_DEFAULT_OPTS="--height 40% --prompt='❯ '"
         export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
         export FZF_CTRL_T_OPTS="--preview='bat {} | head -500'"
         export FZF_CTRL_R_OPTS="--reverse"
