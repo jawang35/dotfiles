@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 __bash_exports() {
+    export PROMPT_SYMBOL="❯"
+
     # Config file paths
     export CONDARC="${HOME}/.config/conda/condarc"
     export HOMEBREW_BUNDLE_FILE="${HOME}/.config/Brewfile"

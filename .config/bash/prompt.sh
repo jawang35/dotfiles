@@ -94,7 +94,7 @@ __bash_prompt_ps1() {
     printf "%s\n" "$reset"
 
     # Prompt
-    printf "%s❯%s " "$prompt_color" "$reset"
+    printf "%s${PROMPT_SYMBOL}%s " "$prompt_color" "$reset"
 }
 
 __bash_prompt() {
@@ -116,7 +116,7 @@ __bash_prompt() {
     fi
 
     PS1="$(__bash_prompt_ps1)"
-    PS2="❯ "
+    PS2="${PROMPT_SYMBOL} "
 }
 
 if [[ ! "$PROMPT_COMMAND" == *__bash_prompt* ]]; then
