@@ -35,7 +35,7 @@ brew 'tfenv'
 brew 'tmux'
 brew 'tmux-mem-cpu-load'
 brew 'tree'
-brew 'universal-ctags'
+brew 'universal-ctags', args: ['head']
 brew 'wifi-password'
 
 # Mac OS only
