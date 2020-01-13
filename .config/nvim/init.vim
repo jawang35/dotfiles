@@ -199,8 +199,8 @@ au BufWritePre,FileWritePre * silent! call mkdir(expand('<afile>:p:h'), 'p')
 " Fuzzy finding (fzf) {{{
 let g:fzf_command_prefix = 'Fzf'
 nnoremap <silent><leader>b :FzfBuffers<CR>
-nnoremap <silent><leader>t :FzfFiles<CR>
 nnoremap <silent><leader>f :FzfRg<CR>
+nnoremap <silent><leader>p :FzfFiles<CR>
 
 " Previews
 command! -bang -nargs=? -complete=dir FzfFiles call fzf#vim#files(
