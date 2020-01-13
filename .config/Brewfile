@@ -1,6 +1,7 @@
 tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/services'
+tap 'universal-ctags/universal-ctags'
 
 brew 'awscli'
 brew 'bash'
@@ -34,7 +35,7 @@ brew 'tfenv'
 brew 'tmux'
 brew 'tmux-mem-cpu-load'
 brew 'tree'
-brew 'universal-ctags/universal-ctags/universal-ctags', args: ['head']
+brew 'universal-ctags'
 brew 'wifi-password'
 
 # Mac OS only
