@@ -80,6 +80,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
 Plug 'justinmk/vim-dirvish'
 Plug 'leafgarland/typescript-vim'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'MaxMEllon/vim-jsx-pretty', { 'for': ['javascript', 'typescript'] }
 Plug 'pangloss/vim-javascript'
 Plug 'Raimondi/delimitMate'
@@ -234,6 +235,16 @@ inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 " }}}
 
+" Tags {{{
+let g:gutentags_file_list_command = 'fd --exclude .git --type f'
+let g:gutentags_project_root = ['environment.yml', 'Makefile', 'package.json', 'requirements.txt']
+augroup GutentagsLightlineRefresher
+    autocmd!
+    autocmd User GutentagsUpdating call lightline#update()
+    autocmd User GutentagsUpdated call lightline#update()
+augroup END
+" }}}
+
 " Status bar and buffers (lightline/bufferline) {{{
 " Hide command and mode on command line
 set noshowcmd
@@ -310,7 +321,7 @@ let g:lightline = {
     \ 'colorscheme': 'onehalfdark',
     \ 'tabline': {
     \   'left': [ [ 'bufferline' ] ],
-    \   'right': [ [ 'readonly', 'modified' ] ] },
+    \   'right': [ [ 'readonly', 'modified', 'ctags' ] ] },
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
     \             [ 'filepath' ],
@@ -324,7 +335,8 @@ let g:lightline = {
     \              [ 'percent' ] ] },
     \ 'component_expand': { 'bufferline': 'LightlineBufferline' },
     \ 'component_type': { 'bufferline': 'tabsel' },
-    \ 'component_function': { 'filepath': 'LightlineFilePath',
+    \ 'component_function': { 'ctags': 'gutentags#statusline',
+    \                         'filepath': 'LightlineFilePath',
     \                         'fileinfo': 'LightlineFileInfo',
     \                         'gitbranch': 'LightlineGitBranch' } }
 " }}}
