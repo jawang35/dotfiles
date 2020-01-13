@@ -1,3 +1,5 @@
+[core]
+	excludesfile = ~/.config/git/ignore
 [fetch]
 	prune = true
 [filter "lfs"]
