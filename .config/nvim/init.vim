@@ -74,6 +74,7 @@ Plug '~/.modules/onehalf/vim'
 
 Plug 'bling/vim-bufferline'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'ekalinin/Dockerfile.vim'
 Plug 'fatih/vim-go'
 Plug 'hashivim/vim-terraform'
 Plug 'itchyny/lightline.vim'
