@@ -74,24 +74,19 @@ Plug '~/.modules/onehalf/vim'
 
 Plug 'bling/vim-bufferline'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'ekalinin/Dockerfile.vim'
-Plug 'fatih/vim-go'
-Plug 'hashivim/vim-terraform'
+Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
 Plug 'justinmk/vim-dirvish'
-Plug 'leafgarland/typescript-vim'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'MaxMEllon/vim-jsx-pretty', { 'for': ['javascript', 'typescript'] }
-Plug 'pangloss/vim-javascript'
 Plug 'Raimondi/delimitMate'
 Plug 'ryanoasis/vim-devicons'
+Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
-Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
 
 if v:progname == 'nvim'
     Plug 'deoplete-plugins/deoplete-jedi', { 'for': 'python' }
