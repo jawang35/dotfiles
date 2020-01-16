@@ -6,7 +6,9 @@ __bash_functions() {
     }
 
     config-update-brew() {
-        brew update && brew bundle && brew upgrade && brew bundle cleanup --force
+        if command -v brew > /dev/null 2>&1; then
+            brew update && brew bundle && brew upgrade && brew bundle cleanup --force
+        fi
     }
 
     config-update-submodule() {
