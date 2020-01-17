@@ -15,3 +15,6 @@
 	rebase = true
 [status]
 	showUntrackedFiles = all
+[user]
+	email = jawang35@gmail.com
+	name = Jason Wang
