@@ -90,9 +90,11 @@ Plug 'tpope/vim-surround'
 
 if v:progname == 'nvim'
     Plug 'deoplete-plugins/deoplete-jedi', { 'for': 'python' }
+    Plug 'honza/vim-snippets'
     Plug 'Shougo/deoplete.nvim'
     Plug 'Shougo/echodoc'
     Plug 'simnalamburt/vim-mundo', { 'on': 'MundoToggle' }
+    Plug 'SirVer/ultisnips'
     Plug 'w0rp/ale'
 endif
 
@@ -218,7 +220,7 @@ autocmd  FileType fzf set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 " }}}
 
-" Autocompletion (deoplete/echodoc) {{{
+" Autocompletion and snippets (deoplete/echodoc/UltiSnips) {{{
 set omnifunc=syntaxcomplete#Complete
 let g:deoplete#enable_at_startup = 1
 
@@ -227,8 +229,14 @@ set completeopt-=preview
 let g:echodoc_enable_at_startup = 1
 
 " Tab through pop-up menus
-inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+inoremap <silent><expr><down> pumvisible() ? "\<c-n>" : "\<down>"
+inoremap <silent><expr><up> pumvisible() ? "\<c-p>" : "\<up>"
+
+" UltiSnips triggers
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsListSnippets = '<c-tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 " }}}
 
 " Tags {{{
