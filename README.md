@@ -31,6 +31,8 @@ $ curl -s https://raw.githubusercontent.com/jawang35/dotfiles/master/bootstrap.s
 
 Configuration files are managed using a Git bare repository (inspired by https://www.atlassian.com/git/tutorials/dotfiles). `config` is an alias for `git --git-dir=${HOME}/.dotfiles.git --work-tree=${HOME}` and is used to manage the repository.
 
+To keep the `$HOME` directory clean, configurations are stored in [.config](.config) when possible. Local configurations and secrets are sourced from [.local](.local).
+
 To update to latest:
 
 ```sh
@@ -43,8 +45,6 @@ $ config-update-all
 - [Homebrew](https://brew.sh/) - macOS package manager. [bundler](https://github.com/Homebrew/homebrew-bundle) manages packages [.config/Brewfile](.config/Brewfile). Local package dependencies managed by `.local/Brewfile` if it exists.
 - [Karabiner-Elements](https://pqrs.org/osx/karabiner/) - Custom key mappings for macOS. Configurations defined in [.config/karabiner](.config/karabiner).
 - [kitty](https://sw.kovidgoyal.net/kitty/) - Full-featured GPU-optimized terminal emulator with a readable [configuration file](.config/kitty).
-- [lf](https://github.com/gokcehan/lf) - Terminal based file manager. Configurations in [.config/lf](.config/lf).
-- [psql](https://www.postgresql.org/docs/current/app-psql.html) - Postgres CLI tool. Configurations at [.psqlrc](.psqlrc).
 - [tmux](https://github.com/tmux/tmux) - Manages multiple terminal sessions, windows, and panes. Configured in [.tmux.conf](.tmux.conf).
 - [Vim](https://www.vim.org/)/[Neovim](https://neovim.io/) - Configurations setup primarily for [Neovim](https://neovim.io/) at [.config/nvim](.config/nvim). Compatibility with [Vim](https://www.vim.org/) is preserved by symlinking [.vim](.vim) and [.config/nvim/vimrc](.config/nvim/vimrc), and by ignoring [Neovim specific plugins](.config/nvim/bundles/nvim).
 
