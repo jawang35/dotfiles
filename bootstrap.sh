@@ -6,7 +6,7 @@ git --git-dir="${HOME}/.dotfiles.git" --work-tree="${HOME}" checkout
 git --git-dir="${HOME}/.dotfiles.git" --work-tree="${HOME}" submodule update --init --recursive
 
 if command -v brew > /dev/null 2>&1; then
-    brew update && brew bundle --file="${HOME}/.config/Brewfile"
+    brew update && brew bundle --file="${HOME}/.config/brew/Brewfile"
 fi
 
 # shellcheck source=.bash_profile
