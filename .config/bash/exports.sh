@@ -5,8 +5,9 @@ __bash_exports() {
 
     # Config file paths
     export CONDARC="${HOME}/.config/conda/condarc"
-    export HOMEBREW_BUNDLE_FILE="${HOME}/.config/Brewfile"
-    export INPUTRC="${HOME}/.config/inputrc"
+    export HOMEBREW_BUNDLE_FILE="${HOME}/.config/brew/Brewfile"
+    export INPUTRC="${HOME}/.config/readline/inputrc"
+    export PSQLRC="${HOME}/.config/psql/psqlrc"
     export RIPGREP_CONFIG_PATH="${HOME}/.config/ripgrep/config"
 
     # Set EDITOR variable to Neovim/Vim

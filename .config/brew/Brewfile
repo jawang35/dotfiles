@@ -55,7 +55,7 @@ cask 'scroll-reverser'
 cask 'slack'
 cask 'viscosity'
 
-BREWFILE_LOCAL = File.join(ENV['HOME'], '.local', 'Brewfile')
+BREWFILE_LOCAL = File.join(ENV['HOME'], '.local/brew', 'Brewfile')
 if File.file?(BREWFILE_LOCAL)
   instance_eval(File.read(BREWFILE_LOCAL))
 end
