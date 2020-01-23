@@ -1,5 +1,5 @@
 \set QUIET 1
-\set HISTFILE ~/.local/psql/psql_history
+\set HISTFILE ~/.local/psql/psql_history- :DBNAME
 \timing
 \x auto
 \set COMP_KEYWORD_CASE upper

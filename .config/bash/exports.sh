@@ -7,6 +7,7 @@ __bash_exports() {
     export CONDARC="${HOME}/.config/conda/condarc"
     export HOMEBREW_BUNDLE_FILE="${HOME}/.config/brew/Brewfile"
     export INPUTRC="${HOME}/.config/readline/inputrc"
+    export PGPASSFILE="${HOME}/.local/psql/pgpass"
     export PSQLRC="${HOME}/.config/psql/psqlrc"
     export RIPGREP_CONFIG_PATH="${HOME}/.config/ripgrep/config"
 
