@@ -213,14 +213,11 @@ command! -bang -nargs=* FzfRg call fzf#vim#grep(
     \ 1,
     \ fzf#vim#with_preview(),
     \ <bang>0)
-
-" Hide status line
-autocmd! FileType fzf
-autocmd  FileType fzf set laststatus=0 noshowmode noruler
-  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 " }}}
 
 " Autocompletion and snippets (deoplete/echodoc/UltiSnips) {{{
+" Silence problematic messages
+set shortmess+=c
 set omnifunc=syntaxcomplete#Complete
 let g:deoplete#enable_at_startup = 1
 
@@ -229,14 +226,16 @@ set completeopt-=preview
 let g:echodoc_enable_at_startup = 1
 
 " Tab through pop-up menus
-inoremap <silent><expr><down> pumvisible() ? "\<c-n>" : "\<down>"
-inoremap <silent><expr><up> pumvisible() ? "\<c-p>" : "\<up>"
+inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+inoremap <silent><expr><CR> pumvisible() ? "\<c-y>" : "\<CR>"
+inoremap <silent><expr><esc> pumvisible() ? "\<c-e>" : "\<esc>"
 
 " UltiSnips triggers
-let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsExpandTrigger = '<c-tab>'
 let g:UltiSnipsListSnippets = '<c-tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+let g:UltiSnipsJumpForwardTrigger = '<c-tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<c-tab>'
 " }}}
 
 " Tags {{{
