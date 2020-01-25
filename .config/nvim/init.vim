@@ -229,7 +229,6 @@ let g:echodoc_enable_at_startup = 1
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 inoremap <silent><expr><CR> pumvisible() ? "\<c-y>" : "\<CR>"
-inoremap <silent><expr><esc> pumvisible() ? "\<c-e>" : "\<esc>"
 
 " UltiSnips triggers
 let g:UltiSnipsExpandTrigger = '<c-tab>'
