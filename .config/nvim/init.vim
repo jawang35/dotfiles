@@ -90,11 +90,9 @@ Plug 'tpope/vim-surround'
 
 if v:progname == 'nvim'
     Plug 'deoplete-plugins/deoplete-jedi', { 'for': 'python' }
-    Plug 'honza/vim-snippets'
     Plug 'Shougo/deoplete.nvim'
     Plug 'Shougo/echodoc'
     Plug 'simnalamburt/vim-mundo', { 'on': 'MundoToggle' }
-    Plug 'SirVer/ultisnips'
     Plug 'w0rp/ale'
 endif
 
@@ -215,7 +213,7 @@ command! -bang -nargs=* FzfRg call fzf#vim#grep(
     \ <bang>0)
 " }}}
 
-" Autocompletion and snippets (deoplete/echodoc/UltiSnips) {{{
+" Autocompletion (deoplete/echodoc) {{{
 " Silence problematic messages
 set shortmess+=c
 set omnifunc=syntaxcomplete#Complete
@@ -229,12 +227,6 @@ let g:echodoc_enable_at_startup = 1
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 inoremap <silent><expr><CR> pumvisible() ? "\<c-y>" : "\<CR>"
-
-" UltiSnips triggers
-let g:UltiSnipsExpandTrigger = '<c-tab>'
-let g:UltiSnipsListSnippets = '<c-tab>'
-let g:UltiSnipsJumpForwardTrigger = '<c-tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<c-tab>'
 " }}}
 
 " Tags {{{
