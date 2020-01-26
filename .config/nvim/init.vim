@@ -10,6 +10,9 @@ set formatoptions=tcqj
 set history=10000
 set hlsearch
 set incsearch
+if exists('+inccommand')
+    set inccommand=nosplit
+endif
 if exists('+langnoremap')
     set langnoremap
 endif
