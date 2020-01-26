@@ -142,12 +142,6 @@ set nohlsearch
 set ignorecase
 set smartcase
 
-" Search behaves like grep
-nnoremap / /\v
-vnoremap / /\v
-nnoremap ? ?\v
-vnoremap ? ?\v
-
 " Better grepping
 if executable('rg')
     " Use ripgrep for faster grepping
