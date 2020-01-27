@@ -1,4 +1,6 @@
 --recurse=yes
 --exclude=.git
 --exclude=node_modules/*
+--exclude=temp/*
+--exclude=tmp/*
 --exclude=vendor/*
