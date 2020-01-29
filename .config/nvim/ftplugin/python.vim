@@ -1,2 +1,2 @@
-let b:ale_linters = ['pycodestyle', 'mypy']
-let b:ale_fixers = ['black']
+let b:ale_linters = ['flake8', 'mypy']
+let b:ale_fixers = ['isort', 'black']
