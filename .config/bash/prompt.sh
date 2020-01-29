@@ -20,7 +20,7 @@ __bash_prompt_cwd() {
     local dir_sep="/"
     local tilde="~"
 
-    local cwd="${PWD/#$HOME/$tilde}"
+    local cwd="${PWD/#${HOME}/${tilde}}"
 
     # Get first char of the path, i.e. tilde or slash
     first_char=${cwd::1}
@@ -28,18 +28,18 @@ __bash_prompt_cwd() {
     # Remove leading tilde
     cwd="${cwd#\~}"
 
-    while [[ "$cwd" == */* && "$cwd" != "/" ]]; do
+    while [[ "${cwd}" == */* && "${cwd}" != "/" ]]; do
         # Pop off last part of cwd
         local part="${cwd##*/}"
         cwd="${cwd%/*}"
 
-        formatted_cwd="$dir_sep$part$formatted_cwd"
+        formatted_cwd="${dir_sep}${part}${formatted_cwd}"
         part_count=$((part_count+1))
 
-        [[ $part_count -eq $dir_limit ]] && first_char="$truncation" && break
+        [[ ${part_count} -eq ${dir_limit} ]] && first_char="${truncation}" && break
     done
 
-    printf "%s" "$first_char$formatted_cwd"
+    printf "%s" "${first_char}${formatted_cwd}"
 }
 
 __bash_prompt_git_branch() {
@@ -62,9 +62,9 @@ __bash_prompt_git_branch() {
 }
 
 __bash_prompt_last_exit_code() {
-    [[ $last_exit_code -gt 0 ]] || return 1;
+    [[ ${last_exit_code} -gt 0 ]] || return 1;
 
-    printf "%s" "$last_exit_code"
+    printf "%s" "${last_exit_code}"
 }
 
 __bash_prompt_section() {
@@ -79,29 +79,29 @@ __bash_prompt_ps1() {
     printf "\n"
 
     # Section "user_host"
-    __bash_prompt_section "$(__bash_prompt_user_host)" "$user_host_color"
+    __bash_prompt_section "$(__bash_prompt_user_host)" "${user_host_color}"
 
     # Section "cwd"
-    __bash_prompt_section "$(__bash_prompt_cwd)" "$cwd_color"
+    __bash_prompt_section "$(__bash_prompt_cwd)" "${cwd_color}"
 
     # Section "git"
-    __bash_prompt_section "$(__bash_prompt_git_branch)" "$git_color"
+    __bash_prompt_section "$(__bash_prompt_git_branch)" "${git_color}"
 
     # Section "warn"
-    __bash_prompt_section "$(__bash_prompt_last_exit_code)" "$warn_color"
+    __bash_prompt_section "$(__bash_prompt_last_exit_code)" "${warn_color}"
 
     # New line
-    printf "%s\n" "$reset"
+    printf "%s\n" "${reset}"
 
     # Prompt
-    printf "%s${PROMPT_SYMBOL}%s " "$prompt_color" "$reset"
+    printf "%s${PROMPT_SYMBOL}%s " "${prompt_color}" "${reset}"
 }
 
 __bash_prompt() {
     last_exit_code="${PROMPTLINE_LAST_EXIT_CODE:-$?}"
     reset="\[\e[49m\]\[\e[0m\]"
 
-    if [ "$COLORTERM" = truecolor ] || [ "$COLORTERM" = 24bit ]; then
+    if [ "${COLORTERM}" = truecolor ] || [ "${COLORTERM}" = 24bit ]; then
         user_host_color="\[\033[38;2;40;44;52m\]\[\033[48;2;97;175;239m\]"
         cwd_color="\[\033[38;2;220;223;228m\]\[\033[48;2;93;103;122m\]"
         git_color="\[\033[38;2;97;175;239m\]\[\033[48;2;49;54;64m\]"
@@ -119,6 +119,6 @@ __bash_prompt() {
     PS2="${PROMPT_SYMBOL} "
 }
 
-if [[ ! "$PROMPT_COMMAND" == *__bash_prompt* ]]; then
-    PROMPT_COMMAND='__bash_prompt;'$'\n'"$PROMPT_COMMAND"
+if [[ ! "${PROMPT_COMMAND}" == *__bash_prompt* ]]; then
+    PROMPT_COMMAND='__bash_prompt;'$'\n'"${PROMPT_COMMAND}"
 fi
