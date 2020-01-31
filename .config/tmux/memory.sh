@@ -10,7 +10,16 @@ WIRED=$(echo "${PAGES}" | grep 'Pages wired down' | awk '{print $NF}')
 
 USED=$(echo "${ACTIVE} + ${WIRED}" | bc -l)
 TOTAL=$(echo "${FREE} + ${ACTIVE} + ${INACTIVE} + ${SPECULATIVE} + ${OCCUPIED_BY_COMPRESSOR} + ${WIRED}" | bc -l)
-
 USED_PCT=$(echo "100 * ${USED} / ${TOTAL}" | bc -l)
 
-printf "M:%.1f%%" "${USED_PCT}"
+if [ "$(echo "${USED_PCT} < 75" | bc -l)" == 1 ]; then
+    COLOR="${TMUX_COLOR_GREEN}"
+elif [ "$(echo "${USED_PCT} < 90" | bc -l)" == 1 ]; then
+    COLOR="${TMUX_COLOR_YELLOW}"
+else
+    COLOR="${TMUX_COLOR_RED}"
+fi
+
+BAR=$(spark 0 100 "${USED_PCT}" | grep -o '.$')
+
+echo "#[fg=${TMUX_COLOR_LIGHT_GRAY}]M:#[fg=${COLOR}]${BAR}"
