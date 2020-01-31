@@ -2,7 +2,7 @@
 
 __bash_aliases() {
     # Manage dotfiles repository
-    alias config='git --git-dir=${HOME}/.dotfiles.git --work-tree=${HOME}'
+    alias config='git --git-dir="${HOME}/.dotfiles.git" --work-tree="${HOME}"'
 
     # Preferred implementations
     alias cd..='cd ..'
@@ -38,6 +38,7 @@ __bash_aliases() {
     alias gs='git status'
 
     # tmux aliases
+    alias tmux='tmux -f "${HOME}/.config/tmux/tmux.conf"'
     alias t='tmux'
     alias ts='tmux new -s'
     alias ta='tmux attach -t'
