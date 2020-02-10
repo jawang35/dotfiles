@@ -4,6 +4,7 @@ __bash_profile() {
     if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
         shopt -s autocd direxpand
     fi
+    shopt -s cmdhist histappend
 
     # bash-completion
     if [ -f '/usr/local/etc/profile.d/bash_completion.sh' ]; then

@@ -120,5 +120,5 @@ __bash_prompt() {
 }
 
 if [[ ! "${PROMPT_COMMAND}" == *__bash_prompt* ]]; then
-    PROMPT_COMMAND='__bash_prompt;'$'\n'"${PROMPT_COMMAND}"
+    PROMPT_COMMAND="__bash_prompt; ${PROMPT_COMMAND}"
 fi
