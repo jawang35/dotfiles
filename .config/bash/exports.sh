@@ -17,7 +17,7 @@ __bash_exports() {
     export INPUTRC="${HOME}/.config/readline/inputrc"
     export PGPASSFILE="${HOME}/.local/psql/pgpass"
     export PSQLRC="${HOME}/.config/psql/psqlrc"
-    export RIPGREP_CONFIG_PATH="${HOME}/.config/ripgrep/config"
+    export RIPGREP_CONFIG_PATH="${HOME}/.config/ripgrep/ripgreprc"
 
     # Set EDITOR variable to Neovim/Vim
     if [ -f /usr/local/bin/nvim ]; then
