@@ -19,6 +19,8 @@ __bash_exports() {
     export PSQLRC="${HOME}/.config/psql/psqlrc"
     export RIPGREP_CONFIG_PATH="${HOME}/.config/ripgrep/ripgreprc"
 
+    export LESSHISTFILE="${HOME}/.local/share/less/lesshst"
+
     # Set EDITOR variable to Neovim/Vim
     if [ -f /usr/local/bin/nvim ]; then
         export EDITOR=/usr/local/bin/nvim
