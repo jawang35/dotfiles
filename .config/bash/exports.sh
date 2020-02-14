@@ -9,7 +9,7 @@ __bash_exports() {
     export HISTSIZE=10000
     export HISTCONTROL=ignoreboth:erasedups # ignore duplicate commands and commands starting with spaces
     export HISTTIMEFORMAT='%F %T '
-    export PROMPT_COMMAND="history -a; history -c; history -r; ${PROMPT_COMMAND}" # append command, clear, and reload history immediately
+    export PROMPT_COMMAND="history -n; history -w; history -c; history -r; ${PROMPT_COMMAND}" # append command, clear, and reload history immediately
 
     # Config file paths
     export CONDARC="${HOME}/.config/conda/condarc"
