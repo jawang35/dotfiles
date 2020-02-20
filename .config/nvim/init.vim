@@ -93,7 +93,7 @@ Plug 'tpope/vim-surround'
 
 if v:progname == 'nvim'
     Plug 'deoplete-plugins/deoplete-jedi', { 'for': 'python' }
-    Plug 'Shougo/deoplete.nvim', { 'tag': '*' }
+    Plug 'Shougo/deoplete.nvim', { 'do': '/usr/local/bin/pip3 install msgpack>=1.0.0' }
     Plug 'Shougo/echodoc'
     Plug 'simnalamburt/vim-mundo', { 'on': 'MundoToggle' }
     Plug 'w0rp/ale'
