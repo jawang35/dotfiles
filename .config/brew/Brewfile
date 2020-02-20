@@ -1,6 +1,8 @@
 tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/services'
+
+tap 'github/gh'
 tap 'universal-ctags/universal-ctags'
 
 brew 'awscli'
@@ -11,7 +13,7 @@ brew 'direnv'
 brew 'docker-compose'
 brew 'fd'
 brew 'fzf'
-brew 'github/gh/gh'
+brew 'gh'
 brew 'git'
 brew 'git-lfs'
 brew 'go'
