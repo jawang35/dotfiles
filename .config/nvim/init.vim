@@ -227,6 +227,7 @@ inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 " Tags {{{
 let g:gutentags_file_list_command = 'fd --exclude .git --type f'
+let g:gutentags_exclude_filetypes = ['gitcommit']
 let g:gutentags_project_root = ['environment.yml', 'Makefile', 'package.json', 'requirements.txt']
 let g:gutentags_add_default_project_roots = 0
 augroup GutentagsLightlineRefresher
