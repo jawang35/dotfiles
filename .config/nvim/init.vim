@@ -77,7 +77,7 @@ Plug '~/.modules/onehalf/vim'
 
 Plug 'bling/vim-bufferline'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoUpdateBinaries' }
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
 Plug 'justinmk/vim-dirvish'
