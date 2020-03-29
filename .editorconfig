@@ -9,7 +9,7 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-[*.js, *.json, *.ts]
+[*.{js,json,jsx,ts,tsx}]
 indent_size = 2
 
 [*.lua]
