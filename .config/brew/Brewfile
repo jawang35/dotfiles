@@ -45,7 +45,7 @@ end
 
 cask 'docker'
 cask 'dozer'
-cask 'font-sourcecodepro-nerd-font-mono'
+cask 'font-saucecodepro-nerd-font'
 cask 'google-chrome'
 cask 'hammerspoon'
 cask 'karabiner-elements'
