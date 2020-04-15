@@ -20,6 +20,7 @@ brew 'htop'
 brew 'httpie'
 brew 'ifstat'
 brew 'jq'
+brew 'mongodb/brew/mongodb-community-shell'
 brew 'n'
 brew 'neofetch'
 brew 'neovim'
@@ -35,7 +36,7 @@ brew 'tealdeer'
 brew 'tfenv'
 brew 'tmux'
 brew 'tree'
-brew 'universal-ctags', args: ['head']
+brew 'universal-ctags/universal-ctags/universal-ctags', args: ['head']
 brew 'wifi-password'
 
 # Mac OS only
