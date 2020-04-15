@@ -37,7 +37,7 @@ brew 'tealdeer'
 brew 'tfenv'
 brew 'tmux'
 brew 'tree'
-brew 'universal-ctags/universal-ctags/universal-ctags', args: ['head']
+brew 'universal-ctags', args: ['head']
 brew 'wifi-password'
 
 # Mac OS only
