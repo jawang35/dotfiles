@@ -12,6 +12,9 @@ insert_final_newline = true
 [*.{js,json,jsx,ts,tsx}]
 indent_size = 2
 
+[*.yml]
+indent_size = 2
+
 [*.lua]
 indent_size = 2
 
