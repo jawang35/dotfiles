@@ -32,10 +32,6 @@ __bash_functions() {
     gput() {
         git push --set-upstream "$(git remote show)" "$(git rev-parse --abbrev-ref HEAD)"
     }
-
-    gi() {
-        curl -sL "https://www.gitignore.io/api/$*"
-    }
 }
 
 __bash_functions

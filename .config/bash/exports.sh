@@ -19,6 +19,7 @@ __bash_exports() {
     export PSQLRC="${HOME}/.config/psql/psqlrc"
     export RIPGREP_CONFIG_PATH="${HOME}/.config/ripgrep/ripgreprc"
 
+    export GIBO_BOILERPLATES="${HOME}/.local/share/gibo/boilerplates"
     export LESSHISTFILE="${HOME}/.local/share/less/lesshst"
 
     # Set EDITOR variable to Neovim/Vim
