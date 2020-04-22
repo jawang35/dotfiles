@@ -13,6 +13,7 @@ __bash_exports() {
 
     # Config file paths
     export CONDARC="${HOME}/.config/conda/condarc"
+    export GNUPGHOME="${HOME}/.config/gnupg"
     export HOMEBREW_BUNDLE_FILE="${HOME}/.config/brew/Brewfile"
     export INPUTRC="${HOME}/.config/readline/inputrc"
     export PGPASSFILE="${HOME}/.local/psql/pgpass"
