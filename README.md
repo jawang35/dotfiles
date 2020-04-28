@@ -7,6 +7,24 @@
 
 This is my collection of [dotfiles](https://dotfiles.github.io/). As with any open source software never blindly running anything that has not been properly understood and/or vetted. These settings should be considered unstable as I'm constantly tinkering with them. Rather than installing, I recommend forking and modifying it for your own use or using as a resource for your own configurations.
 
+## Principles
+
+- Minimalist
+    - Simple install script.
+    - Easy syncing and management.
+    - Minimal dependencies.
+    - Unix philosophy.
+    - XDG https://wiki.archlinux.org/index.php/XDG_Base_Directory
+- Ergonomic
+    - Keyboard and Vim driven. Avoid the mouse where possible.
+    - 60% keyboard.
+- Portable
+    - Bash.
+    - Graceful degradation.
+    - Minimal customization. Prefer default conventions where possible.
+- Extensible
+    - Allow local workspace configurations to extend version controlled configurations.
+
 ## Installation
 
 ### Requires
