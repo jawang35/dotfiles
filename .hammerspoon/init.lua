@@ -6,5 +6,3 @@ require('reloadConfig')(hyper, hyperShift)
 require('applications')(hyper, hyperShift)
 require('spotify')(hyper, hyperShift)
 require('windows')(hyper, hyperShift)
-
--- TODO: Improve LastPass workflow
