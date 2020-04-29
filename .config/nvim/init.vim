@@ -218,7 +218,7 @@ set omnifunc=syntaxcomplete#Complete
 let g:deoplete#enable_at_startup = 1
 
 " Use echodoc to move autocompletion preview window to command line
-set completeopt-=preview
+set completeopt=menu,noselect
 let g:echodoc_enable_at_startup = 1
 
 " Tab through pop-up menus
