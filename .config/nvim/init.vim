@@ -75,6 +75,7 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 call plug#begin('~/.config/nvim/plugged')
 Plug '~/.modules/onehalf/vim'
 
+Plug 'alvan/vim-closetag', { 'for': ['html', 'javascript', 'typescript'] }
 Plug 'bling/vim-bufferline'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoUpdateBinaries' }
