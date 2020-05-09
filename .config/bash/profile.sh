@@ -76,7 +76,7 @@ __bash_profile() {
                 fi
 
                 _fzf_complete "" "$@" < <(
-                    z | sort --numeric-sort --reverse | awk '{print $NF}'
+                    z | sort --numeric-sort --reverse | awk '{print $NF}' | uniq
                 )
             }
 
