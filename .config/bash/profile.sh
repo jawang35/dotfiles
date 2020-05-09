@@ -36,6 +36,12 @@ __bash_profile() {
         eval "$(direnv hook bash)"
     fi
 
+    # z
+    if [ -f '/usr/local/etc/profile.d/z.sh' ]; then
+        export _Z_DATA="${HOME}/.local/share/z/data"
+        source '/usr/local/etc/profile.d/z.sh'
+    fi
+
     # fzf
     if [ -d '/usr/local/opt/fzf' ]; then
         if [[ ! "${PATH}" == "*/usr/local/opt/fzf/bin*" ]]; then
@@ -59,6 +65,12 @@ __bash_profile() {
                 )
             }
 
+            _fzf_z_completion() {
+                _fzf_complete "" "$@" < <(
+                    z | awk '{print $NF}'
+                )
+            }
+
             # Use fd to generate the list for path completion
             _fzf_compgen_path() {
                 fd --exclude .git --hidden --follow . "${1}"
@@ -74,13 +86,8 @@ __bash_profile() {
 
             _fzf_setup_completion path v
             _fzf_setup_completion git_branch gco
+            _fzf_setup_completion z z
         fi
-    fi
-
-    # z
-    if [ -f '/usr/local/etc/profile.d/z.sh' ]; then
-        export _Z_DATA="${HOME}/.local/share/z/data"
-        source '/usr/local/etc/profile.d/z.sh'
     fi
 }
 
