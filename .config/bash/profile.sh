@@ -66,6 +66,15 @@ __bash_profile() {
             }
 
             _fzf_z_completion() {
+                # Support empty completion trigger
+                local trigger=${FZF_COMPLETION_TRIGGER-'**'}
+                local cur="${COMP_WORDS[COMP_CWORD]}"
+                if [[ -z "${cur}" ]]; then
+                    COMP_WORDS[${COMP_CWORD}]=${trigger}
+                elif [[ "${cur}" != *"${trigger}" ]]; then
+                    return 1
+                fi
+
                 _fzf_complete "" "$@" < <(
                     z | awk '{print $NF}'
                 )
@@ -84,9 +93,9 @@ __bash_profile() {
             source '/usr/local/opt/fzf/shell/completion.bash'
             source '/usr/local/opt/fzf/shell/key-bindings.bash'
 
-            _fzf_setup_completion path v
-            _fzf_setup_completion git_branch gco
-            _fzf_setup_completion z z
+            _fzf_setup_completion 'path' v
+            _fzf_setup_completion 'git_branch' gco
+            _fzf_setup_completion 'z' z
         fi
     fi
 }
