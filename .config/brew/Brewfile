@@ -41,6 +41,7 @@ brew 'tmux'
 brew 'tree'
 brew 'universal-ctags', args: ['head']
 brew 'wifi-password'
+brew 'z'
 
 # Mac OS only
 if RUBY_PLATFORM.include? 'darwin'

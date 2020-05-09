@@ -76,6 +76,12 @@ __bash_profile() {
             _fzf_setup_completion git_branch gco
         fi
     fi
+
+    # z
+    if [ -f '/usr/local/etc/profile.d/z.sh' ]; then
+        export _Z_DATA="${HOME}/.local/share/z/data"
+        source '/usr/local/etc/profile.d/z.sh'
+    fi
 }
 
 __bash_profile
