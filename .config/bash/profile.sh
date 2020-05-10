@@ -48,6 +48,7 @@ __bash_profile() {
             export PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
         fi
 
+        export FZF_COMPLETION_TRIGGER='**'
         export FZF_DEFAULT_COMMAND='fd --exclude .git --hidden --type f'
         export FZF_DEFAULT_OPTS="--height 40% --prompt='${PROMPT_SYMBOL} '"
         export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
@@ -67,12 +68,10 @@ __bash_profile() {
 
             _fzf_z_completion() {
                 # Support empty completion trigger
-                local trigger=${FZF_COMPLETION_TRIGGER-'**'}
                 local cur="${COMP_WORDS[COMP_CWORD]}"
-                if [[ -z "${cur}" ]]; then
-                    COMP_WORDS[${COMP_CWORD}]=${trigger}
-                elif [[ "${cur}" != *"${trigger}" ]]; then
-                    return 1
+
+                if [[ "${cur}" != *"${FZF_COMPLETION_TRIGGER}" ]]; then
+                    COMP_WORDS[${COMP_CWORD}]="${cur}${FZF_COMPLETION_TRIGGER}"
                 fi
 
                 _fzf_complete "" "$@" < <(
