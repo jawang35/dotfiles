@@ -57,7 +57,17 @@ __bash_profile() {
 
         # Setup completions and keybindings for interactive shell
         if [[ $- == *i* ]]; then
+            _fzf_allow_no_trigger_completion() {
+                local cur="${COMP_WORDS[COMP_CWORD]}"
+
+                if [[ "${cur}" != *"${FZF_COMPLETION_TRIGGER}" ]]; then
+                    COMP_WORDS[${COMP_CWORD}]="${cur}${FZF_COMPLETION_TRIGGER}"
+                fi
+            }
+
             _fzf_git_branch_completion() {
+                _fzf_allow_no_trigger_completion
+
                 _fzf_complete "" "$@" < <(
                     git --no-pager branch --all \
                         | grep -v HEAD \
@@ -67,12 +77,7 @@ __bash_profile() {
             }
 
             _fzf_z_completion() {
-                # Support empty completion trigger
-                local cur="${COMP_WORDS[COMP_CWORD]}"
-
-                if [[ "${cur}" != *"${FZF_COMPLETION_TRIGGER}" ]]; then
-                    COMP_WORDS[${COMP_CWORD}]="${cur}${FZF_COMPLETION_TRIGGER}"
-                fi
+                _fzf_allow_no_trigger_completion
 
                 _fzf_complete "" "$@" < <(
                     z | sort --numeric-sort --reverse | awk '{print $NF}' | uniq
