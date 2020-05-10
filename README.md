@@ -58,54 +58,53 @@ I use the [@sonph](https://github.com/sonph)'s [onehalfdark](https://github.com/
 
 Custom [Karabiner-Elements](https://pqrs.org/osx/karabiner/) key bindings configured in [.config/karabiner](.config/karabiner) on macOS:
 
-- Left `ctrl` (or `fn`) with `h`, `j`, `k`, `l` for vi-like arrow movement.
-- Simultaneous `j` and `k` to escape.
-- `capslock` bound to `cmd+ctrl+option` to create a `hyper` key for use with [Hammerspoon](#hammerspoon).
-- `ctrl+delete` mimics `fn+delete` (delete forward).
+- <kbd>Ctrl</kbd> (or <kbd>Fn</kbd>) with <kbd>h</kbd>, <kbd>j</kbd>, <kbd>k</kbd>, <kbd>l</kbd> for vi-like arrow movement.
+- Simultaneous <kbd>j</kbd>+<kbd>k</kbd> to escape.  <kbd>⇪ Caps Lock</kbd> bound to <kbd>Ctrl</kbd>+<kbd>⌥</kbd>+<kbd>⌘</kbd> to create a <kbd>Hyper</kbd> key for use with [Hammerspoon](#hammerspoon).
+- <kbd>Ctrl</kbd>+<kbd>Delete</kbd> mimics <kbd>Fn</kbd>+<kbd>Delete</kbd> (delete forward).
 - Ducky (One 2/Mecha) Mini mappings to match Mac keyboard layout. VID/PID changed to work with macOS (https://twitter.com/i/status/1159519887527727106).
 
 ## Hammerspoon
 
 Lua scripts for [Hammerspoon](http://www.hammerspoon.org/) configuration. [.hammerspoon/init.lua](.hammerspoon/init.lua) is the entrypoint that loads all the other modules.
 
-`hyper` key is defined as `ctrl+option+cmd` and is bound to `capslock` using [Karabiner-Elements](#karabiner-elements). `hyper+r` reloads the Hammerspoon config.
+<kbd>Hyper</kbd> key is defined as <kbd>Ctrl</kbd>+<kbd>⌥</kbd>+<kbd>⌘</kbd> and is bound to <kbd>⇪ Caps Lock</kbd> using [Karabiner-Elements](#karabiner-elements). <kbd>Hyper</kbd>+<kbd>r</kbd> reloads the Hammerspoon config.
 
 ### Applications
 
 The following application shortcuts are used:
 
-| Keys         | Application   |
-|:------------:| ------------- |
-| ``hyper+` `` | Kitty         |
-| `hyper+1`    | Google Chrome |
+| Keys                           | Application   |
+|:------------------------------:| ------------- |
+| <kbd>Hyper</kbd>+<kbd>\`</kbd> | Kitty         |
+| <kbd>Hyper</kbd>+<kbd>1</kbd>  | Google Chrome |
 
 #### Application Mode
 
-`hyper+a` opens the application mode. `escape` closes the mode. With the mode open, the following keys launch or switch to the corresponding and close the mode:
+<kbd>Hyper</kbd>+<kbd>a</kbd> opens the application mode. <kbd>Esc</kbd> closes the mode. With the mode open, the following keys launch or switch to the corresponding and close the mode:
 
-| Keys      | Application       |
-|:---------:| ----------------- |
-| `hyper+m` | Messages          |
-| `hyper+o` | Microsoft Outlook |
-| `hyper+p` | 1Password         |
-| `hyper+s` | Slack             |
+| Keys                          | Application       |
+|:-----------------------------:| ----------------- |
+| <kbd>Hyper</kbd>+<kbd>m</kbd> | Messages          |
+| <kbd>Hyper</kbd>+<kbd>o</kbd> | Microsoft Outlook |
+| <kbd>Hyper</kbd>+<kbd>p</kbd> | 1Password         |
+| <kbd>Hyper</kbd>+<kbd>s</kbd> | Slack             |
 
 ### Window Management
 
 The following window shortcuts are used:
 
-| Keys            | Action       |
-|:---------------:| ------------ |
-| `hyper+f`       | Full Screen  |
-| `hyper+c`       | Center       |
-| `hyper+h`       | Left Half    |
-| `hyper+j`       | Bottom Half  |
-| `hyper+k`       | Top Half     |
-| `hyper+l`       | Right Half   |
-| `hyper+shift+h` | Left Screen  |
-| `hyper+shift+j` | Lower Screen |
-| `hyper+shift+k` | Upper Screen |
-| `hyper+shift+l` | Right Screen |
+| Keys                                       | Action       |
+|:------------------------------------------:| ------------ |
+| <kbd>Hyper</kbd>+<kbd>f</kbd>              | Full Screen  |
+| <kbd>Hyper</kbd>+<kbd>c</kbd>              | Center       |
+| <kbd>Hyper</kbd>+<kbd>h</kbd>              | Left Half    |
+| <kbd>Hyper</kbd>+<kbd>j</kbd>              | Bottom Half  |
+| <kbd>Hyper</kbd>+<kbd>k</kbd>              | Top Half     |
+| <kbd>Hyper</kbd>+<kbd>l</kbd>              | Right Half   |
+| <kbd>Hyper</kbd>+<kbd>⇧</kbd>+<kbd>h</kbd> | Left Screen  |
+| <kbd>Hyper</kbd>+<kbd>⇧</kbd>+<kbd>j</kbd> | Lower Screen |
+| <kbd>Hyper</kbd>+<kbd>⇧</kbd>+<kbd>k</kbd> | Upper Screen |
+| <kbd>Hyper</kbd>+<kbd>⇧</kbd>+<kbd>l</kbd> | Right Screen |
 
 ## License
 
