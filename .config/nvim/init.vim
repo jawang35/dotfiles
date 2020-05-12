@@ -72,13 +72,19 @@ let g:loaded_python_provider = 0
 " Default Python 3 path to ensure pynvim exists when changing environments
 let g:python3_host_prog = '/usr/local/bin/python3'
 
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.local/share/vim/plugins')
+" Conditional plug install
+function! PlugCond(cond, ...)
+  let opts = get(a:000, 0, {})
+  return a:cond ? opts : extend(opts, { 'on': [], 'for': [] })
+endfunction
+
 Plug '~/.modules/onehalf/vim'
 
-Plug 'alvan/vim-closetag', { 'for': ['html', 'javascript', 'typescript'] }
+Plug 'alvan/vim-closetag'
 Plug 'bling/vim-bufferline'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
 Plug 'justinmk/vim-dirvish'
@@ -93,13 +99,12 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 
-if v:progname == 'nvim'
-    Plug 'deoplete-plugins/deoplete-jedi', { 'for': 'python' }
-    Plug 'Shougo/deoplete.nvim', { 'do': '/usr/local/bin/pip3 install msgpack>=1.0.0' }
-    Plug 'Shougo/echodoc'
-    Plug 'simnalamburt/vim-mundo', { 'on': 'MundoToggle' }
-    Plug 'w0rp/ale'
-endif
+" Neovim plugins
+Plug 'deoplete-plugins/deoplete-jedi', PlugCond(has('nvim'))
+Plug 'Shougo/deoplete.nvim', PlugCond(has('nvim'), { 'do': '/usr/local/bin/pip3 install msgpack>=1.0.0' })
+Plug 'Shougo/echodoc', PlugCond(has('nvim'))
+Plug 'simnalamburt/vim-mundo', PlugCond(has('nvim'))
+Plug 'w0rp/ale', PlugCond(has('nvim'))
 
 if isdirectory('/usr/local/opt/fzf')
     Plug '/usr/local/opt/fzf'
