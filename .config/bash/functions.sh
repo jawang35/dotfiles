@@ -16,7 +16,7 @@ __bash_functions() {
     }
 
     config-update-vim-plug() {
-        vim -E +PlugUpdate +PlugClean! +UpdateRemotePlugins +qa!
+        vim -i NONE -E +PlugUpdate +PlugClean! +UpdateRemotePlugins +qa!
     }
 
     config-reload() {
