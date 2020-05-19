@@ -66,8 +66,6 @@ __bash_profile() {
             }
 
             _fzf_git_branch_completion() {
-                _fzf_allow_no_trigger_completion
-
                 _fzf_complete "" "$@" < <(
                     git --no-pager branch --all \
                         | grep -v HEAD \
