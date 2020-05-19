@@ -236,6 +236,20 @@ inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 " }}}
 
+" HTML/JSX tag closing {{{
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js,*.jsx,*.ts,*.tsx'
+let g:closetag_xhtml_filenames = '*.xhtml,*.js,*.jsx,*.ts,*.tsx'
+let g:closetag_filetypes = 'html,xhtml,phtml,javascript,typescript'
+let g:closetag_xhtml_filetypes = 'xhtml,javascript.typescript'
+let g:closetag_emptyTags_caseSensitive = 1
+let g:closetag_regions = {
+    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
+    \ 'javascript.jsx': 'jsxRegion',
+    \ 'typescript': 'jsxRegion,tsxRegion',
+    \ 'javascript': 'jsxRegion',
+    \ }
+" }}}
+
 " Tags {{{
 let g:gutentags_file_list_command = 'fd --exclude .git --type f'
 let g:gutentags_exclude_filetypes = ['gitcommit']
