@@ -31,6 +31,7 @@ brew 'postgresql'
 brew 'python3'
 brew 'rbenv'
 brew 'readline'
+brew 'reattach-to-user-namespace'
 brew 'redis'
 brew 'ripgrep'
 brew 'shellcheck'
@@ -42,11 +43,6 @@ brew 'tree'
 brew 'universal-ctags', args: ['head']
 brew 'wifi-password'
 brew 'z'
-
-# Mac OS only
-if RUBY_PLATFORM.include? 'darwin'
-    brew 'reattach-to-user-namespace'
-end
 
 cask 'docker'
 cask 'dozer'
