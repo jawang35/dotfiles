@@ -8,6 +8,7 @@ __bash_exports() {
     export HISTFILESIZE=2000000
     export HISTSIZE=10000
     export HISTCONTROL=ignoreboth:erasedups # ignore duplicate commands and commands starting with spaces
+    export HISTIGNORE='z *:cd *:ls*:exit:pwd:clear'
     export HISTTIMEFORMAT='%F %T '
     export PROMPT_COMMAND="history -n; history -w; history -c; history -r; ${PROMPT_COMMAND}" # append command, clear, and reload history immediately
 
