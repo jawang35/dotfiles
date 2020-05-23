@@ -82,7 +82,6 @@ endfunction
 Plug '~/.modules/onehalf/vim'
 
 Plug 'alvan/vim-closetag'
-Plug 'bling/vim-bufferline'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'itchyny/lightline.vim'
@@ -262,24 +261,11 @@ augroup GutentagsLightlineRefresher
 augroup END
 " }}}
 
-" Status bar and buffers (lightline/bufferline) {{{
+" Status and tab bars (lightline) {{{
 " Hide command and mode on command line
 set noshowcmd
 set noshowmode
-
 set showtabline=2
-let g:bufferline_echo = 0
-let g:bufferline_active_buffer_left = ''
-let g:bufferline_active_buffer_right = ''
-
-" Buffers in tabsline
-function! LightlineBufferline()
-    call bufferline#refresh_status()
-    let before = join(split(g:bufferline_status_info.before), '  ')
-    let current = substitute(g:bufferline_status_info.current, ' ', '', '')
-    let after = join(split(g:bufferline_status_info.after), '  ')
-    return [ before, current, after ]
-endfunction
 
 function! LightlineFileFormat()
     return WebDevIconsGetFileFormatSymbol() . ' ' . &fileformat
@@ -337,7 +323,7 @@ endfunction
 let g:lightline = {
     \ 'colorscheme': 'onehalfdark',
     \ 'tabline': {
-    \   'left': [ [ 'bufferline' ] ],
+    \   'left': [ [ 'cwd' ] ],
     \   'right': [ [ 'readonly', 'modified', 'ctags' ] ] },
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
@@ -350,8 +336,8 @@ let g:lightline = {
     \   'left': [ [ 'filename' ] ],
     \   'right': [ [ 'lineinfo' ],
     \              [ 'percent' ] ] },
-    \ 'component_expand': { 'bufferline': 'LightlineBufferline' },
-    \ 'component_type': { 'bufferline': 'tabsel' },
+    \ 'component_expand': { 'cwd': 'getcwd' },
+    \ 'component_type': { 'cwd': 'tabsel' },
     \ 'component_function': { 'ctags': 'gutentags#statusline',
     \                         'filepath': 'LightlineFilePath',
     \                         'fileinfo': 'LightlineFileInfo',
