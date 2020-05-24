@@ -267,29 +267,34 @@ set noshowcmd
 set noshowmode
 set showtabline=2
 
+function! LightlineCWD()
+    return substitute(getcwd(), $HOME, '~', '')
+endfunction
+
 function! LightlineFileFormat()
     return WebDevIconsGetFileFormatSymbol() . ' ' . &fileformat
 endfunction
 
-" Truncate filepath on narrow panes
 function! LightlineFilePath()
+    " Truncate filepath on narrow panes
     if winwidth(0) < 120
         return expand('%:t')
     endif
 
-    let home = fnamemodify('~', ':p:h')
-    let abspath = substitute(expand('%:p'), home, '~', '')
-    if abspath ==# ''
+    let filepath = fnamemodify(expand('%'), ':~:.')
+    let modifiedfilepath = substitute(filepath, $HOME, '~', '')
+    if modifiedfilepath ==# ''
         return '[No Name]'
     endif
 
-    let filepath = split(abspath, '/')
+    let parts = split(modifiedfilepath, '/')
 
-    if len(filepath) > 3
-        return '⋯/' . join(filepath[-3:], '/')
+    " Shorten long file paths
+    if len(parts) > 3
+        return '⋯/' . join(parts[-3:], '/')
     endif
 
-    return join(filepath, '/')
+    return join(parts, '/')
 endfunction
 
 function! LightlineFileType()
@@ -336,7 +341,7 @@ let g:lightline = {
     \   'left': [ [ 'filename' ] ],
     \   'right': [ [ 'lineinfo' ],
     \              [ 'percent' ] ] },
-    \ 'component_expand': { 'cwd': 'getcwd' },
+    \ 'component_expand': { 'cwd': 'LightlineCWD' },
     \ 'component_type': { 'cwd': 'tabsel' },
     \ 'component_function': { 'ctags': 'gutentags#statusline',
     \                         'filepath': 'LightlineFilePath',
