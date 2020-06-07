@@ -2,27 +2,15 @@ root = true
 
 [*]
 indent_style = space
-indent_size = 4
+indent_size = 2
 tab_width = 4
 end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-[*.{css,less,sass}]
-indent_size = 2
-
 [*.go]
 indent_style = tab
-
-[*.{js,json,jsx,ts,tsx}]
-indent_size = 2
-
-[*.yml]
-indent_size = 2
-
-[*.lua]
-indent_size = 2
 
 [{.gitconfig, Makefile, makefile, GNUmakefile}]
 indent_style = tab
