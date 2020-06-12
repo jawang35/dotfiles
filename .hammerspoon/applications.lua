@@ -20,7 +20,7 @@ local function applications(hyper)
   end
 
   hs.hotkey.bind(hyper, '`', function () launch('Kitty') end)
-  hs.hotkey.bind(hyper, '1', function () launch('Google Chrome') end)
+  hs.hotkey.bind(hyper, '1', function () launch('Brave Browser Nightly') end)
 
   applicationModal:bind('', 'escape', function () applicationModal:exit() end)
   applicationModal:bind(hyper, 'm', function () launch('Messages') end)
