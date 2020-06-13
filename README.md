@@ -76,7 +76,7 @@ The following application shortcuts are used:
 | Keys                           | Application   |
 |:------------------------------:| ------------- |
 | <kbd>Hyper</kbd>+<kbd>\`</kbd> | Kitty         |
-| <kbd>Hyper</kbd>+<kbd>1</kbd>  | Brave Browser |
+| <kbd>Hyper</kbd>+<kbd>1</kbd>  | Google Chrome |
 
 #### Application Mode
 
