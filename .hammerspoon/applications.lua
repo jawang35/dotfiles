@@ -19,7 +19,7 @@ local function applications(hyper)
     end
   end
 
-  hs.hotkey.bind(hyper, '`', function () launch('Kitty') end)
+  hs.hotkey.bind(hyper, '`', function () launch('kitty') end)
   hs.hotkey.bind(hyper, '1', function () launch('Google Chrome') end)
 
   applicationModal:bind('', 'escape', function () applicationModal:exit() end)
