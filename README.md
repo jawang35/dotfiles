@@ -1,5 +1,5 @@
 <a href="https://github.com/jawang35/dotfiles" title="Jason's dotfiles">
-    <img src="https://raw.githubusercontent.com/jglovier/dotfiles-logo/master/dotfiles-logo.svg?sanitize=true" alt="Jason's dotfiles" width="400">
+    <img src="https://raw.githubusercontent.com/jglovier/dotfiles-logo/main/dotfiles-logo.svg?sanitize=true" alt="Jason's dotfiles" width="400">
 </a>
 
 [![GitHub Actions](https://github.com/jawang35/dotfiles/workflows/CI/badge.svg)](https://github.com/jawang35/dotfiles/actions?query=workflow%3ACI)
