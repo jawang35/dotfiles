@@ -15,5 +15,5 @@ indent_style = tab
 [*.go]
 indent_style = tab
 
-[*.{py,sh}]
+[*.{md,py,sh}]
 indent_size = 4
