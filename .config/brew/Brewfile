@@ -11,7 +11,7 @@ brew 'bash'
 brew 'bash-completion@2'
 brew 'bat'
 brew 'direnv'
-brew 'docker-compose'
+brew 'docker-compose', link: true
 brew 'fd'
 brew 'fzf'
 brew 'gibo'
