@@ -10,7 +10,12 @@ __bash_exports() {
     export HISTCONTROL=ignoreboth:erasedups # ignore duplicate commands and commands starting with spaces
     export HISTIGNORE='z *:cd *:exit:pwd:clear'
     export HISTTIMEFORMAT='%F %T '
-    export PROMPT_COMMAND="history -n; history -w; history -c; history -r; ${PROMPT_COMMAND}" # append command, clear, and reload history immediately
+
+    # append command, clear, and reload history immediately
+    __bash_history() {
+        history -n; history -w; history -c; history -r;
+    }
+    export starship_precmd_user_func="__bash_history"
 
     # Config file paths
     export CONDARC="${HOME}/.config/conda/condarc"
@@ -20,6 +25,7 @@ __bash_exports() {
     export PGPASSFILE="${HOME}/.local/psql/pgpass"
     export PSQLRC="${HOME}/.config/psql/psqlrc"
     export RIPGREP_CONFIG_PATH="${HOME}/.config/ripgrep/ripgreprc"
+    export STARSHIP_CONFIG="${HOME}/.config/starship/starship.toml"
 
     export GIBO_BOILERPLATES="${HOME}/.local/share/gibo/boilerplates"
     export LESSHISTFILE="${HOME}/.local/share/less/lesshst"
