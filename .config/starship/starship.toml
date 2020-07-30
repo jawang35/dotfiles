@@ -12,3 +12,6 @@ truncate_to_repo = false
 
 [git_branch]
 symbol = " "
+
+[jobs]
+disabled = true
