@@ -1,5 +1,8 @@
 [aws]
 disabled = true
 
+[battery]
+disabled = true
+
 [git_branch]
 symbol = " "
