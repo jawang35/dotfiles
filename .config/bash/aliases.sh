@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 
 __bash_aliases() {
-    # Manage dotfiles repository
-    alias config='git --git-dir="${HOME}/.dotfiles.git" --work-tree="${HOME}"'
-
     # Preferred implementations
     alias cd..='cd ..'
     alias cp='cp -iv'
