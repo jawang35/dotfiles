@@ -9,4 +9,4 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Shellcheck
-        run: config ls-files | grep -E '(.bash_profile|\.sh)' | xargs shellcheck
+        run: git ls-files | grep -E '(.bash_profile|\.sh)' | xargs shellcheck
