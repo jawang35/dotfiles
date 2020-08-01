@@ -11,11 +11,11 @@ __bash_exports() {
     export HISTIGNORE='z *:cd *:exit:pwd:clear'
     export HISTTIMEFORMAT='%F %T '
 
-    # append command, clear, and reload history immediately
-    __bash_history() {
+    __starship_precmd_user_func() {
+        # append command, clear, and reload history immediately
         history -n; history -w; history -c; history -r;
     }
-    export starship_precmd_user_func="__bash_history"
+    export starship_precmd_user_func="__starship_precmd_user_func"
 
     # Config file paths
     export CONDARC="${HOME}/.config/conda/condarc"
