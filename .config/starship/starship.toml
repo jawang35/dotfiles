@@ -4,6 +4,9 @@ disabled = true
 [battery]
 disabled = true
 
+[character]
+style_success = "bold blue"
+
 [conda]
 ignore_base = true
 
