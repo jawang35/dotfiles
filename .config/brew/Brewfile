@@ -45,12 +45,11 @@ brew 'universal-ctags', args: ['head']
 brew 'wifi-password'
 brew 'z'
 
+cask 'brave-browser-nightly'
 cask 'docker'
 cask 'dozer'
 cask 'font-saucecodepro-nerd-font'
-cask 'google-chrome'
 cask 'hammerspoon'
-cask 'brave-browser-nightly'
 cask 'karabiner-elements'
 cask 'kitty'
 cask 'miniconda'
