@@ -50,7 +50,7 @@ $ config-update-all
 
 ## Theme
 
-I use the [@sonph](https://github.com/sonph)'s [onehalfdark](https://github.com/sonph/onehalf) theme with [Source Code Pro Nerd Font Mono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/SourceCodePro). My [Bash prompt](.config/bash/prompt) and [tmux status bar](.config/tmux/onehalfdark.tmux) have been inspired by the same theme. [24-bit](https://res.cloudinary.com/jawang35/image/upload/kitty-24-bit.png) and [256-color](https://res.cloudinary.com/jawang35/image/upload/terminal-256-color.png) terminal emulators are supported.
+I use the [@sonph](https://github.com/sonph)'s [onehalfdark](https://github.com/sonph/onehalf) theme with [Source Code Pro Nerd Font Mono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/SourceCodePro). My [tmux status bar](.config/tmux/onehalfdark.tmux) has been inspired by the same theme. [24-bit](https://res.cloudinary.com/jawang35/image/upload/kitty-24-bit.png) and [256-color](https://res.cloudinary.com/jawang35/image/upload/terminal-256-color.png) terminal emulators are supported.
 
 [![Kitty (24-bit colors)](https://res.cloudinary.com/jawang35/image/upload/kitty-24-bit.png "Kitty (24-bit colors)")](https://res.cloudinary.com/jawang35/image/upload/kitty-24-bit.png)
 
