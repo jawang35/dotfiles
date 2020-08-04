@@ -7,9 +7,6 @@ disabled = true
 [character]
 style_success = "bold blue"
 
-[conda]
-ignore_base = true
-
 [git_branch]
 symbol = " "
 
