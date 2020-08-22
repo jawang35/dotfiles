@@ -18,3 +18,5 @@ jobs:
         if: matrix.os == 'macos-latest'
       - name: Run Bootstrap Script
         run: ./bootstrap.sh
+      - name: Shellcheck
+        run: git ls-files | grep -E '(.bash_profile|\.sh)' | xargs shellcheck
