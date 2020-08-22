@@ -47,6 +47,33 @@ __bash_functions() {
     gput() {
         git push --set-upstream "$(git remote show)" "$(git rev-parse --abbrev-ref HEAD)"
     }
+
+    gopen() {
+        local REMOTE
+        local FILE_PATH
+
+        if [ "${#}" -eq 1 ]; then
+            REMOTE=origin
+            FILE_PATH="${1}"
+        elif [ "${#}" -eq 2 ]; then
+            REMOTE="${1}"
+            FILE_PATH="${2}"
+        else
+            echo 'Path to file required.'
+            return 1
+        fi
+
+        GIT_REPO=$( \
+            git remote -v | \
+            grep "${REMOTE}" | \
+            awk '{print $2}' | \
+            sort -u | \
+            sed -e 's/\.git//' \
+                -e 's/git@github\.com:/https:\/\/github.com\//' \
+                -e 's/https:\/\/github\.com:/https:\/\/github.com\//' \
+        )
+        python -m webbrowser -t "${GIT_REPO}/blob/master/${FILE_PATH}"
+    }
 }
 
 __bash_functions
