@@ -8,7 +8,7 @@ __bash_exports() {
     export HISTFILESIZE=2000000
     export HISTSIZE=10000
     export HISTCONTROL=ignoreboth:erasedups # ignore duplicate commands and commands starting with spaces
-    export HISTIGNORE='z *:cd *:exit:pwd:clear'
+    export HISTIGNORE='z *:cd *:exit:pwd:clear:gopen *'
     export HISTTIMEFORMAT='%F %T '
 
     __starship_precmd_user_func() {
