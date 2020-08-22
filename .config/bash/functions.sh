@@ -50,15 +50,35 @@ __bash_functions() {
 
     # open git repository file in web browser
     gopen() {
-        local GIT_REPO
         local GIT_BRANCH
-        local FILE_PATH="${1}"
+        local GIT_PATH
+        local GIT_REPO
+        local GIT_ROOT_DIR
+        local TARGET_DIR
+        local TARGET_FILE
+        local TARGET_PATH="${1-.}"
         local URL
 
+        if [ -f "${TARGET_PATH}" ]; then
+            pushd "$(dirname "${TARGET_PATH}")" > /dev/null || return
+            TARGET_DIR=$(pwd)
+            TARGET_FILE=$(basename "${TARGET_PATH}")
+        else
+            pushd "${TARGET_PATH}" > /dev/null || return
+            TARGET_DIR=$(pwd)
+        fi
+
+        GIT_ROOT_DIR=$(git rev-parse --show-toplevel)
+        if [ -z "${GIT_ROOT_DIR}" ]; then
+            return 1
+        fi
+
+        TARGET_DIR="${TARGET_DIR#${GIT_ROOT_DIR}}"
         GIT_BRANCH=$(git branch --show-current)
+        GIT_BRANCH="${GIT_BRANCH-master}"
         GIT_REPO=$( \
             git remote -v | \
-            grep "${REMOTE}" | \
+            grep origin | \
             awk '{print $2}' | \
             head -n1 | \
             sed -e 's/\.git//' \
@@ -68,20 +88,28 @@ __bash_functions() {
                 -e 's/https:\/\/github\.com:/https:\/\/github.com\//' \
         )
 
+        if [ -z "${TARGET_DIR}" ]; then
+            GIT_PATH="/${TARGET_FILE}"
+        else
+            GIT_PATH="${TARGET_DIR}/${TARGET_FILE}"
+        fi
+
         case "${GIT_REPO}" in
             *bitbucket*)
-                URL="${GIT_REPO}/src/${GIT_BRANCH}/${FILE_PATH}"
+                URL="${GIT_REPO}/src/${GIT_BRANCH}${GIT_PATH}"
                 ;;
             *github*)
-                if [ -z "${FILE_PATH}" ]; then
+                if [ "${GIT_PATH}" == '/' ]; then
                     URL="${GIT_REPO}/tree/${GIT_BRANCH}"
                 else
-                    URL="${GIT_REPO}/blob/${GIT_BRANCH}/${FILE_PATH}"
+                    URL="${GIT_REPO}/blob/${GIT_BRANCH}${GIT_PATH}"
                 fi
                 ;;
         esac
 
         python -m webbrowser -t "${URL}"
+
+        popd > /dev/null || return
     }
 }
 
