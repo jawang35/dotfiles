@@ -8,7 +8,7 @@ __bash_functions() {
                 ;;
             brew)
                 if command -v brew > /dev/null 2>&1; then
-                    brew update && brew bundle && brew upgrade && brew bundle cleanup --force
+                    brew update && brew upgrade && brew bundle cleanup --force && brew bundle
                 else
                     echo "brew not found."
                 fi
