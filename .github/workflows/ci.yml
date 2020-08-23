@@ -10,14 +10,29 @@ jobs:
         os: [ubuntu-latest, macos-latest]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v1
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Cache Homebrew Packages
+        id: cache-homebrew-packages
+        uses: actions/cache@v2
+        env:
+          cache-name: homebrew-packages
+        with:
+          path: $(brew --prefix)
+          key: ${{ matrix.os }}-${{ env.cache-name }}-${{ hashFiles('.config/brew/Brewfile') }}
+        if: matrix.os == 'macos-latest'
+
       - name: Clean Workspace
         run: rm -f ~/.bash_profile ~/.bashrc ~/.gitconfig
+
       - name: Clean Homebrew Packages
-        run: brew list | xargs -n1 brew uninstall --ignore-dependencies
-        if: matrix.os == 'macos-latest'
+        run: brew list | xargs -n1 brew uninstall -f --ignore-dependencies && rm $(brew --prefix)/bin/conda
+        if: matrix.os == 'macos-latest' && steps.cache-homebrew-packages.outputs.cache-hit != 'true'
+
       - name: Run Bootstrap Script
         run: ./bootstrap.sh
+
       - name: Shellcheck
         run: git ls-files | grep -E '(.bash_profile|\.sh)' | xargs shellcheck
         if: matrix.os == 'macos-latest'
