@@ -111,6 +111,14 @@ __bash_functions() {
 
         popd > /dev/null || return
     }
+
+    urldecode() {
+        python -c "import urllib.parse; print(urllib.parse.unquote('${1}'))"
+    }
+
+    urlencode() {
+        python -c "import urllib.parse; print(urllib.parse.quote('${1}'))"
+    }
 }
 
 __bash_functions
