@@ -271,10 +271,6 @@ function! LightlineCWD()
     return substitute(getcwd(), $HOME, '~', '')
 endfunction
 
-function! LightlineFileFormat()
-    return WebDevIconsGetFileFormatSymbol() . ' ' . &fileformat
-endfunction
-
 function! LightlineFilePath()
     " Truncate filepath on narrow panes
     if winwidth(0) < 120
@@ -297,10 +293,6 @@ function! LightlineFilePath()
     return join(parts, '/')
 endfunction
 
-function! LightlineFileType()
-    return WebDevIconsGetFileTypeSymbol() . ' ' . (strlen(&filetype) ?  &filetype : 'text')
-endfunction
-
 function! LightlineGitBranch()
     if winwidth(0) < 120
         return ''
@@ -310,8 +302,8 @@ function! LightlineGitBranch()
 endfunction
 
 function! LightlineFileInfo()
-    let fileformat = LightlineFileFormat()
-    let filetype = LightlineFileType()
+    let fileformat = WebDevIconsGetFileFormatSymbol() . ' ' . &fileformat
+    let filetype = WebDevIconsGetFileTypeSymbol() . ' ' . (strlen(&filetype) ?  &filetype : 'text')
     let parts = []
 
     if strlen(fileformat)
