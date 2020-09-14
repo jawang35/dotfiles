@@ -82,6 +82,16 @@ __bash_profile() {
                 )
             }
 
+            # Advanced customization of options by command
+            _fzf_comprun() {
+                local COMMAND="${1}"
+                shift
+                case "${COMMAND}" in
+                    cd|v)  fzf "$@" --preview 'if [ -f {} ]; then bat {} --line-range :500; else tree -C {} | head -200; fi' ;;
+                    *)  fzf "$@" ;;
+                esac
+            }
+
             # Use fd to generate the list for path completion
             _fzf_compgen_path() {
                 fd --exclude .git --hidden --follow . "${1}"
