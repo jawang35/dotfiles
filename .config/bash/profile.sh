@@ -87,7 +87,7 @@ __bash_profile() {
                 local COMMAND="${1}"
                 shift
                 case "${COMMAND}" in
-                    cd|v)  fzf "$@" --preview 'if [ -f {} ]; then bat {} --line-range :500; else tree -C {} | head -200; fi' ;;
+                    cd|gopen|v)  fzf "$@" --preview 'if [ -f {} ]; then bat {} --line-range :500; else tree -C {} | head -200; fi' ;;
                     *)  fzf "$@" ;;
                 esac
             }
@@ -105,7 +105,7 @@ __bash_profile() {
             source '/usr/local/opt/fzf/shell/completion.bash'
             source '/usr/local/opt/fzf/shell/key-bindings.bash'
 
-            _fzf_setup_completion 'path' v
+            _fzf_setup_completion 'path' gopen v
             _fzf_setup_completion 'git_branch' gco
             _fzf_setup_completion 'z' z
         fi
