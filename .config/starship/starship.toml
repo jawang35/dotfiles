@@ -12,3 +12,7 @@ symbol = " "
 
 [jobs]
 disabled = true
+
+[status]
+format = "[($status)]($style)"
+disabled = false
