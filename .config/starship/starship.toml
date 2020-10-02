@@ -5,7 +5,7 @@ disabled = true
 disabled = true
 
 [character]
-style_success = "bold blue"
+success_symbol = "[❯](bold blue)"
 
 [git_branch]
 symbol = " "
