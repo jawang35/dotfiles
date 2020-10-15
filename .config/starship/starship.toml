@@ -10,6 +10,9 @@ success_symbol = "[❯](bold blue)"
 [git_branch]
 symbol = " "
 
+[git_status]
+disabled = true
+
 [jobs]
 disabled = true
 
