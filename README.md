@@ -3,7 +3,6 @@
 </a>
 
 [![GitHub Actions](https://github.com/jawang35/dotfiles/workflows/CI/badge.svg)](https://github.com/jawang35/dotfiles/actions?query=workflow%3ACI)
-[![Dependabot](https://api.dependabot.com/badges/status?host=github&repo=jawang35/dotfiles)](https://app.dependabot.com/)
 
 This is my collection of [dotfiles](https://dotfiles.github.io/). As with any open source software never blindly running anything that has not been properly understood and/or vetted. These settings should be considered unstable as I'm constantly tinkering with them. Rather than installing, I recommend forking and modifying it for your own use or using as a resource for your own configurations.
 
