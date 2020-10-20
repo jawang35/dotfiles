@@ -1,1 +1,3 @@
+--glob=!package-lock.json
+--glob=!yarn.lock
 --smart-case
