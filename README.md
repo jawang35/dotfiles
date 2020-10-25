@@ -2,7 +2,7 @@
     <img src="https://raw.githubusercontent.com/jglovier/dotfiles-logo/main/dotfiles-logo.svg?sanitize=true" alt="Jason's dotfiles" width="400">
 </a>
 
-[![License](https://img.shields.io/github/license/jawang35/dotfiles)](https://github.com/jawang35/dotfiles/blob/master/LICENSE)
+[![License](https://img.shields.io/github/license/jawang35/dotfiles?color=informational)](https://github.com/jawang35/dotfiles/blob/master/LICENSE)
 [![GitHub Workflow](https://img.shields.io/github/workflow/status/jawang35/dotfiles/CI)](https://github.com/jawang35/dotfiles/actions?query=workflow%3ACI)
 
 This is my collection of [dotfiles](https://dotfiles.github.io/). As with any open source software never blindly running anything that has not been properly understood and/or vetted. These settings should be considered unstable as I'm constantly tinkering with them. Rather than installing, I recommend forking and modifying it for your own use or using as a resource for your own configurations.
