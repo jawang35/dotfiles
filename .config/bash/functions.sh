@@ -14,7 +14,7 @@ __bash_functions() {
                 fi
                 ;;
             python)
-                "$(brew --prefix)/bin/pip3" install -r "${HOME}/.config/python/requirements.txt"
+                pip3 install -r "${HOME}/.config/python/requirements.txt"
                 ;;
             submodule)
                 config submodule update --init --recursive
