@@ -1,12 +1,14 @@
 version: 2
 updates:
+- package-ecosystem: "github-actions"
+  directory: "/"
+  schedule:
+    interval: "daily"
 - package-ecosystem: "gitsubmodule"
   directory: "/"
   schedule:
-    interval: "weekly"
-  open-pull-requests-limit: 99
+    interval: "daily"
 - package-ecosystem: "pip"
   directory: "/.config/python"
   schedule:
-    interval: "weekly"
-  open-pull-requests-limit: 99
+    interval: "daily"
