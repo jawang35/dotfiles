@@ -27,7 +27,7 @@ jobs:
         run: rm -f ~/.bash_profile ~/.bashrc ~/.gitconfig
 
       - name: Clean Homebrew Packages
-        run: brew list | xargs -n1 brew uninstall -f --ignore-dependencies && rm $(brew --prefix)/bin/conda
+        run: brew list --formula | xargs -n1 brew uninstall -f --ignore-dependencies && brew list --unbrewed | xargs -I{} rm -rf $(brew --prefix)/{}
         if: matrix.os == 'macos-latest' && steps.cache-homebrew-packages.outputs.cache-hit != 'true'
 
       - name: Run Bootstrap Script
