@@ -4,7 +4,7 @@ __bash_functions() {
     __config_update() {
         case "${1}" in
             all)
-                config pull && config update submodule && config update brew && config update vim-plug && config reload
+                config pull && config update submodule && config update brew && config update python && config update vim-plug && config reload
                 ;;
             brew)
                 if command -v brew > /dev/null 2>&1; then
@@ -13,6 +13,9 @@ __bash_functions() {
                     echo "brew not found."
                 fi
                 ;;
+            python)
+                "$(brew --prefix)/bin/pip3" install -r "${HOME}/.config/python/requirements.txt"
+                ;;
             submodule)
                 config submodule update --init --recursive
                 ;;
@@ -20,7 +23,7 @@ __bash_functions() {
                 vim -i NONE -E +PlugUpdate +PlugClean! +UpdateRemotePlugins +qa!
                 ;;
             *)
-                echo "${1} is not a valid update command."
+                echo "\"${1}\" is not a valid update command."
         esac
     }
 
