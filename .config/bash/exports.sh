@@ -3,6 +3,8 @@
 __bash_exports() {
     export PROMPT_SYMBOL="❯"
 
+    export PATH="${PATH}:${HOME}/.config/bin"
+
     # History
     export HISTFILE="${HOME}/.local/share/bash/bash_history"
     export HISTFILESIZE=2000000
