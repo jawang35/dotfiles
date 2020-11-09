@@ -23,7 +23,9 @@ local function fullScreen()
 end
 
 local function center()
-  onFocusedWindow(hs.window.centerOnScreen)
+  onFocusedWindow(function (window)
+    window:centerOnScreen()
+  end)
 end
 
 local function leftHalf()
