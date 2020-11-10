@@ -1,11 +1,8 @@
 local spotifyIcon = hs.image.imageFromPath('resources/spotify.png')
 
-local function spotifyNotification(title, text)
-  hs.notify.new({ title = title, informativeText = text }):setIdImage(spotifyIcon):send()
-end
-
-local function getCurrentSong()
-  return 'Artist: ' .. hs.spotify.getCurrentArtist() .. '\nSong: ' .. hs.spotify.getCurrentTrack()
+local function spotifyNotification(title)
+  local currentSong = 'Artist: ' .. hs.spotify.getCurrentArtist() .. '\nSong: ' .. hs.spotify.getCurrentTrack()
+  hs.notify.new({ title = title, informativeText = currentSong }):setIdImage(spotifyIcon):send()
 end
 
 local function open()
@@ -15,27 +12,25 @@ local function open()
 end
 
 local function info()
-  spotifyNotification('Currently Playing', getCurrentSong())
+  spotifyNotification('Currently Playing')
 end
 
 local function previous()
   hs.spotify.previous()
-  spotifyNotification('⏮ Previous', getCurrentSong())
+  spotifyNotification('⏮ Previous')
 end
 
 local function next()
   hs.spotify.next()
-  spotifyNotification('⏭ Next', getCurrentSong())
+  spotifyNotification('⏭ Next')
 end
 
 local function pause_play()
-  local playbackState = hs.spotify.getPlaybackState()
-  if playbackState == hs.spotify.state_playing then
-    hs.spotify.pause()
-    spotifyNotification('⏸ Pause', getCurrentSong())
+  hs.spotify.playpause()
+  if hs.spotify.isPlaying() then
+    spotifyNotification('▶️ Play')
   else
-    hs.spotify.play()
-    spotifyNotification('▶️ Play', getCurrentSong())
+    spotifyNotification('⏸ Pause')
   end
 end
 
