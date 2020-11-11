@@ -99,8 +99,8 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 
 " Neovim plugins
-Plug 'deoplete-plugins/deoplete-jedi', PlugCond(has('nvim'), { 'do': '/usr/local/bin/python3 -m pip install jedi'})
-Plug 'Shougo/deoplete.nvim', PlugCond(has('nvim'), { 'do': '/usr/local/bin/python3 -m pip install msgpack>=1.0.0' })
+Plug 'deoplete-plugins/deoplete-jedi', PlugCond(has('nvim'))
+Plug 'Shougo/deoplete.nvim', PlugCond(has('nvim'))
 Plug 'Shougo/echodoc', PlugCond(has('nvim'))
 Plug 'simnalamburt/vim-mundo', PlugCond(has('nvim'))
 Plug 'w0rp/ale', PlugCond(has('nvim'))
