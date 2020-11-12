@@ -19,7 +19,11 @@ __config_update() {
             config submodule update --init --recursive
             ;;
         vim-plug)
-            vim -i NONE -E +PlugUpdate +PlugClean! +UpdateRemotePlugins +qa!
+            if command -v nvim > /dev/null 2>&1; then
+              nvim -i NONE -E +PlugUpdate +PlugClean! +UpdateRemotePlugins +qa!
+            else
+              vim -i NONE -E +PlugUpdate +PlugClean! +qa!
+            fi
             ;;
         *)
             echo "\"${1}\" is not a valid update command."
