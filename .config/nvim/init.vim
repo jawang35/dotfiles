@@ -235,6 +235,10 @@ inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 " }}}
 
+" Polyglot {{{
+let g:vim_markdown_new_list_item_indent = 0
+" }}}
+
 " HTML/JSX tag closing {{{
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js,*.jsx,*.ts,*.tsx'
 let g:closetag_xhtml_filenames = '*.xhtml,*.js,*.jsx,*.ts,*.tsx'
