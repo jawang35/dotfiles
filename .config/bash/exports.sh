@@ -51,3 +51,4 @@ __bash_exports() {
 }
 
 __bash_exports
+unset __bash_exports

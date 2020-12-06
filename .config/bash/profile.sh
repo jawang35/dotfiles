@@ -113,3 +113,4 @@ __bash_profile() {
 }
 
 __bash_profile
+unset __bash_profile

@@ -7,3 +7,4 @@ __bash_prompt() {
 }
 
 __bash_prompt
+unset __bash_prompt

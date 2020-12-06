@@ -13,3 +13,4 @@ __bash_functions() {
 }
 
 __bash_functions
+unset __bash_functions

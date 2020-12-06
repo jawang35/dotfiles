@@ -51,3 +51,4 @@ __bash_aliases() {
 }
 
 __bash_aliases
+unset __bash_aliases
