@@ -10,6 +10,7 @@ __bash_aliases() {
     alias mv='mv -iv'
     alias rm='rm -v'
     alias rmrf='rm -rf'
+    alias ssh='TERM=screen-256color ssh'
     alias sshnc='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
 
     # Git aliases
