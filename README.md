@@ -45,12 +45,12 @@ $ config update all
 - [Homebrew](https://brew.sh/) - macOS package manager. [bundler](https://github.com/Homebrew/homebrew-bundle) manages packages [.config/Brewfile](.config/Brewfile). Local package dependencies managed by `.local/Brewfile` if it exists.
 - [Karabiner-Elements](https://pqrs.org/osx/karabiner/) - Custom key mappings for macOS. See [Karabiner-Elements](#karabiner-elements).
 - [kitty](https://sw.kovidgoyal.net/kitty/) - Full-featured GPU-optimized terminal emulator with a readable [configuration file](.config/kitty).
-- [tmux](https://github.com/tmux/tmux) - Manages multiple terminal sessions, windows, and panes. Configured in [.tmux.conf](.tmux.conf).
+- [tmux](https://github.com/tmux/tmux) - Manages multiple terminal sessions, windows, and panes. Configured in [.config/tmux/tmux.conf](.config/tmux/tmux.conf).
 - [Vim](https://www.vim.org/)/[Neovim](https://neovim.io/) - Configurations setup primarily for [Neovim](https://neovim.io/) at [.config/nvim](.config/nvim). Compatibility with [Vim](https://www.vim.org/) is preserved by symlinking [.vim](.vim) and [.config/nvim/vimrc](.config/nvim/vimrc), and by ignoring [Neovim specific plugins](.config/nvim/bundles/nvim).
 
 ## Theme
 
-I use the [@sonph](https://github.com/sonph)'s [onehalfdark](https://github.com/sonph/onehalf) theme with [Source Code Pro Nerd Font Mono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/SourceCodePro). My [tmux status bar](.config/tmux/onehalfdark.tmux) has been inspired by the same theme. [24-bit](https://res.cloudinary.com/jawang35/image/upload/kitty-24-bit.png) and [256-color](https://res.cloudinary.com/jawang35/image/upload/terminal-256-color.png) terminal emulators are supported.
+I use the [@sonph](https://github.com/sonph)'s [onehalfdark](https://github.com/sonph/onehalf) theme with [Source Code Pro Nerd Font Mono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/SourceCodePro). My [tmux status bar](.config/tmux/status-bar.sh) has been inspired by the same theme. [24-bit](https://res.cloudinary.com/jawang35/image/upload/kitty-24-bit.png) and [256-color](https://res.cloudinary.com/jawang35/image/upload/terminal-256-color.png) terminal emulators are supported.
 
 [![Kitty (24-bit colors)](https://res.cloudinary.com/jawang35/image/upload/kitty-24-bit.png "Kitty (24-bit colors)")](https://res.cloudinary.com/jawang35/image/upload/kitty-24-bit.png)
 
