@@ -108,4 +108,4 @@ The following window shortcuts are used:
 
 ## License
 
-Copyright (c) 2016 Jason Wang licensed under the [MIT License](LICENSE).
+© 2016 Jason Wang licensed under the [MIT License](LICENSE).
