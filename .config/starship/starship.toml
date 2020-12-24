@@ -1,11 +1,30 @@
 [aws]
+symbol = " "
 disabled = true
 
 [battery]
+full_symbol = ""
+charging_symbol = ""
+discharging_symbol = ""
 disabled = true
 
 [character]
 success_symbol = "[❯](bold blue)"
+
+[conda]
+symbol = " "
+
+[directory]
+read_only = " "
+
+[docker]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
 
 [git_branch]
 symbol = " "
@@ -13,8 +32,56 @@ symbol = " "
 [git_status]
 disabled = true
 
+[golang]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
 [jobs]
 disabled = true
+
+[julia]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[python]
+symbol = " "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[swift]
+symbol = "ﯣ "
 
 [status]
 format = "[($status)]($style)"
