@@ -10,6 +10,7 @@ brew 'awscli'
 brew 'bash'
 brew 'bash-completion@2'
 brew 'bat'
+brew 'bitwarden-cli'
 brew 'direnv'
 brew 'docker-compose', link: true
 brew 'fd'
@@ -51,6 +52,7 @@ brew 'universal-ctags', args: ['head']
 brew 'wifi-password'
 brew 'z'
 
+cask 'bitwarden'
 cask 'brave-browser-nightly'
 cask 'docker'
 cask 'dozer'
