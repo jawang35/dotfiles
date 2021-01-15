@@ -53,7 +53,7 @@ brew 'wifi-password'
 brew 'z'
 
 cask 'bitwarden'
-cask 'brave-browser-nightly'
+cask 'brave-browser'
 cask 'docker'
 cask 'dozer'
 cask 'font-sauce-code-pro-nerd-font'
