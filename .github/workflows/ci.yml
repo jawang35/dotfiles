@@ -15,7 +15,7 @@ jobs:
 
       - name: Cache Homebrew Packages
         id: cache-homebrew-packages
-        uses: actions/cache@v2
+        uses: actions/cache@v2.1.4
         env:
           cache-name: homebrew-packages
         with:
