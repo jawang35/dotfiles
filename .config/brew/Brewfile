@@ -11,6 +11,7 @@ brew 'bash'
 brew 'bash-completion@2'
 brew 'bat'
 brew 'bitwarden-cli'
+brew 'coreutils'
 brew 'direnv'
 brew 'docker-compose', link: true
 brew 'fd'

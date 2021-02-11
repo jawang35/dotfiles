@@ -4,8 +4,8 @@ __bash_aliases() {
     # Preferred implementations
     alias cd..='cd ..'
     alias cp='cp -iv'
-    alias ls='ls -AF'
-    alias ll='ls -AhlF'
+    alias ls='ls -AF --color'
+    alias ll='ls -AhlF --color'
     alias mkdir='mkdir -pv'
     alias mv='mv -iv'
     alias rm='rm -v'
