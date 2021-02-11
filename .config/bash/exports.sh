@@ -3,8 +3,8 @@
 __bash_exports() {
     export PROMPT_SYMBOL="❯"
 
-    export PATH="/usr/local/opt/coreutils/libexec/gnubin:${PATH}:${HOME}/.config/bin"
-    export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}"
+    export PATH="${HOME}/.config/bin:/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/opt/coreutils/libexec/gnubin:${PATH}"
+    export MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}"
 
     # History
     export HISTFILE="${HOME}/.local/share/bash/bash_history"

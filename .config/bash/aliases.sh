@@ -35,11 +35,6 @@ __bash_aliases() {
     alias gr='git rebase -i'
     alias gs='git status'
 
-    # GNU sed
-    if command -v gsed > /dev/null 2>&1; then
-        alias sed='gsed'
-    fi
-
     # tmux aliases
     alias tmux='tmux -f "${HOME}/.config/tmux/tmux.conf"'
     alias t='tmux'
