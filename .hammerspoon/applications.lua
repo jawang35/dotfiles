@@ -26,7 +26,7 @@ local function applications(hyper)
   applicationModal:bind(hyper, 'h', function () launch('HighfiveApp') end)
   applicationModal:bind(hyper, 'm', function () launch('Messages') end)
   applicationModal:bind(hyper, 'o', function () launch('Microsoft Outlook') end)
-  applicationModal:bind(hyper, 'p', function () launch('1Password 7') end)
+  applicationModal:bind(hyper, 'p', function () launch('Bitwarden') end)
   applicationModal:bind(hyper, 's', function () launch('Slack') end)
   applicationModal:bind(hyper, 't', function () launch('Microsoft Teams') end)
 
