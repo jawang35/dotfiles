@@ -34,7 +34,6 @@ __bash_aliases() {
     alias gpd='git pull'
     alias gr='git rebase -i'
     alias grc='git rebase --continue'
-    alias grm='git rebase -i master'
     alias gs='git status'
 
     # tmux aliases
