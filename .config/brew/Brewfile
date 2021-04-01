@@ -31,7 +31,7 @@ brew 'jq'
 brew 'mongodb-community'
 brew 'mongodb-database-tools'
 brew 'mysql'
-brew 'n'
+brew 'n', conflicts_with: ['node']
 brew 'neofetch'
 brew 'neovim'
 brew 'plantuml'
