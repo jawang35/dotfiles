@@ -17,7 +17,7 @@ symbol = " "
 [directory]
 read_only = " "
 
-[docker]
+[docker_context]
 symbol = " "
 
 [elixir]
@@ -34,9 +34,6 @@ disabled = true
 
 [golang]
 symbol = " "
-
-[haskell]
-symbol = " "
 
 [hg_branch]
 symbol = " "
