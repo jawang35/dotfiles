@@ -196,7 +196,12 @@
                                         {
                                             "key_code": "k"
                                         }
-                                    ]
+                                    ],
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
