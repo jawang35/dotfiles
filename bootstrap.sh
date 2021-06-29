@@ -6,8 +6,20 @@ git --git-dir="${HOME}/.dotfiles.git" --work-tree="${HOME}" checkout
 git --git-dir="${HOME}/.dotfiles.git" --work-tree="${HOME}" submodule update --init --recursive
 git --git-dir="${HOME}/.dotfiles.git" --work-tree="${HOME}" config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
 
-if [ "$(uname -s)" == Darwin ] && command -v brew > /dev/null 2>&1; then
-    brew update && brew bundle --file="${HOME}/.config/brew/Brewfile"
+if [ "$(uname -s)" == Darwin ]; then
+    # Fast keyboard repeat
+    defaults write NSGlobalDomain KeyRepeat -int 2
+    defaults write NSGlobalDomain InitialKeyRepeat -int 15
+
+    # Dark mode
+    defaults write AppleInterfaceStyle -string Dark
+
+    # Disable startup sound
+    sudo nvram SystemAudioVolume=" "
+
+    if command -v brew > /dev/null 2>&1; then
+        brew update && brew bundle --file="${HOME}/.config/brew/Brewfile"
+    fi
 fi
 
 # shellcheck source=.bash_profile
