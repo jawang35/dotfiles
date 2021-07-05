@@ -225,6 +225,7 @@ command! -bang -nargs=* FzfRg call RipgrepFzf(<q-args>, <bang>0)
 set shortmess+=c
 set omnifunc=syntaxcomplete#Complete
 let g:deoplete#enable_at_startup = 1
+call deoplete#custom#source('_', 'smart_case', v:true)
 
 " Use echodoc to move autocompletion preview window to command line
 set completeopt=menu,noselect
