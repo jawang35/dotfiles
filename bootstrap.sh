@@ -11,6 +11,13 @@ if [ "$(uname -s)" == Darwin ]; then
     defaults write NSGlobalDomain KeyRepeat -int 2
     defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
+    # Disable annoying automatic keyboard settings
+    defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+    defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+    defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+    defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+    defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+
     # Dark mode
     defaults write AppleInterfaceStyle -string Dark
 
