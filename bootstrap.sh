@@ -24,6 +24,9 @@ if [ "$(uname -s)" == Darwin ]; then
     # Disable startup sound
     sudo nvram SystemAudioVolume=" "
 
+    # Google DNS
+    networksetup -setdnsservers Wi-Fi 8.8.8.8 8.8.4.4
+
     if command -v brew > /dev/null 2>&1; then
         brew update && brew bundle --file="${HOME}/.config/brew/Brewfile"
     fi
