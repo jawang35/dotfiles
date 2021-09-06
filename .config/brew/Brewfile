@@ -52,6 +52,7 @@ brew 'universal-ctags', args: ['head']
 brew 'wifi-password'
 brew 'z'
 
+cask 'authy'
 cask 'bitwarden'
 cask 'brave-browser'
 cask 'docker'
