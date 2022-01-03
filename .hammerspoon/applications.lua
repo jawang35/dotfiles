@@ -23,6 +23,7 @@ local function applications(hyper)
   hs.hotkey.bind(hyper, '1', function () launch('Brave Browser') end)
 
   applicationModal:bind('', 'escape', function () applicationModal:exit() end)
+  applicationModal:bind(hyper, 'a', function () launch('Authy Desktop') end)
   applicationModal:bind(hyper, 'h', function () launch('HighfiveApp') end)
   applicationModal:bind(hyper, 'm', function () launch('Messages') end)
   applicationModal:bind(hyper, 'o', function () launch('Microsoft Outlook') end)
