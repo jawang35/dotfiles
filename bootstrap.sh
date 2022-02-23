@@ -25,7 +25,7 @@ if [ "$(uname -s)" == Darwin ]; then
     sudo nvram SystemAudioVolume=" "
 
     # Cloudflare/APNIC DNS
-    networksetup -setdnsservers Wi-Fi 1.1.1.1 1.0.0.1 2606:4700:4700::1111 2606:4700:4700::1001
+    networksetup -setdnsservers Wi-Fi 1.1.1.1 1.0.0.1 2606:4700:4700::1111 2606:4700:4700::1001 || true
 
     if command -v brew > /dev/null 2>&1; then
         brew update && brew bundle --file="${HOME}/.config/brew/Brewfile"
