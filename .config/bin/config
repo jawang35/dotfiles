@@ -13,7 +13,7 @@ __config_update() {
             fi
             ;;
         python)
-            pip3 install -r "${HOME}/.config/python/requirements.txt"
+            /usr/local/bin/pip3 install -r "${HOME}/.config/python/requirements.txt"
             ;;
         submodule)
             config submodule update --init --recursive
