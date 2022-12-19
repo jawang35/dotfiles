@@ -36,6 +36,11 @@ __bash_profile() {
         eval "$(direnv hook bash)"
     fi
 
+    # rbenv
+    if command -v rbenv > /dev/null 2>&1; then
+        eval "$(rbenv init - bash)"
+    fi
+
     # z
     if [ -f '/usr/local/etc/profile.d/z.sh' ]; then
         export _Z_DATA="${HOME}/.local/share/z/data"
