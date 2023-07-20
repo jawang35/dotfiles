@@ -21,7 +21,7 @@ __bash_exports() {
     export starship_precmd_user_func="__starship_precmd_user_func"
 
     # Config file paths
-    export CONDARC="${HOME}/.config/conda/condarc"
+    export CONDARC="${HOME}/.local/conda/condarc"
     export GNUPGHOME="${HOME}/.config/gnupg"
     export HOMEBREW_BUNDLE_FILE="${HOME}/.config/brew/Brewfile"
     export INPUTRC="${HOME}/.config/readline/inputrc"
