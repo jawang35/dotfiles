@@ -24,7 +24,6 @@ local function applications(hyper)
 
   applicationModal:bind('', 'escape', function () applicationModal:exit() end)
   applicationModal:bind(hyper, 'a', function () launch('Authy Desktop') end)
-  applicationModal:bind(hyper, 'h', function () launch('HighfiveApp') end)
   applicationModal:bind(hyper, 'm', function () launch('Messages') end)
   applicationModal:bind(hyper, 'o', function () launch('Microsoft Outlook') end)
   applicationModal:bind(hyper, 'p', function () launch('Bitwarden') end)
