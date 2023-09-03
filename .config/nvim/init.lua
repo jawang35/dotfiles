@@ -77,7 +77,14 @@ if vim.loop.fs_stat(lazypath) then
           lsp.default_keymaps({buffer = bufnr})
         end)
 
-        lsp.setup_servers({'eslint', 'lua_ls', 'pyright', 'terraformls', 'tflint', 'tsserver'})
+        lsp.ensure_installed({
+          'eslint',
+          'lua_ls',
+          'pyright',
+          'terraformls',
+          'tflint',
+          'tsserver',
+        })
 
         require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
