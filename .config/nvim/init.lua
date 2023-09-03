@@ -119,6 +119,12 @@ if vim.loop.fs_stat(lazypath) then
       end,
     },
     {
+      'tpope/vim-commentary',
+      config = function()
+        vim.keymap.set('n', 'g/', '<Plug>Commentary')
+      end,
+    },
+    {
       'simnalamburt/vim-mundo',
       config = function()
         vim.keymap.set('n', '<leader>u', vim.cmd.MundoToggle)
