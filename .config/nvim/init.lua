@@ -83,6 +83,22 @@ if vim.loop.fs_stat(lazypath) then
       end
     },
     {
+      'windwp/nvim-autopairs',
+      config = function()
+        require('nvim-autopairs').setup({})
+      end
+    },
+    {
+      'kylechui/nvim-surround',
+      version = '*',
+      event = 'VeryLazy',
+      config = function()
+        require('nvim-surround').setup({
+          move_cursor = false,
+        })
+      end,
+    },
+    {
       'nvim-treesitter/nvim-treesitter',
       build = function()
         require('nvim-treesitter.install').update({ with_sync = true })()
@@ -128,16 +144,6 @@ if vim.loop.fs_stat(lazypath) then
       'simnalamburt/vim-mundo',
       config = function()
         vim.keymap.set('n', '<leader>u', vim.cmd.MundoToggle)
-      end,
-    },
-    {
-      'kylechui/nvim-surround',
-      version = '*',
-      event = 'VeryLazy',
-      config = function()
-        require('nvim-surround').setup({
-          move_cursor = false,
-        })
       end,
     },
   })
