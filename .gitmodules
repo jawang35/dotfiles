@@ -1,6 +1,6 @@
-[submodule ".modules/vim-plug"]
-	path = .modules/vim-plug
-	url = https://github.com/junegunn/vim-plug.git
+[submodule ".modules/lazy.nvim"]
+	path = .modules/lazy.nvim
+	url = https://github.com/folke/lazy.nvim.git
 [submodule ".modules/onehalf"]
 	path = .modules/onehalf
 	url = https://github.com/sonph/onehalf.git
