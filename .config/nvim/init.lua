@@ -19,10 +19,31 @@ if vim.loop.fs_stat(lazypath) then
           'telescope',
           winopts = {
             preview = {
-              default = "bat",
+              default = 'bat',
             },
           },
         })
+      end,
+    },
+    {
+      'nvim-treesitter/nvim-treesitter',
+      build = function()
+        require('nvim-treesitter.install').update({ with_sync = true })()
+      end,
+      config = function()
+        require('nvim-treesitter.configs').setup({
+          auto_install = true,
+          highlight = {
+            enable = true,
+            additional_vim_regex_highlighting = false,
+          },
+        })
+      end,
+    },
+    {
+      'navarasu/onedark.nvim',
+      config = function ()
+        require('onedark').load()
       end,
     },
   })
