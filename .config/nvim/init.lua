@@ -1,4 +1,30 @@
 vim.g.mapleader = ' '
+vim.g.python3_host_prog = '/usr/local/bin/python3'
+
+vim.opt.number = true
+vim.opt.relativenumber = true
+
+vim.opt.expandtab = true
+vim.opt.shiftround = true
+vim.opt.shiftwidth = 4
+vim.opt.smartindent = true
+vim.opt.softtabstop = 4
+vim.opt.tabstop = 4
+
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+vim.opt.cursorline = true
+vim.opt.hlsearch = false
+vim.opt.termguicolors = true
+vim.opt.wrap = false
+
+vim.opt.grepprg='rg --vimgrep --smart-case'
+vim.opt.undofile = true
+
 vim.keymap.set('n', '<leader>j', function() vim.cmd.wincmd('j') end)
 vim.keymap.set('n', '<leader>k', function() vim.cmd.wincmd('k') end)
 vim.keymap.set('n', '<leader>h', function() vim.cmd.wincmd('h') end)
@@ -6,11 +32,6 @@ vim.keymap.set('n', '<leader>l', function() vim.cmd.wincmd('l') end)
 vim.keymap.set('n', '<leader>o', function() vim.cmd.wincmd('o') end)
 vim.keymap.set('n', '<leader>[', vim.cmd.bp)
 vim.keymap.set('n', '<leader>]', vim.cmd.bn)
-
-vim.opt.autoindent = true
-vim.opt.smartindent = true
-vim.opt.number = true
-vim.opt.relativenumber = true
 
 local lazypath = vim.fn.expand('$HOME/.modules/lazy.nvim')
 vim.opt.rtp:prepend(lazypath)
@@ -21,6 +42,7 @@ if vim.loop.fs_stat(lazypath) then
       dependencies = { 'nvim-tree/nvim-web-devicons' },
       config = function()
         local fzfLua = require('fzf-lua')
+
         fzfLua.setup({
           'telescope',
           winopts = {
@@ -29,6 +51,7 @@ if vim.loop.fs_stat(lazypath) then
             },
           },
         })
+
         vim.keymap.set('n', '<leader>b', function() fzfLua.buffers() end)
         vim.keymap.set('n', '<leader>f', function() fzfLua.live_grep_native() end)
         vim.keymap.set('n', '<leader>p', function() fzfLua.files() end)
@@ -83,7 +106,6 @@ if vim.loop.fs_stat(lazypath) then
     {
       'simnalamburt/vim-mundo',
       config = function()
-        vim.opt.undofile = true
         vim.keymap.set('n', '<leader>u', vim.cmd.MundoToggle)
       end,
     },
