@@ -19,6 +19,8 @@ vim.opt.smartcase = true
 
 vim.opt.cursorline = true
 vim.opt.hlsearch = false
+vim.opt.showcmd = false
+vim.opt.showmode = false
 vim.opt.termguicolors = true
 vim.opt.wrap = false
 
@@ -39,7 +41,7 @@ if vim.loop.fs_stat(lazypath) then
   require('lazy').setup({
     {
       'ibhagwan/fzf-lua',
-      dependencies = { 'nvim-tree/nvim-web-devicons' },
+      dependencies = {'nvim-tree/nvim-web-devicons'},
       config = function()
         local fzfLua = require('fzf-lua')
 
@@ -61,12 +63,12 @@ if vim.loop.fs_stat(lazypath) then
       'VonHeikemen/lsp-zero.nvim',
       branch = 'v2.x',
       dependencies = {
-        {'neovim/nvim-lspconfig'},
-        {'williamboman/mason.nvim'},
-        {'williamboman/mason-lspconfig.nvim'},
-        {'hrsh7th/nvim-cmp'},
-        {'hrsh7th/cmp-nvim-lsp'},
-        {'L3MON4D3/LuaSnip'},
+        'neovim/nvim-lspconfig',
+        'williamboman/mason.nvim',
+        'williamboman/mason-lspconfig.nvim',
+        'hrsh7th/nvim-cmp',
+        'hrsh7th/cmp-nvim-lsp',
+        'L3MON4D3/LuaSnip',
       },
       config = function()
         local lsp = require('lsp-zero').preset({})
@@ -80,6 +82,48 @@ if vim.loop.fs_stat(lazypath) then
         require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
         lsp.setup()
+      end
+    },
+    {
+      'nvim-lualine/lualine.nvim',
+      dependencies = {'nvim-tree/nvim-web-devicons'},
+      config = function()
+        require('lualine').setup({
+          options = {
+            component_separators = '',
+            section_separators = '',
+          },
+          sections = {
+            lualine_a = {'mode'},
+            lualine_b = {
+              {
+                'branch',
+                icon = '',
+                cond = function()
+                  return vim.api.nvim_win_get_width(0) > 120
+                end
+              },
+              'diagnostics',
+            },
+            lualine_c = {
+              {
+                'filename',
+                path = 3,
+              },
+            },
+            lualine_x = {'filetype'},
+            lualine_y = {'progress'},
+            lualine_z = {'location'}
+          },
+          inactive_sections = {
+            lualine_a = {},
+            lualine_b = {},
+            lualine_c = {'filename'},
+            lualine_x = {'progress'},
+            lualine_y = {'location'},
+            lualine_z = {}
+          },
+        })
       end
     },
     {
@@ -115,7 +159,7 @@ if vim.loop.fs_stat(lazypath) then
     },
     {
       'stevearc/oil.nvim',
-      dependencies = { 'nvim-tree/nvim-web-devicons' },
+      dependencies = {'nvim-tree/nvim-web-devicons'},
       config = function()
         local oil = require('oil')
         oil.setup({
