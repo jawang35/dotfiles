@@ -130,5 +130,15 @@ if vim.loop.fs_stat(lazypath) then
         vim.keymap.set('n', '<leader>u', vim.cmd.MundoToggle)
       end,
     },
+    {
+      'kylechui/nvim-surround',
+      version = '*',
+      event = 'VeryLazy',
+      config = function()
+        require('nvim-surround').setup({
+          move_cursor = false,
+        })
+      end,
+    },
   })
 end
