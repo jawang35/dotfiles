@@ -7,6 +7,11 @@ vim.keymap.set('n', '<leader>o', function() vim.cmd.wincmd('o') end)
 vim.keymap.set('n', '<leader>[', vim.cmd.bp)
 vim.keymap.set('n', '<leader>]', vim.cmd.bn)
 
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.number = true
+vim.opt.relativenumber = true
+
 local lazypath = vim.fn.expand('$HOME/.modules/lazy.nvim')
 vim.opt.rtp:prepend(lazypath)
 if vim.loop.fs_stat(lazypath) then
@@ -30,11 +35,29 @@ if vim.loop.fs_stat(lazypath) then
       end,
     },
     {
-      'simnalamburt/vim-mundo',
+      'VonHeikemen/lsp-zero.nvim',
+      branch = 'v2.x',
+      dependencies = {
+        {'neovim/nvim-lspconfig'},
+        {'williamboman/mason.nvim'},
+        {'williamboman/mason-lspconfig.nvim'},
+        {'hrsh7th/nvim-cmp'},
+        {'hrsh7th/cmp-nvim-lsp'},
+        {'L3MON4D3/LuaSnip'},
+      },
       config = function()
-        vim.opt.undofile = true
-        vim.keymap.set('n', '<leader>u', vim.cmd.MundoToggle)
-      end,
+        local lsp = require('lsp-zero').preset({})
+
+        lsp.on_attach(function(client, bufnr)
+          lsp.default_keymaps({buffer = bufnr})
+        end)
+
+        lsp.setup_servers({'eslint', 'lua_ls', 'pyright', 'terraformls', 'tflint', 'tsserver'})
+
+        require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+
+        lsp.setup()
+      end
     },
     {
       'nvim-treesitter/nvim-treesitter',
@@ -55,6 +78,13 @@ if vim.loop.fs_stat(lazypath) then
       'navarasu/onedark.nvim',
       config = function ()
         require('onedark').load()
+      end,
+    },
+    {
+      'simnalamburt/vim-mundo',
+      config = function()
+        vim.opt.undofile = true
+        vim.keymap.set('n', '<leader>u', vim.cmd.MundoToggle)
       end,
     },
   })
