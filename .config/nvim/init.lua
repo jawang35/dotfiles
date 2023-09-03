@@ -1,11 +1,11 @@
 vim.g.mapleader = ' '
-vim.keymap.set('n', '<leader>j', ':wincmd j<cr>')
-vim.keymap.set('n', '<leader>k', ':wincmd k<cr>')
-vim.keymap.set('n', '<leader>h', ':wincmd h<cr>')
-vim.keymap.set('n', '<leader>l', ':wincmd l<cr>')
-vim.keymap.set('n', '<leader>o', ':wincmd o<cr>')
-vim.keymap.set('n', '<leader>[', ':bp<cr>')
-vim.keymap.set('n', '<leader>]', ':bn<cr>')
+vim.keymap.set('n', '<leader>j', function() vim.cmd.wincmd('j') end)
+vim.keymap.set('n', '<leader>k', function() vim.cmd.wincmd('k') end)
+vim.keymap.set('n', '<leader>h', function() vim.cmd.wincmd('h') end)
+vim.keymap.set('n', '<leader>l', function() vim.cmd.wincmd('l') end)
+vim.keymap.set('n', '<leader>o', function() vim.cmd.wincmd('o') end)
+vim.keymap.set('n', '<leader>[', vim.cmd.bp)
+vim.keymap.set('n', '<leader>]', vim.cmd.bn)
 
 local lazypath = vim.fn.expand('$HOME/.modules/lazy.nvim')
 vim.opt.rtp:prepend(lazypath)
@@ -15,7 +15,8 @@ if vim.loop.fs_stat(lazypath) then
       'ibhagwan/fzf-lua',
       dependencies = { 'nvim-tree/nvim-web-devicons' },
       config = function()
-        require('fzf-lua').setup({
+        local fzfLua = require('fzf-lua')
+        fzfLua.setup({
           'telescope',
           winopts = {
             preview = {
@@ -23,6 +24,16 @@ if vim.loop.fs_stat(lazypath) then
             },
           },
         })
+        vim.keymap.set('n', '<leader>b', function() fzfLua.buffers() end)
+        vim.keymap.set('n', '<leader>f', function() fzfLua.live_grep_native() end)
+        vim.keymap.set('n', '<leader>p', function() fzfLua.files() end)
+      end,
+    },
+    {
+      'simnalamburt/vim-mundo',
+      config = function()
+        vim.opt.undofile = true
+        vim.keymap.set('n', '<leader>u', vim.cmd.MundoToggle)
       end,
     },
     {
@@ -48,7 +59,3 @@ if vim.loop.fs_stat(lazypath) then
     },
   })
 end
-
-vim.keymap.set('n', '<leader>b', function() require('fzf-lua').buffers() end)
-vim.keymap.set('n', '<leader>f', function() require('fzf-lua').live_grep_native() end)
-vim.keymap.set('n', '<leader>p', function() require('fzf-lua').files() end)
