@@ -183,13 +183,14 @@ if vim.loop.fs_stat(lazypath) then
       config = function()
         local oil = require('oil')
         oil.setup({
-          prompt_save_on_select_new_entry = false,
           view_options = {
             show_hidden = true
           },
+          keymaps = {
+            ['gq'] = 'actions.close',
+          },
         })
         vim.keymap.set('n', '-', vim.cmd.Oil)
-        vim.keymap.set('n', 'gq', oil.close)
       end
     },
     {
