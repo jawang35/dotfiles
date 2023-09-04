@@ -68,6 +68,11 @@ if vim.loop.fs_stat(lazypath) then
         'williamboman/mason-lspconfig.nvim',
         {
           'hrsh7th/nvim-cmp',
+          dependencies = {
+            'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/cmp-nvim-lua',
+            'hrsh7th/cmp-path',
+          },
           config = function()
             local cmp = require('cmp')
             local cmp_action = require('lsp-zero').cmp_action()
@@ -77,10 +82,14 @@ if vim.loop.fs_stat(lazypath) then
                 ['<Tab>'] = cmp_action.tab_complete(),
                 ['<S-Tab>'] = cmp_action.select_prev_or_fallback(),
               },
+              sources = {
+                {name = 'path'},
+                {name = 'nvim_lsp'},
+                {name = 'nvim_lua'},
+              },
             })
           end
         },
-        'hrsh7th/cmp-nvim-lsp',
         'L3MON4D3/LuaSnip',
       },
       config = function()
