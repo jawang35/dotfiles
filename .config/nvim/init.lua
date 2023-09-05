@@ -22,7 +22,6 @@ vim.opt.hlsearch = false
 vim.opt.showcmd = false
 vim.opt.showmode = false
 vim.opt.termguicolors = true
-vim.opt.wrap = false
 
 vim.opt.grepprg='rg --vimgrep --smart-case'
 vim.opt.undofile = true
