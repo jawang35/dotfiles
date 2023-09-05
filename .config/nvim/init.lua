@@ -34,6 +34,8 @@ vim.keymap.set('n', '<leader>l', function() vim.cmd.wincmd('l') end)
 vim.keymap.set('n', '<leader>o', function() vim.cmd.wincmd('o') end)
 vim.keymap.set('n', '<leader>[', vim.cmd.bp)
 vim.keymap.set('n', '<leader>]', vim.cmd.bn)
+vim.keymap.set('n', '<c-n>', vim.diagnostic.goto_next)
+vim.keymap.set('n', '<c-p>', vim.diagnostic.goto_prev)
 
 local lazypath = vim.fn.expand('$HOME/.modules/lazy.nvim')
 vim.opt.rtp:prepend(lazypath)
