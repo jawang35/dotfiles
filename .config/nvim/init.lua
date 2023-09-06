@@ -26,6 +26,13 @@ vim.opt.termguicolors = true
 vim.opt.grepprg='rg --vimgrep --smart-case'
 vim.opt.undofile = true
 
+vim.api.nvim_create_autocmd({'BufWritePre', 'FileWritePre'}, {
+  pattern = '*',
+  callback = function()
+    vim.fn.mkdir(vim.fn.expand('<afile>:p:h'), 'p')
+  end
+})
+
 vim.keymap.set('n', '<leader>j', function() vim.cmd.wincmd('j') end)
 vim.keymap.set('n', '<leader>k', function() vim.cmd.wincmd('k') end)
 vim.keymap.set('n', '<leader>h', function() vim.cmd.wincmd('h') end)
