@@ -29,7 +29,10 @@ vim.opt.undofile = true
 vim.api.nvim_create_autocmd({'BufWritePre', 'FileWritePre'}, {
   pattern = '*',
   callback = function()
-    vim.fn.mkdir(vim.fn.expand('<afile>:p:h'), 'p')
+    local file_path = vim.fn.expand('<afile>:p:h')
+    if not(file_path:match('.*://')) then
+      vim.fn.mkdir(file_path, 'p')
+    end
   end
 })
 
@@ -43,17 +46,17 @@ vim.keymap.set('n', '<leader>]', vim.cmd.bn)
 vim.keymap.set('n', '<c-n>', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<c-p>', vim.diagnostic.goto_prev)
 
-local lazypath = vim.fn.expand('$HOME/.modules/lazy.nvim')
-vim.opt.rtp:prepend(lazypath)
-if vim.loop.fs_stat(lazypath) then
+local lazy_path = vim.fn.expand('$HOME/.modules/lazy.nvim')
+vim.opt.rtp:prepend(lazy_path)
+if vim.loop.fs_stat(lazy_path) then
   require('lazy').setup({
     {
       'ibhagwan/fzf-lua',
       dependencies = {'nvim-tree/nvim-web-devicons'},
       config = function()
-        local fzfLua = require('fzf-lua')
+        local fzf_lua = require('fzf-lua')
 
-        fzfLua.setup({
+        fzf_lua.setup({
           'telescope',
           winopts = {
             preview = {
@@ -62,9 +65,9 @@ if vim.loop.fs_stat(lazypath) then
           },
         })
 
-        vim.keymap.set('n', '<leader>b', function() fzfLua.buffers() end)
-        vim.keymap.set('n', '<leader>f', function() fzfLua.live_grep_native() end)
-        vim.keymap.set('n', '<leader>p', function() fzfLua.files() end)
+        vim.keymap.set('n', '<leader>b', function() fzf_lua.buffers() end)
+        vim.keymap.set('n', '<leader>f', function() fzf_lua.live_grep_native() end)
+        vim.keymap.set('n', '<leader>p', function() fzf_lua.files() end)
       end,
     },
     {
