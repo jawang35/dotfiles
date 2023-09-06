@@ -3,7 +3,7 @@
 __config_update() {
     case "${1}" in
         all)
-            config pull && config update submodule && config update brew && config update python && config update vim-plug && config reload
+            config pull && config update submodule && config update brew && config update python && config update vim && config reload
             ;;
         brew)
             if command -v brew > /dev/null 2>&1; then
@@ -15,17 +15,17 @@ __config_update() {
         python)
             /usr/local/bin/pip3 install -r "${HOME}/.config/python/requirements.txt"
             if [ -f "${HOME}/.local/python/requirements.txt" ]; then
-              /usr/local/bin/pip3 install -r "${HOME}/.local/python/requirements.txt"
+                /usr/local/bin/pip3 install -r "${HOME}/.local/python/requirements.txt"
             fi
             ;;
         submodule)
             config submodule update --init --recursive
             ;;
-        vim-plug)
+        vim)
             if command -v nvim > /dev/null 2>&1; then
-              nvim -i NONE -E +PlugUpdate +PlugClean! +UpdateRemotePlugins +qa!
+                nvim --headless "+Lazy! sync" +qa!
             else
-              vim -i NONE -E +PlugUpdate +PlugClean! +qa!
+                echo "nvim not found."
             fi
             ;;
         *)
