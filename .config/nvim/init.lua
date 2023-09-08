@@ -101,6 +101,7 @@ if vim.loop.fs_stat(lazy_path) then
         {
           'hrsh7th/nvim-cmp',
           dependencies = {
+            'hrsh7th/cmp-buffer',
             'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/cmp-nvim-lua',
             'hrsh7th/cmp-path',
@@ -115,6 +116,7 @@ if vim.loop.fs_stat(lazy_path) then
                 ['<S-Tab>'] = cmp_action.select_prev_or_fallback(),
               },
               sources = {
+                {name = 'buffer'},
                 {name = 'path'},
                 {name = 'nvim_lsp'},
                 {name = 'nvim_lua'},
