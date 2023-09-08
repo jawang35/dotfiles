@@ -71,6 +71,27 @@ if vim.loop.fs_stat(lazy_path) then
       end,
     },
     {
+      'mhartington/formatter.nvim',
+      config = function()
+        require('formatter').setup({
+          filetype = {
+            ['*'] = {require('formatter.filetypes.any').remove_trailing_whitespace},
+            javascript = {require('formatter.filetypes.javascript').prettier},
+            typescript = {require('formatter.filetypes.typescript').prettier},
+          },
+        })
+
+        local format_augroup = vim.api.nvim_create_augroup('FormatAutogroup', {clear = true})
+        vim.api.nvim_create_autocmd({'BufWritePost'}, {
+          pattern = '*',
+          group = format_augroup,
+          callback = function()
+            vim.cmd.FormatWrite()
+          end,
+        })
+      end
+    },
+    {
       'VonHeikemen/lsp-zero.nvim',
       branch = 'v2.x',
       dependencies = {
