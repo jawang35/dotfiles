@@ -243,7 +243,7 @@ if vim.loop.fs_stat(lazy_path) then
     {
       'tpope/vim-commentary',
       config = function()
-        vim.keymap.set('n', 'g/', '<Plug>Commentary')
+        vim.keymap.set({'n', 'v'}, 'g/', '<Plug>Commentary')
       end,
     },
     {
