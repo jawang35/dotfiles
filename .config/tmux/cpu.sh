@@ -13,4 +13,4 @@ fi
 
 BAR=$(spark 0 100 "${USAGE_PCT}" | grep -o '.$')
 
-echo "#[fg=${TMUX_COLOR_LIGHT_GRAY}]C:#[fg=${COLOR}]${BAR}"
+echo "#[fg=${TMUX_COLOR_FG_1}]C:#[fg=${COLOR}]${BAR}"

@@ -28,4 +28,4 @@ elif [ "$(echo "${UPLOAD} >= 100" | bc -l)" == 1 ]; then
     UPLOAD_COLOR="${TMUX_COLOR_YELLOW}"
 fi
 
-printf "#[fg=${TMUX_COLOR_LIGHT_GRAY}]:#[fg=${DOWNLOAD_COLOR}]%.1f${DOWNLOAD_RATE} #[fg=${TMUX_COLOR_LIGHT_GRAY}]:#[fg=${UPLOAD_COLOR}]%.1f${UPLOAD_RATE}" "${DOWNLOAD}" "${UPLOAD}"
+printf "#[fg=${TMUX_COLOR_FG_1}]:#[fg=${DOWNLOAD_COLOR}]%.1f${DOWNLOAD_RATE} #[fg=${TMUX_COLOR_FG_1}]:#[fg=${UPLOAD_COLOR}]%.1f${UPLOAD_RATE}" "${DOWNLOAD}" "${UPLOAD}"
