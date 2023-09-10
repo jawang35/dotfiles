@@ -51,26 +51,6 @@ vim.opt.rtp:prepend(lazy_path)
 if vim.loop.fs_stat(lazy_path) then
   require('lazy').setup({
     {
-      'ibhagwan/fzf-lua',
-      dependencies = {'nvim-tree/nvim-web-devicons'},
-      config = function()
-        local fzf_lua = require('fzf-lua')
-
-        fzf_lua.setup({
-          'telescope',
-          winopts = {
-            preview = {
-              default = 'bat',
-            },
-          },
-        })
-
-        vim.keymap.set('n', '<leader>b', function() fzf_lua.buffers() end)
-        vim.keymap.set('n', '<leader>f', function() fzf_lua.live_grep_native() end)
-        vim.keymap.set('n', '<leader>p', function() fzf_lua.files() end)
-      end,
-    },
-    {
       'mhartington/formatter.nvim',
       config = function()
         require('formatter').setup({
@@ -90,6 +70,26 @@ if vim.loop.fs_stat(lazy_path) then
           end,
         })
       end
+    },
+    {
+      'ibhagwan/fzf-lua',
+      dependencies = {'nvim-tree/nvim-web-devicons'},
+      config = function()
+        local fzf_lua = require('fzf-lua')
+
+        fzf_lua.setup({
+          'telescope',
+          winopts = {
+            preview = {
+              default = 'bat',
+            },
+          },
+        })
+
+        vim.keymap.set('n', '<leader>b', function() fzf_lua.buffers() end)
+        vim.keymap.set('n', '<leader>f', function() fzf_lua.live_grep_native() end)
+        vim.keymap.set('n', '<leader>p', function() fzf_lua.files() end)
+      end,
     },
     {
       'VonHeikemen/lsp-zero.nvim',

@@ -59,8 +59,8 @@ __bash_profile() {
         --height 40%
         --prompt='${PROMPT_SYMBOL} '
         --color=dark
-        --color=fg:-1,bg:-1,hl:#98c379,fg+:#dcdfe4,bg+:#313640,hl+:#98c379
-        --color=info:#e5c07b,prompt:#61afef,pointer:#e06c75,marker:#c678dd,spinner:#61afef,header:#61afef"
+        --color=fg:-1,bg:-1,hl:#98c379,fg+:#abb2bf,bg+:#31353f,hl+:#98c379
+        --color=info:#e5c07b,prompt:#61afef,pointer:#e86671,marker:#c678dd,spinner:#61afef,header:#61afef"
         export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
         export FZF_CTRL_T_OPTS="--preview='bat {} | head -500'"
         export FZF_CTRL_R_OPTS="--reverse"
