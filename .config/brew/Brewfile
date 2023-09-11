@@ -4,7 +4,6 @@ tap 'homebrew/cask-versions'
 tap 'homebrew/services'
 
 tap 'mongodb/brew'
-tap 'universal-ctags/universal-ctags'
 
 brew 'awscli'
 brew 'bash'
@@ -49,7 +48,6 @@ brew 'tealdeer'
 brew 'tfenv'
 brew 'tmux'
 brew 'tree'
-brew 'universal-ctags', args: ['head']
 brew 'wifi-password'
 brew 'z'
 
