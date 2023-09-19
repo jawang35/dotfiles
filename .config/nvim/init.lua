@@ -57,6 +57,19 @@ if vim.loop.fs_stat(lazy_path) then
           filetype = {
             ['*'] = {require('formatter.filetypes.any').remove_trailing_whitespace},
             javascript = {require('formatter.filetypes.javascript').prettier},
+            terraform = {
+              function()
+                return {
+                  exe = 'terraform',
+                  args = {
+                    'fmt',
+                    '-list=false',
+                    '-',
+                  },
+                  stdin = true,
+                }
+              end
+            },
             typescript = {require('formatter.filetypes.typescript').prettier},
           },
         })
