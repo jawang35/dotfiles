@@ -133,12 +133,12 @@ if vim.loop.fs_stat(lazy_path) then
                 disallow_fuzzy_matching = true,
                 disallow_partial_matching = true,
               },
-              sources = {
-                {name = 'path'},
+              sources = cmp.config.sources({
                 {name = 'nvim_lsp'},
                 {name = 'nvim_lua'},
+                {name = 'path'},
                 {name = 'buffer'},
-              },
+              }),
             })
 
             cmp.setup.cmdline({'/', '?'}, {
