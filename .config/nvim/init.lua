@@ -141,7 +141,7 @@ if vim.loop.fs_stat(lazy_path) then
               },
             })
 
-            cmp.setup.cmdline('/', {
+            cmp.setup.cmdline({'/', '?'}, {
               mapping = cmp.mapping.preset.cmdline(),
               sources = {
                 {name = 'buffer'},
