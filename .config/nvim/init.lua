@@ -128,11 +128,15 @@ if vim.loop.fs_stat(lazy_path) then
                 ['<Tab>'] = cmp_action.tab_complete(),
                 ['<S-Tab>'] = cmp_action.select_prev_or_fallback(),
               },
+              matching = {
+                disallow_fuzzy_matching = true,
+                disallow_partial_matching = true,
+              },
               sources = {
-                {name = 'buffer'},
                 {name = 'path'},
                 {name = 'nvim_lsp'},
                 {name = 'nvim_lua'},
+                {name = 'buffer'},
               },
             })
           end
