@@ -1,5 +1,11 @@
 name: CI
 on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: 'Ref to checkout.'
+        required: true
+        default: master
   push:
     branches:
       - master
@@ -12,6 +18,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.inputs.ref }}
 
       - name: Cache Homebrew Packages
         id: cache-homebrew-packages
