@@ -33,7 +33,7 @@ brew 'n', conflicts_with: ['node']
 brew 'neofetch'
 brew 'neovim'
 brew 'plantuml'
-brew 'postgresql'
+brew 'postgresql@16'
 brew 'python3'
 brew 'rbenv'
 brew 'readline'
