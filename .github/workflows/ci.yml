@@ -35,7 +35,7 @@ jobs:
         run: rm -f ~/.bash_profile ~/.bashrc ~/.gitconfig
 
       - name: Clean Homebrew Packages
-        run: brew uninstall -f --ignore-dependencies $(brew list --formula) && ls $(brew --prefix)/bin | grep -v brew | xargs rm
+        run: brew uninstall -f --ignore-dependencies $(brew list --formula) && ls $(brew --prefix)/bin | grep -v brew | xargs -I{} rm $(brew --prefix)/bin/{}
         if: matrix.os == 'macos-latest' && steps.cache-homebrew-packages.outputs.cache-hit != 'true'
 
       - name: Run Bootstrap Script
