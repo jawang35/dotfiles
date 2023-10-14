@@ -71,7 +71,7 @@ __bash_profile() {
                 local cur="${COMP_WORDS[COMP_CWORD]}"
 
                 if [[ "${cur}" != *"${FZF_COMPLETION_TRIGGER}" ]]; then
-                    COMP_WORDS[${COMP_CWORD}]="${cur}${FZF_COMPLETION_TRIGGER}"
+                    COMP_WORDS[COMP_CWORD]="${cur}${FZF_COMPLETION_TRIGGER}"
                 fi
             }
 
