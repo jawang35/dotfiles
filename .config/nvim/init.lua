@@ -51,38 +51,19 @@ vim.opt.rtp:prepend(lazy_path)
 if vim.loop.fs_stat(lazy_path) then
   require('lazy').setup({
     {
-      'mhartington/formatter.nvim',
+      'stevearc/conform.nvim',
       config = function()
-        require('formatter').setup({
-          filetype = {
-            ['*'] = {require('formatter.filetypes.any').remove_trailing_whitespace},
-            javascript = {require('formatter.filetypes.javascript').prettier},
-            terraform = {
-              function()
-                return {
-                  exe = 'terraform',
-                  args = {
-                    'fmt',
-                    '-list=false',
-                    '-',
-                  },
-                  stdin = true,
-                }
-              end
-            },
-            typescript = {require('formatter.filetypes.typescript').prettier},
+        require('conform').setup({
+          format_on_save = {},
+          formatters_by_ft = {
+            ['_'] = {'trim_newlines', 'trim_whitespace'},
+            javascript = {{'prettierd', 'prettier'}},
+            python = {'autoflake', 'isort', 'black'},
+            terraform = {'terraform_fmt'},
+            typescript = {{'prettierd', 'prettier'}},
           },
         })
-
-        local format_augroup = vim.api.nvim_create_augroup('FormatAutogroup', {clear = true})
-        vim.api.nvim_create_autocmd({'BufWritePost'}, {
-          pattern = '*',
-          group = format_augroup,
-          callback = function()
-            vim.cmd.FormatWrite()
-          end,
-        })
-      end
+      end,
     },
     {
       'ibhagwan/fzf-lua',
