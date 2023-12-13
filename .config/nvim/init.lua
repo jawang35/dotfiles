@@ -238,6 +238,9 @@ if vim.loop.fs_stat(lazy_path) then
             enable = true,
             additional_vim_regex_highlighting = false,
           },
+          indent = {
+            enable = true,
+          },
         })
       end,
     },
