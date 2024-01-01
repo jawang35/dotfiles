@@ -51,6 +51,26 @@ vim.opt.rtp:prepend(lazy_path)
 if vim.loop.fs_stat(lazy_path) then
   require('lazy').setup({
     {
+      'numToStr/Comment.nvim',
+      config = function()
+        require('Comment').setup({
+          toggler = {
+            line = 'g/l',
+            block = 'g/bl',
+          },
+          opleader = {
+            line = 'g/',
+            block = 'g/b',
+          },
+          extra = {
+            above = 'g/O',
+            below = 'g/o',
+            eol = 'g/A',
+          },
+        })
+      end,
+    },
+    {
       'stevearc/conform.nvim',
       config = function()
         require('conform').setup({
@@ -264,12 +284,6 @@ if vim.loop.fs_stat(lazy_path) then
       'navarasu/onedark.nvim',
       config = function ()
         require('onedark').load()
-      end,
-    },
-    {
-      'tpope/vim-commentary',
-      config = function()
-        vim.keymap.set({'n', 'v'}, 'g/', '<Plug>Commentary')
       end,
     },
     {
