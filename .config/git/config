@@ -13,6 +13,8 @@
 	ff = only
 [pull]
 	rebase = true
+[push]
+	autoSetupRemote = true
 [status]
 	showUntrackedFiles = all
 [user]
