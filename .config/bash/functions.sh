@@ -5,11 +5,6 @@ __bash_functions() {
     cd() {
         builtin cd "${@}" && ls
     }
-
-    # git push track remote
-    gput() {
-        git push --set-upstream "$(git remote show)" "$(git rev-parse --abbrev-ref HEAD)"
-    }
 }
 
 __bash_functions
