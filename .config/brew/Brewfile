@@ -1,5 +1,4 @@
 tap 'homebrew/services'
-
 tap 'mongodb/brew'
 
 brew 'awscli'
@@ -24,8 +23,8 @@ brew 'htop'
 brew 'httpie'
 brew 'ifstat'
 brew 'jq'
-brew 'mongodb-community'
 brew 'mongodb-database-tools'
+brew 'mongosh'
 brew 'mysql'
 brew 'n', conflicts_with: ['node']
 brew 'neofetch'
