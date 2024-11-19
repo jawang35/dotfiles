@@ -77,10 +77,10 @@ if vim.loop.fs_stat(lazy_path) then
           format_on_save = {},
           formatters_by_ft = {
             ['_'] = {'trim_newlines', 'trim_whitespace'},
-            javascript = {{'prettierd', 'prettier'}},
+            javascript = {'prettierd', 'prettier', stop_after_first = true},
             python = {'autoflake', 'isort', 'black'},
             terraform = {'terraform_fmt'},
-            typescript = {{'prettierd', 'prettier'}},
+            typescript = {'prettierd', 'prettier', stop_after_first = true},
           },
         })
       end,
