@@ -22,6 +22,7 @@ vim.opt.hlsearch = false
 vim.opt.showcmd = false
 vim.opt.showmode = false
 vim.opt.termguicolors = true
+vim.opt.signcolumn = 'yes'
 
 vim.opt.grepprg='rg --vimgrep --smart-case'
 vim.opt.undofile = true
@@ -50,6 +51,123 @@ local lazy_path = vim.fn.expand('$HOME/.modules/lazy.nvim')
 vim.opt.rtp:prepend(lazy_path)
 if vim.loop.fs_stat(lazy_path) then
   require('lazy').setup({
+    {
+      'hrsh7th/cmp-nvim-lsp',
+      dependencies = {
+        'williamboman/mason.nvim',
+        'williamboman/mason-lspconfig.nvim',
+        {
+          'hrsh7th/nvim-cmp',
+          dependencies = {
+            'hrsh7th/cmp-buffer',
+            'hrsh7th/cmp-cmdline',
+            'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/cmp-nvim-lua',
+            'hrsh7th/cmp-path',
+          },
+          config = function()
+            local cmp = require('cmp')
+            cmp.setup({
+              mapping = cmp.mapping.preset.insert({
+                ['<Tab>'] = cmp.mapping(function(fallback)
+                  local col = vim.fn.col('.') - 1
+
+                  if cmp.visible() then
+                    cmp.select_next_item({behavior = 'insert'})
+                  elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+                    fallback()
+                  else
+                    cmp.complete()
+                  end
+                end, {'i', 's'}),
+                ['<S-Tab>'] = cmp.mapping.select_prev_item({behavior = 'insert'}),
+              }),
+              matching = {
+                disallow_fuzzy_matching = true,
+                disallow_partial_matching = true,
+              },
+              sources = {
+                {name = 'nvim_lsp'},
+                {name = 'nvim_lua'},
+                {name = 'path'},
+                {name = 'buffer'},
+              },
+              snippet = {
+                expand = function(args)
+                  vim.snippet.expand(args.body)
+                end,
+              },
+            })
+
+            cmp.setup.cmdline({'/', '?'}, {
+              mapping = cmp.mapping.preset.cmdline(),
+              sources = {
+                {name = 'buffer'},
+              },
+            })
+
+            cmp.setup.cmdline(':', {
+              mapping = cmp.mapping.preset.cmdline(),
+              sources = cmp.config.sources({
+                {name = 'path'},
+              },
+              {
+                {
+                  name = 'cmdline',
+                  option = {
+                    ignore_cmds = {'Man', '!'},
+                  },
+                },
+              }),
+            })
+          end,
+        },
+        'neovim/nvim-lspconfig',
+      },
+      config = function()
+        local lspconfig_defaults = require('lspconfig').util.default_config
+        lspconfig_defaults.capabilities = vim.tbl_deep_extend(
+          'force',
+          lspconfig_defaults.capabilities,
+          require('cmp_nvim_lsp').default_capabilities()
+        )
+
+        vim.api.nvim_create_autocmd('LspAttach', {
+          desc = 'LSP actions',
+          callback = function(event)
+            local opts = {buffer = event.buf}
+
+            vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
+            vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
+            vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
+            vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
+            vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
+            vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
+            vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
+            vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+            vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
+            vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+          end,
+        })
+
+        require('mason').setup({})
+        require('mason-lspconfig').setup({
+          ensure_installed = {
+            'eslint',
+            'lua_ls',
+            'pylsp',
+            'terraformls',
+            'tflint',
+            'ts_ls',
+          },
+          handlers = {
+            function(server_name)
+              require('lspconfig')[server_name].setup({})
+            end,
+          },
+        })
+      end,
+    },
     {
       'numToStr/Comment.nvim',
       config = function()
@@ -106,89 +224,6 @@ if vim.loop.fs_stat(lazy_path) then
       end,
     },
     {
-      'VonHeikemen/lsp-zero.nvim',
-      branch = 'v2.x',
-      dependencies = {
-        'neovim/nvim-lspconfig',
-        'williamboman/mason.nvim',
-        'williamboman/mason-lspconfig.nvim',
-        {
-          'hrsh7th/nvim-cmp',
-          dependencies = {
-            'hrsh7th/cmp-buffer',
-            'hrsh7th/cmp-cmdline',
-            'hrsh7th/cmp-nvim-lsp',
-            'hrsh7th/cmp-nvim-lua',
-            'hrsh7th/cmp-path',
-          },
-          config = function()
-            local cmp = require('cmp')
-            local cmp_action = require('lsp-zero').cmp_action()
-
-            cmp.setup({
-              mapping = {
-                ['<Tab>'] = cmp_action.tab_complete(),
-                ['<S-Tab>'] = cmp_action.select_prev_or_fallback(),
-              },
-              matching = {
-                disallow_fuzzy_matching = true,
-                disallow_partial_matching = true,
-              },
-              sources = cmp.config.sources({
-                {name = 'nvim_lsp'},
-                {name = 'nvim_lua'},
-                {name = 'path'},
-                {name = 'buffer'},
-              }),
-            })
-
-            cmp.setup.cmdline({'/', '?'}, {
-              mapping = cmp.mapping.preset.cmdline(),
-              sources = {
-                {name = 'buffer'},
-              },
-            })
-
-            cmp.setup.cmdline(':', {
-              mapping = cmp.mapping.preset.cmdline(),
-              sources = cmp.config.sources({
-                {name = 'path'},
-              },
-              {
-                {
-                  name = 'cmdline',
-                  option = {
-                    ignore_cmds = {'Man', '!'},
-                  },
-                },
-              })
-            })
-          end
-        },
-        'L3MON4D3/LuaSnip',
-      },
-      config = function()
-        local lsp_zero = require('lsp-zero').preset({})
-
-        lsp_zero.on_attach(function(client, bufnr)
-          lsp_zero.default_keymaps({buffer = bufnr})
-        end)
-
-        lsp_zero.ensure_installed({
-          'eslint',
-          'lua_ls',
-          'pylsp',
-          'terraformls',
-          'tflint',
-          'tsserver',
-        })
-
-        require('lspconfig').lua_ls.setup(lsp_zero.nvim_lua_ls())
-
-        lsp_zero.setup()
-      end
-    },
-    {
       'nvim-lualine/lualine.nvim',
       dependencies = {'nvim-tree/nvim-web-devicons'},
       config = function()
@@ -228,13 +263,13 @@ if vim.loop.fs_stat(lazy_path) then
             lualine_z = {}
           },
         })
-      end
+      end,
     },
     {
       'windwp/nvim-autopairs',
       config = function()
         require('nvim-autopairs').setup({})
-      end
+      end,
     },
     {
       'kylechui/nvim-surround',
@@ -278,7 +313,7 @@ if vim.loop.fs_stat(lazy_path) then
           },
         })
         vim.keymap.set('n', '-', vim.cmd.Oil)
-      end
+      end,
     },
     {
       'navarasu/onedark.nvim',
