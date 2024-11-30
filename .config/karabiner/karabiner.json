@@ -148,33 +148,12 @@
             "devices": [
                 {
                     "identifiers": {
-                        "description": "Ducky One 2 Mecha Mini (modified VID/PID - 05AC024F)",
                         "is_keyboard": true,
-                        "product_id": 291,
-                        "vendor_id": 1046
+                        "is_pointing_device": true,
+                        "product_id": 320,
+                        "vendor_id": 13364
                     },
-                    "simple_modifications": [
-                        {
-                            "from": { "key_code": "escape" },
-                            "to": [{ "key_code": "grave_accent_and_tilde" }]
-                        },
-                        {
-                            "from": { "key_code": "left_command" },
-                            "to": [{ "key_code": "left_option" }]
-                        },
-                        {
-                            "from": { "key_code": "left_option" },
-                            "to": [{ "key_code": "left_command" }]
-                        },
-                        {
-                            "from": { "key_code": "right_command" },
-                            "to": [{ "key_code": "right_option" }]
-                        },
-                        {
-                            "from": { "key_code": "right_option" },
-                            "to": [{ "key_code": "right_command" }]
-                        }
-                    ]
+                    "ignore": false
                 }
             ],
             "name": "Default profile",
