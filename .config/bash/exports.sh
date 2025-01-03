@@ -3,7 +3,8 @@
 __bash_exports() {
     export PROMPT_SYMBOL="❯"
 
-    export PATH="${HOME}/.config/bin:${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnubin:${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin:$(brew --prefix python)/libexec/bin:${PATH}"
+    HOMEBREW_PREFIX_PYTHON=$(brew --prefix python)
+    export PATH="${HOME}/.config/bin:${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnubin:${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin:${HOMEBREW_PREFIX_PYTHON}/libexec/bin:${PATH}"
     export MANPATH="${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnuman:${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnuman:${MANPATH}"
 
     # History
