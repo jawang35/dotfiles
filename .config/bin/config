@@ -13,9 +13,9 @@ __config_update() {
             fi
             ;;
         python)
-            /usr/local/bin/pip3 install --break-system-packages -r "${HOME}/.config/python/requirements.txt"
+            "${HOMEBREW_PREFIX}/bin/pip3" install --break-system-packages -r "${HOME}/.config/python/requirements.txt"
             if [ -f "${HOME}/.local/python/requirements.txt" ]; then
-                /usr/local/bin/pip3 install --break-system-packages -r "${HOME}/.local/python/requirements.txt"
+                "${HOMEBREW_PREFIX}/bin/pip3" install --break-system-packages -r "${HOME}/.local/python/requirements.txt"
             fi
             ;;
         submodule)

@@ -3,8 +3,8 @@
 __bash_exports() {
     export PROMPT_SYMBOL="❯"
 
-    export PATH="${HOME}/.config/bin:/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/opt/coreutils/libexec/gnubin:${PATH}"
-    export MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}"
+    export PATH="${HOME}/.config/bin:${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnubin:${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin:$(brew --prefix python)/libexec/bin:${PATH}"
+    export MANPATH="${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnuman:${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnuman:${MANPATH}"
 
     # History
     export HISTFILE="${HOME}/.local/share/bash/bash_history"
@@ -34,10 +34,10 @@ __bash_exports() {
     export LESSHISTFILE="${HOME}/.local/share/less/lesshst"
 
     # Set EDITOR variable to Neovim/Vim
-    if [ -f /usr/local/bin/nvim ]; then
-        export EDITOR=/usr/local/bin/nvim
-    elif [ -f /usr/local/bin/vim ]; then
-        export EDITOR=/usr/local/bin/vim
+    if [ -f "${HOMEBREW_PREFIX}/bin/nvim" ]; then
+        export EDITOR="${HOMEBREW_PREFIX}/bin/nvim"
+    elif [ -f "${HOMEBREW_PREFIX}/bin/vim" ]; then
+        export EDITOR="${HOMEBREW_PREFIX}/bin/vim"
     else
         export EDITOR=/usr/bin/vim
     fi

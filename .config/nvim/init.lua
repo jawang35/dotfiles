@@ -1,5 +1,5 @@
 vim.g.mapleader = ' '
-vim.g.python3_host_prog = '/usr/local/bin/python3'
+vim.g.python3_host_prog = vim.env.HOMEBREW_PREFIX .. '/bin/python3'
 
 vim.opt.number = true
 vim.opt.relativenumber = true

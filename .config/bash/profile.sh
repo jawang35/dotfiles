@@ -7,9 +7,9 @@ __bash_profile() {
     shopt -s cmdhist histappend
 
     # bash-completion
-    if [ -f '/usr/local/etc/profile.d/bash_completion.sh' ]; then
-        export BASH_COMPLETION_COMPAT_DIR='/usr/local/etc/bash_completion.d'
-        source '/usr/local/etc/profile.d/bash_completion.sh'
+    if [ -f "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]; then
+        export BASH_COMPLETION_COMPAT_DIR="${HOMEBREW_PREFIX}/etc/bash_completion.d"
+        source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
     fi
 
     # Git completion for aliases
@@ -42,15 +42,15 @@ __bash_profile() {
     fi
 
     # z
-    if [ -f '/usr/local/etc/profile.d/z.sh' ]; then
+    if [ -f "${HOMEBREW_PREFIX}/etc/profile.d/z.sh" ]; then
         export _Z_DATA="${HOME}/.local/share/z/data"
-        source '/usr/local/etc/profile.d/z.sh'
+        source "${HOMEBREW_PREFIX}/etc/profile.d/z.sh"
     fi
 
     # fzf
-    if [ -d '/usr/local/opt/fzf' ]; then
-        if [[ ! "${PATH}" == "*/usr/local/opt/fzf/bin*" ]]; then
-            export PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
+    if [ -d "${HOMEBREW_PREFIX}/opt/fzf" ]; then
+        if [[ ! "${PATH}" == "*/${HOMEBREW_PREFIX}/opt/fzf/bin*" ]]; then
+            export PATH="${PATH:+${PATH}:}${HOMEBREW_PREFIX}/opt/fzf/bin"
         fi
 
         export FZF_COMPLETION_TRIGGER='**'
@@ -112,8 +112,8 @@ __bash_profile() {
                 fd --exclude .git --hidden --follow --type d . "${1}"
             }
 
-            source '/usr/local/opt/fzf/shell/completion.bash'
-            source '/usr/local/opt/fzf/shell/key-bindings.bash'
+            source "${HOMEBREW_PREFIX}/opt/fzf/shell/completion.bash"
+            source "${HOMEBREW_PREFIX}/opt/fzf/shell/key-bindings.bash"
 
             _fzf_setup_completion 'path' gopen v
             _fzf_setup_completion 'git_branch' gco
