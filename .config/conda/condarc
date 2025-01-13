@@ -2,3 +2,4 @@ channel_priority: strict
 channels:
   - conda-forge
 show_channel_urls: True
+subdir: osx-64
