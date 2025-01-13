@@ -48,7 +48,6 @@ brew 'tree'
 brew 'wifi-password'
 brew 'z'
 
-cask 'authy'
 cask 'bitwarden'
 cask 'brave-browser'
 cask 'docker'
