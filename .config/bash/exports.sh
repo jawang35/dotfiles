@@ -30,7 +30,7 @@ __bash_exports() {
     export GNUPGHOME="${HOME}/.config/gnupg"
     export HOMEBREW_BUNDLE_FILE="${HOME}/.config/brew/Brewfile"
     export INPUTRC="${HOME}/.config/readline/inputrc"
-    export PGPASSFILE="${HOME}/.local/psql/pgpass"
+    export PGPASSFILE="${HOME}/.local/libpq/pgpass"
     export PSQLRC="${HOME}/.config/psql/psqlrc"
     export RIPGREP_CONFIG_PATH="${HOME}/.config/ripgrep/ripgreprc"
     export STARSHIP_CONFIG="${HOME}/.config/starship/starship.toml"

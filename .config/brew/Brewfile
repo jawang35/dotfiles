@@ -29,6 +29,7 @@ brew 'mysql'
 brew 'n', conflicts_with: ['node']
 brew 'neofetch'
 brew 'neovim'
+brew 'pgcli'
 brew 'plantuml'
 brew 'postgresql@17'
 brew 'python3'
