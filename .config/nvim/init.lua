@@ -52,78 +52,13 @@ vim.opt.rtp:prepend(lazy_path)
 if vim.loop.fs_stat(lazy_path) then
   require('lazy').setup({
     {
+      'hrsh7th/cmp-buffer',
+    },
+    {
+      'hrsh7th/cmp-cmdline',
+    },
+    {
       'hrsh7th/cmp-nvim-lsp',
-      dependencies = {
-        'williamboman/mason.nvim',
-        'williamboman/mason-lspconfig.nvim',
-        {
-          'hrsh7th/nvim-cmp',
-          dependencies = {
-            'hrsh7th/cmp-buffer',
-            'hrsh7th/cmp-cmdline',
-            'hrsh7th/cmp-nvim-lsp',
-            'hrsh7th/cmp-nvim-lua',
-            'hrsh7th/cmp-path',
-          },
-          config = function()
-            local cmp = require('cmp')
-            cmp.setup({
-              mapping = cmp.mapping.preset.insert({
-                ['<Tab>'] = cmp.mapping(function(fallback)
-                  local col = vim.fn.col('.') - 1
-
-                  if cmp.visible() then
-                    cmp.select_next_item({behavior = 'insert'})
-                  elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
-                    fallback()
-                  else
-                    cmp.complete()
-                  end
-                end, {'i', 's'}),
-                ['<S-Tab>'] = cmp.mapping.select_prev_item({behavior = 'insert'}),
-              }),
-              matching = {
-                disallow_fuzzy_matching = true,
-                disallow_partial_matching = true,
-              },
-              sources = {
-                {name = 'nvim_lsp'},
-                {name = 'nvim_lua'},
-                {name = 'path'},
-                {name = 'buffer'},
-              },
-              snippet = {
-                expand = function(args)
-                  vim.snippet.expand(args.body)
-                end,
-              },
-            })
-
-            cmp.setup.cmdline({'/', '?'}, {
-              mapping = cmp.mapping.preset.cmdline(),
-              sources = {
-                {name = 'buffer'},
-              },
-            })
-
-            cmp.setup.cmdline(':', {
-              mapping = cmp.mapping.preset.cmdline(),
-              sources = cmp.config.sources({
-                {name = 'path'},
-              },
-              {
-                {
-                  name = 'cmdline',
-                  option = {
-                    ignore_cmds = {'Man', '!'},
-                  },
-                },
-              }),
-            })
-          end,
-        },
-        'neovim/nvim-lspconfig',
-      },
       config = function()
         local lspconfig_defaults = require('lspconfig').util.default_config
         lspconfig_defaults.capabilities = vim.tbl_deep_extend(
@@ -168,6 +103,18 @@ if vim.loop.fs_stat(lazy_path) then
         })
       end,
     },
+    {
+      'hrsh7th/cmp-nvim-lua',
+    },
+    {
+      'hrsh7th/cmp-path',
+    },
+    -- {
+    --   'Exafunction/codeium.nvim',
+    --   config = function()
+    --     require('codeium').setup({})
+    --   end,
+    -- },
     {
       'numToStr/Comment.nvim',
       config = function()
@@ -266,10 +213,78 @@ if vim.loop.fs_stat(lazy_path) then
       end,
     },
     {
+      'williamboman/mason.nvim',
+    },
+    {
+      'williamboman/mason-lspconfig.nvim',
+    },
+    {
       'windwp/nvim-autopairs',
       config = function()
         require('nvim-autopairs').setup({})
       end,
+    },
+    {
+      'hrsh7th/nvim-cmp',
+      config = function()
+        local cmp = require('cmp')
+        cmp.setup({
+          mapping = cmp.mapping.preset.insert({
+            ['<Tab>'] = cmp.mapping(function(fallback)
+              local col = vim.fn.col('.') - 1
+
+              if cmp.visible() then
+                cmp.select_next_item({behavior = 'insert'})
+              elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+                fallback()
+              else
+                cmp.complete()
+              end
+            end, {'i', 's'}),
+            ['<S-Tab>'] = cmp.mapping.select_prev_item({behavior = 'insert'}),
+          }),
+          matching = {
+            disallow_fuzzy_matching = true,
+            disallow_partial_matching = true,
+          },
+          sources = {
+            {name = 'nvim_lsp'},
+            {name = 'nvim_lua'},
+            {name = 'path'},
+            {name = 'buffer'},
+          },
+          snippet = {
+            expand = function(args)
+              vim.snippet.expand(args.body)
+            end,
+          },
+        })
+
+        cmp.setup.cmdline({'/', '?'}, {
+          mapping = cmp.mapping.preset.cmdline(),
+          sources = {
+            {name = 'buffer'},
+          },
+        })
+
+        cmp.setup.cmdline(':', {
+          mapping = cmp.mapping.preset.cmdline(),
+          sources = cmp.config.sources({
+            {name = 'path'},
+          },
+          {
+            {
+              name = 'cmdline',
+              option = {
+                ignore_cmds = {'Man', '!'},
+              },
+            },
+          }),
+        })
+      end,
+    },
+    {
+      'neovim/nvim-lspconfig',
     },
     {
       'kylechui/nvim-surround',
@@ -320,6 +335,9 @@ if vim.loop.fs_stat(lazy_path) then
       config = function ()
         require('onedark').load()
       end,
+    },
+    {
+      'nvim-lua/plenary.nvim',
     },
     {
       'simnalamburt/vim-mundo',
