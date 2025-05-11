@@ -10,6 +10,7 @@ if [ "$(uname -s)" == Darwin ]; then
     # Fast keyboard repeat
     defaults write NSGlobalDomain KeyRepeat -int 2
     defaults write NSGlobalDomain InitialKeyRepeat -int 15
+    defaults write -g ApplePressAndHoldEnabled -bool false
 
     # Disable annoying automatic keyboard settings
     defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false

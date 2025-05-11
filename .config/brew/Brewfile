@@ -51,6 +51,7 @@ brew 'z'
 
 cask 'bitwarden'
 cask 'brave-browser'
+cask 'cursor'
 cask 'docker'
 cask 'font-hack-nerd-font'
 cask 'hammerspoon'
