@@ -109,12 +109,6 @@ if vim.loop.fs_stat(lazy_path) then
     {
       'hrsh7th/cmp-path',
     },
-    -- {
-    --   'Exafunction/codeium.nvim',
-    --   config = function()
-    --     require('codeium').setup({})
-    --   end,
-    -- },
     {
       'numToStr/Comment.nvim',
       config = function()
