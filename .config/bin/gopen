@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 gopen() {
-    local GIT_BRANCH
     local GIT_PATH
     local GIT_REPO
     local GIT_ROOT_DIR
@@ -25,8 +24,6 @@ gopen() {
     fi
 
     TARGET_DIR="${TARGET_DIR#${GIT_ROOT_DIR}}"
-    # GIT_BRANCH=$(git branch --show-current)
-    GIT_BRANCH="${GIT_BRANCH-master}"
     GIT_REPO=$( \
         git remote -v | \
         grep origin | \
@@ -47,13 +44,13 @@ gopen() {
 
     case "${GIT_REPO}" in
         *bitbucket*)
-            URL="${GIT_REPO}/src/${GIT_BRANCH}${GIT_PATH}"
+            URL="${GIT_REPO}/src/master${GIT_PATH}"
             ;;
         *github*)
             if [ "${GIT_PATH}" == '/' ]; then
-                URL="${GIT_REPO}/tree/${GIT_BRANCH}"
+                URL="${GIT_REPO}/tree/master"
             else
-                URL="${GIT_REPO}/blob/${GIT_BRANCH}${GIT_PATH}"
+                URL="${GIT_REPO}/blob/master${GIT_PATH}"
             fi
             ;;
     esac
