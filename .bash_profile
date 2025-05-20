@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+if [ -f "${HOME}/.bashrc" ]; then
+    source "${HOME}/.bashrc"
+fi
+
 if [ -f "${HOMEBREW_PREFIX}/bin/bash" ]; then
     export SHELL="${HOMEBREW_PREFIX}/bin/bash"
 else
@@ -11,7 +15,3 @@ for file in "${HOME}"/.{config,local}/bash/*; do
         source "${file}"
     fi
 done
-
-if [ -f "${HOME}/.bashrc" ]; then
-    source "${HOME}/.bashrc"
-fi
