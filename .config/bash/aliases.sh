@@ -39,8 +39,8 @@ __bash_aliases() {
     # tmux aliases
     alias tmux='tmux -f "${HOME}/.config/tmux/tmux.conf"'
     alias t='tmux'
-    alias ts='tmux new -s'
-    alias ta='tmux attach -t'
+    alias ts='tmux new-session -s'
+    alias ta='tmux attach-session -t'
     alias tl='tmux ls'
     alias tk='tmux kill-session -t'
 
