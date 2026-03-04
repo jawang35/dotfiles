@@ -45,6 +45,7 @@ brew 'tealdeer'
 brew 'tfenv'
 brew 'tmux'
 brew 'tree'
+brew 'uv'
 brew 'wifi-password'
 brew 'z'
 
