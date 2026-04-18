@@ -292,6 +292,7 @@ if vim.loop.fs_stat(lazy_path) then
     },
     {
       'nvim-treesitter/nvim-treesitter',
+      branch = 'main',
       build = function()
         require('nvim-treesitter.install').update({ with_sync = true })()
       end,
