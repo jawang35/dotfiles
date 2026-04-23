@@ -27,6 +27,7 @@ vim.opt.signcolumn = 'yes'
 vim.opt.grepprg='rg --vimgrep --smart-case'
 vim.opt.undofile = true
 
+
 vim.api.nvim_create_autocmd({'BufWritePre', 'FileWritePre'}, {
   pattern = '*',
   callback = function()
@@ -293,21 +294,22 @@ if vim.loop.fs_stat(lazy_path) then
     {
       'nvim-treesitter/nvim-treesitter',
       branch = 'main',
-      build = function()
-        require('nvim-treesitter.install').update({ with_sync = true })()
-      end,
+      lazy = false,
+      build = ':TSUpdate',
       config = function()
-        require('nvim-treesitter.configs').setup({
-          auto_install = true,
-          highlight = {
-            enable = true,
-            additional_vim_regex_highlighting = false,
-          },
-          indent = {
-            enable = true,
-          },
+        local languages = {
+          'javascript',
+          'lua',
+          'python',
+          'terraform',
+          'typescript',
+        }
+        require('nvim-treesitter').install(languages)
+        vim.api.nvim_create_autocmd('FileType', {
+          pattern = languages,
+          callback = function() vim.treesitter.start() end,
         })
-      end,
+      end
     },
     {
       'stevearc/oil.nvim',
