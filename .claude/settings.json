@@ -1,0 +1,17 @@
+{
+  "env": {
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus-4-6"
+  },
+  "permissions": {
+    "defaultMode": "plan"
+  },
+  "model": "opusplan",
+  "statusLine": {
+    "type": "command",
+    "command": "input=$(cat); echo \"$(echo \"$input\" | jq -r '.model.display_name')\""
+  },
+  "alwaysThinkingEnabled": true,
+  "effortLevel": "medium",
+  "disableAutoMode": "disable",
+  "agentPushNotifEnabled": true
+}
