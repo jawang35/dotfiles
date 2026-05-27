@@ -48,6 +48,7 @@ brew 'tree'
 brew 'tree-sitter-cli'
 brew 'uv'
 brew 'wifi-password'
+brew 'yq'
 brew 'z'
 
 cask 'bitwarden'
