@@ -1,4 +1,4 @@
-tap 'mongodb/brew'
+tap 'mongodb/brew', trusted: true
 
 brew 'awscli'
 brew 'bash'
