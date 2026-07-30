@@ -12,6 +12,7 @@
   },
   "alwaysThinkingEnabled": true,
   "effortLevel": "medium",
+  "tui": "default",
   "disableAutoMode": "disable",
   "agentPushNotifEnabled": true
 }
