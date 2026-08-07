@@ -1,7 +1,4 @@
 {
-  "env": {
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus-4-6"
-  },
   "permissions": {
     "defaultMode": "plan"
   },
