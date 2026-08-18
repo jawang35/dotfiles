@@ -11,5 +11,8 @@
   "effortLevel": "medium",
   "tui": "default",
   "disableAutoMode": "disable",
-  "agentPushNotifEnabled": true
+  "agentPushNotifEnabled": true,
+  "enabledPlugins": {
+    "slack@claude-plugins-official": true
+  }
 }
